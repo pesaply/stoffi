@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="Italian" CultureName="Italiano" Culture="it-IT">
+
+	<Value Id="Application"              FlowDirection="LeftToRight" Title="Lettore musicale Stoffi" Tagline="The world's next music player" />
+
+	<Value Id="ToolbarAdd"                        Text="Aggiungi" />
+	<Value Id="ToolbarAddTrack"                   Text="File"/>
+	<Value Id="ToolbarAddFolder"                  Text="Cartella"/>
+	<Value Id="ToolbarAddPlaylist"                Text="Playlist"/>
+	<Value Id="ToolbarAddRadioStation"            Text="Stazione Radio"/>
+	<Value Id="ToolbarAddApp"                     Text="App"/>
+	<Value Id="ToolbarShow"                       Text="Mostra" />
+	<Value Id="ToolbarDetailsPane"                Text="Riquadro dettagli" />
+	<Value Id="ToolbarMenuBar"                    Text="Barra dei menù" />
+	<Value Id="ToolbarTools"                      Text="Strumenti" />
+	<Value Id="ToolbarImporter"                   Text="Importa configurazione" />
+	<Value Id="ToolbarExporter"                   Text="Esporta configurazione" />
+	<Value Id="ToolbarGeneratePlaylist"           Text="Genera playlist" />
+	<Value Id="ToolbarPreferences"             Content="Preferenze" />
+	<Value Id="ToolbarEqualizer"               Content="Equalizzatore" />
+	<Value Id="ToolbarUpgrade"                 ToolTip="Stoffi è stato aggiornato e necessita il riavvio"/>
+	<Value Id="ToolbarScanning"                Content="Scansione..."/>
+
+	<Value Id="Searching"                         Text="Ricerca..."/>
+
+	<Value Id="MenuFile"                        Header="File"/>
+	<Value Id="MenuAddTrack"                    Header="Aggiungi traccia"/>
+	<Value Id="MenuAddFolder"                   Header="Aggiungi cartella"/>
+	<Value Id="MenuAddPlaylist"                 Header="Aggiungi playlist"/>
+	<Value Id="MenuAddRadioStation"             Header="Aggiungi stazione radio"/>
+	<Value Id="MenuAddApp"                      Header="Installa app"/>
+	<Value Id="MenuHide"                        Header="Nascondi"/>
+	<Value Id="MenuClose"                       Header="Chiudi"/>
+	<Value Id="MenuView"                        Header="Visualizza"/>
+	<Value Id="MenuMenuBar"                     Header="Barra dei menù"/>
+	<Value Id="MenuDetailsPane"                 Header="Riquadro dettagli"/>
+	<Value Id="MenuTools"                       Header="Strumenti"/>
+	<Value Id="MenuImporter"                    Header="Importa configurazione"/>
+	<Value Id="MenuExporter"                    Header="Esporta configurazione"/>
+	<Value Id="MenuGeneratePlaylist"            Header="Genera playlist"/>
+	<Value Id="MenuEqualizer"                   Header="Equalizzatore"/>
+	<Value Id="MenuPreferences"                 Header="Preferenze"/>
+	<Value Id="MenuHelp"                        Header="Aiuto"/>
+	<Value Id="MenuAbout"                       Header="Informazioni su Stoffi"/>
+
+	<Value Id="MenuAddToPlaylist"               Header="Aggiungi a playlist"/>
+	<Value Id="MenuCreateNew"                   Header="Crea nuova"/>
+	<Value Id="MenuRemoveFromPlaylist"          Header="Rimuovi da playlist"/>
+	<Value Id="MenuRemoveBookmark"              Header="Rimuovi segnalibro"/>
+
+	<Value Id="MenuEnable"                      Header="Abilita"/>
+	<Value Id="MenuDisable"                     Header="Disabilita"/>
+	<Value Id="MenuUninstall"                   Header="Disinstalla"/>
+
+	<Value Id="MenuRenamePlaylist"                Text="Rinomina playlist"/>
+	<Value Id="MenuRemovePlaylist"                Text="Rimuovi playlist"/>
+	<Value Id="MenuSavePlaylist"                  Text="Salva playlist"/>
+	<Value Id="MenuSharePlaylist"                 Text="Condividi playlist"/>
+
+	<Value Id="MenuRemove"                        Text="Rimuovi"/>
+	<Value Id="MenuDelete"                        Text="Rimuovi dal disco"/>
+	<Value Id="MenuInclude"                       Text="Includi"/>
+	<Value Id="MenuIgnore"                        Text="Ignora"/>
+	<Value Id="MenuQueue"                         Text="Aggiungi in coda"/>
+	<Value Id="MenuDequeue"                       Text="Rimuovi da coda"/>
+	<Value Id="MenuInfo"                          Text="Propriertà"/>
+	<Value Id="MenuCopy"                          Text="Copia..."/>
+	<Value Id="MenuMove"                          Text="Sposta..."/>
+	<Value Id="MenuPlay"                          Text="Riproduci"/>
+	<Value Id="MenuPause"                         Text="Pausa"/>
+	<Value Id="MenuWatchOnYouTube"                Text="Guarda su YouTube"/>
+	<Value Id="MenuListenOnSoundCloud"            Text="Ascolta su SoundCloud"/>
+  <Value Id="MenuOpenFolder"                    Text="Open in Explorer"/>
+	<Value Id="MenuShareSong"                     Text="Condividi"/>
+	<Value Id="MenuVisitWebsite"                Header="Visita sito web"/>
+
+  <Value Id="MenuClearSort"                     Text="Clear sorting"/>
+
+	<Value Id="ColumnType"                        Text="Tipo"/>
+	<Value Id="ColumnLocation"                    Text="Percorso"/>
+	<Value Id="ColumnArtist"                      Text="Artista"/>
+	<Value Id="ColumnAlbum"                       Text="Album"/>
+	<Value Id="ColumnTitle"                       Text="Titolo"/>
+	<Value Id="ColumnGenre"                       Text="Genere"/>
+	<Value Id="ColumnLength"                      Text="Durata"/>
+	<Value Id="ColumnTrack"                       Text="Traccia"/>
+	<Value Id="ColumnYear"                        Text="Anno"/>
+	<Value Id="ColumnPlayCount"                   Text="N° ascolti"/>
+	<Value Id="ColumnLastPlayed"                  Text="Ultimo ascolto"/>
+	<Value Id="ColumnPlayed"                      Text="Riprodotta"/>
+	<Value Id="ColumnPath"                        Text="Percorso"/>
+	<Value Id="ColumnViews"                       Text="Visualizzazioni"/>
+	<Value Id="ColumnSize"                        Text="Dimensione"/>
+	<Value Id="ColumnBitrate"                     Text="Velocità in bit"/>
+	<Value Id="ColumnChannels"                    Text="Canali"/>
+	<Value Id="ColumnSamplingRate"                Text="Frequenza"/>
+	<Value Id="ColumnCodecs"                      Text="Codec"/>
+	<Value Id="ColumnURL"                         Text="URL"/>
+	<Value Id="ColumnName"                        Text="Nome"/>
+	<Value Id="ColumnAuthor"                      Text="Autore"/>
+	<Value Id="ColumnInstalled"                   Text="Installato"/>
+	<Value Id="ColumnVersion"                     Text="Versione"/>
+	<Value Id="ColumnEnabled"                     Text="Attivo"/>
+	<Value Id="ColumnDescription"                 Text="Descrizione"/>
+
+	<Value Id="TotalSize"                         Text="Dimensione totale"/>
+	<Value Id="TotalLength"                       Text="Lunghezza totale"/>
+	<Value Id="AverageSize"                       Text="Dimensione media"/>
+	<Value Id="AverageLength"                     Text="Lunghezza media"/>
+	<Value Id="AverageTracks"                     Text="Tracce medie"/>
+	<Value Id="Tracks"                            Text="Tracce"/>
+	<Value Id="Stations"                          Text="Stazioni"/>
+
+	<Value Id="MostViewed"                        Text="Più visti"/>
+	<Value Id="TopRated"                          Text="Più votati"/>
+
+	<Value Id="TaskbarPrev"                       Text="Canzone precedente"/>
+	<Value Id="TaskbarPlay"                       Text="Riproduci canzone"/>
+	<Value Id="TaskbarNext"                       Text="Canzone successiva"/>
+
+	<Value Id="TrayShow"                          Text="Mostra"/>
+	<Value Id="TrayExit"                          Text="Esci"/>
+	<Value Id="TrayPrev"                          Text="Precedente"/>
+	<Value Id="TrayPlay"                          Text="Riproduci"/>
+	<Value Id="TrayNext"                          Text="Successiva"/>
+
+	<Value Id="JumpPlay"                         Title="Riproduci/Pausa" Description="Riproduce o mette in pausa la traccia corrente"/>
+	<Value Id="JumpNext"                         Title="Successiva" Description="Salta alla traccia successiva"/>
+	<Value Id="JumpPrev"                         Title="Precedente" Description="Riproduce la traccia precedente"/>
+
+	<Value Id="NavigationFavorites"               Text="Preferiti"/>
+	<Value Id="NavigationNowPlaying"              Text="In riproduzione"/>
+	<Value Id="NavigationVideo"                   Text="Video"/>
+	<Value Id="NavigationVisualizer"              Text="Visualizer"/>
+	<Value Id="NavigationVisualizerTitle"         Text="Nessun visualizer attivo"/>
+	<Value Id="NavigationVisualizerDescription"   Text="Non c'è nessun visualizer attivo al momento"/>
+	<Value Id="NavigationMusic"                   Text="Musica"/>
+	<Value Id="NavigationMusicDescription"        Text="Tutta la musica del mondo"/>
+	<Value Id="NavigationFiles"                   Text="File"/>
+	<Value Id="NavigationFilesTitle"              Text="Libreria Musicale"/>
+	<Value Id="NavigationYouTube"                 Text="YouTube"/>
+	<Value Id="NavigationYouTubeTitle"            Text="YouTube"/>
+	<Value Id="NavigationYouTubeDescription"      Text="Ascolta musica da YouTube"/>
+	<Value Id="NavigationSoundCloud"              Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudTitle"         Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudDescription"   Text="Ascolta musica da SoundCloud"/>
+	<Value Id="NavigationRadio"                   Text="Radio"/>
+	<Value Id="NavigationRadioTitle"              Text="Stazioni Radio"/>
+	<Value Id="NavigationDisc"                    Text="Disco"/>
+	<Value Id="NavigationDiscTitle"               Text="Audio CD"/>
+	<Value Id="NavigationQueue"                   Text="Coda"/>
+	<Value Id="NavigationQueueTitle"              Text="Riproduci coda"/>
+	<Value Id="NavigationHistory"                 Text="Cronologia"/>
+	<Value Id="NavigationHistoryTitle"            Text="Cronologia"/>
+	<Value Id="NavigationPlaylists"               Text="Playlist"/>
+	<Value Id="NavigationCreateNew"               Text="Crea nuova"/>
+	<Value Id="NavigationPlaylistTitle"           Text="Playlist"/>
+
+	<Value Id="PlaybackEmpty"                     Text="Nessun elemento in riproduzione"/>
+	<Value Id="PlaybackSearch"                    Text="Cerca"/>
+
+	<Value Id="ControlBack"                    Content="Torna a musica"/>
+	<Value Id="ControlGeneral"                 Content="Generale"/>
+	<Value Id="ControlSources"                 Content="Risorse musicali"/>
+	<Value Id="ControlServices"                Content="Cloud"/>
+	<Value Id="ControlApps"                    Content="App"/>
+	<Value Id="ControlShortcuts"               Content="Scorciatoie da tastiera"/>
+	<Value Id="ControlAbout"                   Content="Informazioni su Stoffi"/>
+	<Value Id="ControlSeeAlso"                    Text="Vedi anche:"/>
+	<Value Id="ControlProject"                 Content="Progetto"/>
+	<Value Id="ControlBlog"                    Content="Blog"/>
+	<Value Id="ControlWebsite"                 Content="Sito web"/>
+
+	<Value Id="SourcesTitle"                      Text="Scegli dove cercare la musica"/>
+	<Value Id="SourcesSubTitle"                   Text="Lista sorgenti"/>
+	<Value Id="SourcesText"                       Text="Aggiungi i percorsi nei quali Stoffi deve cercare la tua musica. Tutti i percorsi verranno monitorati al fine di seguirne i cambiamenti. Puoi aggiungere sia file singoli che intere cartelle. Puoi anche dire a Stoffi di ignorare alcune cartelle e file.
+Stoffi aggiungerà tutto alla tua Libreria Musicale automaticamente."/>
+
+	<Value Id="SourcesTypeFile"                   Text="File"/>
+	<Value Id="SourcesTypeFolder"                 Text="Cartella"/>
+	<Value Id="SourcesTypeLibrary"                Text="Libreria"/>
+
+	<Value Id="SourcesAddFolder"               Content="Includi cartella"/>
+	<Value Id="SourcesAddFile"                 Content="Includi file"/>
+	<Value Id="SourcesIgnoreFolder"            Content="Ignora cartella"/>
+	<Value Id="SourcesIgnoreFile"              Content="Ignora file"/>
+
+	<Value Id="ServicesTitle"                     Text="Servizi cloud per Stoffi"/>
+	<Value Id="ServicesAccountTitle"              Text="Il tuo account cloud"/>
+	<Value Id="ServicesAccountText"               Text="Il servizio Cloud di Stoffi ti permette di connettere Stoffi con il mondo esterno utilizzando vari servizi."/>
+	<Value Id="ServicesAccountDelink"          Content="Disconnetti"/>
+	<Value Id="ServicesUserName"                  Text="Logged in as:"/>
+	<Value Id="ServicesDeviceName"                Text="Nome dispositivo:"/>
+
+	<Value Id="ServicesLinksTitle"                Text="Link Your Account"/>
+	<Value Id="ServicesLinksText"                 Text="Connect your Stoffi account with your accounts at other services and networks and expand your music experience even further."/>
+	<Value Id="ServicesCheckShare"             Content="Publish the stuff I share"/>
+	<Value Id="ServicesCheckListen"            Content="Publish the songs I listen to"/>
+	<Value Id="ServicesCheckDonate"            Content="Publish the artists I support"/>
+	<Value Id="ServicesCheckCreatePlaylist"    Content="Publish the playlists I create"/>
+	<Value Id="ServicesUnlink"                 Content="Unlink"/>
+	<Value Id="ServicesLink"                   Content="Link {0}"/>
+	<Value Id="ServicesRefresh"                   Text="Refresh"/>
+	<Value Id="ServicesLinkDisconnected"          Text="{0} kicked us out"/>
+	<Value Id="ServicesReconnect"                 Text="Reconnect"/>
+
+	<Value Id="ServicesPrivacyTitle"              Text="Proteggi la tua privacy"/>
+	<Value Id="ServicesPrivacyText"               Text="Qui puoi controllare i dati che vengono trasmessi tra il tuo computer ed i nostri servizi."/>
+	<Value Id="ServicesSubmit"                    Text="Scegli quali informazioni vuoi condividere con gli altri."/>
+	<Value Id="ServicesSubmitSongs"               Text="Le canzoni che ho ascoltato"/>
+	<Value Id="ServicesSubmitPlaylists"           Text="Le playlist che ho creato"/>
+	<Value Id="ServicesSynchronize"               Text="Mantieni le tue impostazioni sincronizzate con altre istanze di Stoffi."/>
+	<Value Id="ServicesSynchronizeProfile"        Text="Sincronizzazione profilo"/>
+	<Value Id="ServicesSynchronizeCheckbox"       Text="Sincronizza"/>
+	<Value Id="ServicesNoSynchronize"          Content="Non sincronizzare"/>
+	<Value Id="ServicesSynchronizeManage"       Header="What to sync?"/>
+	<Value Id="ServicesNewSyncProfile"         Content="Nuovo profilo"/>
+	<Value Id="ServicesSynchronizeConfig"      Content="Configuration"/>
+	<Value Id="ServicesSynchronizePlaylists"   Content="Playlists"/>
+	<Value Id="ServicesSynchronizeQueue"       Content="Play queue"/>
+	<Value Id="ServicesDisconnected"              Text="It seems as if there's something wrong with your connection.
+Make sure you are connected to the Internet and try connecting again."/>
+	<Value Id="ServicesConnect"                Content="Connect"/>
+
+	<Value Id="AppsTitle"                         Text="Estendi Stoffi con app"/>
+	<Value Id="AppsInstalledTitle"                Text="App installati"/>
+	<Value Id="AppsInstalledText"                 Text="Scorri la lista dei app installati, selezionali per configurarli. Puoi anche installare nuovi app."/>
+	<Value Id="AppsInstall"                    Content="Installa"/>
+	<Value Id="AppsLabelDescription"              Text="Descrizione:"/>
+	<Value Id="AppsLabelAuthor"                   Text="Autore:"/>
+	<Value Id="AppsLabelVersion"                  Text="Versione:"/>
+	<Value Id="AppsLabelType"                     Text="Tipo:"/>
+	<Value Id="AppsLabelEnabled"                  Text="Attivo:"/>
+	<Value Id="AppsSettingsTitle"                 Text="Impostazioni app"/>
+	<Value Id="AppsSettingsText"                  Text="Configurazione del app."/>
+
+	<Value Id="AppTypeFilter"                     Text="Filter"/>
+	<Value Id="AppTypeSource"                     Text="Music source"/>
+	<Value Id="AppTypeVisualizer"                 Text="Visualizer"/>
+
+	<Value Id="ShortcutsTitle"                    Text="Configura scorciatoie da tastiera"/>
+	<Value Id="ShortcutsProfileTitle"             Text="Profilo"/>
+	<Value Id="ShortcutsProfileText"              Text="Se hai usato le scorciatoie di tastiera di una particolare applicazione puoi sceglierla come profilo quì.
+Puoi anche creare il tuo profilo personalizzato se lo desideri."/>
+	<Value Id="ShortcutsProfileCustom"            Text="Personalizzato"/>
+	<Value Id="ShortcutsProfileSelect"            Text="Scegli profilo"/>
+	<Value Id="ShortcutsProfileNew"            Content="Nuovo profilo"/>
+	<Value Id="ShortcutsProfileRename"         Content="Rinomina profilo"/>
+	<Value Id="ShortcutsProfileDelete"         Content="Elimina profilo"/>
+
+	<Value Id="AboutTitle"                        Text="Visualizza informazioni sul lettore musicale Stoffi"/>
+	<Value Id="AboutDescriptionTitle"             Text="Descrizione"/>
+	<Value Id="AboutDescriptionText"              Text="Il lettore musicale Stoffi ha un approcio semplice alla musica.
+
+Questo significa che è facile da utilzzare, ha un'interfaccia pulita e di buon gusto ed allo stesso tempo ti permette di gustarti un lettore musicale ricco di funzionalità.
+
+È stato costruito per essere leggero e veloce, così che tu possa eseguirlo in maniera trasparente senza impattare sulle prestazioni del tuo sistema. Si integra facilmente con il resto del sistema, divenendo una parte naturale dello stesso.
+
+Con il lettore musicale Stoffi puoi facilmente catalogare la musica nel modo che preferisci, creando e modificando playlist in modo semplice e veloce, così come mantenendo nominati in modo opportuno i titoli delle tracce e degli album.
+
+La musica non è mai stata così divertente."/>
+	<Value Id="AboutPropertiesTitle"              Text="Proprietà Applicazione"/>
+	<Value Id="AboutPropertiesRelease"            Text="Rilascio:"/>
+	<Value Id="AboutPropertiesDetails"          Header="Dettagli tecnici"/>
+	<Value Id="AboutPropertiesVersion"            Text="Versione:"/>
+	<Value Id="AboutPropertiesStamp"              Text="Stampo:"/>
+	<Value Id="AboutPropertiesArch"               Text="Architettura:"/>
+	<Value Id="AboutPropertiesChannel"            Text="Canale:"/>
+	<Value Id="AboutPropertiesCheck"              Text="Ultimo controllo per aggiornamenti:"/>
+	<Value Id="AboutPropertiesUpgraded"           Text="Stoffi è stato aggiornato e necessita di essere riavviato"/>
+  <Value Id="AboutCreditsTesters"               Text="Testers"/>
+  <Value Id="AboutCreditsDevelopers"            Text="Developers"/>
+	<Value Id="AboutCreditsTranslators"           Text="Traduttori"/>
+
+	<Value Id="GeneralTitle"                      Text="Modifica le impostazioni principali dell'applicazione"/>
+	<Value Id="GeneralLookTitle"                  Text="Aspetto"/>
+	<Value Id="GeneralLookText"                   Text="Quì puoi scegliere configurazioni differenti relative all'interfaccia dell'applicazione. Cambia quello che vedi e come appare."/>
+	<Value Id="GeneralLanguage"                   Text="Lingua"/>
+	<Value Id="GeneralOSD"                        Text="Mostra su schermo (OSD)"/>
+	<Value Id="GeneralMinimize"                   Text="Minimizza in tray"/>
+	<Value Id="GeneralFeelTitle"                  Text="Comportamento"/>
+	<Value Id="GeneralFeelText"                   Text="Quì puoi modificare un comportamento specifico di Stoffi in alcune circostanze e specificare quali azioni eseguire."/>
+	<Value Id="GeneralSearchPolicy"               Text="Politiche di ricerca"/>
+	<Value Id="GeneralSearchPolicyGlobal"      Content="Stessa ricerca ovunque"/>
+	<Value Id="GeneralSearchPolicyPartial"     Content="Stessa ricerca per tutte le playlist"/>
+	<Value Id="GeneralSearchPolicyIndividual"  Content="Ricerca differente per ogni lista"/>
+	<Value Id="GeneralUpgradePolicy"              Text="Politiche d'aggiornamento"/>
+	<Value Id="GeneralUpgradePolicyManual"     Content="Lascia controllare me gli aggiornamenti"/>
+	<Value Id="GeneralUpgradePolicyNotify"     Content="Notificami quando posso aggiornare"/>
+	<Value Id="GeneralUpgradePolicyAuto"       Content="Aggiorna automaticamente"/>
+	<Value Id="GeneralDoUpgrade"               Content="Aggiorna"/>
+	<Value Id="GeneralDoCheck"                 Content="Controlla per aggiornamenti"/>
+	<Value Id="GeneralRestart"                 Content="Riavvia"/>
+	<Value Id="GeneralAddPlayText"                Text="Quando su un file viene fatto doppio-click in Esplora Risorse esegui le seguenti azioni:"/>
+	<Value Id="GeneralAddPolicy"                  Text="Politiche d'aggiunta"/>
+	<Value Id="GeneralAddPolicyDont"           Content="Non aggiungere"/>
+	<Value Id="GeneralAddPolicyLibrary"        Content="Aggiungi a libreria"/>
+	<Value Id="GeneralAddPolicyBoth"           Content="Aggiungi a libreria e playlist corrente"/>
+	<Value Id="GeneralPlayPolicy"                 Text="Politiche di riproduzione"/>
+	<Value Id="GeneralPlayPolicyPlay"          Content="Riproduci"/>
+	<Value Id="GeneralPlayPolicyDont"          Content="Non riprodurre"/>
+	<Value Id="GeneralPlayPolicyBack"          Content="Aggiungi alla fine della coda"/>
+	<Value Id="GeneralPlayPolicyFront"         Content="Aggiungi all'inizio della coda"/>
+	<Value Id="GeneralPausePlayback"              Text="Metti in pausa la riproduzione quando:"/>
+	<Value Id="GeneralPausePlaybackLocked"        Text="Il computer è bloccato"/>
+  <Value Id="GeneralPausePlaybackEnd"           Text="Song ends"/>
+	<Value Id="GeneralPausePlaybackLoggedOut"     Text="Sono disconnesso dal sistema"/>
+
+	<Value Id="SourceFieldType"                 Header="Tipo"/>
+	<Value Id="SourceFieldLocation"             Header="Percorso"/>
+
+	<Value Id="ShortcutNotUsed"                   Text="Non usato"/>
+	<Value Id="ShortcutPress"                     Text="Premi tasti"/>
+	<Value Id="ShortcutApplicationTitle"          Text="Comandi applicazione"/>
+	<Value Id="ShortcutApplicationText"           Text="Queste scorciatoie da tastiera eseguono comandi dell'applicazione."/>
+	<Value Id="ShortcutMainWindowTitle"           Text="Navigazione finestra principale"/>
+	<Value Id="ShortcutMainWindowText"            Text="Queste sono le scorciatoie da tastiera usate per interagire e navigare all'interno della finestra principale.
+Questo include il riquadro di navigazione (Libreria, Coda, Playlist ed altro), la lista tracce ed il riquadro dettagli."/>
+	<Value Id="ShortcutMediaCommandsTitle"        Text="Comandi multimediali"/>
+	<Value Id="ShortcutMediaCommandsText"         Text="Queste sono le scorciatoie da tastiera per controllare la riproduzione dei tuoi media."/>
+	<Value Id="ShortcutTrackTitle"                Text="Lista tracce"/>
+	<Value Id="ShortcutTrackText"                 Text="Usa questi comandi quando stai operando su una traccia selezionata nella lista tracce."/>
+	<Value Id="ShortcutGlobal"                    Text="Globale" ToolTip="Esegui comandi anche quando Stoffi non è in evidenza"/>
+
+	<Value Id="Shortcut_Add_track"                Text="Aggiungi traccia"/>
+	<Value Id="Shortcut_Add_folder"               Text="Aggiungi cartella"/>
+	<Value Id="Shortcut_Add_playlist"             Text="Apri playlist"/>
+	<Value Id="Shortcut_Add_radio_station"        Text="Add radio station"/>
+	<Value Id="Shortcut_Add_app"                  Text="Add app"/>
+	<Value Id="Shortcut_Generate_playlist"        Text="Generate playlist"/>
+	<Value Id="Shortcut_Minimize"                 Text="Minimizza"/>
+	<Value Id="Shortcut_Restore"                  Text="Ripristina"/>
+	<Value Id="Shortcut_Help"                     Text="Aiuto"/>
+	<Value Id="Shortcut_Close"                    Text="Chiudi"/>
+	<Value Id="Shortcut_Video"                    Text="Video"/>
+	<Value Id="Shortcut_Visualizer"               Text="Visualizer"/>
+	<Value Id="Shortcut_Files"                    Text="Files"/>
+	<Value Id="Shortcut_YouTube"                  Text="YouTube"/>
+	<Value Id="Shortcut_SoundCloud"               Text="SoundCloud"/>
+	<Value Id="Shortcut_Radio"                    Text="Radio"/>
+	<Value Id="Shortcut_Queue"                    Text="Coda"/>
+	<Value Id="Shortcut_History"                  Text="Cronologia"/>
+	<Value Id="Shortcut_Playlists"                Text="Playlist"/>
+	<Value Id="Shortcut_Tracklist"                Text="Lista tracce"/>
+	<Value Id="Shortcut_Search"                   Text="Cerca"/>
+	<Value Id="Shortcut_General_preferences"      Text="Preferenze generali"/>
+	<Value Id="Shortcut_Music_sources"            Text="Music sources"/>
+	<Value Id="Shortcut_Services"                 Text="Cloud"/>
+	<Value Id="Shortcut_Apps"                     Text="App"/>
+	<Value Id="Shortcut_Keyboard_shortcuts"       Text="Scorciatoie da tastiera"/>
+	<Value Id="Shortcut_About"                    Text="Informazioni su"/>
+	<Value Id="Shortcut_Toggle_details_pane"      Text="Commuta riquadro dettagli"/>
+	<Value Id="Shortcut_Toggle_menu_bar"          Text="Commuta barra dei menù"/>
+	<Value Id="Shortcut_Create_playlist"          Text="Crea playlist"/>
+	<Value Id="Shortcut_Play_or_pause"            Text="Riproduci o Pausa"/>
+	<Value Id="Shortcut_Next"                     Text="Successiva"/>
+	<Value Id="Shortcut_Previous"                 Text="Precedente"/>
+	<Value Id="Shortcut_Toggle_shuffle"           Text="Commuta casuale"/>
+	<Value Id="Shortcut_Toggle_repeat"            Text="Commuta ripeti"/>
+	<Value Id="Shortcut_Increase_volume"          Text="Aumenta volume"/>
+	<Value Id="Shortcut_Decrease_volume"          Text="Diminuisci volume"/>
+	<Value Id="Shortcut_Seek_forward"             Text="Aumenta velocità"/>
+	<Value Id="Shortcut_Seek_backward"            Text="Diminuisci velocità"/>
+	<Value Id="Shortcut_Add_bookmark"             Text="Aggiungi segnalibro"/>
+	<Value Id="Shortcut_Jump_to_previous_bookmark" Text="Vai al segnalibro precedente"/>
+	<Value Id="Shortcut_Jump_to_next_bookmark"    Text="Vai al segnalibro successivo"/>
+	<Value Id="Shortcut_Jump_to_first_bookmark"   Text="Vai al primo segnalibro"/>
+	<Value Id="Shortcut_Jump_to_last_bookmark"    Text="Vai all'ultimo segnalibro"/>
+	<Value Id="Shortcut_Jump_to_bookmark_1"       Text="Vai al segnalibro 1"/>
+	<Value Id="Shortcut_Jump_to_bookmark_2"       Text="Vai al segnalibro 2"/>
+	<Value Id="Shortcut_Jump_to_bookmark_3"       Text="Vai al segnalibro 3"/>
+	<Value Id="Shortcut_Jump_to_bookmark_4"       Text="Vai al segnalibro 4"/>
+	<Value Id="Shortcut_Jump_to_bookmark_5"       Text="Vai al segnalibro 5"/>
+	<Value Id="Shortcut_Jump_to_bookmark_6"       Text="Vai al segnalibro 6"/>
+	<Value Id="Shortcut_Jump_to_bookmark_7"       Text="Vai al segnalibro 7"/>
+	<Value Id="Shortcut_Jump_to_bookmark_8"       Text="Vai al segnalibro 8"/>
+	<Value Id="Shortcut_Jump_to_bookmark_9"       Text="Vai al segnalibro 9"/>
+	<Value Id="Shortcut_Jump_to_bookmark_10"      Text="Vai al segnalibro 10"/>
+	<Value Id="Shortcut_Jump_to_current_track"    Text="Vai alla traccia corrente"/>
+	<Value Id="Shortcut_Jump_to_selected_track"   Text="Vai alla traccia selezionata"/>
+	<Value Id="Shortcut_Play_track"               Text="Riproduci traccia"/>
+	<Value Id="Shortcut_Queue_and_dequeue"        Text="Accoda e rimuovi da coda"/>
+	<Value Id="Shortcut_Open_folder"              Text="Open folder"/>
+	<Value Id="Shortcut_Remove"                   Text="Remove"/>
+	<Value Id="Shortcut_Remove_from_harddrive"    Text="Remove from harddrive"/>
+	<Value Id="Shortcut_Copy"                     Text="Copy"/>
+	<Value Id="Shortcut_Move"                     Text="Move"/>
+	<Value Id="Shortcut_View_information"         Text="Visualizza informazioni"/>
+	<Value Id="Shortcut_Share"                    Text="Share"/>
+
+	<Value Id="ButtonOK"                       Content="OK"/>
+	<Value Id="ButtonApply"                    Content="Applica"/>
+	<Value Id="ButtonCancel"                   Content="Annulla"/>
+	<Value Id="ButtonAdd"                      Content="Aggiungi"/>
+	<Value Id="ButtonClose"                    Content="Chiudi"/>
+	<Value Id="ButtonNew"                      Content="Nuovo"/>
+	<Value Id="ButtonRename"                   Content="Rinomina"/>
+	<Value Id="ButtonRemove"                   Content="Rimuovi"/>
+
+	<Value Id="PropertiesTitle"                  Title="Proprietà"/>
+	<Value Id="PropertiesMultipleFiles"           Text="{0} tracce"/>
+	<Value Id="PropertiesGeneral"               Header="Generale"/>
+	<Value Id="PropertiesGeneralType"             Text="Tipo di file:"/>
+	<Value Id="PropertiesGeneralTypeFormat"       Text="Formato sonoro {0} (.{1})"/>
+	<Value Id="PropertiesGeneralVariousFormats"   Text="Formati vari"/>
+	<Value Id="PropertiesGeneralLength"           Text="Durata:"/>
+	<Value Id="PropertiesGeneralChannels"         Text="Canali:"/>
+	<Value Id="PropertiesGeneralVariousChannels"  Text="Canali vari"/>
+	<Value Id="PropertiesGeneralCodec"            Text="Codec:"/>
+	<Value Id="PropertiesGeneralVariousCodecs"    Text="Codec vari"/>
+	<Value Id="PropertiesGeneralBitrate"          Text="Velocità in bit:"/>
+	<Value Id="PropertiesGeneralVariousBitrates"  Text="Velocità in bit varie"/>
+	<Value Id="PropertiesGeneralSamplingrate"     Text="Frequenza:"/>
+	<Value Id="PropertiesGeneralVariousSamplingrates" Text="Frequenze varie"/>
+	<Value Id="PropertiesGeneralLocation"          Text="Percorso:"/>
+	<Value Id="PropertiesGeneralVariousLocations" Text="Cartelle varie"/>
+	<Value Id="PropertiesGeneralSize"             Text="Dimensione:"/>
+	<Value Id="PropertiesGeneralPlayCount"        Text="Contatore riproduzioni:"/>
+	<Value Id="PropertiesGeneralLastPlayed"       Text="Ultima riproduzione:"/>
+	<Value Id="PropertiesGeneralCreated"          Text="Data creazione:"/>
+	<Value Id="PropertiesGeneralModified"         Text="Ultima modifica:"/>
+	<Value Id="PropertiesGeneralAccessed"         Text="Ultimo accesso:"/>
+	<Value Id="PropertiesDetails"               Header="Dettagli"/>
+	<Value Id="PropertiesDetailsProperty"      Content="Proprietà"/>
+	<Value Id="PropertiesDetailsValue"         Content="Valore"/>
+	<Value Id="PropertiesDetailsMultipleValues"   Text="(valori multipli)"/>
+
+	<Value Id="EqualizerTitle"                   Title="Equalizzatore"/>
+	<Value Id="EqualizerProfile"                  Text="Profilo:"/>
+	<Value Id="EqualizerHertz"                    Text="Hz:"/>
+	<Value Id="EqualizerEcho"                     Text="Echo"/>
+	<Value Id="EqualizerProfileTuned"             Text="Tuned"/>
+	<Value Id="EqualizerProfileBass"              Text="Bass"/>
+	<Value Id="EqualizerProfileJazz"              Text="Jazz"/>
+	<Value Id="EqualizerProfileDance"             Text="Dance"/>
+	<Value Id="EqualizerProfileRnB"               Text="R&amp;B"/>
+	<Value Id="EqualizerProfileSpeech"            Text="Speech"/>
+	<Value Id="EqualizerProfileLoud"              Text="Loud"/>
+	<Value Id="EqualizerProfileHeadphones"        Text="Headphones"/>
+	<Value Id="EqualizerProfileFlat"              Text="Flat"/>
+	<Value Id="EchoWet"                           Text="Wet"/>
+	<Value Id="EchoDry"                           Text="Dry"/>
+
+	<Value Id="AddURLTitle"                      Title="Aggiungi Stazione Radio"/>
+	<Value Id="AddURLLabel"                       Text="URL:"/>
+	<Value Id="AddURLWait"                        Text="Per favore attendere..."/>
+
+	<Value Id="GeneratePlaylistTitle"            Title="Genera playlist"/>
+	<Value Id="FromList"                          Text="Da lista"/>
+	<Value Id="AllTracks"                      Content="Tutte le tracce"/>
+	<Value Id="NumberOfTracks"                    Text="Numero di tracce"/>
+	<Value Id="ApplySearch"                       Text="Applica il corrente filtro di ricerca"/>
+	<Value Id="Name"                              Text="Nome"/>
+	<Value Id="ButtonGenerate"                 Content="Genera"/>
+
+	<Value Id="DateDays"                      Singular="giorno" Plural="giorni"/>
+	<Value Id="DateHours"                     Singular="ora" Plural="ore"/>
+	<Value Id="DateMinutes"                   Singular="minuto" Plural="minuti"/>
+	<Value Id="DateSeconds"                   Singular="secondo" Plural="secondi"/>
+
+	<Value Id="Filter"                            Text="Filter:"/>
+	<Value Id="FilterNone"                     Content="No filter"/>
+	<Value Id="FilterMusic"                    Content="Music"/>
+	<Value Id="Quality"                           Text="Quality:"/>
+	<Value Id="QualityLow"                     Content="Low"/>
+	<Value Id="QualityMedium"                  Content="Medium"/>
+	<Value Id="QualityHigh"                    Content="High"/>
+	<Value Id="Quality720"                     Content="720p"/>
+	<Value Id="Quality1080"                    Content="1080p"/>
+	<Value Id="QualityHighres"                 Content="Highres"/>
+	<Value Id="QualityDefault"                 Content="Automatic"/>
+
+	<Value Id="SizeByte"                          Text="{0} byte"/>
+	<Value Id="SizeKb"                            Text="{0} kB"/>
+	<Value Id="SizeMb"                            Text="{0} MB"/>
+	<Value Id="SizeGb"                            Text="{0} GB"/>
+	<Value Id="SizeTb"                            Text="{0} TB"/>
+	<Value Id="SizePb"                            Text="{0} PB"/>
+	<Value Id="SizeEb"                            Text="{0} EB"/>
+
+	<Value Id="BeatsPerMinute"                    Text="{0} bpm"/>
+	<Value Id="KilobitsPerSecond"                 Text="{0} kbps"/>
+	<Value Id="KiloHertz"                         Text="{0} kHz"/>
+
+	<Value Id="MultipleSelectedTracks"            Text="{0} tracce"/>
+	<Value Id="FileTypeYouTube"                   Text="Traccia YouTube" Plural="Tracce YouTube"/>
+	<Value Id="FileTypeSoundCloud"                Text="Traccia SoundCloud" Plural="Tracce SoundCloud"/>
+	<Value Id="FileTypeRadio"                     Text="Stazione Radio" Plural="Stazioni Radio"/>
+	<Value Id="FileTypeUnknown"                   Text="Tipo sconosciuto" Plural="Tipi sconosciuti"/>
+	<Value Id="FileTypeExtension"                 Text="{0} file" Plural="{0} file"/>
+	<Value Id="FileTypeLocal"                     Text="File locale" Plural="File locali"/>
+
+	<Value Id="SearchTooltip"                     Text="Cerca: {0}"/>
+
+	<Value Id="UpgradeConnecting"                 Text="Connessione..."/>
+	<Value Id="UpgradeDownloading"                Text="In download..."/>
+	<Value Id="UpgradeProcessing"                 Text="In esecuzione..."/>
+	<Value Id="UpgradeNotChecked"                 Text="Non ancora controllati"/>
+	<Value Id="UpgradeWait"                       Text="Per favore attendere..."/>
+	<Value Id="UpgradePending"                    Text="Aggiornamento installato, riavviare l'applicazione"/>
+	<Value Id="UpgradeNotFound"                   Text="Stai eseguendo l'ultima versione"/>
+	<Value Id="UpgradeFound"                      Text="Non ci sono aggiornamenti disponibili"/>
+	<Value Id="UpgradeDebug"                      Text="Aggiornamenti disattivati poichè in modalità DEBUG"/>
+	<Value Id="UpgradeInProgress"                 Text="Aggiornamento in esecuzione.
+Per favore attendere..."/>
+
+	<Value Id="AssociationsCaption"               Text="Rendi Stoffi il lettore musicale predefinito"/>
+	<Value Id="AssociationsInstruction"           Text="Rendere Stoffi il lettore musicale predefinito?"/>
+	<Value Id="AssociationsText"                  Text="Scegli di avere Stoffi come lettore musicale predefinito e gestisci la musica sia su Internet che sul computer."/>
+	<Value Id="AssociationsSkip"                  Text="Salta"/>
+	<Value Id="AssociationsSkipText"              Text="Non effettuare nessuna modifica al mio sistema"/>
+	<Value Id="AssociationsChoose"                Text="Lasciami scegliere"/>
+	<Value Id="AssociationsChooseText"            Text="Personalizza quali file verranno gestiti da Stoffi"/>
+	<Value Id="AssociationsYes"                   Text="Si"/>
+	<Value Id="AssociationsYesText"               Text="Rendere Stoffi il mio lettore musicale predefinito"/>
+
+	<Value Id="AssociationsCustom"               Title="Associazioni"/>
+	<Value Id="AssociationsCustomHeader"          Text="Scegli associazione file"/>
+	<Value Id="AssociationsCustomText"            Text="Scegli quali file devono essere gestiti da Stoffi. Stoffi può gestire sia playlist che canzoni."/>
+	<Value Id="AssociationsCustomSongs"        Content="Canzoni"/>
+	<Value Id="AssociationsCustomPlaylists"    Content="Playlist"/>
+	<Value Id="AssociationsCustomOther"        Content="Altro"/>
+	<Value Id="AssociationsCustomInternet"     Content="Internet"/>
+	<Value Id="AssociationsCustomSPP"          Content="App"/>
+	<Value Id="AssociationsCustomSCX"          Content="Configurazione"/>
+	<Value Id="AssociationsCustomExpander"      Header="Personalizzato"/>
+	<Value Id="AssociationsCustomFootLink"     Content="Per saperne di più"/>
+
+	<Value Id="FileAssociationSong"               Text="Traccia musicale ({0})"/>
+	<Value Id="FileAssociationPlaylist"           Text="Playlist ({0})"/>
+	<Value Id="FileAssociationSPP"                Text="App Stoffi"/>
+	<Value Id="FileAssociationSCX"                Text="Configurazione Stoffi"/>
+	<Value Id="URIAssociationOpen"                Text="Riproduci"/>
+	<Value Id="FileAssociationOpen"               Text="Riproduci"/>
+	<Value Id="FileAssociationInstall"            Text="Installa"/>
+	<Value Id="FileAssociationLoad"               Text="Carica"/>
+	<Value Id="FileAssociationPlay"               Text="Riproduci con Stoffi"/>
+
+	<Value Id="DialogOpenPlaylistTitle"           Text="Apri Playlist"/>
+	<Value Id="DialogInstallAppTitle"             Text="Installa App"/>
+	<Value Id="DialogNameCreateTitle"             Text="Crea profilo"/>
+	<Value Id="DialogNameRenameTitle"             Text="Rinomina profilo"/>
+	<Value Id="DialogNameDescription"             Text="Dai un nome al tuo profilo"/>
+	<Value Id="DialogNameExistsError"             Text="Esiste già un profilo con quel nome"/>
+	<Value Id="DialogNameInvalidError"            Text="Usa soltanto lettere A-Z e numberi"/>
+	<Value Id="DialogNameEmptyError"              Text="Inserisci un nome"/>
+	<Value Id="DialogNumberTooSmall"              Text="Il numero deve essere più grande di {0}"/>
+	<Value Id="DialogNumberTooLarge"              Text="Il numero deve essere più piccolo di {0}"/>
+	<Value Id="DialogNumberInvalid"               Text="Il numero non è valido"/>
+
+	<Value Id="MessageOldWindows"                Title="Non siamo 'Vecchia Scuola'" Message="Spiacente ma devi avere un Windows aggiornato per poter utilizzare Stoffi"/>
+	<Value Id="MessageShortcutClash"             Title="Scorciatoia Già Esistente" Message="Questa scorciatoia è già stata usata per %name (%category)
+Vuoi sostituirla?"/>
+	<Value Id="MessageDeletePlaylist"            Title="Elimina Playlist" Message="Sei sicuro di voler eliminare la playlist '%name'?"/>
+	<Value Id="MessageSavingPlaylist"	           Title="Impossibile salvare Playlist" Message="Si è verificato un problema durante il salvataggio della playlist"/>
+	<Value Id="MessageContactingServer"           Text="Impossibile contattare il server"/>
+	<Value Id="MessageSaveProfile"               Title="Salva modifiche al profilo" Message="Alcuni parametri sono stati cambiati.
+Vuoi salvarli?"/>
+	<Value Id="MessageUpgradeInProgress"         Title="Aggiornamento in corso" Message="C'è un aggiornamento in corso.
+Sei sicuro di voler uscire?"/>
+	<Value Id="MessageNoFlash"                   Title="Flash Non Installato" Message="Hai bisogno di Flash per Internet Explorer.
+Vuoi scaricarlo?"/>
+	<Value Id="MessageYouTubeBadParams"          Title="Errore Player YouTube" Message="Parametri non validi del player YouTube."/>
+	<Value Id="MessageYouTubeNotFound"           Title="Errore Player YouTube" Message="La traccia è stata rimossa o segnata come privata."/>
+	<Value Id="MessageYouTubeUnknown"            Title="Errore Player YouTube" Message="Errore sconosciuto (codice: {0})."/>
+	<Value Id="MessageAlreadyAddedSource"        Title="Sorgente Già Presente" Message="La sorgente che stai tentando di aggiungere è già stata aggiunta."/>
+	<Value Id="MessageConnectionProblem"         Title="Problema Connessione" Message="Impossibile contattare il server.
+
+Può essere causato da un problema con la tua connessione
+oppure dai nostri server che rispondono in modo anomalo."/>
+	<Value Id="MessageConfirmDelete"             Title="Elimina Dal Disco" Message="Sei sicuro di voler eliminare questo file dal disco?"/>
+	<Value Id="MessageErrorDeleting"             Title="Impossibile eliminare file"/>
+	<Value Id="MessageErrorUpdating"             Title="Impossibile aggiornare file"/>
+	<Value Id="MessageErrorRenaming"             Title="Impossibile rinominare file"/>
+	<Value Id="MessageErrorMoving"	             Title="Impossibile spostare file"/>
+	<Value Id="MessageErrorCopying"	             Title="Impossibile copiare file"/>
+	<Value Id="MessageErrorInstallingApp"        Title="Could Not Install App"/>
+	<Value Id="MessageErrorStartingApp"          Title="Could Not Start App"/>
+
+	<Value Id="ServiceDisconnected"               Text="Il servizio è disconnesso."/>
+	<Value Id="ServiceConnect"                 Content="Connetti"/>
+
+	<Value Id="HeaderTracks"                      Text="{0} tracce"/>
+	<Value Id="HeaderStations"                    Text="{0} stazioni"/>
+	<Value Id="HeaderPlaylists"                   Text="{0} playlist"/>
+	<Value Id="MetaDataLoading"                   Text="Caricamento..."/>
+	<Value Id="NoVideoAvailable"                  Text="Nessun video disponibile"/>
+	<Value Id="NoVisualizerAvailable"             Text="Non c'è nessun visualizer disponibile"/>
+	<Value Id="NoVisualizer"                      Text="Nessun visualizer"/>
+	<Value Id="SavingSettings"                 Content="Salvataggio impostazioni."/>
+	<Value Id="Closing"                        Content="Chiusura Stoffi."/>
+	<Value Id="Unknown"                           Text="Sconosciuto"/>
+</Dictionary>

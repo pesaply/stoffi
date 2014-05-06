@@ -1,0 +1,13 @@
+<div class="group">
+	<%
+	langs = ["us", "se"].sort
+	langs.each do |l|
+		path = lang_path(:l => l)
+		flag = "/assets/" + lang2flag(l)
+		disp = lang(l)
+		css = "lang"
+		css += " active" if I18n.locale.to_s == l
+		%>
+		<%= button_tag disp, path, flag, { :color => :blue, :class => css } %>
+	<% end %>
+</div>

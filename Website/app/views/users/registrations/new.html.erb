@@ -1,0 +1,115 @@
+<div class="ingraved dialog box">
+	<h1><%= t "join.title" %></h1>
+
+	<%= form_for(resource,:as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<% if any_errors?(resource) || !flash[:alert].to_s.empty? %>
+			<div class="alert">
+				<%= pretty_error(resource) %>
+				<%= flash[:alert] %>
+			</div>
+		<% end %>
+		
+		<% unless flash[:notice].to_s.empty? %>
+			<div class="notice"><%=h flash[:notice] %></div>
+		<% end %>
+
+		<div>
+			<%= f.label :email, t("dialog.email") %>
+			<%= f.email_field :email, :class => "field", :placeholder => t("dialog.email_placeholder"),
+				:autofocus => true %>
+		</div>
+
+		<div>
+			<%= f.label :password, t("dialog.password") %>
+			<%= f.password_field :plain, :class => "field",
+				:placeholder => t("dialog.password_choose_placeholder"),
+				:onkeyup => "evaluatePassword();" %>
+			<div class="red note" style="display:none;" id="crack_time">
+				<span id="crack_time_text"></span>
+				<%= image_tag "gfx/tooltip.png", :id => "crack_time_img" %>
+			</div>
+			<%= f.hidden_field :password %>
+		</div>
+
+		<div>
+			<%= f.label :password_confirmation, t("dialog.password_confirm") %>
+			<%= f.password_field :plain_confirmation, :class => "field", :placeholder => t("dialog.password_confirm_placeholder") %>
+			<%= f.hidden_field :password_confirmation %>
+		</div>
+		
+		<div>
+			<label><%= t "dialog.oauth" %></label>
+			<%
+			[
+				{ :name => "Twitter" },
+				{ :name => "Facebook" },
+				{ :name => "Google", :link_name => "google_oauth2" },
+				{ :name => "Vimeo" },
+				{ :name => "LinkedIn", :link_name => "linked_in" },
+				{ :name => "SoundCloud" }
+			].each do |link|
+				n = link[:name]
+				ln = link[:link_name] || n.downcase
+				path = "/auth/#{ln}"
+				css = "auth"
+				disp = image_tag("auth_buttons/#{n.downcase}_16.png")
+				title = t("auth.login", :service => n)
+				%>
+				<%= link_to disp, path, :class => css, :title => title %>
+			<% end %>
+		</div>
+		
+		<div>
+			<%= recaptcha_tags :ssl => true, :display => { :theme => "white", :lang => I18n.locale,
+				:custom_translations =>
+				{
+					:instructions_visual => t("recaptcha.instructions_visual"),
+					:instructions_audio  => t("recaptcha.instructions_audio"),
+					:play_again          => t("recaptcha.play_again"),
+					:cant_hear_this      => t("recaptcha.cant_hear_this"),
+					:visual_challenge    => t("recaptcha.visual_challenge"),
+					:audio_challenge     => t("recaptcha.audio_challenge"),
+					:refresh_btn         => t("recaptcha.refresh_btn"),
+					:help_btn            => t("recaptcha.help_btn")
+				} }
+			%>
+		</div>
+
+		<div class="bottom">
+			<div class="throw-left">
+				<%= render :partial => "devise/shared/links" %>
+			</div>
+			<div class="throw-right">
+				<%=button_tag t("join.link"), "hashPasswords();", "join", { :type => :form, :color => :gold } %>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<% end %>
+</div>
+
+<script>
+<%
+bots = 20000
+speed = 1000000000
+l = I18n.locale
+l = :en if l == :us
+bots = number_with_delimiter(bots, :locale => l)
+speed = number_to_human(speed, :locale => l).downcase
+%>
+$(function()
+{
+	$(document).ready(function()
+	{
+		$("#crack_time_img").qtip({
+			content: "<%=t "notice.password.explanation", :botsize => bots, :speed => speed %>",
+			show: "mouseover",
+			hide: "mouseout",
+			style:
+			{
+				name: 'light',
+				tip: true
+			}
+		});
+	});
+});
+</script>

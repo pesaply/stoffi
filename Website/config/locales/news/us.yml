@@ -1,0 +1,36 @@
+us:
+  news:
+    features: "New features"
+    screenshots: "Screenshots"
+  
+    xia:
+      title: "A new dawn has broken"
+      subtitle: "Here begins a new era in your music"
+      content_html: "<p>We are proud to announce that Stoffi - the world's next music player - has seen the light of day. This is the foundation upon which we will build a great music experience.</p><p>Stoffi features a great interface which was built to look like the rest of your system and integrate well with the host operating system. It stays out of your face with automatic scanner and automatic upgrades.</p><p>We hope you will enjoy using Stoffi as much as we enjoy creating it for you. Follow us as we continue to improve and upgrade it with even more features. Maybe even <a href='http://dev.stoffiplayer.com/issues'>suggest something</a> for us to do?</p>"
+      list_html: "<li>Bookmarks</li><li>Automatic scanner</li><li>Silent upgrades</li><li>Beautiful interface</li><li>Wide format support</li><li>Free of charge</li><li>Keyboard navigation</li><li>Meta data editor</li><li>Equalizer</li><li>Realtime search</li><li>Queue and history</li>"
+    
+    shang:
+      title: "Any music you want, for free"
+      subtitle: "We proudly present: All the world's music"
+      content_html: "<p>Six months ago Stoffi was released to the world. Today comes the first update.</p><p>The most notable change is the support to play any music you want via YouTube, giving you the ability to listen to just about any song you wish, at an instant.</p><p>There's also enhancements to meta editing and improvements to both the speed and size of Stoffi.</p><p>Try it out and let us know what you think. We are already working on the next update so <a href='http://dev.stoffiplayer.com/issues'>tell us what feature you want</a>.</p>"
+      list_html: "<li>30% faster startup</li><li>20% faster scanner</li><li>10% smaller download</li><li>YouTube support</li><li>Editable details</li><li>Powerful property window</li><li>Language support</li><li>Backup tool</li><li>Equalizer profiles</li><li>Polished interface</li><li>Lots of bugfixes</li>"
+    
+    zhou:
+      title: "A reach for the clouds"
+      subtitle: "We connect you to the rest of the world"
+      content_html: "<p>The development of Stoffi is still in full swing. Thanks to a joint effort of students at Uppsala University we have some great new features to announce.</p><p>We are starting to rollout a new cloud service. It gives you listening statistics, synchronization, remote control and more.</p><p>Another new feature is social integration. You can now share your music with friends on both Facebook and Twitter in just one click.</p><p>Check it out and let us know what you think.</p><p>Enjoy!</p>"
+      list_html: "<li>Twitter</li><li>Facebook</li><li>Synchronization</li><li>Remote control</li><li>Listening statistics</li><li>Artist donations</li><li>Search indicators</li><li>Playlist generator</li><li>Lots of bugfixes</li>"
+    
+    qin:
+      title: "More music, more sharing"
+      subtitle: "Stream from more places and share it to more networks"
+      content_html: "<p>Even though I've had little spare time since my daughter was born I have been able to add some new features to Stoffi.</p><p>The biggest addition is more music streaming from both SoundCloud and Internet radio. This brings even more music together into one single place for you to enjoy.</p><p>Sharing music is also easier. It is now possible to share links to songs or playlists and play them directly in Stoffi. You can also show what you listen to on both Last.fm and Facebook.</p><p>Hope you'll enjoy the new stuff!</p>"
+      list_html: "<li>SoundCloud</li><li>Last.fm</li><li>File associations</li><li>User profiles</li><li>Playlist sharing</li><li>Playlist sync</li><li>Internet radio</li><li>Lots of bugfixes</li>"
+  
+    actions:
+      download: "Download"
+      tour: "Take tour"
+      contribute: "Get involved"
+      future: "Future plans"
+      bug: "Report bug"
+      feature: "Suggest feature"

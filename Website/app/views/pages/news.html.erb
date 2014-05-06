@@ -1,0 +1,96 @@
+<%
+pref = "/assets/#{I18n.locale}/screenshots"
+articles =
+[
+	{
+		:name => "qin",
+		:stamp => 1356344023,
+		:screens =>
+		[
+			{ :width => 514, :height => 318 },
+			{ :width => 438, :height => 129 },
+			{ :width => 924, :height => 490 },
+			{ :width => 412, :height => 178 }
+		]
+	},
+	{
+		:name => "zhou",
+		:stamp => 1341698631,
+		:screens =>
+		[
+			{ :width => 832, :height => 349 },
+			{ :width => 444, :height => 197 },
+			{ :width => 263, :height => 160 }
+		]
+	},
+	{
+		:name => "shang",
+		:stamp => 1319815721,
+		:screens =>
+		[
+			{ :width => 848, :height => 539 },
+			{ :width => 848, :height => 539 },
+			{ :width => 848, :height => 539 },
+			{ :width => 848, :height => 539 },
+			{ :width => 400, :height => 500 },
+			{ :width => 400, :height => 500 }
+		]
+	},
+	{
+		:name => "xia",
+		:stamp => 1303931053,
+		:screens =>
+		[
+			{ :width => 393, :height => 252 },
+			{ :width => 393, :height => 252 }
+		]
+	}
+]
+%>
+
+<div id="main">
+	<div class="white box" id="news">
+	
+		<%
+		articles.each do |article|
+			stamp = Time.at(article[:stamp]).to_date
+			stamp = I18n.localize(stamp, :format => :long)
+			stamp_class = "timestamp"
+			stamp_class+= " top" if article == articles.first
+			%>
+	
+			<div class="<%=stamp_class %>">
+				<a name="<%=article[:name]%>"><%=stamp%></a>
+			</div>
+		
+			<ul>
+				<li><h2><%=t "news.features" %></h2></li>
+				<%=t "news.#{article[:name]}.list_html" %>
+			</ul>
+			<h1><%=t "news.#{article[:name]}.title" %></h1>
+			<h2><%=t "news.#{article[:name]}.subtitle" %></h2>
+			<%=t "news.#{article[:name]}.content_html" %>
+			<div class="screenshots">
+				<h2><%=t "news.screenshots" %></h2>
+				<%
+				i = 0
+				article[:screens].each do |screen|
+					i += 1
+					name = "#{article[:name]}_#{i}"
+					path = "#{pref}/#{name}.png"
+					thumb = "#{I18n.locale}/screenshots/#{name}_thumb.png"
+					%>
+					<a href="javascript:viewImage('<%=path%>', <%=screen[:width]%>, <%=screen[:height]%>);">
+						<%= image_tag thumb %>
+					</a>
+				<% end %>
+			</div>
+		<% end %>
+		
+	</div>
+
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/main" %>
+</div>

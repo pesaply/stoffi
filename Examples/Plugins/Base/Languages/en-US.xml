@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfTranslation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Translation ID="Name" Text="Base plugin"/>
+	<Translation ID="Description" Text="A skeleton code base for a Stoffi plugin"/>
+	<Translation ID="MyStringSetting" Text="My string setting"/>
+	<Translation ID="MyBooleanSetting" Text="My boolean setting"/>
+</ArrayOfTranslation>

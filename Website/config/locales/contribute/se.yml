@@ -1,0 +1,51 @@
+se:
+  contribute:
+    header: "Vad vill du göra?"
+    
+    test:
+      asd: "Testköra"
+      
+    translate:
+      asd: "Översätta"
+      
+    promote:
+      asd: "Sprida ordet"
+      
+    design:
+      asd: "Designa"
+      
+    write:
+      asd: "Dokumentera"
+      
+    hack:
+      header: "Att vara en Stoffi-utvecklare"
+      intro_html: "<p>Stoffi är uppdelad i två delar: musikspelaren och serverplattformen. På servern kör vi Ruby on Rails och klienten är byggd med C# och WPF. Även om det skulle vara enkelt att säga att server är backend och klienten är frontend så är det inte riktigt så simpelt. Servern innehåller ju fortfarande webbsidan som faktiskt är ett frontend och klienten innehåller en \"kärn\"-del (Core mappen) som kan anses vara lite lägre abstraktionsnivå än själva gränssnittet.</p>"
+      client:
+        header: "Att hacka på klienten"
+        checkout_html: "<p>För att hacka på klienten så behöver du installera Visual Studio 2010 (det kan fungera med andra versioner eller andra IDE:er men jag har inte provat). Sen behöver du bara ladda ner källkoden och du är redo att köra igång.</p>"
+        checkout_link: "Ladda ner källkoden"
+        convention_html: "<p>Om du vill att dina ändringar ska accepteras så borde du följa vår konvention för namngivning och struktur. Detta ser till att koden ser bra ut och att en utvecklare kan förvänta sig att koden ska fungera, se ut och bete sig på samma sätt var hen än jobbar just nu.</p>"
+        convention_link: "Kodkonvention"
+        suggestions_html: "<p>Om du redan vet vad du vill jobba med så är det bara att köra igång. Annars så finns det en wikisida med en lista på några förslag åt dig. Där finns allt från mindre uppgifter som tar ett par dagar till större saker som kräver några veckors jobb.</p>"
+        suggestions_link: "Arbetsförslag"
+        overview_html: "<p>Det finns också en wikisida som ger dig en överblick av hela projektet, vad de olika filerna är och fungerar som en bra startpunkt för att bli bekant med koden. Du behöver inte känna till varje liten del av projektet, men genom att skumma igenom texten kan du hitta de relevanta delarna för din uppgift.</p>"
+        overview_link: "Överblick"
+        
+      server:
+        header: "Hacka på servern"
+        account_html: "<p>Än så länge så går det inte att ladda hem koden på servern. Så just nu måste du få ett konto för att kunna sätta igång. För att begära ett konto kan du bara skicka ett mail med hjälp av formuläret på kontaktsidan.</p>"
+        technologies_html: "<p>Om du har jobbat med Rails innan så kommer du inte att ha några problem med att vara igång på ett par minuter. Vår kod är i stort sett standard-saker för Rails. Vi använder Devise för kontohantering, OmniAuth för att autha mot andra tjänster såsom Facebook och Twitter, och vi använder OAuth pluginet av Pelle för att agera som OAuth leverantör själva.</p>"
+      
+    apps:
+      asd: "Skapa app"
+      
+    plugins:
+      asd: "Skapa plugin"
+      
+    idea:
+      asd: "Föreslå idé"
+    
+    why:
+      header: "Varför Stoffi är det bästa projektet att jobba med"
+      intro_html: "<p>Intro kommer här.</p>"
+      

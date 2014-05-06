@@ -1,0 +1,10 @@
+us:
+  recaptcha:
+    instructions_visual: "Type the two words:"
+    instructions_audio: "Type what you hear:"
+    play_again: "Play sound again"
+    cant_hear_this: "Download sound as mp3"
+    visual_challenge: "Get a visual challenge"
+    audio_challenge: "Get an audio challenge"
+    refresh_btn: "Get a new challenge"
+    help_btn: "Help"

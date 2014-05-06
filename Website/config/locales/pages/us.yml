@@ -1,0 +1,206 @@
+us:
+  not_found:
+    header:          'No such %{resource} exists'
+    text:            "The %{resource} that this adress points to doesn't seem to exist."
+    
+  index:
+    link:            'Home'
+    title:           ''
+    description:     'Stoffi Music Player is a beautiful, integrated, compact &amp; free music player that plays music from YouTube, SoundCloud, radio and your harddrive.'
+  
+  donations:
+    link:            'Donate'
+    title:           'Support artists'
+    description:     'Send money directly to artists in a safe and secure way, where the artist get 90% of the money.'
+  
+  donation:
+    title:           'Donation of %{amount} to %{artist}'
+    description:     'Send money directly to artists in a safe and secure way, where the artist get 90% of the money.'
+  
+  news:
+    link:            'News'
+    title:           'Latest news'
+    description:     'Read about our latest release, learn what new features it brings and check out screenshots.'
+  
+  language:
+    link:            'Change language'
+    title:           'Language'
+    description:     'Change the language of the Stoffi website.'
+  
+  about:
+    link:            'About'
+    title:           'About'
+    description:     'Learn more about Stoffi and the team behind it.'
+  
+  get:
+    link:            'Download'
+    title:           'Get it'
+    description:     'Download the Stoffi Music Player for free without any extra bundles, addons or other crapware.'
+  
+  tour:
+    link:            'Tour'
+    title:           'Take our tour'
+    description:     'Learn more about Stoffi by taking our extensive tour showing off the key features of this amazing music player.'
+  
+  download:
+    link:            'Download'
+    title:           'Download'
+    description:     'Thank you for downloading Stoffi Music Player. Be sure to follow us on Twitter, Facebook or our blog for more information.'
+    
+  old:
+    title:           'Unsupported browser'
+    description:     'You are using an old and unsupported browser. This is dangerous and you should avoid the accessing the Internet.'
+  
+  contribute:
+    link:            'Contribute'
+    title:           'Contribute'
+    description:     'Become a contributor to this open and fun project. You work as much or as little as you want.'
+    
+    design:
+      link:          'Design'
+      title:         'Design'
+      description:   'Scratch your artistic itch by doing some cool designs. Anything from icons and graphics to layout or wallpapers.'
+    
+    translate:
+      link:          'Translate'
+      title:         'Translate'
+      description:   'Bring Stoffi to your language using our simple and easy web based system.'
+    
+    test:
+      link:          'Test drive'
+      title:         'Test'
+      description:   'Help us find bugs and issues by testing out new betas.'
+    
+    hack:
+      link:          'Hack'
+      title:         'Hack'
+      description:   'Fix a small bug or work on a large new feature. We will help and guide you on your way to become a fully fledge Stoffi developer.'
+    
+    apps:
+      link:          'Create app'
+      title:         'App development'
+      description:   'Create an app and start to use our API in your own software or website.'
+    
+    plugins:
+      link:          'Create plugin'
+      title:         'Plugin development'
+      description:   'Create a plugin for Stoffi and distribute it here on our website.'
+    
+    promote:
+      link:          'Promote'
+      title:         'Promote'
+      description:   'Help us spread the word and let the world know about Stoffi.'
+    
+    write:
+      link:          'Document'
+      title:         'Write documentation'
+      description:   'Fill out the wiki, write tutorials or fix some help files for new users.'
+    
+    idea:
+      link:          'Suggest idea'
+      title:         'Suggest idea'
+      description:   "Do you have an idea on how to improve Stoffi and make it the world's best music player?"
+    
+    why:
+      link:          'Why work on Stoffi?'
+      title:         'Why it is the best project to work on'
+      description:   'Stoffi is great to work with. You get to come and go as you want, work from home and do what you like. Join the fun!'
+      
+  translate:
+    link:            'Languages'
+    title:           'Languages'
+    description:     'Select a language or create a new one and start to translate Stoffi right away.'
+    show_title:      'Translate to %{language}'
+  
+  contact:
+    link:            'Contact'
+    title:           'Contact us'
+    description:     'You are always free to contact us regarding any issues you may have, any information you want or anything else really.'
+  
+  legal:
+    link:            'Legal'
+    title:           'Terms and policies'
+    description:     'Stoffi is open source, free for anyone to download, modify and use. We have a strong focus on your privacy and will never sell any data to third parties.'
+  
+  money:
+    link:            'Money'
+    title:           'Money, money, money'
+    description:     'With Stoffi you can send money safely to your favorite artists. We appreaciate that you trust us with your money and want to make sure that you can influence and control how just your money is distributed.'
+  
+  join:
+    link:            'Join'
+    title:           'Join'
+    description:     "Create an account and start to enjoy our great services. If you already have an account at Facebook, Twitter, Google, SoundCloud, Vimeo or LinkedIn you don't even have to register."
+  
+  login:
+    link:            'Login'
+    title:           'Login'
+    description:     "Login with your account and start to enjoy our great services. If you already have an account at Facebook, Twitter, Google, SoundCloud, Vimeo or LinkedIn you don't even have to register."
+  
+  unlock:
+    link:            'Unlock'
+    title:           'Unlock account'
+    description:     'If you have been locked out you can request an email to unlock your account.'
+  
+  forgot:
+    link:            'Forgot'
+    title:           'Forgot password'
+    description:     'We all forget sometimes. Request an email for a password reset.'
+  
+  reset:
+    link:            'Reset'
+    title:           'Reset password'
+    description:     'Reset your password in case you forgot what it was.'
+  
+  dashboard:
+    link:            'My Stoffi'
+    title:           'Dashboard'
+    description:     'Get an overview of your account, check out your listening habits, manage playlists and devices, or remotely control your music.'
+  
+  settings:
+    link:            'Settings'
+    title:           'Settings'
+    description:     'Manage your account, configure your profile, or connect your account to other services.'
+  
+  apps:
+    link:            'My Apps'
+    title:           'Apps'
+    description:     'Connect applications and websites to Stoffi and give them access to your playlist and tracks.' 
+  
+  devices:
+    link:            'Devices'
+    title:           'Devices'
+    description:     'See and manage the devices you are using with your Stoffi account.'
+  
+  profile:
+    link:            'Profile'
+    description:     'Check out %{usernames} hottest tracks and playlists on Stoffi.'
+  
+  logout:
+    link:            'Logout'
+  
+  playlists:
+    link:            'Playlists'
+    all:
+      title:         'Playlists'
+      link:          'Playlists'
+      description:   'Find the hottest music playlists on Stoffi.'
+    by:
+      title:         '%{username} playlists'
+      link:          '%{username} playlists'
+      description:   'Playlists created by %{username} on Stoffi.'
+  playlist:
+    description:     'The playlist %{name} created by %{username} on Stoffi.'
+    
+  artists:
+    short_description: "%{artist} is an artist on Stoffi"
+    description: 'The artist %{artist} is on Stoffi. You can donate money to %{artist} today and be sure that no record labels take any cuts.'
+    
+  songs:
+    description: 'Listen to %{song} in Stoffi Music Player or right here on the website. You can donate money to the artist %{artist} today and be sure that no record labels take any cuts.'
+    description_without_artist: 'Listen to %{song} in Stoffi Music Player or right here on the website.'
+    
+  remote:
+    link: "Remote"
+    title: "Remote control"
+    description: "Remotely control your player directly from a phone or another computer by using our web based interface."

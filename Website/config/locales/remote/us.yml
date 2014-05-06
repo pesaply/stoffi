@@ -1,0 +1,18 @@
+us:
+  remote:
+    title: "Remote control"
+    text1: "You can remotely control Stoffi using either your smartphone or a computer."
+    text2: "To enable remote control in Stoffi you need to login to your account by going to <b>Preferences</b> and selecting <b>Services</b>."
+    text3: "Once you are connected you need to enable <b>Synchronization</b>."
+    devices:
+      title: "Devices"
+      empty: "You have not enabled remote control in any devices."
+    playing: "Now playing"
+    tooltips:
+      play: "Play the current track."
+      pause: "Pause the current track."
+      prev: "Load the previous track."
+      next: "Skip to the next track."
+      shuffle: "Toggle the shuffle mode."
+      repeat: "Toggle the repeat mode."
+      volume: "Change the volume level."

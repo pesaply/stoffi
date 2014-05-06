@@ -1,0 +1,160 @@
+<%= form_for(@playlist) do |f| %>
+
+	<% if any_errors?(@playlist) || (flash[:alert] && flash[:alert] != "") %>
+		<div class="notice">
+			<%= pretty_error(@playlist) %>
+			<%= flash[:alert] %>
+		</div>
+	<% end %>
+	
+	<div> 
+		<%= f.label :name, t("playlists.name") %>
+		<%= f.decoded_text_field :name, :data => { :field => "playlist-#{@playlist.id}-name" } %>
+	</div>
+	
+	<div>
+		<%= f.label :is_public, t("playlists.is_public") %>
+		<%= f.check_box :is_public %>
+	</div>
+	
+	<% if @playlist.dynamic? %>
+	
+		<div>
+			<%= f.label :filter, t("playlists.filter") %>
+			<%= f.decoded_text_field :filter %>
+		</div>
+	
+	<% else %>
+	
+		<div id="tracks_added"></div>
+		<div id="tracks_removed"></div>
+		
+		<div id="playlist-<%=@playlist.id%>">
+			<%= f.label :songs, t("playlists.songs.label") %>
+			<ul class="horizontal" data-list="songs">
+				<% @playlist.songs.order(:title).each do |song| %>
+					<%= item song.title, song, "song_#{song.id}",
+						:image => song.picture,
+						:delete_func => "removeSong(#{@playlist.id}, #{song.id}, false, event)",
+						:delete => t("playlists.songs.remove", :song => song.title) %>
+				<% end %>
+				<p class="empty" data-field="no-songs"<%= "style='display:none;'".html_safe if @playlist.songs.length > 0 %>>
+					<%=t "playlists.songs.empty" %>
+				</p>
+			</ul>
+		</div>
+		<div class="separator"></div>
+		<div>
+			<%= f.label :add_song_from, t("playlists.add.label") %>
+			<div class="checkbar">
+				<%= image_tag "gfx/icons/youtube.gif", :title => t("playlists.add.youtube") %>
+				<%= check_box_tag :add_from_youtube, :yes, true, :title => t("playlists.add.youtube"), :onclick => "refreshSources()" %>
+				
+				<%= image_tag "gfx/icons/soundcloud.png", :title => t("playlists.add.soundcloud") %>
+				<%= check_box_tag :add_from_soundcloud, :yes, true, :title => t("playlists.add.soundcloud"), :onclick => "refreshSources()" %>
+				
+				<%= image_tag "gfx/icons/file.ico", :width => 16, :height => 16, :title => t("playlists.add.files") %>
+				<%= check_box_tag :add_from_files, :yes, true, :title => t("playlists.add.files"), :onclick => "refreshSources()" %>
+			</div>
+			<%= text_field_tag :add_text, "", :placeholder => t("search.placeholder"), :size => 50 %>
+		</div>
+		
+		<div id="song-menu">&nbsp;</div>
+	<% end %>
+	
+	<div class="bottom">
+		<div class="right">
+			<%
+			submit_label = "create"
+			submit_label = "save" if @playlist.id
+			back_url = playlists_path
+			back_url = playlist_path(@playlist) if @playlist.id
+			%>
+			<%=button_tag t("back"), back_url, "back" %>
+			<%=button_tag t(submit_label), nil, "save", { :type => :form, :color => :blue } %>
+		</div>
+	</div>
+	
+<% end %>
+
+<script>
+
+	function refreshSources()
+	{
+		sources = new Array();
+		if ($("#add_from_youtube").is(':checked'))
+			sources.push("youtube");
+		if ($("#add_from_soundcloud").is(':checked'))
+			sources.push("soundcloud");
+		if ($("#add_from_files").is(':checked'))
+			sources.push("files");
+		
+		$("#add_text").catcomplete({ source: "/search.json?category=songs&sources="+sources.join("|") });
+	}
+
+	$.widget("custom.catcomplete", $.ui.autocomplete,
+	{
+		_renderMenu: function(ul, items)
+		{
+			var self = this, currentCategory = "";
+			catCount = 0;
+			$.each(items, function(index, item)
+			{
+				if (item.category != currentCategory)
+				{
+					if (catCount != 0)
+						ul.append("<li class='ui-menu-filler'></li>");
+					ul.append("<li class='ui-autocomplete-category'><span class='strike'></span>"+
+						"<span class='text'>" + item.category + "</span></li>");
+					currentCategory = item.category;
+					catCount++;
+				}
+				self._renderItem(ul, item);
+			});
+		}
+	});
+	$(function()
+	{
+		$("#add_text").catcomplete(
+		{
+			minLength: 2,
+			appendTo: "#song-menu",
+			position: { offset: "0 -1", collision: "flip" },
+			select: function(event, ui)
+			{
+				id = "tmp_" + hash(ui.item.path, "sha256");
+				
+				addSong(
+					<%=@playlist.id ? @playlist.id : -1 %>,
+					id,
+					ui.item.path,
+					ui.item.title,
+					ui.item.length,
+					ui.item.picture,
+					ui.item.url,
+					ui.item.artist,
+					ui.item.album,
+					ui.item.genre,
+					false
+				);
+				$("#add_text").val("");
+				return false;
+			}
+			/*,
+			focus: function(event, ui)
+			{
+				$("#add_text").val(ui.item.display);
+				return false;
+			}
+			*/
+		})
+		.data("custom-catcomplete")._renderItem = function(ul, item)
+		{
+			return $("<li></li>")
+				.data("ui-autocomplete-item", item)
+				.append("<a><h1>" + item.display + "</h1></a>")
+				.appendTo(ul);
+		};
+		refreshSources();
+	});
+</script>

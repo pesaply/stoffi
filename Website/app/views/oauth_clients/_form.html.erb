@@ -1,0 +1,70 @@
+<% if any_errors?(@app) || (flash[:alert] && flash[:alert] != "") %>
+	<div class="notice">
+		<%= pretty_error(@app) %>
+		<%= flash[:alert] %>
+	</div>
+<% end %>
+
+<div>
+	<%= f.label :name, t("apps.name") %>
+	<%= f.decoded_text_field :name, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :description, t("apps.descr") %>
+	<%= f.decoded_text_field :description, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :website, t("apps.url") %>
+	<%= f.decoded_text_field :website, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :icon_16, t("apps.small_icon") %>
+	<%= f.decoded_text_field :icon_16, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :icon_64, t("apps.large_icon") %>
+	<%= f.decoded_text_field :icon_64, :class => "field", :size => 40 %>
+</div>
+
+<div>&nbsp;</div>
+
+<div>
+	<%= f.label :author, t("apps.author") %>
+	<%= f.decoded_text_field :author, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :author_url, t("apps.author_url") %>
+	<%= f.decoded_text_field :author_url, :class => "field", :size => 40 %>
+</div>
+
+<div>&nbsp;</div>
+
+<div>
+	<%= f.label :callback_url, t("apps.callback") %>
+	<%= f.decoded_text_field :callback_url, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :support_url, t("apps.support_url") %>
+	<%= f.decoded_text_field :support_url, :class => "field", :size => 40 %>
+</div>
+
+<div class="bottom">
+	<div class="right">
+		<%
+		submit_label = "create"
+		submit_label = "save" if @app.id
+		back_url = apps_path
+		back_url = app_path(@app) if @app.id
+		%>
+		<% unless @no_back %>
+			<%=button_tag t("back"), back_url, "back" %>
+		<% end %>
+		<%=button_tag t(submit_label), nil, "save", { :type => :form, :color => :blue } %>
+	</div>
+</div>

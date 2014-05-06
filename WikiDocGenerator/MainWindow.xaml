@@ -1,0 +1,18 @@
+﻿<Window x:Class="WikiDocGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="700">
+	<DockPanel VerticalAlignment="Stretch">		
+		<Button Name="StartButton" Content="Generate" Click="StartButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Top"/>
+
+		<DockPanel VerticalAlignment="Stretch" DockPanel.Dock="Top">
+			<TreeView Width="300" VerticalAlignment="Stretch">
+				<TreeViewItem Name="ClassTree" Header="Classes"/>
+			</TreeView>
+			<TextBlock VerticalAlignment="Stretch">
+				
+			</TextBlock>
+		</DockPanel>
+
+	</DockPanel>
+</Window>

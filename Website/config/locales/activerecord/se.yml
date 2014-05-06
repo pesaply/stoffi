@@ -1,0 +1,151 @@
+se:
+  activerecord:
+    errors:
+      messages:
+        human: "Är du människa?"
+#        <<: *errors_messages
+#      template:
+#        <<: *errors_template
+      models:
+        user:
+          attributes:
+            password:
+              too_long: "är för långt (max %{count} tecken)"
+            current_password:
+              invalid: "är felaktigt"
+            reset_password_token:
+              invalid: "är felaktigt"
+
+      full_messages:
+        format: "%{attribute} %{message}"
+
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+        # Append your own errors here or at the model/attributes scope.
+
+      # You can define own errors for models or model attributes.
+      # The values :model, :attribute and :value are always available for interpolation.
+      #
+      # For example,
+      #   models:
+      #     user:
+      #       blank: "This is a custom blank message for %{model}: %{attribute}"
+      #       attributes:
+      #         login:
+      #           blank: "This is a custom blank message for User login"
+      # Will define custom blank validation message for User model and
+      # custom blank validation message for login attribute of User model.
+      # models:
+
+    # Translate model names. Used in Model.human_name().
+    #models:
+      # For example,
+      #   user: "Dude"
+      # will translate User model name to "Dude"
+
+    # Translate model attribute names. Used in Model.human_attribute_name(attribute).
+    #attributes:
+      # For example,
+      #   user:
+      #     login: "Handle"
+      # will translate User attribute "login" as "Handle"
+      
+    models:
+      user: "Användaren"
+      
+    attributes:
+      user:
+        email: "Mail"
+        password: "Lösenord"
+        image: "Bild"
+        name: "Namn"
+        name_source: "Namn"
+        password_confirmation: "Lösenord igen"
+        current_password: "Nuvarande lösenord"
+        show_ads: "Reklam"
+        
+      playlist:
+        name: "Namn"
+        
+      artist:
+        picture: "Bild"
+        website: "Hemsida"
+
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%e %b"
+      long: "%e %B %Y"
+
+    day_names:
+      - söndag
+      - måndag
+      - tisdag
+      - onsdag
+      - torsdag
+      - fredag
+      - lördag
+    abbr_day_names:
+      - sön
+      - mån
+      - tis
+      - ons
+      - tor
+      - fre
+      - lör
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names:
+      - ~
+      - januari
+      - februari
+      - mars
+      - april
+      - maj
+      - juni
+      - juli
+      - augusti
+      - september
+      - oktober
+      - november
+      - december
+    abbr_month_names:
+      - ~
+      - jan
+      - feb
+      - mar
+      - apr
+      - maj
+      - jun
+      - jul
+      - aug
+      - sep
+      - okt
+      - nov
+      - dec
+    # Used in date_select and datime_select.
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%a, %e %b %Y %H:%M:%S %z"
+      short: "%e %b %H:%M"
+      long: "%e %B %Y %H:%M"
+    am: ""
+    pm: ""
+
+  # Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " och "
+      last_word_connector: " och "
+    select:
+      # default value for :prompt => true in FormOptionsHelper
+      prompt: "Välj"

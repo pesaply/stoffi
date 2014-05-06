@@ -1,0 +1,14 @@
+us:
+  money:
+    intro: "We think that music is awesome. But we also think that the industry around music needs to upgrade. Most importantly we think a new business model need to emerge to combat the loss of piracy but without causing harm to the openness of the Internet or the integrity of mankind and humans. We need peace on Earth for everyone; fans and artists."
+    labels:
+      title: "Too many take a cut"
+      text1: "According to The Root the average distribution of money currently awards the band member with 2.3% of the money in a four member band. A single solo artists thus gets around a 9.2% cut."
+      text2: "If you send an artist $10 they get the same as if you bought 10 albums on iTunes or listened to their music 18,000 times on Spotify (assuming the $0.0056 stream royalty from 2011). This means you will have to listen to the same artists non-stop a whole month assuming the song is 2:30 long. It's just easier to send them $10."
+    process:
+      title: "How does it work?"
+      text1: "We use PayPal to handle the transactions. This means we don't save any sensitive information such as credit card numbers. Instead we can focus on serving the website and send the money to the artists, while you can feel safe that your money is handled with care."
+      text2: "When we get a donation we track down the artist and offer them the money. If they refuse, or we can't find the artist, we can either send the money back to you, donate it to charity, or use it to grow our project. It's up to you."
+    charity:
+      title: "Heal the world"
+      text: "When you make a donation we will donate 10% of the money to charity. So every transfer you make will contribute to a better world for us all to live in. Save the world! Support music! It doesn't get any better."

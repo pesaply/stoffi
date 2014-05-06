@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfTranslation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Translation ID="Name" Text="Shake It!"/>
+	<Translation ID="Description" Text="More dance = more volume"/>
+	<Translation ID="MinimumVolume" Text="Minimum volume"/>
+	<Translation ID="MaximumVolume" Text="Maximum volume"/>
+	<Translation ID="Viscosity" Text="Viscosity"/>
+	<Translation ID="Sensitivity" Text="Sensitivity"/>
+	<Translation ID="KinectStatus" Text="Kinect status:"/>
+	<Translation ID="NotConnected" Text="Not connected"/>
+	<Translation ID="Connected" Text="Connected"/>
+	<Translation ID="ErrorStarting" Text="Could not start. Make sure you have installed the drivers for Kinect."/>
+</ArrayOfTranslation>

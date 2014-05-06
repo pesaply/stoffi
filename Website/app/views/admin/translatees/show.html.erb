@@ -1,0 +1,28 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/user" %>
+</div>
+<div class="main">
+	
+	<div class="goldenbox">
+		<h1 class="title"><%= @admin_translatee.name %></h1>
+		
+		<div class="form">
+			<div>
+				<label><%=t "translatee.description" %></label>
+				<span><%= @admin_translatee.description %></span>
+			</div>
+			<div>
+				<label><%=t "translatee.size" %></label>
+				<span><%=t "translatee.sizes.#{@admin_translatee.size.downcase}" %></span>
+			</div>
+			<div class="bottom">
+				<div class="throw-left">
+					<div class="links">
+						<%= link_to t("links.edit"), edit_admin_translatee_path(@admin_translatee) %>
+						<%= link_to t("links.back"), admin_translatees_path %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

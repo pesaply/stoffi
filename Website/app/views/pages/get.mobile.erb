@@ -1,0 +1,15 @@
+
+<!-- mobile player -->
+<p>
+	<%= t "get.mobile.player.text" %>
+</p>
+
+<!-- mobile remote -->
+<% if @os == "iphone" %>
+	<p>
+		<%= t "get.mobile.remote.text" %>
+	</p>
+	<div class="center">
+		<%= link_to t("get.mobile.remote.link"), "#", :class => "button" %>
+	</div>
+<% end %>

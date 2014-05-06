@@ -1,0 +1,35 @@
+us:
+  translatee:
+    create: "Create translatee"
+    edit: "Edit translatee"
+    list: "List translatees"
+    name: "Name"
+    description: "Description"
+    size: "Size"
+    sizes:
+      short: "Short"
+      long: "Long"
+    params:
+      title: "Parameters"
+      add: "Add parameter"
+      new: "New parameter"
+      delete: "Delete this parameter"
+      no_found: "There's no parameters."
+      missing:
+        name: "Name missing"
+        example: "Example value missing"
+      name: "Name"
+      example: "Example value"
+      example_short: "ex:"
+    
+  
+  language:
+    create: "Create language"
+    edit: "Edit language"
+    list: "Languages"
+    native_name: "Native name"
+    english_name: "English name"
+    iso_tag: "ISO tag"
+    iso_tag_example: "(ex: en, sv, zh)"
+    ietf_tag: "IETF tag"
+    ietf_tag_example: "(ex: en-US, sv-SE, zh-CN)"

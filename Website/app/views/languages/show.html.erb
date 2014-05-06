@@ -1,0 +1,93 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/user" %>
+</div>
+<div class="main">
+	
+	<div class="goldenbox">
+		<h1 class="title"><%= @language.native_name %></h1>
+		
+		<div class="form">
+			<div>
+				<label><%=t "language.english_name" %></label>
+				<span><%= @language.english_name %></span>
+			</div>
+			<div>
+				<label><%=t "language.iso_tag" %></label>
+				<span><%= @language.iso_tag %></span>
+			</div>
+			<div>
+				<label><%=t "language.ietf_tag" %></label>
+				<span><%= @language.ietf_tag %></span>
+			</div>
+			<div class="bottom">
+				<div class="throw-left">
+					<div class="links">
+						<% if current_user && current_user.is_admin? %>
+							<%= link_to t("links.edit"), edit_language_path(@language) %>
+							<%= link_to t("links.delete"), @language, :confirm => t("confirm"), :method => :delete %>
+						<% end %>
+						<%= link_to t("links.back"), languages_path %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bluebox">
+		<h1 class="title"><%=t "translations.title" %></h1>
+		
+		<% @translatees.each do |translatee| %>
+			<div class="translatee engraved">
+			
+				<h3><%=raw h(english(translatee)).gsub(/\n/,"<br/>") %></h3>
+				<p><%= translatee.description %></p>
+				
+				<div class="translations">				
+					<% translatee.translations.find_all_by_language_id(@language.id).each do |t| %>
+						<%
+						cu = ""
+						cd = ""
+						if current_user
+							if t.votes.find_all_by_user_id_and_value(current_user.id, 1).count > 0
+								cu = "active"
+							elsif t.votes.find_all_by_user_id_and_value(current_user.id, -1).count > 0
+								cd = "active"
+							end
+						end
+						%>
+						<div class="translation goldenbox" id="translation_<%=t.id%>">
+							<div class="throw-right throw-top vote">
+								<%=link_to "+", "#", :title => t("translations.vote.up"), :class => cu,
+									:onclick => "vote(1, #{t.id});", :id => "vote_up_#{t.id}" %>
+								<%=link_to "-", "#", :title => t("translations.vote.down"), :class => cd,
+									:onclick => "vote(-1, #{t.id});", :id => "vote_down_#{t.id}" %>
+								<% if current_user && current_user.is_admin? %>
+									<% url = translation_url(t, :format => :json) %>
+									<%=link_to_function "x", "removeItem('#{url}', 'translation_#{t.id}', event)", 
+										:title => t("translations.delete") %>
+								<% end %>
+							</div>
+							<%=raw h(t.content).gsub(/\n/,"<br/>") %>
+						</div>
+					<% end %>
+					
+					<%= form_for Translation.new do |f| %>
+						<div class="translation goldenbox">
+							<% if translatee.size == "long" %>
+								<%= f.text_area :content, :class => "field", :cols => 74, :rows => 10 %>
+								<%= f.submit t("send") %>
+							<% else %>
+								<%= f.text_field :content, :class => "field", :size => 96,
+									:onkeydown => "return submitIfEnter(this,event);" %>
+							<% end %>
+						</div>
+						<%= f.hidden_field :language_id, :value => @language.id %>
+						<%= f.hidden_field :translatee_id, :value => translatee.id %>
+					<% end %>
+				</div>
+				
+			</div>
+		<% end %>
+		
+	</div>
+</div>

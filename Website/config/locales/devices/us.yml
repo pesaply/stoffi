@@ -1,0 +1,21 @@
+us:
+  device:
+    info: "Information"
+    name: "Name:"
+    version: "Version:"
+    sync: "Synchronization Profile:"
+    no_sync: "No profile"
+    app: "App:"
+    req: "Last request"
+    time: "Time:"
+    ip: "IP:"
+    city: "City:"
+    country: "Country:"
+    network: "Network:"
+    status:
+      label: "Status"
+      online: "Online"
+      offline: "Offline"
+    
+  devices:
+    empty: "No connected devices."

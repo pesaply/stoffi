@@ -1,0 +1,30 @@
+se:
+  media:
+    shuffle:
+      disabled: "Blanda inte"
+      random: "Blanda"
+      mind_reader: "Tankeläsare"
+
+    repeat:
+      disabled: "Loopa inte"
+      all: "Loopa alla"
+      one: "Loopa en"
+      
+    nothing_playing: "Ingenting spelas"
+    
+    song:
+      link_html: "%{title} av %{artist}"
+    
+  plays:
+    label: "Spelningar"
+    zero: "Inga spelningar"
+    one: "En spelning"
+    other: "%{count} spelningar"
+    
+  user_plays:
+    zero: "Inga spelningar av dig"
+    one: "En spelning av dig"
+    other: "%{count} spelningar av dig"
+    
+  by: "av %{name}"
+  

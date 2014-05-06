@@ -1,0 +1,111 @@
+source 'http://rubygems.org'
+
+gem 'rails', '~> 3.2.12'
+gem 'rake', '~> 10.0.3'
+gem 'rdoc', '~> 3.12.2'
+gem 'haml', '~> 3.1.7'
+
+# Bundle edge Rails instead:
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+
+gem 'mysql2'
+
+gem 'json'
+#gem 'system_timer'
+
+# Gems used for mocking and stubbing while running tests
+group :test do
+	gem 'webmock'
+	gem 'mocha'
+	gem 'capybara'
+	#gem 'capybara-webkit'
+	gem 'headless'
+	gem 'selenium-webdriver'
+	gem 'ruby-prof'
+end
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier',     '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the web server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'ruby-debug'
+
+# Use Devise for user authentication
+gem 'devise', :git => "https://github.com/plataformatec/devise.git"
+
+# Use Hanna as documentation template
+gem 'hanna-nouveau'
+
+# Use OmniAuth for authentication with other services
+# (we don't use Devise's built-in since it didn't work when we tried)
+gem "omniauth-facebook"
+gem "omniauth-google-oauth2"
+gem "omniauth-lastfm"
+gem "omniauth-linkedin"
+gem "omniauth-myspace"
+gem "omniauth-soundcloud"
+gem "omniauth-twitter"
+gem "omniauth-vimeo"
+gem "omniauth-vkontakte"
+gem "omniauth-weibo-oauth2"
+gem "omniauth-windowslive"
+gem "omniauth-yahoo"
+gem "omniauth-yandex"
+gem "omniauth-youtube"
+
+gem "omniauth", '~> 1.1.4'
+#gem "oa-oauth"
+#gem "rest-client"
+
+# We use GeoIP so we can adjust locale depending on origin
+gem 'geoip'
+
+# Keep spam away
+gem 'recaptcha', :require => 'recaptcha/rails'
+
+# Let third parties access our services via OAuth
+gem "oauth-plugin", ">= 0.4.0.pre1"
+
+# Push changes to connected clients
+gem "juggernaut"
+
+# Translate the URLs
+gem "i18n_routing"
+
+# Paginate
+gem "will_paginate"
+
+# Audio processing
+#gem "ruby-audio"
+#gem "fftw3"
+#gem "ruby-echonest"
+
+# Access wikipedia API
+gem "wikipedia-client"
+gem "mediacloth"
+gem "wikicloth"
+
+# Truncate HTML
+#gem "truncate_html"
+
+gem "deep_merge"
+
+gem "htmlentities"
+gem 'tlsmail'

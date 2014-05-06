@@ -1,0 +1,320 @@
+﻿<!--MainWindow.xaml
+	
+	The markup that creates the main window of Stoffi.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<Window x:Class="Stoffi.StoffiWindow"
+		Name="StoffiMainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Stoffi"
+		xmlns:Core="clr-namespace:Stoffi.Core"
+		xmlns:Stoffi.Controls="clr-namespace:Stoffi.Platform.Windows7.GUI.Controls"
+		Height="{Binding Source={StaticResource Settings}, Path=WinHeight, Mode=TwoWay}"
+		Width="{Binding Source={StaticResource Settings}, Path=WinWidth, Mode=TwoWay}"
+		Top="{Binding Source={StaticResource Settings}, Path=WinTop, Mode=TwoWay}"
+		Left="{Binding Source={StaticResource Settings}, Path=WinLeft, Mode=TwoWay}"
+		MinWidth="450"
+		MinHeight="300"
+		Loaded="Window_Loaded"
+		Closing="Window_Closing"
+		Closed="Window_Closed"
+		PreviewKeyDown="Window_KeyDown"
+		PreviewKeyUp="Window_KeyUp"
+		SizeChanged="ChangeSize"
+		LocationChanged="ChangePos"
+		Activated="Window_Activated"
+		Deactivated="Window_Deactivated"
+		TextOptions.TextFormattingMode="Display"
+		PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+		PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown"
+		MouseMove="Window_MouseMove"
+		StateChanged="Window_StateChanged"
+		Drop="Window_Drop"
+		AllowDrop="True"
+		UseLayoutRounding="True"
+		Icon="../../../../Stoffi.ico"
+		loc:Translate.Uid="Application"
+		Title="{loc:Translate Title}"
+		FlowDirection="{loc:Translate LeftToRight}">
+	<Window.TaskbarItemInfo>
+		<TaskbarItemInfo/>
+	</Window.TaskbarItemInfo>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="..\Styles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	<Grid Name="RootGrid" Margin="0">
+		<DockPanel LastChildFill="True" Name="RootPanel" Margin="0">
+
+			<!-- playback area -->
+			<Border DockPanel.Dock="Top" BorderThickness="0,0,1,1" BorderBrush="Transparent" x:Name="OuterBottomRight" SnapsToDevicePixels="True" Margin="0,1,0,0">
+				<Border DockPanel.Dock="Top" BorderThickness="1,1,0,0" BorderBrush="Transparent" x:Name="OuterTopLeft" SnapsToDevicePixels="True">
+					<Border DockPanel.Dock="Top" BorderThickness="0,0,1,1" BorderBrush="Transparent" x:Name="InnerBottomRight" SnapsToDevicePixels="True">
+						<Border DockPanel.Dock="Top" BorderThickness="1,1,0,0" BorderBrush="Transparent" x:Name="InnerTopLeft" SnapsToDevicePixels="True">
+							<local:Playback x:Name="PlaybackControls" RemoveBookmarkClick="Playback_RemoveBookmarkClick" Margin="2"
+											SearchCleared="Playback_SearchCleared" AddSearch="Playback_AddSearch"
+											AddSearchToNew="Playback_AddSearchToNew" RemoveSearch="Playback_RemoveSearch"
+											SearchTextChanged="Playback_SearchTextChanged" PausePlayClick="Playback_PausePlayClick"/>
+						</Border>
+					</Border>
+				</Border>
+			</Border>
+
+			<!-- main area -->
+			<Border BorderThickness="1" BorderBrush="Gray" Background="White" x:Name="MainFrame">
+				<DockPanel LastChildFill="True" x:Name="MainContainer">
+
+					<!-- menu bar -->
+					<Menu DockPanel.Dock="Top" x:Name="MenuBar" Visibility="Collapsed">
+						<MenuItem loc:Translate.Uid="MenuFile" Header="{loc:Translate Header}">
+							<MenuItem loc:Translate.Uid="MenuAddTrack" Header="{loc:Translate Header}" Click="AddFile_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/FileAudio.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem loc:Translate.Uid="MenuAddFolder" Header="{loc:Translate Header}" Click="AddFolder_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/FolderAudio.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem loc:Translate.Uid="MenuAddPlaylist" Header="{loc:Translate Header}" Click="AddPlaylist_Clicked"/>
+							<MenuItem loc:Translate.Uid="MenuAddRadioStation" Header="{loc:Translate Header}" Click="OpenURL_Clicked"/>
+							<Separator/>
+							<MenuItem loc:Translate.Uid="MenuAddApp" Header="{loc:Translate Header}" Click="AddPlugin_Clicked"/>
+							<Separator/>
+							<MenuItem loc:Translate.Uid="MenuHide" Header="{loc:Translate Header}" Click="Hide_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/Close.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem loc:Translate.Uid="MenuClose" Header="{loc:Translate Header}" Click="Close_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/Close.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+						</MenuItem>
+						<MenuItem loc:Translate.Uid="MenuTools" Header="{loc:Translate Header}">
+							<MenuItem loc:Translate.Uid="MenuImporter" Header="{loc:Translate Header}" Click="Importer_Clicked"/>
+							<MenuItem loc:Translate.Uid="MenuExporter" Header="{loc:Translate Header}" Click="Exporter_Clicked"/>
+							<MenuItem loc:Translate.Uid="MenuGeneratePlaylist" Header="{loc:Translate Header}" Click="GeneratePlaylist_Clicked"/>
+							<MenuItem loc:Translate.Uid="MenuEqualizer" Header="{loc:Translate Header}" Click="Equalizer_Clicked"/>
+							<MenuItem loc:Translate.Uid="MenuPreferences" Header="{loc:Translate Header}" Click="Preferences_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/Settings.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+						</MenuItem>
+						<MenuItem loc:Translate.Uid="MenuView" Header="{loc:Translate Header}">
+							<MenuItem x:Name="MenuItemViewMenuBar" loc:Translate.Uid="MenuMenuBar" Header="{loc:Translate Header}" IsCheckable="True" Click="ToggleMenuBar"/>
+							<MenuItem x:Name="MenuItemViewDetailsPane" loc:Translate.Uid="MenuDetailsPane" Header="{loc:Translate Header}" IsCheckable="True" Click="ToggleDetailsPane"/>
+						</MenuItem>
+						<MenuItem loc:Translate.Uid="MenuHelp" Header="{loc:Translate Header}">
+							<MenuItem loc:Translate.Uid="MenuAbout" Header="{loc:Translate Header}" Click="About_Clicked">
+								<MenuItem.Icon>
+									<Image Source="/Stoffi.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem loc:Translate.Uid="MenuHelp" Header="{loc:Translate Header}" Click="Help_Clicked">
+								<MenuItem.Icon>
+									<Image Source="../Images/Icons/Help.ico" Height="16" Width="16"/>
+								</MenuItem.Icon>
+							</MenuItem>
+						</MenuItem>
+					</Menu>
+
+					<Grid x:Name="MusicPanel" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*" MinHeight="200"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition x:Name="DetailsRow" Height="80"/>
+						</Grid.RowDefinitions>
+
+						<!-- toolbar -->
+						<Border Grid.Row="0" Height="30" x:Name="TopToolbar" Style="{DynamicResource AeroToolbarStyle}" SnapsToDevicePixels="True">
+							<DockPanel Margin="2">
+								<Button x:Name="AddButton" DockPanel.Dock="Left" Style="{DynamicResource AeroToolbarButtonStyle}" Click="Add_Clicked">
+									<Button.Content>
+										<StackPanel Orientation="Horizontal">
+											<TextBlock loc:Translate.Uid="ToolbarAdd" Text="{loc:Translate Text}"/>
+											<Polygon Margin="4,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Points="0,0 4,4 8,0" Fill="#1e395b"/>
+										</StackPanel>
+									</Button.Content>
+								</Button>
+								<Button x:Name="ShowButton" DockPanel.Dock="Left" Style="{DynamicResource AeroToolbarButtonStyle}" Click="Show_Clicked">
+									<Button.Content>
+										<StackPanel Orientation="Horizontal">
+											<TextBlock loc:Translate.Uid="ToolbarShow" Text="{loc:Translate Text}"/>
+											<Polygon Margin="4,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Points="0,0 4,4 8,0" Fill="#1e395b"/>
+										</StackPanel>
+									</Button.Content>
+								</Button>
+								<Button x:Name="ToolsButton" DockPanel.Dock="Left" Style="{DynamicResource AeroToolbarButtonStyle}" Click="Tools_Clicked">
+									<Button.Content>
+										<StackPanel Orientation="Horizontal">
+											<TextBlock loc:Translate.Uid="ToolbarTools" Text="{loc:Translate Text}"/>
+											<Polygon Margin="4,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Points="0,0 4,4 8,0" Fill="#1e395b"/>
+										</StackPanel>
+									</Button.Content>
+								</Button>
+								<Button loc:Translate.Uid="ToolbarEqualizer" 
+										Content="{loc:Translate Content}" 
+										x:Name="EqualizerButton" 
+										DockPanel.Dock="Left" 
+										Style="{DynamicResource AeroToolbarButtonStyle}" 
+										Click="Equalizer_Clicked"/>
+								<Button loc:Translate.Uid="ToolbarPreferences"
+										Content="{loc:Translate Content}" 
+										x:Name="PreferencesButton" 
+										DockPanel.Dock="Left" 
+										Style="{DynamicResource AeroToolbarButtonStyle}" 
+										Click="Preferences_Clicked"/>
+
+								<Button x:Name="HelpButton" DockPanel.Dock="Right" Margin="0 0 5 0" Style="{DynamicResource AeroToolbarSmallButtonStyle}" Click="Help_Clicked">
+									<Image Source="../Images/Icons/Help.ico" Width="16" Height="16" Margin="0" Name="HelpButtonIcon"/>
+								</Button>
+								<Button x:Name="UpgradeButton" DockPanel.Dock="Right" Margin="0 0 5 0"  Visibility="Collapsed"
+										Style="{DynamicResource AeroToolbarSmallButtonStyle}" Click="UpgradeButton_Click"
+										loc:Translate.Uid="ToolbarUpgrade" ToolTip="{loc:Translate ToolTip}">
+									<Image Source="../Images/Icons/Upgrade.ico" Width="16" Height="16" Margin="0"/>
+								</Button>
+
+                                <StackPanel Orientation="Vertical" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 5 0"
+												Name="ScanProgress" Visibility="Collapsed">
+									<Label FontSize="10" Padding="0" HorizontalAlignment="Center" Name="ScanProgressLabel" loc:Translate.Uid="ToolbarScanning" Content="{loc:Translate Content}"/>
+									<ProgressBar Width="100" Height="10" Name="ScanProgressBar" IsIndeterminate="True" Padding="0" Maximum="100"/>
+								</StackPanel>
+							</DockPanel>
+						</Border>
+
+						<!-- music pane -->
+						<Grid KeyboardNavigation.TabNavigation="Local" Grid.Row="1" Name="MusicPane">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="150" x:Name="NavigationColumn" MinWidth="100"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+
+							<!-- navigation pane -->
+							<local:Navigation x:Name="NavigationPane" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0 0 1 0"/>
+
+							<GridSplitter Width="11" Margin="-5,0" BorderThickness="5,0" BorderBrush="Transparent" Background="#d6e5f5"
+										  x:Name="VerticalSplitter" DragCompleted="VerticalSplitter_DragCompleted"/>
+
+							<Grid Grid.Column="1" x:Name="ContentContainer" Background="Transparent">
+
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="*"/>
+								</Grid.RowDefinitions>
+
+								<!-- track list info pane -->
+								<Border BorderThickness="0 0 0 1" SnapsToDevicePixels="True" Padding="0" Name="InfoPaneBorder">
+									<Border.BorderBrush>
+										<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+											<GradientStop Color="Transparent" Offset="0"/>
+											<GradientStop Color="#d6e5f5" Offset="0.03"/>
+											<GradientStop Color="#d6e5f5" Offset="0.97"/>
+											<GradientStop Color="Transparent" Offset="1"/>
+										</LinearGradientBrush>
+									</Border.BorderBrush>
+									<DockPanel Grid.Row="0" Margin="0" x:Name="InfoPane" MinHeight="60">
+										<DockPanel.Background>
+											<ImageBrush ImageSource="/Platform/Windows 7/GUI/Images/Backgrounds/Info.png" />
+										</DockPanel.Background>
+										<DockPanel DockPanel.Dock="Left" Margin="18 0 0 0">
+											<TextBlock DockPanel.Dock="Top" Foreground="{DynamicResource InfoPaneTitle}" FontSize="18" Margin="5 5 0 0" x:Name="InfoPaneTitle"
+												   TextOptions.TextFormattingMode="Ideal"/>
+											<DockPanel>
+												<TextBlock DockPanel.Dock="Left" Foreground="{DynamicResource InfoPaneText}" 
+												   FontSize="12" Margin="5 5 0 10" x:Name="InfoPaneSubtitle" Visibility="Collapsed"/>
+												<TextBlock DockPanel.Dock="Left" Foreground="{DynamicResource InfoPaneText}" 
+												   FontSize="12" Margin="5 5 0 10" x:Name="InfoPaneTracks" Visibility="Collapsed"/>
+												<TextBlock DockPanel.Dock="Left" Foreground="{DynamicResource InfoPaneText}" 
+												   FontSize="12" Margin="50 5 0 10" x:Name="InfoPaneDuration" Visibility="Collapsed"/>
+											</DockPanel>
+										</DockPanel>
+
+										<StackPanel Orientation="Horizontal" Name="YouTubeFilterPanel" DockPanel.Dock="Right" Margin="5 5 20 5" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center">
+											<TextBlock loc:Translate.Uid="Filter" Text="{loc:Translate Text}" VerticalAlignment="Center" Margin="0 0 5 0" Foreground="{DynamicResource InfoPaneText}" FontSize="12"/>
+											<ComboBox Name="YouTubeFilter" SelectionChanged="YouTubeFilter_SelectionChanged" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource AeroComboBoxStyle}">
+												<ComboBoxItem loc:Translate.Uid="FilterNone" Content="{loc:Translate Content}" Tag="None" FontSize="12"/>
+												<ComboBoxItem loc:Translate.Uid="FilterMusic" Content="{loc:Translate Content}" Tag="Music" Name="FilterMusic" FontSize="12"/>
+											</ComboBox>
+										</StackPanel>
+
+										<StackPanel Orientation="Horizontal" Name="YouTubeVideoPanel" DockPanel.Dock="Right" Margin="5 5 20 5" Visibility="Collapsed" HorizontalAlignment="Right"
+													VerticalAlignment="Center">
+											<TextBlock loc:Translate.Uid="Quality" Text="{loc:Translate Text}" VerticalAlignment="Center" Margin="0 0 5 0" Foreground="{DynamicResource InfoPaneText}" FontSize="12"/>
+											<ComboBox Name="YouTubeQuality" SelectionChanged="YouTubeQuality_SelectionChanged" VerticalAlignment="Center" FontSize="12" Style="{DynamicResource AeroComboBoxStyle}">
+												<ComboBoxItem loc:Translate.Uid="QualityDefault" Content="{loc:Translate Content}" Tag="default" Name="QualityDefault"/>
+												<ComboBoxItem loc:Translate.Uid="QualityLow" Content="{loc:Translate Content}" Tag="small" />
+												<ComboBoxItem loc:Translate.Uid="QualityMedium" Content="{loc:Translate Content}" Tag="medium" />
+												<ComboBoxItem loc:Translate.Uid="QualityHigh" Content="{loc:Translate Content}" Tag="large"/>
+												<ComboBoxItem loc:Translate.Uid="Quality720" Content="{loc:Translate Content}" Tag="hd720"/>
+												<ComboBoxItem loc:Translate.Uid="Quality1080" Content="{loc:Translate Content}" Tag="hd1080"/>
+												<ComboBoxItem loc:Translate.Uid="QualityHighres" Content="{loc:Translate Content}" Tag="highres"/>
+											</ComboBox>
+										</StackPanel>
+
+										<ComboBox Name="VisualizerList" DockPanel.Dock="Right" Margin="5 5 20 5" Visibility="Collapsed" HorizontalAlignment="Right"
+												  VerticalAlignment="Center" SelectionChanged="VisualizerList_SelectionChanged" Style="{DynamicResource AeroComboBoxStyle}">
+											<ComboBox.ItemTemplate>
+												<DataTemplate>
+													<TextBlock Text="{Binding Path=Name}" />
+												</DataTemplate>
+											</ComboBox.ItemTemplate>
+										</ComboBox>
+									</DockPanel>
+								</Border>
+
+								<!-- content containers -->
+								<local:ViewDetails Grid.Row="1" Visibility="Collapsed" BorderThickness="0" x:Name="FileTracks"/>
+								<local:ViewDetails Grid.Row="1" Visibility="Collapsed" BorderThickness="0" x:Name="RadioTracks"/>
+								<local:ViewDetails Grid.Row="1" Visibility="Collapsed" BorderThickness="0" x:Name="DiscTracks"/>
+								<local:ViewDetails Grid.Row="1" Visibility="Collapsed" BorderThickness="0" x:Name="QueueTracks"/>
+								<local:ViewDetails Grid.Row="1" Visibility="Collapsed" BorderThickness="0" x:Name="HistoryTracks" InvertSortIndicator="True"/>
+								<Stoffi.Controls:SoundCloudTracks Grid.Row="1" Visibility="Collapsed" x:Name="SoundCloudTracks" BorderThickness="0"/>
+								<Stoffi.Controls:YouTubeTracks    Grid.Row="1" Visibility="Collapsed" x:Name="YouTubeTracks" BorderThickness="0"/>
+								<Stoffi.Controls:Video            Grid.Row="1" Visibility="Collapsed" x:Name="VideoContainer" ConnectionProblem="Video_ConnectionProblem" />
+								<Stoffi.Controls:Visualizer       Grid.Row="1" Visibility="Collapsed" x:Name="VisualizerContainer"/>
+
+							</Grid>
+
+						</Grid>
+
+						<GridSplitter Height="12" Margin="0,-5" BorderThickness="0,5" BorderBrush="Transparent" Background="#d6e5f5"
+									  x:Name="HorizontalSplitter" DragCompleted="HorizontalSplitter_DragCompleted"
+									  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="2"/>
+
+						<!-- details pane -->
+						<local:Details x:Name="DetailsPane" Grid.Row="3" SizeChanged="DetailsPane_SizeChanged"
+									   Title="" Description="" EnteredEditMode="EditableTextBlock_EnteredEditMode"
+									   FieldEdited="DetailsPane_FieldEdited"/>
+						
+					</Grid>
+
+					<local:ControlPanel x:Name="ControlPanel" Visibility="Collapsed" />
+
+				</DockPanel>
+			</Border>
+		</DockPanel>
+	</Grid>
+</Window>

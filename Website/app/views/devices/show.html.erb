@@ -1,0 +1,86 @@
+<div id="main">
+	<div class="white box" id="device_<%=@device.id%>">
+		<h1 data-field="name"><%=h @device.name %></h1>
+		
+		<h2><%=t "device.version" %></h2>
+		<span data-field="version"><%=h @device.version %></span>
+		
+		<h2><%=t "device.sync" %></h2>
+		<span data-field="profile">
+			<% if @device.configuration %>
+				<%= link_to h(@device.configuration.name), @device.configuration %>
+			<% else %>
+				<%=t "device.no_sync" %>
+			<% end %>
+		</span>
+		
+		<% if @device.app %>
+			<h2><%=t "device.app" %></h2>
+			<span data-field="app">
+				<%= image_tag @device.app.small_icon %>
+				<%= link_to @device.app.name, app_path(@device.app) %>
+			</span>
+		<% end %>
+		
+		<h1><%=t "device.req" %></h1>
+		
+		<h2><%=t "device.time" %></h2>
+		<span data-field="last_time">
+			<%= t "datetime.ago_at", :ago => time_ago_in_words(@device.updated_at), :at => @device.updated_at %>
+		</span>
+		
+		<h2><%=t "device.ip" %></h2>
+		<span data-field="last_ip"><%=h @device.last_ip %></span>
+
+		<h2><%=t "device.city" %></h2>
+		<span data-field="last_city"><%=h @city %></span>
+
+		<h2><%=t "device.country" %></h2>
+		<span data-field="last_country">
+			<%= image_tag @flag %>
+			<%=h t("countries.#{@country.downcase}", :default => @country) %>
+		</span>
+
+		<h2><%=t "device.network" %></h2>
+		<span data-field="last_net">
+			<%=h @network %>
+		</span>
+		
+		<% unless @latitude == 0 and @longitude == 0 %>
+		<div class="center" style="width: 425px; height: 350px;">
+			<div id="map" style="width: 425px; height: 350px;"></div>
+			<script>
+			
+			var lat = <%=@latitude%>;
+			var lng = <%=@longitude%>;
+
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 6,
+				center: new google.maps.LatLng(lat, lng),
+				mapTypeId: google.maps.MapTypeId.TERRAIN
+			});
+
+			var infowindow = new google.maps.InfoWindow();
+			var marker, i;
+
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(lat, lng),
+				map: map
+			});
+
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				return function()
+				{
+					infowindow.setContent("Your device was accessed from this point");
+					infowindow.open(map, marker);
+				}
+			})(marker, i));
+			</script>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/user" %>
+</div>

@@ -1,0 +1,21 @@
+se:
+  device:
+    info: "Information"
+    name: "Namn:"
+    version: "Version:"
+    sync: "Synkroniseringsprofil:"
+    no_sync: "Ingen profil"
+    app: "App:"
+    req: "Senaste förfrågan"
+    time: "Tid:"
+    ip: "IP:"
+    city: "Stad:"
+    country: "Land:"
+    network: "Nätverk:"
+    status:
+      label: "Status"
+      online: "Ansluten"
+      offline: "Ej ansluten"
+    
+  devices:
+    empty: "Inga anslutna enheter."

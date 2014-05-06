@@ -1,0 +1,73 @@
+<div id="main" class="app">
+	<div class="white box">
+		<div class="head">
+			<%= image_tag @app.large_icon, :width => 64, :height => 64 %>
+			<div class="text">
+				<h1><%=h @app.name %></h1>
+				<h2><%=h @app.description %></h2>
+			</div>
+		</div>
+		
+		<div class="narrow">
+			<dl>
+				<dt><%=t "apps.permissions.title" %></dt>
+				
+				<% ["name", "picture", "playlists", "listens", "shares"].each do |p| %>
+					<dd title="<%=t "apps.permissions.#{p}.tooltip" %>">
+						<%=t "apps.permissions.#{p}.label" %>
+					</dd>
+				<% end %>
+				
+				<dt><%=t "apps.url" %></dt>
+				<dd><%= link_to pretty_url(@app.website), @app.website %></dd>
+				
+				<dt><%=t "apps.support" %></dt>
+				<dd><%= link_to pretty_url(@app.support_url), @app.support_url %></dd>
+				
+				<dt><%=t "apps.author" %></dt>
+				<dd><%= link_to @app.author, @app.author_url %></dd>
+				
+				<% if user_signed_in? && @app.user == current_user %>
+					<dt><%=t "apps.key" %></dt>
+					<dd><%= @app.key %></dd>
+					<dt><%=t "apps.secret" %></dt>
+					<dd><%= @app.secret %></dd>
+					<dt><%=t "apps.request" %></dt>
+					<dd><code>
+						http<%="s" if request.ssl? %>://<%= request.host_with_port %><%=@app.oauth_server.request_token_path %>
+					</code></dd>
+					<dt><%=t "apps.access" %></dt>
+					<dd><code>
+						http<%="s" if request.ssl? %>://<%= request.host_with_port %><%=@app.oauth_server.access_token_path %>
+					</code></dd>
+					<dt><%=t "apps.authorize" %></dt>
+					<dd><code>
+						http<%="s" if request.ssl? %>://<%= request.host_with_port %><%=@app.oauth_server.authorize_path %>
+					</code></dd>
+				<% end %>
+			</dl>
+		</div>
+		
+		<% if false %>
+		<div class="wide center">
+			<%= button_tag t("apps.add.button"), "", "", { :color => :blue, :class => "huge add" } %>
+			<p><%=t "apps.add.hint", :app => h(@app.name) %></p>
+		</div>
+		<% end %>
+		
+	</div>
+	
+	<% if user_signed_in? && @app.user == current_user %>
+		<div class="blue box">
+			<h1><%=t "apps.settings" %></h1>
+			<%= form_for :app, :url => app_path(@app), :html => {:method => :put}  do |f| %>
+				<% @no_back = true %>
+				<%= render :partial => "form", :locals => { :f => f } %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => (user_signed_in? ? "sidebars/user" : "sidebars/main") %>
+</div>

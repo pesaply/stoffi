@@ -1,0 +1,31 @@
+<%
+articles =
+[
+	{
+		:name => "qin",
+		:stamp => 1356344023
+	},
+	{
+		:name => "zhou",
+		:stamp => 1341698631
+	},
+	{
+		:name => "shang",
+		:stamp => 1319815721
+	},
+	{
+		:name => "xia",
+		:stamp => 1303931053
+	}
+]
+%>
+<% articles.each do |article|
+	stamp = Time.at(article[:stamp]).to_date
+	stamp = I18n.localize(stamp, :format => :long)
+	%>
+	<h1>
+		<%= t("news.#{article[:name]}.title") %>
+	</h1>
+	<div class="timestamp"><%=stamp%></div>
+	<%=t "news.#{article[:name]}.content_html" %>
+<% end %>

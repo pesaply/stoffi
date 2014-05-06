@@ -1,0 +1,158 @@
+<% usuf = current_user == @user ? ".you" : ".user" %>
+
+<div class="white box" id="profile">
+	<div class="top">
+		<div class="picture">
+			<%
+			pic = @user.picture
+			c = pic == User.default_pic ? "default" : ""
+			%>
+			<%= image_tag pic, :width => 80, :height => 80, :class => c %>
+		</div>
+		<div class="info">
+			<h3><%=t "profile.points" %></h3>
+			<h1><%= number_with_delimiter @user.points, :locale => current_locale %></h1>
+		</div>
+		
+		<h1><%=d @user.name %></h1>
+		<div class="actions">			
+			<div class="social-buttons">
+				<div id="fb-root"></div>
+				
+				<!-- +1 button -->
+				<span class="plus-button">
+					<div class="g-plusone" data-size="medium" data-lang="<%langtag(I18n.locale)%>"
+						data-width="50">
+					</div>
+				</span>
+				
+				<!-- like button -->
+				<span class="like-button">
+					<div class="fb-like"
+						data-send="false" data-layout="button_count" data-width="50"
+						data-show-faces="false" data-font="segoe ui">
+					</div>
+				</span>
+				
+				<!-- tweet button -->
+				<span class="tweet-button">
+					<a href="https://twitter.com/share" class="twitter-share-button"
+						data-via="StoffiPlayer" data-lang="<%=langtag(I18n.locale)%>">Tweet</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wide">
+		<h1><%=t "profile.songs.title" %></h1>
+		<% if @songs.length > 0 %>
+			<ul class="horizontal">
+				<% @songs.each do |song| %>
+					<%= item song.title, song, "song_#{song.id}", :image => song.picture %>
+				<% end %>
+			</ul>
+		<% else %>
+			<p class="message"><%=t "profile.songs.empty#{usuf}", :user => @user.name %></p>
+		<% end %>
+		
+		<% if text_ads? %>
+			<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-5639501338860736";
+				/* Front Black */
+				google_ad_slot = "4189875527";
+				google_ad_width = 468;
+				google_ad_height = 60;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+		<% end %>
+		
+		<h1><%=t "profile.artists.title" %></h1>
+		<% if @artists.length > 0 %>
+			<ul class="horizontal">
+				<% @artists.each do |artist| %>
+					<%= item artist.name, artist, "artist-#{artist.id}-name", :image => artist.picture %>
+				<% end %>
+			</ul>
+		<% else %>
+			<p class="message"><%=t "profile.artists.empty#{usuf}", :user => @user.name %></p>
+		<% end %>
+		
+		<h1><%=t "profile.listens.title" %></h1>
+		<% if @listens.length > 0 %>
+			<ul class="horizontal">
+				<% @listens.each do |listen| %>
+					<%= item listen.song.title, listen, "song-#{listen.song.id}-title", :url => url_for(listen.song), :image => listen.song.picture %>
+				<% end %>
+			</ul>
+		<% else %>
+			<p class="message"><%=t "profile.listens.empty#{usuf}", :user => @user.name %></p>
+		<% end %>
+		
+	</div>
+	<div class="narrow">
+		<h1><%=t "playlists.title.list" %></h1>
+		<ul class="vertical" data-list="playlists">
+			<% uid = user_signed_in? ? current_user.id : -1 %>
+			<% @playlists.each do |playlist| %>
+				<%= item playlist.name, playlist, "playlist-#{playlist.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-playlists"<%= "style='display:none;'".html_safe if @playlists.length > 0 %>>
+			<%=t "playlists.empty#{usuf}", :user => @user.name %>
+		</p>
+		
+		<h1><%=t "profile.donations.title" %></h1>
+		<ul class="vertical" data-list="donations">
+			<% @donations.each do |donation| %>
+				<%= item donation.artist.name, donation, "artist-#{donation.artist.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-donations"<%= "style='display:none;'".html_safe if @donations.count > 0 %>>
+			<%=t "profile.donations.empty#{usuf}", :user => @user.name %>
+		</p>
+		
+		<% if text_ads? %>
+			<div class="skyscraper ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-5639501338860736";
+				/* Skyscraper */
+				google_ad_slot = "3985447558";
+				google_ad_width = 160;
+				google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+	// like button
+	(function(d)
+	{
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/<%=full_locale(I18n.locale)%>/all.js#appId=243125052401100&xfbml=1";
+		d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+	
+	// +1 button
+	window.___gcfg = {lang: '<%=I18n.locale%>'};
+	(function()
+	{
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	
+	// tweet button
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>

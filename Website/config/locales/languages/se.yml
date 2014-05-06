@@ -1,0 +1,17 @@
+se:
+  languages:
+    switch: "Byt språk till:"
+    menu: "Språk"
+    english: "Engelska"
+    swedish: "Svenska"
+  
+  countries:
+    sweden: "Sverige"
+
+  translations:
+    title: "Översättningar"
+    vote:
+      up: "Rösta upp denna översättning"
+      down: "Rösta ner denna översättning"
+    
+    delete: "Ta bort denna översättning"

@@ -1,0 +1,35 @@
+us:
+  playlists:
+  
+    title:
+      new: "Create playlist"
+      edit: "Edit playlist"
+      list: "Playlists"
+      global: "Best playlists"
+      you: "Your playlists"
+      user: "%{users} playlists"
+      
+    name: "Name"
+    is_public: "Public"
+    filter: "Filter"
+    
+    songs: 
+      label: "Songs"
+      empty: "There are no songs in this playlist."
+      remove: "Remove %{song} from playlist."
+      
+    add:
+      label: "Add songs from"
+      youtube: "Include songs from YouTube in search results."
+      soundcloud: "Include songs from SoundCloud in search results."
+      files: "Include local files in search results."
+      
+    empty:
+      you: "You have no playlists yet."
+      all: "No one has any playlists yet."
+      user: "%{user} has no plyalists yet."
+      short: "No playlists yet."
+    
+    created: "Created by"
+    
+    controls: "Controls"

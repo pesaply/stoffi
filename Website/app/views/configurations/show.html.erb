@@ -1,0 +1,81 @@
+<% if @configuration
+	conf = @configuration
+	id = conf.id.to_s
+	%>
+	<div class="white box">
+		<div class="wide">
+			<h1 data-field="configuration-<%=id%>-now-playing" class="ellipsis">
+				<%=d conf.now_playing %>
+			</h1>
+			<div class="playback">
+				<span class="group">
+					<%s=20%>
+					<span class="blue button" onclick="prev(<%=id%>)" id="prev_button_<%=id%>">
+						<%= image_tag "media/prev.png", :width => s, :height => s %>
+					</span>
+					<span class="blue button" onclick="playPause(<%=id%>)" id="play_pause_button_<%=id%>" data-state="<%=conf.media_state%>">
+						<%= image_tag play_pause_image(conf), :width => s, :height => s, :id => "play_pause_img_#{id}" %>
+					</span>
+					<span class="blue button" onclick="next(<%=id%>)" id="next_button_<%=id%>">
+						<%= image_tag "media/next.png", :width => s, :height => s %>
+					</span>
+				</span>
+				<span class="group">
+					<%= range_field "volume_level", id, :min => 0, :max => 100, :step => 1, :value => conf.volume.to_i %>
+					<script>
+						var slider_timer_<%=id%>;
+						$("#volume_level_<%=id%>").bind("change", function()
+						{
+							volume(<%=id%>);
+						});
+					</script>
+				</span>
+				<span class="group">
+					<span class="blue button" onclick="repeat(<%=id%>)" id="repeat_button_<%=id%>" data-state="<%=conf.repeat%>">
+						<%= image_tag repeat_image(conf), :width => s, :height => s, :id => "repeat_img_#{id}" %>
+					</span>
+					<span class="blue button" onclick="shuffle(<%=id%>)" id="shuffle_button_<%=id%>" data-state="<%=conf.shuffle%>">
+						<%= image_tag shuffle_image(conf), :width => s, :height => s, :id => "shuffle_img_#{id}" %>
+					</span>
+				</span>
+			</div>
+		</div>
+		<div class="narrow">
+			<h1><%=t "remote.devices.title" %></h1>
+			<ul class="vertical" data-list="devices">
+				<% @devices.each do |device| %>
+					<%= item device.name, device, "device-#{device.id}-name" %>
+				<% end %>
+			</ul>
+			<p class="message" data-field="no-devices"<%= "style=display:none;" if @devices.length > 0 %>>
+				<%=t "remote.devices.empty" %>
+			</p>
+		</div>
+	</div>
+		
+<% else %>
+	<div id="main">
+		<div class="white box">
+			<h1><%=t "remote.title"%></h1>
+			<p><%=raw t("remote.text1")%></p>
+			<p><%=raw t("remote.text2")%></p>
+			<p><%=raw t("remote.text3")%></p>
+		</div>
+	</div>
+
+	<div id="sidebar">
+		<% if user_signed_in? %>
+			<%= render :partial => "sidebars/user" %>
+		<% else %>
+			<%= render :partial => "sidebars/main" %>
+		<% end %>
+	</div>
+
+<% end %>
+
+<script>
+images = ["play","pause","shuffle_on","shuffle_off","repeat_all","repeat_one","repeat_off"];
+for (i in images)
+	images[i] = "/assets/media/"+images[i]+".png";
+preloadImages(images);
+</script>

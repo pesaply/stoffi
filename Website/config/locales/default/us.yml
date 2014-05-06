@@ -1,0 +1,90 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+us:
+  title: "Stoffi Music Player"
+  
+  auth:
+    link: "Link with your %{service} account"
+    unlink: "Remove link to your %{service} account"
+    login: "Login with your %{service} account"
+
+  dialog:
+    email: "Email"
+    email_placeholder: "Enter email"
+    password: "Password"
+    password_placeholder: "Enter password"
+    password_choose_placeholder: "Choose password"
+    password_confirm: "Password again"
+    password_confirm_placeholder: "Confirm password"
+    remember: "Remember"
+    oauth: "Or login with"
+
+  switch:
+    mobile: "Mobile version"
+    desktop: "Desktop version"
+    language: "Change language"
+
+  copyright: "copyright"
+  project: "project"
+  blog: "blog"
+  
+  confirm: "Are you sure?"
+  show_more: "Show more"
+  delete: "Delete %{item}"
+  
+  send: "Send"
+  save: "Save"
+  create: "Create"
+  hide: "Hide"
+  back: "Back"
+  search:
+    placeholder: "Search"
+    categories:
+      artists: "Artists"
+      songs: "Songs"
+      albums: "Albums"
+      playlists: "Playlists"
+      devices: "Devices"
+      users: "People"
+      files: "Files"
+      soundcloud: "SoundCloud"
+      youtube: "YouTube"
+  
+  you: "You"
+  
+  name: "Name"
+  description: "Description"
+      
+  links:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    save: "Save"
+    play: "Play in Stoffi"
+  
+  top:
+    personal: "Personal top"
+    global: "Global top"
+  
+  hello: "Hello, %{name}!"
+  
+  location_inside: "%{city} in %{country}"
+  
+  fetched_from: "Fetched from %{from}"
+  
+  admin: "Administrate"
+  
+  mail:
+    title: "Contact us"
+    unlock:
+      info: "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
+      click: "Click the link below to unlock your account:"
+      link: "Unlock my account"
+    password:
+      request: "Forgot your password? It's OK! We all forget sometimes. Just click on the link below to change password."
+      link: "Change password"
+      require_action: "Your password won't change until you click on the link above and create a new one."
+
+    ignore: "If you didn't request this, please ignore this email."

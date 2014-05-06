@@ -1,0 +1,17 @@
+us:
+  languages:
+    switch: "Switch language to:"
+    menu: "Language"
+    english: "English"
+    swedish: "Swedish"
+  
+  countries:
+    sweden: "Sweden"
+
+  translations:
+    title: "Translations"
+    vote:
+      up: "Vote for this translation"
+      down: "Vote against this translation"
+    
+    delete: "Remove this translation"

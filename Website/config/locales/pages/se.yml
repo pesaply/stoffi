@@ -1,0 +1,207 @@
+se:
+  not_found:
+    header:          'Ingen sån %{resource} finns'
+    text:            'Den %{resource} som den här addressen pekar på verkar inte finnas.'
+    
+  index:
+    link:            'Hem'
+    title:           ''
+    description:     'Stoffi Musikspelare är en vacker, integrerad, kompakt &amp; gratis musikspelare som spelar musik från YouTube, SoundCloud, radio och din hårddisk.'
+  
+  donations:
+    link:            'Donera'
+    title:           'Stöd artister'
+    description:     'Skicka pengar till artister på ett säkert och tryggt sätt, där artisten får hela 90% av pengarna.'
+  
+  donation:
+    title:           'Donation på %{amount} till %{artist}'
+    description:     'Skicka pengar till artister på ett säkert och tryggt sätt, där artisten får hela 90% av pengarna.'
+  
+  news:
+    link:            'Nyheter'
+    title:           'Senaste nyheterna'
+    description:     'Läs om våra senaste släpp, lär dig vilka nya features som kommit och spana in våra screenshots.'
+  
+  language:
+    link:            'Byt språk'
+    title:           'Språk'
+    description:     'Byt vilket språk som visas på hemsidan.'
+  
+  about:
+    link:            'Om'
+    title:           'Om'
+    description:     'Lär dig mer om Stoffi och gänget bakom.'
+  
+  get:
+    link:            'Ladda ner'
+    title:           'Skaffa den'
+    description:     'Ladda ner Stoffi Musikspelare helt gratis och utan några extra bundles, addons eller annat skräp.'
+  
+  tour:
+    link:            'Tur'
+    title:           'Ta en rundtur'
+    description:     'Lär dig mer om Stoffi genom att spana in vår rundtur som visar några av de coolaste delarna av denna underbara musikspelare.'
+  
+  download:
+    link:            'Ladda ner'
+    title:           'Ladda ner'
+    description:     'Tack för att du laddar hem Stoffi Musikspelare. Se till att följa oss på Twitter, Facebook och läs vår blogg för mer information.'
+    
+  old:
+    title:           'Gammal webbläsare'
+    description:     'Du använder en gammal och övergiven webbläsare. Detta är väldigt farligt och du borde undvika att vara ute på Internet.'
+  
+  contribute:
+    link:            'Hjälp till'
+    title:           'Hjälp till'
+    description:     'Hjälp till med detta öppna och roliga projekt. Jobba så mycket eller lite du vill.'
+    
+    design:
+      link:          'Designa'
+      title:         'Design'
+      description:   'Väck konstnären i dig och skapa några coola designs. Allt från ikoner och grafik till layouter och bakgrunder.'
+    
+    translate:
+      link:          'Översätta'
+      title:         'Översätt'
+      description:   'Ta Stoffi till ditt språk med vårt simpla och enkla webbaserade system.'
+    
+    test:
+      link:          'Testkör'
+      title:         'Testkör'
+      description:   'Hjälp oss att hitta buggar och problem genom att testa nya beta versioner.'
+    
+    hack:
+      link:          'Hacka'
+      title:         'Hacka'
+      description:   'Fixa en liten bugg eller jobba på en stor ny feature. Vi kommer att hjälpa och guida dig på din väg att bli en fullfjädrad utvecklare av Stoffi.'
+    
+    apps:
+      link:          'Skapa app'
+      title:         'App-utveckling'
+      description:   'Skapa en app och börja använda vårt API i ditt eget program eller din hemsida.'
+    
+    plugins:
+      link:          'Skapa plugin'
+      title:         'Plugin-utveckling'
+      description:   'Skapa ett plugin och distribuera det här på vår sida.'
+    
+    promote:
+      link:          'Sprid ordet'
+      title:         'Sprid ordet'
+      description:   'Hjälp oss att sprida ordet och lär världen om Stoffi.'
+    
+    write:
+      link:          'Dokumentera'
+      title:         'Skriv dokumentation'
+      description:   'Fyll vår wiki, skriv guider eller fixa några hjälpfiler för nya användare.'
+    
+    idea:
+      link:          'Föreslå idé'
+      title:         'Föreslå idé'
+      description:   "Har du ett förslag på en idé om hur Stoffi kan bli världens bästa musikspelare?"
+    
+    why:
+      link:          'Varför jobba med Stoffi?'
+      title:         'Varför det är det bästa projektet att jobba på'
+      description:   "Stoffi är underbart att jobba med. Du får komma och gå som du vill, jobba hemifrån och göra det du tycker är kul. Haka på du med!"
+      
+  translate:
+    link:            "Språk"
+    title:           "Språk"
+    description:     "Välj ett språk eller skapa ett nytt och börja översätta Stoffi redan nu."
+    show_title:      "Översätt till %{language}"
+  
+  contact:
+    link:            'Kontakt'
+    title:           'Kontakta oss'
+    description:     'Du kan kontakta oss om problem du har, information du saknar eller vad som helst egentligen.'
+  
+  legal:
+    link:            'Regler'
+    title:           'Regler'
+    description:     'Stoffis kod är öppen, gratis att ladda hem, ändra och använda. Vi har starkt fokus på ditt privatliv och säljer aldrig vidare några uppgifter till andra parter.'
+  
+  money:
+    link:            'Pengar'
+    title:           'Pengar, pengar, pengar'
+    description:     "Med Stoffi kan du skicka pengar säkert till dina favoritartister. Vi uppskattar att du ger oss förtroende över dina pengar och vill se till att du kan påverka och bestämma hur just dina pengar ska fördelas."
+  
+  join:
+    link:            'Gå med'
+    title:           'Gå med'
+    description:     "Skapa ett konto och ta del av våra coola tjänster. Om du redan har ett konto på Facebook, Twitter, Google, SoundCloud, Vimeo eller LinkedIn så behöver du inte ens registrera dig."
+  
+  login:
+    link:            'Logga in'
+    title:           'Logga in'
+    description:     "Logga in med ditt konto och ta del av våra coola tjänster. Om du redan har ett konto på Facebook, Twitter, Google, SoundCloud, Vimeo eller LinkedIn så behöver du inte ens registrera dig."
+
+  unlock:
+    link:            'Lås upp'
+    title:           'Lås upp konto'
+    description:     'Om ditt konto har blivit låst kan du be om ett mail för att låsa upp det.'
+
+  forgot:
+    link:            'Glömt'
+    title:           'Glömt lösenord'
+    description:     'Vi glömmer alla ibland. Begär ett mail för att återställa lösenordet.'
+
+  reset:
+    link:            'Återställ'
+    title:           'Återställ lösenord'
+    description:     'Återställ ditt lösenord om du har råkat glömma bort det.'
+  
+  dashboard:
+    link:            'Mitt Stoffi'
+    title:           'Panel'
+    description:     'Få en översikt av ditt konto, spana in dina spelvanor, hantera dina spellistor och enheter, eller fjärrstyr din musik.'
+  
+  settings:
+    link:            'Inställningar'
+    title:           'Inställningar'
+    description:     'Hantera ditt konto, konfigurera din profil, eller koppla ihop ditt konto med andra tjänster.'
+  
+  apps:
+    link:            'Mina Appar'
+    title:           'Appar'
+    description:     'Koppla ihop program och hemsidor med Stoffi och ge dem tillgång till dina spellistor och låtar.' 
+  
+  devices:
+    link:            'Enheter'
+    title:           'Enheter'
+    description:     'Visa och hantera de enheter du använder med ditt Stoffikonto.'
+  
+  profile:
+    link:            'Profil'
+    description:     'Spana in %{usernames} hetaste låtar och spellistor på Stoffi.'
+  
+  logout:
+    link:            'Logga ut'
+  
+  playlists:
+    link:            'Playlists'
+    all:
+      title:         'Spellistor'
+      link:          'Spellistor'
+      description:   'Hitta de hetaste spellistorna på Stoffi.'
+    by:
+      title:         '%{username} spellistor'
+      link:          '%{username} spellistor'
+      description:   'Spellistor skapade av %{username} på Stoffi.'
+  playlist:
+    description:     'Spellistan %{name} skapad av %{username} på Stoffi.'
+    
+  artists:
+    short_description: "%{artist} är en artist på Stoffi"
+    description: "Artisten %{artist} finns på Stoffi. Du kan donera pengar till %{artist} redan idag och vara säker på att inga skivbolag tar några pengar på vägen."
+
+  songs:
+    description: "Lyssna på %{song} i Stoffi Musikspelare eller direkt här på hemsidan. Du kan donera pengar till artisten %{artist} redan idag och vara säker på att inga skivbolag tar några pengar på vägen."
+    description_without_artist: "Lyssna på %{song} i Stoffi Musikspelare eller direkt här på hemsidan."
+    
+  remote:
+    link: "Fjärr"
+    title: "Fjärrstyr"
+    description: "Fjärrstyr din spelare direkt från mobilen eller en annan dator med vårt webbaserade gränssnitt."
+    

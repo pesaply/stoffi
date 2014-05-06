@@ -1,0 +1,61 @@
+<div class="white box" id="download">
+	<% if @type == "checksum" %>
+		<div id="download-start">
+			<h1><%= t "check.brief.title" %></h1>
+			<p><%=raw t("check.brief.text") %></p>
+		</div>
+		
+		<div id="download-instructions-wide">
+			<div class="download-instruction">
+				<h1>1. <%= t "check.install.title" %></h1>
+				<p><%= t "check.install.text_html", :link => link_to("md5deep", "http://md5deep.sourceforge.net/") %></p>
+			</div>
+			
+			<div class="download-instruction">
+				<h1>2. <%= t "check.get.title" %></h1>
+				<p><%= t "check.get.text_html", :click_here => link_to(t("check.file"), @file) %></p>
+					<%= image_tag "#{I18n.locale}/installation/files.png" %>
+				<p class="notice"><%= t "check.get.notice_html" %></p>
+			</div>
+			
+			<div class="download-instruction">
+				<h1>3. <%= t "check.run.title" %></h1>
+				<p><%= t "check.run.text_html", :fname => @fname %></p>
+					<%= image_tag "#{I18n.locale}/installation/command.png" %>
+			</div>
+			
+			<div class="download-instruction">
+				<h1>4. <%= t "check.verify.title" %></h1>
+				<p><%= t "check.verify.text" %></p>
+					<%= image_tag "#{I18n.locale}/installation/output.png" %>
+			</div>
+		</div>
+
+	<% else %>
+		<div id="download-start">
+			<h1><%=t "get.thanks" %></h1>
+			<p><%=t "get.manual_start_html", :click_here => link_to(t("get.click_here"), @file) %></p>
+		</div>
+
+
+		<div id="download-instructions">
+			<div class="download-instruction">
+				<h1>1. <%=t "get.instruction1.title" %></h1>
+				<p><%=t "get.instruction1.text.#{@browser}", :fname => @fname %></p>
+				<%= image_tag "#{I18n.locale}/installation/#{@browser}.jpg" %>
+			</div>
+			
+			<div class="download-instruction">
+				<h1>2. <%=t "get.instruction2.title" %></h1>
+				<p><%=t "get.instruction2.text" %></p>
+				<%= image_tag "#{I18n.locale}/installation/security.jpg" %>
+			</div>
+
+			<div class="download-instruction">
+				<h1>3. <%=t "get.instruction3.title" %></h1>
+				<p><%=t "get.instruction3.text" %></p>
+				<%= image_tag "#{I18n.locale}/installation/setup.jpg" %>
+			</div>
+		</div>
+	<% end %>
+</div>

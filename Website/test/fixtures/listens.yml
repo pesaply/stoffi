@@ -1,0 +1,11 @@
+alice_one_love:
+  user: alice
+  song: one_love
+  created_at: 2014-01-09 08:22:00
+  ended_at: 2014-01-09 08:22:10
+
+alice_not_afraid:
+  user: alice
+  song: not_afraid
+  created_at: 2014-01-09 08:22:00
+  ended_at: 2014-01-09 08:23:00

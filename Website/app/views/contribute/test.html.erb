@@ -1,0 +1,17 @@
+<h1>Become beta tester</h1>
+<p>In order to find any problems or issues we need to test Stoffi. The more people that test it, the more bugs will be found and hopefully fixed before we release it. If you want to help out but don't know how to program, use Photoshop or speak any language besides English you can just download Stoffi and tell us of any bugs you find.</p>
+
+<h2>How to write a good report</h2>
+<p>When you find a bug we need to be able to reproduce it. Some bugs are nasty and only show up during certain circumstances. You should at least try to find a way for <b>you</b> to make the bug occur on command. There's also a possibility that the bug only appears on your system so you should include any additional information to make it possible for us to fix the bug. For example, if the bug occurs when you press play, it may be interesting to know the song you were trying to play. Maybe the bug only occurs with some songs?</p>
+<p>A bug may also only occur when you have a certain state of configuration, for example you have turned upgrades to manually or when you have three songs in History. All these settings can be found in the configuration file (C:\<i>You</i>\AppData\Simplare\Stoffi.exe_XXX\A.B.C.D\user.config). You can try to close Stoffi, move this file and start Stoffi again and see if the bug still exists. If not, we would appreciate it if you could send us this file so we can use it to investigate the bug.</p>
+</p>
+
+<h2>What happens to your report?</h2>
+<p>When we get your report we will first try to reproduce the issue. If we can we will set the status to "Accepted", otherwise we will ask you for additional information.</p>
+<p>Then we will fix the bug inside the code. When the code has been fixed the status will be changed to "Fixed" and you can even see the code change that fixed the bug.</p>
+<p>When the code has been fixed we will package the new update, lastly we will release it and it should now be available to all users.</p>
+
+<p>&nbsp;</p>
+<%= link_to t("links.back"), contribute_path, :class => "button down" %>
+<%= link_to t("get.link"), get_path, :class => "button down" %>
+<%= link_to t("news.actions.bug"), "http://dev.stoffiplayer.com/issues/new", :class => "button down" %>

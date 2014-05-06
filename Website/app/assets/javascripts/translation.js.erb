@@ -1,0 +1,133 @@
+<%# encoding: utf-8 %>
+<%
+keys =
+[
+	"media.repeat.disabled",
+	"media.repeat.all",
+	"media.repeat.one",
+	"media.shuffle.disabled",
+	"media.shuffle.random",
+	"media.shuffle.mind_reader",
+	"media.nothing_playing",
+	
+	"tour.youtube.title",
+	"tour.youtube.text1",
+	"tour.youtube.text2",
+	
+	"tour.sources.title",
+	"tour.sources.text1",
+	"tour.sources.text2",
+	
+	"tour.playlists.title",
+	"tour.playlists.text1",
+	"tour.playlists.text2",
+	
+	"tour.interface.title",
+	"tour.interface.text1",
+	"tour.interface.text2",
+	
+	"tour.shortcuts.title",
+	"tour.shortcuts.text1",
+	"tour.shortcuts.text2",
+	
+	"tour.bookmarks.title",
+	"tour.bookmarks.text1",
+	"tour.bookmarks.text2",
+	
+	"tour.jumplists.title",
+	"tour.jumplists.text1",
+	"tour.jumplists.text2",
+	
+	"tour.formats.title",
+	"tour.formats.text1",
+	"tour.formats.text2",
+	
+	"tour.focus.title",
+	"tour.focus.text1",
+	"tour.focus.text2",
+	
+	"tour.settings.title",
+	"tour.settings.text1",
+	"tour.settings.text2",
+	
+	"tour.history.title",
+	"tour.history.text1",
+	"tour.history.text2",
+	
+	"tour.backup.title",
+	"tour.backup.text1",
+	"tour.backup.text2",
+	
+	"tour.quickedit.title",
+	"tour.quickedit.text1",
+	"tour.quickedit.text2",
+	
+	"tour.equalizer.title",
+	"tour.equalizer.text1",
+	"tour.equalizer.text2",
+	
+	"tour.generator.title",
+	"tour.generator.text1",
+	"tour.generator.text2",
+	
+	"donations.too_little",
+	"donations.invalid_amount",
+	"donations.missing_artist",
+	"donations.status.pending",
+	"donations.status.processing",
+	"donations.status.delivered",
+	"donations.status.confirmed",
+	"donations.status.failed",
+	"donations.status.revoked",
+	"donations.status.returned",
+	
+	"device.status.label",
+	"device.status.online",
+	"device.status.offline",
+	
+	"translatee.params.missing.name",
+	"translatee.params.missing.example",
+	"translatee.params.example_short",
+	
+	"datetime.distance_in_words.x_seconds.one",
+	"datetime.distance_in_words.x_seconds.other",
+	"datetime.distance_in_words.x_minutes.one",
+	"datetime.distance_in_words.x_minutes.other",
+	"datetime.distance_in_words.x_hours.one",
+	"datetime.distance_in_words.x_hours.other",
+	"datetime.distance_in_words.about_x_hours.one",
+	"datetime.distance_in_words.about_x_hours.other",
+	"datetime.distance_in_words.x_days.one",
+	"datetime.distance_in_words.x_days.other",
+	"datetime.distance_in_words.x_weeks.one",
+	"datetime.distance_in_words.x_weeks.other",
+	"datetime.distance_in_words.x_months.one",
+	"datetime.distance_in_words.x_months.other",
+	"datetime.distance_in_words.x_years.one",
+	"datetime.distance_in_words.x_years.other",
+	"datetime.distance_in_words.about_x_years.one",
+	"datetime.distance_in_words.about_x_years.other",
+	"datetime.distance_in_words.x_centuries.one",
+	"datetime.distance_in_words.x_centuries.other",
+	
+	"notice.password.hint.very_short",
+	"notice.password.hint.very_long",
+	"notice.password.hint.text",
+	
+	"playlists.songs.remove",
+	
+	"confirm",
+	"delete"
+];
+
+langs = ["us", "se", "uk", "cn", "de"];
+%>
+var trans = {
+<% langs.each do |lang| %>
+	"<%=lang%>": {
+	<% keys.each do |key| %>
+		"<%=key%>": "<%=I18n.t(key, :locale => lang)%>",
+	<% end %>
+	},
+<% end %>
+};

@@ -1,0 +1,40 @@
+<div class="white box" id="tour">
+	<h1 id="title">&nbsp;</h1>
+	<div class="handle prev" onclick="prevSlide();"><</div>
+	<div class="view">
+		<div id="image-wrap">
+			<%= image_tag "#{I18n.locale}/tour/youtube.png", :id => "image", :style => "display:none;" %>
+		</div>
+	</div>
+	<div class="handle next" onclick="nextSlide();">></div>
+	<div id="text-wrap"><div id="text">
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div></div>
+</div>
+
+<% if image_ads? %>
+	<div class="center">
+		<div class="ingraved leader box ad">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Leader Images -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-5639501338860736"
+			     data-ad-slot="0353186432"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	</div>
+<% end %>
+
+<script>
+	var images = [];
+	for (s in tourSlides)
+		images.push('/assets/' + locale + '/tour/' + tourSlides[s] + '.png');
+	preloadImages(images);
+
+	jQuery.fx.interval = 1;
+	window.onload = function() { updateSlide(false); };
+</script>

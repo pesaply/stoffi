@@ -1,0 +1,155 @@
+﻿<!--EditableTextBlock.xaml
+	
+	A custom textblock that can be turned into a textbox for
+    editing.
+	
+	= = = = = = = = = =
+     
+    Copyright 2012 Jesper Borgtrup, Simplare
+    
+    This code is based on the work by Jesper Borgtrup which can
+    be found at
+    http://www.codeproject.com/KB/WPF/editabletextblock.aspx
+    It is part of the Stoffi Music Player Project.
+    Visit our website at: stoffiplayer.com
+   
+    This code is licensed under the terms of the Code Project
+    Open License as published by the Code Project; only version
+    1.02 of the License.
+    
+    See stoffiplayer.com/license for more information.
+	-->
+<UserControl x:Class="Stoffi.EditableTextBlock"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:Stoffi"
+			 x:Name="mainControl">
+	<UserControl.Resources>
+
+		<DataTemplate x:Key="EditModeTemplate">
+			<TextBox KeyUp="TextBox_KeyUp"
+					 KeyDown="TextBox_KeyDown"
+					 Loaded="TextBox_Loaded" 
+					 LostFocus="TextBox_LostFocus" 
+					 x:Name="EditBox" 
+					 Margin="0 0 0 0"
+					 BorderThickness="1" 
+					 BorderBrush="Black"
+					 SnapsToDevicePixels="True"
+					 Padding="-1 -1 0 -1"/>
+			<DataTemplate.Triggers>
+				<!-- simple hover  -->
+				<MultiDataTrigger>
+					<MultiDataTrigger.Conditions>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=ClickToEdit}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=SimpleHover}" Value="True"/>
+					</MultiDataTrigger.Conditions>
+
+					<Setter TargetName="EditBox" Property="BorderBrush" Value="#919397"/>
+					<Setter TargetName="EditBox" Property="BorderThickness" Value="1"/>
+					<Setter TargetName="EditBox" Property="Margin" Value="-2"/>
+					<Setter TargetName="EditBox" Property="Padding" Value="0"/>
+
+				</MultiDataTrigger>
+				
+				<!-- non-simple hover -->
+				<DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=SimpleHover}" Value="False">
+					<Setter TargetName="EditBox" Property="Padding" Value="-1 -1 0 1"/>
+					<Setter TargetName="EditBox" Property="Margin" Value="0 0 0 -2"/>
+				</DataTrigger>
+			</DataTemplate.Triggers>
+		</DataTemplate>
+
+		<DataTemplate x:Key="DisplayModeTemplate">
+			<Border SnapsToDevicePixels="True" CornerRadius="1" VerticalAlignment="Top" Padding="0" 
+					Margin="0,0,0,0" Name="OuterBorder" BorderThickness="0,0,1,1" BorderBrush="Transparent">
+				<Border SnapsToDevicePixels="True" CornerRadius="1" VerticalAlignment="Top" Padding="0"
+						Margin="0,0,0,0" Name="InnerBorder" BorderThickness="1,1,0,0" BorderBrush="Transparent">
+					<StackPanel>
+						<TextBlock Text="{Binding ElementName=mainControl, Path=FormattedText}"  Name="Block"
+							   Margin="0"
+							   Padding="2,0,0,0"
+							   MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" 
+							   TextTrimming="CharacterEllipsis"
+							   ToolTip="{Binding ElementName=mainControl, Path=FormattedText}"/>
+					</StackPanel>
+				</Border>
+			</Border>
+			<DataTemplate.Triggers>
+
+				<!-- simple hover  -->
+				<MultiDataTrigger>
+					<MultiDataTrigger.Conditions>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=SimpleHover}" Value="True"/>
+					</MultiDataTrigger.Conditions>
+
+					<Setter TargetName="OuterBorder" Property="Margin" Value="-2"/>
+					<Setter TargetName="OuterBorder" Property="BorderThickness" Value="1"/>
+					<Setter TargetName="InnerBorder" Property="BorderThickness" Value="0"/>
+					<Setter TargetName="Block" Property="Padding" Value="3,1,1,1"/>
+
+				</MultiDataTrigger>
+
+				<MultiDataTrigger>
+					<MultiDataTrigger.Conditions>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border}}, Path=IsMouseOver}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=ClickToEdit}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=SimpleHover}" Value="True"/>
+					</MultiDataTrigger.Conditions>
+					
+					<!-- border -->
+					<Setter TargetName="OuterBorder" Property="BorderBrush" Value="#919397"/>
+					<Setter TargetName="InnerBorder" Property="Background" Value="#f5f8fc"/>
+
+					<!-- cursor -->
+					<Setter Property="Cursor" Value="IBeam"/>
+				</MultiDataTrigger>
+
+				<!-- non-simple hover -->
+				<MultiDataTrigger>
+					<MultiDataTrigger.Conditions>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border}}, Path=IsMouseOver}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=ClickToEdit}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=SimpleHover}" Value="False"/>
+					</MultiDataTrigger.Conditions>
+
+					<!-- spacing -->
+					<Setter TargetName="OuterBorder" Property="Margin" Value="-1,0,0,-2"/>
+					<Setter TargetName="OuterBorder" Property="CornerRadius"  Value="2"/>
+					<Setter TargetName="InnerBorder" Property="CornerRadius"  Value="2"/>
+					<Setter TargetName="Block" Property="Padding" Value="3,0,0,2"/>
+
+					<!-- border -->
+					<Setter TargetName="OuterBorder" Property="BorderBrush" Value="PaleTurquoise"/>
+					<Setter TargetName="InnerBorder" Property="BorderBrush" Value="SteelBlue"/>
+					<Setter TargetName="InnerBorder" Property="Background"  Value="White"/>
+					<Setter TargetName="Block" Property="Foreground"  Value="Black"/>
+
+					<!-- cursor -->
+					<Setter Property="Cursor" Value="IBeam"/>
+				</MultiDataTrigger>
+
+				<!-- hand hover -->
+				<MultiDataTrigger>
+					<MultiDataTrigger.Conditions>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border}}, Path=IsMouseOver}" Value="True"/>
+						<Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:EditableTextBlock}}, Path=HandHover}" Value="True"/>
+					</MultiDataTrigger.Conditions>
+					<Setter Property="Cursor" Value="Hand"/>
+				</MultiDataTrigger>
+				
+			</DataTemplate.Triggers>
+		</DataTemplate>
+
+		<Style TargetType="{x:Type local:EditableTextBlock}">
+			<Style.Triggers>
+				<Trigger Property="IsInEditMode" Value="True">
+					<Setter Property="ContentTemplate" Value="{StaticResource EditModeTemplate}" />
+				</Trigger>
+				<Trigger Property="IsInEditMode" Value="False">
+					<Setter Property="ContentTemplate" Value="{StaticResource DisplayModeTemplate}" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</UserControl.Resources>
+</UserControl>

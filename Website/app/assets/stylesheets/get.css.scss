@@ -1,0 +1,126 @@
+#get
+{
+	.download-button { margin: 20px 0px; }
+	.white.box { padding-bottom: 20px; }	
+	
+	.message
+	{
+		font-style: italic;
+		color: rgba(0,0,0,0.7);
+		font-size: 14pt;
+		margin: 20px auto 40px;
+		width: 450px;
+	}
+	
+	form
+	{
+		label
+		{
+			font-size: 10pt;
+			font-style: normal;
+			width: auto;
+			padding: 0px 0px 0px 5px;
+		}
+	}
+	
+	.button
+	{
+		margin: 0px 0px 5px;
+	}
+}
+
+#versions, #checksums, #mirrors
+{
+	vertical-align: top;
+}
+
+#versions
+{
+	display: inline-block;
+	width: 290px;
+}
+
+#checksums
+{
+	display: inline-block;
+	width: 290px;
+}
+
+#mirrors
+{
+	display: inline-block;
+	width: 260px;
+	.mirror-image
+	{
+	}
+	.mirror-title
+	{
+		padding: 10px 20px 10px 0px;
+	}
+	.mirror-url
+	{
+	}
+	td
+	{
+		padding: 10px 0px;
+		img
+		{
+			vertical-align: middle;
+			height: 16px;
+			margin-bottom: 3px;
+		}
+	}
+}
+
+#awards
+{
+	margin: 30px 0px;
+	text-align: center;
+	
+	h1 { margin: 0px 0px 20px; }
+	
+	img
+	{
+		vertical-align: middle;
+		margin: 10px;
+		opacity: 0.9;
+		&:hover { opacity: 1; }
+	}
+}
+
+#download
+{
+	padding-bottom: 50px;
+	p
+	{
+		margin: 10px 0px 20px;
+		font-size: 12pt;
+		font-style: italic;
+		color: rgba(0,0,0,0.5);
+	}
+	
+	#download-start
+	{
+		h1 { font-size: 34pt; }
+		p { margin: 10px 0px; font-size: 14pt; }
+	}
+	#download-instructions, #download-instructions-wide
+	{
+		width: 350px;
+		margin: auto;
+		.download-instruction
+		{
+			margin-top: 70px;
+	
+			.notice
+			{
+				background: rgba(255,0,0,0.2);
+				padding: 7px 15px;
+				border: 1px solid rgba(200,0,0,0.5);
+				margin-left: 10px;
+				width: 246px;
+				text-align: center;
+			}
+		}
+	}
+}

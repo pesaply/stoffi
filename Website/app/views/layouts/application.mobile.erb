@@ -1,0 +1,81 @@
+<%= render :partial => "layouts/common" %>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<%= stylesheet_link_tag "application" %>
+	<%= stylesheet_link_tag "mobile" %>
+	<%= javascript_include_tag "mobile" %>
+</head>
+
+<body>
+
+	<header id="header">
+		<div class="blue container">
+			<%= render "pages/header" %>
+		</div>
+	</header>
+
+	<div id="root">
+		<%= yield %>
+	</div>
+	
+	<footer>
+		<p>© <%= Time.now.year %> <a href="http://www.simplare.com">simplare</a></p>
+		<p>
+			<%= link_to t("contact.link"), contact_path, :class => "link" %> · 
+			<%= link_to t("legal.link"), legal_path, :class => "link" %> · 
+			<%= link_to t("blog"), "https://blog.stoffiplayer.com", :class => "link" %> · 
+			<%= link_to t("project"), "http://dev.stoffiplayer.com", :class => "link" %>
+		</p>
+		<p>
+			<%= link_to t("money.link"), money_path, :class => "link" %> · 
+			<%= link_to t("language.title"), lang_path, :class => "link" %> · 
+			<%= link_to t("switch.desktop"), { :mobile => 0 }, :class => "link" %>
+		</p>
+	</footer>
+	
+	<div id="navigation" style="display:none;">
+		<ul>
+			<li><a onclick="javascript:toggleNavigation();">
+				<%= t "hide" %> ▶
+			</a></li>
+			<li class="separator"></li>
+			<%
+			all_tabs =
+			{
+				:outside =>
+				[
+					{ :name => "news",       :path => news_path, :hidable => true },
+					{ :name => "join",       :path => join_path, :hidable => true },
+				],
+				:inside =>
+				[
+					{ :name => "donations",  :path => new_donation_path, :hidable => true },
+					{ :name => "about",      :path => about_path },
+					{ :name => "news",       :path => news_path },
+					{ :name => "profile",    :path => profile_path },
+					{ :name => "playlists",  :path => playlists_path, :hidable => true }
+				]
+			}
+			tabs = all_tabs[user_signed_in? ? :inside : :outside]
+
+			tabs.each do |tab|
+				if tab[:separator]
+					%>
+					<li class="separator">&nbsp;</li>
+					<%
+				else
+					name = tab[:name]
+					path = tab[:path]
+					css = @tab == name ? "active" : ""
+					disp = tab[:disp] ? tab[:disp] : t("#{name}.link")
+					data = tab[:hidable] ? "yes" : "no"
+					%>
+					<li><%= link_to disp, path, :class => css, :data => { :hidable => data } %></li>
+					<%
+				end
+			end
+			%>
+		</ul>			
+	</div>
+	<script>adaptNavigation();</script>
+</body>
+</html>

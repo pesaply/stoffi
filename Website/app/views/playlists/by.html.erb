@@ -1,0 +1,18 @@
+<div id="main">
+	<div class="white box">
+		<h1><%=t "playlists.title.user", :users => @user.name.possessive %></h1>
+		<ul class="horizontal" data-field="playlists">
+			<% @playlists.each do |playlist| %>
+				<%= item playlist.name, playlist, "playlist_#{playlist.id}-name",
+						:image => "/assets/media/disc.png" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-playlists"<%= "style='display:none;'".html_safe if @playlists.length > 0 %>>
+			<%=t "playlists.empty.user", :user => @user.name %>
+		</p>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/music" %>
+</div>

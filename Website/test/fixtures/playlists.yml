@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+foo:
+    name: Foo
+    user: alice
+    is_public: 1
+    songs: not_afraid, one_love
+
+bar:
+    name: Bar
+    user: alice
+    is_public: 0
+    filter: Eminem
+    songs: not_afraid
+    subscribers: bob
+
+baz:
+    name: Baz
+    user: bob
+    is_public: 1
+    filter: Bob Marley
+    songs: one_love, no_woman_no_cry
+
+car:
+    name: Car
+    user: bob
+    is_public: 1
+    songs: one_love
+    subscribers: alice

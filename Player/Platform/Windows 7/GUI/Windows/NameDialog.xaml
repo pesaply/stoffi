@@ -1,0 +1,49 @@
+﻿<!--NameDialog.xaml
+	
+	The small dialog shown when creating or renaming profile.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<Window x:Class="Stoffi.NameDialog"
+		Name="ShortcutProfileDialog"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+		Width="250" Height="140"
+		Icon="../../../../Stoffi.ico"
+		ShowInTaskbar="False" Topmost="True"
+		WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow"
+		KeyDown="ShortcutProfileDialog_KeyDown"
+		TextOptions.TextFormattingMode="Display">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
+				   loc:Translate.Uid="DialogNameDescription" Text="{loc:Translate Text}"/>
+		<TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ProfileName" Margin="20 5"/>
+		<TextBlock Grid.Row="2" Grid.Column="0" Margin="5" TextWrapping="Wrap" Foreground="DarkRed" Name="Error" Visibility="Collapsed"
+				   loc:Translate.Uid="DialogNameExistsError" Text="{loc:Translate Text}"/>
+		<Button Grid.Row="2" Grid.Column="1" MinWidth="80" Name="OK" Click="OK_Click" IsDefault="True" VerticalAlignment="Bottom" Margin="5"
+				   loc:Translate.Uid="ButtonOK" Content="{loc:Translate Content}"/>
+	</Grid>
+</Window>

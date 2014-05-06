@@ -1,0 +1,183 @@
+<div id="get">
+	<div class="white box">
+		<div class="center">
+
+			<% if @os == "windows 7" %>
+				<% subtitle = "#{t("home.download_button.os.windows7")} &nbsp; &nbsp; #{t("home.download_button.size")}: 5.1 Mb" %>
+				<div class="download-button">
+					<%=button_tag t("home.download_button.title"), download_path, "arrow_down", { :color => :green, :subtitle => subtitle, :id => "download-button" } %>
+				</div>
+			<% else %>
+				<div class="message"><p>
+					<% if  @os == "mac" %>
+						<%=raw t("get.message.osx") %>
+					<% elsif @os == "linux" %>
+						<%=raw t("get.message.linux") %>
+					<% elsif @os == "windows old" %>
+						<%=raw t("get.message.win_old") %>
+					<% elsif @os == "windows 8" %>
+						<%=raw t("get.message.win8") %>
+					<% elsif @os == "google" || @os == "facebook" %>
+						<%=raw t("get.message.bot") %>
+					<% end %>
+				<p></div>
+			<% end %>
+
+			<%= image_tag "#{I18n.locale}/start.png", :width => "860px", :height => "290px" %>
+		</div>
+	</div>
+
+	<div class="gold box" id="awards">
+		<a name="awards"></a>
+			
+		<%= link_to image_tag("http://author.brothersoft.com/softimg/pick_109.gif"),
+			"http://www.brothersoft.com/stoffi-music-player-455731.html" %>
+		
+		<%= link_to image_tag("http://www.softpedia.com/base_img/softpedia_free_award_f.gif"),
+			"http://www.softpedia.com/get/Multimedia/Audio/Audio-Players/Stoffi-Music-Player.shtml" %>
+			
+		<%= link_to image_tag("http://filedir.com/best/dn_award.gif"),
+			"http://filedir.com/audio-multimedia/audio-file-players/stoffi-music-player-947271.html" %>
+			
+		<%= link_to image_tag("http://img.informer.com/awards/si_editor5.gif"),
+			"http://stoffi-music-player.software.informer.com/" %>
+			
+		<%= link_to image_tag("http://www.fileguru.com/resources/rate5_b2.gif"),
+			"http://fileguru.com/Stoffi-Music-Player/info " %>
+	</div>
+
+	<div class="white box">
+		<div id="versions">	
+			<h2><a name="versions"><%=t "get.versions" %></a></h2>
+			<%= form_tag "download", :url => download_path, :method => :get do %>
+				<%= label_tag "os", t("get.os") %>
+				<%= select_tag "os", options_for_select([["Windows 7", "win7"]]) %>
+				<%= label_tag "arch", t("get.arch") %>
+				<%= select_tag "arch", options_for_select([
+					[t("get.archs.32bits"), "32"]
+				]) %>
+				<%= label_tag "fat", t("get.bundle") %>
+				<%= check_box_tag "fat" %>
+				<%= label_tag "channel", t("get.channel") %>
+				<%= select_tag "channel", options_for_select([
+					[t("get.channels.stable"), "stable"],
+					[t("get.channels.beta"), "beta"],
+					[t("get.channels.alpha"), "alpha"]
+				]) %>
+				<p>&nbsp;</p>
+				<%= button_tag t("get.download"), "", "arrow_down_small", { :color => :blue, :type => :form } %>
+			<% end %>
+		</div>
+		
+		<div id="checksums">
+			<h2><a name="checksums"><%=t "get.checksums" %></a></h2>
+			<%= form_tag "download", :url => download_path(:checksum => true), :method => :get do %>
+				<%= hidden_field_tag "type", "checksum" %>
+				<%= label_tag "os", t("get.os") %>
+				<%= select_tag "os", options_for_select([["Windows 7", "win7"]]) %>
+				<%= label_tag "arch", t("get.arch") %>
+				<%= select_tag "arch", options_for_select([
+					[t("get.archs.32bits"), "32"]
+				]) %>
+				<%= label_tag "fat", t("get.bundle") %>
+				<%= check_box_tag "fat" %>
+				<%= label_tag "channel", t("get.channel") %>
+				<%= select_tag "channel", options_for_select([
+					[t("get.channels.stable"), "stable"],
+					[t("get.channels.beta"), "beta"],
+					[t("get.channels.alpha"), "alpha"]
+				]) %>
+				<p>&nbsp;</p>
+				<%= button_tag t("get.getsum"), "", "check", { :color => :blue, :type => :form } %>
+			<% end %>
+		</div>
+		
+		<div id="mirrors">
+			<h2><a name="mirrors"><%=t "get.mirrors" %></a></h2>
+			<%
+			mirrors =
+			[
+				{
+					:title => "Softpedia",
+					:type => :gold,
+					:url => "http://www.softpedia.com/get/Multimedia/Audio/Audio-Players/Stoffi-Music-Player.shtml"
+				},
+				{
+					:title => "CNET",
+					:type => :gold,
+					:url => "http://download.cnet.com/Stoffi/3000-2133_4-75610202.html?tag=mncol;1"
+				},
+				{
+					:title => "filecluster",
+					:type => :gold,
+					:url => "http://www.filecluster.com/Audio-Video/Media-Players/Download-Stoffi-Music-Player.html"
+				},
+				{
+					:title => "BrotherSoft",
+					:url => "http://www.brothersoft.com/stoffi-music-player-455731.html"
+				},
+				{
+					:title => "Tucows",
+					:type => :blue,
+					:url => "http://www.tucows.com/preview/1294571/Stoffi-Music-Player"
+				},
+				{
+					:title => "NoNags",
+					:type => :blue,
+					:url => "http://www.nonags.com/freeware-stoffi-music-player_3990.html"
+				},
+				{
+					:title => "software.informer",
+					:type => :blue,
+					:url => "http://stoffi.software.informer.com/"
+				}
+			]
+			%>
+			<% mirrors.each do |m| %>
+				<%=button_tag m[:title], m[:url], m[:title].downcase, { :color => m[:type], :width => 220 } %><br/>
+			<% end %>
+		</div>
+	</div>
+</div>
+	
+	<!--
+	
+	<div class="main center">
+		<div class="goldenbox">
+			<h1 class="title collapsed interactive" onclick="toggleBox(this, 'variants');" id="variants-toggler">
+				<%=t "get.versions" %>
+			</h1>
+			<div id="variants" style="display: none;">
+			</div>
+		</div>
+		
+		<div class="goldenbox">
+			<h1 class="title collapsed interactive" onclick="toggleBox(this, 'mirrors');" id="mirrors-toggler">
+				<%=t "get.mirrors" %>
+			</h1>
+			<div id="mirrors" style="display: none;">
+			
+			</div>
+		</div>
+		
+		<div class="goldenbox">
+			<h1 class="title collapsed interactive" onclick="toggleBox(this, 'checksums');" id="checksums-toggler">
+				<%=t "get.checksums" %>
+			</h1>
+			<div id="checksums" style="display: none;">
+			</div>
+		</div>
+		
+		<div class="goldenbox">
+			<h1 class="title collapsed interactive" onclick="toggleBox(this, 'awards');" id="awards-toggler">
+				<%=t "get.awards" %>
+			</h1>
+			<div id="awards" style="display: none;" class="center">
+					
+					
+			</div>
+		</div>
+	</div>
+	
+</div>
+-->

@@ -1,0 +1,1 @@
+$('#artists').html('<%= escape_javascript(render :partial => "artists/index", :locals => { :show => params[:show].to_sym }) %>');

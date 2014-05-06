@@ -1,0 +1,233 @@
+<!--This page is used by Stoffi Music Player to play YouTube clips.-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>YouTube Player For Stoffi</title>
+		<script src="http://www.google.com/jsapi"></script> 
+		<script>
+			if (google != null)
+				google.load("swfobject", "2.1");
+		</script> 
+		<style type="text/css"> 
+
+			html, body { margin: 0; padding: 0; }
+			body
+			{
+				font-family: verdana, helvetica;
+				background-color: red;
+				width: 100%;
+				height: 100%;
+			}
+			#ytapiplayer
+			{
+				color: black;
+				text-align: center;
+				padding: 0px 50px;
+				font-size: large;
+				width: 100%;
+				height: 100%;
+			}
+			#ytapiplayer a
+			{
+				color: orange;
+				text-decoration: none;
+			}
+			#ytapiplayer div
+			{
+				font-size: small;
+				padding: 50px 0px;
+				color: #555;
+			}
+			#myytplayer
+			{
+				height: 500px;
+				width: 100%;
+			}
+		</style> 
+		<script type="text/javascript">
+
+			ytplayer = null;
+
+			function onYouTubePlayerReady(playerId)
+			{
+				ytplayer = document.getElementById("myytplayer");
+				if (ytplayer != null)
+				{
+					ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
+					ytplayer.addEventListener("onError", "onPlayerError");
+					window.external.OnPlayerReady();
+				}
+			}
+
+			function onPlayerError(errorCode)
+			{
+				window.external.OnVideoError(errorCode);
+			}
+
+			function onytplayerStateChange(newState)
+			{
+				window.external.OnStateChanged(parseInt(newState));
+			}
+
+			// functions for the api calls
+			function loadNewVideo(id, startSeconds)
+			{
+				if (ytplayer)
+					ytplayer.loadVideoById(id, parseInt(startSeconds));
+			}
+
+			function cueNewVideo(id, startSeconds)
+			{
+				if (ytplayer)
+					ytplayer.cueVideoById(id, parseInt(startSeconds));
+			}
+
+			function play()
+			{
+				if (ytplayer)
+					ytplayer.playVideo();
+			}
+
+			function pause()
+			{
+				if (ytplayer)
+					ytplayer.pauseVideo();
+			}
+
+			function stop()
+			{
+				if (ytplayer)
+					ytplayer.stopVideo();
+			}
+
+			function getPlayerState()
+			{
+				if (ytplayer)
+					return ytplayer.getPlayerState();
+			}
+
+			function seekTo(seconds)
+			{
+				if (ytplayer)
+					ytplayer.seekTo(seconds, true);
+			}
+
+			function getBytesLoaded()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoBytesLoaded();
+			}
+
+			function getBytesStart()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoStartBytes();
+			}
+
+			function getBytesTotal()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoBytesTotal();
+			}
+
+			function getCurrentTime()
+			{
+				if (ytplayer)
+					return ytplayer.getCurrentTime();
+			}
+
+			function getDuration()
+			{
+				if (ytplayer)
+					return ytplayer.getDuration();
+			}
+
+			function getStartBytes()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoStartBytes();
+			}
+
+			function mute()
+			{
+				if (ytplayer)
+					ytplayer.mute();
+			}
+
+			function unMute()
+			{
+				if (ytplayer)
+					ytplayer.unMute();
+			}
+
+			function getEmbedCode()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoEmbedCode();
+			}
+
+			function getVideoUrl()
+			{
+				if (ytplayer)
+					return ytplayer.getVideoUrl();
+			}
+
+			function setVolume(newVolume)
+			{
+				if (ytplayer)
+					ytplayer.setVolume(newVolume);
+			}
+
+			function getVolume()
+			{
+				if (ytplayer)
+					return ytplayer.getVolume();
+			}
+
+			function clearVideo()
+			{
+				if (ytplayer)
+					ytplayer.clearVideo();
+			}
+		</script> 
+	</head> 
+	<body id="page" scroll="no">
+	
+		<!-- embed the player --> 
+		<div id="ytapiplayer"> 
+			You need Adobe Flash Player to listen to YouTube tracks.<br/>
+			<a href="http://get.adobe.com/flashplayer/" target="_blank">Download it from Adobe.</a>
+		</div>
+		
+		<script type="text/javascript"> 
+			// <![CDATA[
+
+			// allowScriptAccess must be set to allow the Javascript from one 
+			// domain to access the swf on the youtube domain
+			var params = { allowScriptAccess: "always", bgcolor: "#cccccc" };
+			
+			// this sets the id of the object or embed tag to 'myytplayer'.
+			// You then use this id to access the swf and make calls to the player's API
+			var atts = { id: "myytplayer" };
+			if (swfobject != null)
+				swfobject.embedSWF("http://www.youtube.com/apiplayer?border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;version=3&amp;loop=0", "ytapiplayer", "100%", "100px", "8", null, null, params, atts);
+			
+			try
+			{
+				var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+				if (fo)
+					fo = null;
+				else
+					window.external.OnNoFlash();
+			}
+			catch (e)
+			{				
+				if (navigator.mimeTypes["application/x-shockwave-flash"] == undefined)
+					window.external.OnNoFlash();
+			}
+
+			//]]>
+		</script>
+	</body> 
+</html>

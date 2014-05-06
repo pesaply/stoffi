@@ -1,0 +1,13 @@
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+	<% if any_errors?(resource) %>
+		<div class="error">
+			<%= pretty_error(resource) %>
+		</div>
+	<% end %>
+
+	<%= f.email_field :email, :class => "field", :placeholder => t("dialog.email_placeholder") %>
+	
+	<%=button_tag t("forgot.link"), nil, "question", { :type => :form, :color => :gold } %>
+	
+	<%= render :partial => "devise/shared/links" %>
+<% end %>

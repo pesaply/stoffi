@@ -1,0 +1,102 @@
+<div id="main">
+	<div class="white box">
+		<% if params[:sent] && params[:sent] == "success" %>
+			<div class="notice"><%=t "contact.email.sent" %></div>
+		<% end %>
+		<h1><%=t "contact.issue.title" %></h1>
+		<p>
+			<%=t "contact.issue.text_html", :link => link_to(t("contact.issue.link"), "http://dev.stoffimusic.com/issues/entry") %>
+		</p>
+		<p>&nbsp;</p>
+
+		<h1><%=t "contact.email.title" %></h1>
+		<%= form_tag mail_path do %>
+
+			<% if flash[:error] %>
+				<div class="error"><%= flash[:error] %></div>
+			<% end %>
+
+			<%= label_tag :name, t("contact.email.name") %>
+			<%= text_field_tag :name, params[:name], :class => "entry" %>
+
+			<%= label_tag :email, t("contact.email.email") %>
+			<%= text_field_tag :email, params[:email], :class => "entry" %>
+
+			<%= label_tag :subject, t("contact.email.subject") %>
+			<%= text_field_tag :subject, params[:subject], :class => "entry" %>
+
+			<%= label_tag :message, t("contact.email.message") %>
+			<%= text_area_tag :message, params[:message], :class => "entry", :cols => 50, :rows => 10 %>
+
+			<%= label_tag :captca, t("contact.email.captcha") %>
+			<%= recaptcha_tags :ssl => true, :display => { :theme => "white", :lang => I18n.locale,
+				:custom_translations =>
+				{
+					:instructions_visual => t("recaptcha.instructions_visual"),
+					:instructions_audio  => t("recaptcha.instructions_audio"),
+					:play_again          => t("recaptcha.play_again"),
+					:cant_hear_this      => t("recaptcha.cant_hear_this"),
+					:visual_challenge    => t("recaptcha.visual_challenge"),
+					:audio_challenge     => t("recaptcha.audio_challenge"),
+					:refresh_btn         => t("recaptcha.refresh_btn"),
+					:help_btn            => t("recaptcha.help_btn")
+				} }
+			%>
+
+			<%= button_tag t("contact.email.send"), "", "", { :type => :form, :color => :blue } %>
+		<% end %>
+		<p>&nbsp;</p>
+		
+		<h1><%=t "contact.visit.title" %></h1>
+		<p>
+			Djäknegatan 81<br/>
+			754 25 Uppsala<br/>
+			<%=t "contact.visit.sweden" %>
+		</p>
+		<div class="place-center" style="width: 580px; height: 400px;border:1px solid black;">
+			<div id="map" style="width: 580px; height: 400px;"></div>
+			<script>
+			
+			var lat = 59.873154;
+			var lng = 17.641365;
+
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 3,
+				center: new google.maps.LatLng(lat, lng),
+				mapTypeId: google.maps.MapTypeId.TERRAIN
+			});
+
+			var infowindow = new google.maps.InfoWindow();
+			var marker, i;
+
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(lat, lng),
+				map: map
+			});
+
+			google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				return function()
+				{
+					infowindow.setContent("Your device was accessed from this point");
+					infowindow.open(map, marker);
+				}
+			})(marker, i));
+			</script>
+		</div>
+		<small>
+		<a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Dj%C3%A4knegatan+81,+Uppsala,+Sweden&amp;aq=0&amp;oq=dj%C3%A4knegatan&amp;sll=37.0625,-95.677068&amp;sspn=31.426353,57.128906&amp;ie=UTF8&amp;hq=&amp;hnear=Dj%C3%A4knegatan+81,+754+25+Uppsala,+Sweden&amp;t=m&amp;z=14&amp;ll=59.873154,17.641365"
+		   style="text-align:left">
+			<%=t "contact.visit.map_link" %>
+		</a></small>
+		
+		<h1><%=t "contact.phone.title" %></h1>
+		<p>
+			<%= I18n.locale.to_s == "se" ? "0":"+46 (0) " %>76 1337 235
+		</p>
+		<p>&nbsp;</p>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/main" %>
+</div>

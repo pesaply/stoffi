@@ -1,0 +1,58 @@
+<div id="main">
+	<div class="white box">
+		<% if @added.length > 0 %>
+			<h1><%=t "apps.personal" %></h1>
+			<ul class="apps">
+				<% @added.each do |app| %>
+					<% token = @tokens[app.id] %>
+					<li class="app">
+						<%= button_tag t("apps.revoke"), revoke_app_path(app), "delete",
+							:class => :small, :method => :delete, :confirm => t("confirm") %>
+						<%= image_tag app.large_icon, :class => "app-img" %>
+						<div class="content">
+							<div>
+								<strong><%=app.name%></strong>
+								<span class="author">
+									<%=raw t("by", :name => link_to(app.author, app.author_url)) %>
+								</span>
+							</div>
+							<p class="description"><%= app.description %></p>
+							<p class="meta" title="<%=token.created_at%>">
+								<%=t "apps.added", :time => time_ago_in_words(token.created_at) %>
+							</p>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+		
+		<% if @created.length > 0 %>
+			<h1><%=t "apps.created" %></h1>
+			<ul class="apps">
+				<% @created.each do |app| %>
+					<li class="app">
+						<%= button_tag t("apps.edit"), app_path(app), "edit", :color => :blue, :class => :small %>
+						<%= image_tag app.large_icon, :class => "app-img" %>
+						<div class="content">
+							<div>
+								<strong><%=app.name%></strong>
+								<span class="author">
+									<%=raw t("by", :name => link_to(app.author, app.author_url)) %>
+								</span>
+							</div>
+							<p class="description"><%= app.description %></p>
+							<p class="meta" title="<%=app.created_at%>">
+								<%=t "apps.created_at", :time => time_ago_in_words(app.created_at) %>
+							</p>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+		<%=button_tag t("apps.create"), new_app_path %>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/user" %>
+</div>

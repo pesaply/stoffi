@@ -1,0 +1,25 @@
+<div class="notice">
+	<%= pretty_error @language %>
+</div>
+
+<div>
+	<%= f.label :native_name, t("language.native_name") %>
+	<%= f.text_field :native_name, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :english_name, t("language.english_name") %>
+	<%= f.text_field :english_name, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :iso_tag, t("language.iso_tag") %>
+	<%= f.text_field :iso_tag, :class => "field", :size => 40 %>
+	<br/><p class="example"><%=t "language.iso_tag_example" %></p>
+</div>
+
+<div>
+	<%= f.label :ietf_tag, t("language.ietf_tag") %>
+	<%= f.text_field :ietf_tag, :class => "field", :size => 40 %>
+	<br/><p class="example"><%=t "language.ietf_tag_example" %></p>
+</div>

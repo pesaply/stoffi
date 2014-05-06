@@ -1,0 +1,40 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require default
+ *= require boxes
+ *= require form
+ *= require lists
+ *= require buttons
+ *= require editable
+ *= require header
+ *= require footer
+ *= require dialog
+ *= require paginate
+ *
+ *= require jquery.qtip.min
+ *= require vendor
+ *
+ *= require home
+ *= require about
+ *= require tour
+ *= require donations
+ *= require news
+ *= require get
+ *= require user
+ *= require song
+ *= require artist
+ *= require apps
+ *= require remote
+ *= require search
+ */
+
+a.soundcloud-badge:hover { background-position: bottom left !important; }
+
+html a.soundcloud-badge
+{
+	background-image: none !important;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='(http://a1.sndcdn.com/images/badges/imonsc/square/blue.png?c052af5)', sizingMethod='crop') !important;
+}

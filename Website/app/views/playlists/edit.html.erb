@@ -1,0 +1,11 @@
+<div id="main">
+	<div class="white box">
+		<h1 data-field="playlist-<%=@playlist.id%>-name"><%=h @playlist.name %></h1>
+
+		<%= render "form" %>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/music" %>
+</div>

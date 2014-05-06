@@ -1,0 +1,25 @@
+#contribute
+{
+	display: inline-block;
+	margin: auto;
+	
+	h1
+	{
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.gridbox
+	{
+		width: 150px;
+		margin: 20px;
+		padding: 20px;
+		img { opacity: 0.8; }
+		&:hover
+		{
+			color: white !important;
+			img { opacity: 1; }
+		}
+	}
+}

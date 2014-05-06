@@ -1,0 +1,39 @@
+# note: this never worked properly so routes are currently not translated
+#
+# needs to be fixed:
+# 1) path_for and url_for looks like this:
+#      foo?i18n_locale=XX
+#    should be:
+#      XX/foo
+#
+# 2) link_to 'foo', :i18n_locale => XX
+#    for example when on swedish news page and
+#    changing language to english it should go
+#    from:
+#      sv/nyheter
+#    to:
+#      en/news
+#
+# When these two issues are fixed we can start
+# using translated URLs.
+us:
+  resources:
+    devices: "devices"
+
+  path_names:
+    new: "new"
+    edit: "edit"
+    create: "create"
+    destroy: "destroy"
+    update: "update"
+
+  named_routes_path:
+    news: "news"
+    get: "get"
+    download: "download"
+    about: "about"
+    contact: "contact"
+    legal: "rules"
+    money: "money"
+    tour: "tour"
+    contribute: "contribute"

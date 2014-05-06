@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+	  xmlns:fb="https://www.facebook.com/2008/fbml"
+	  xml:lang="<%=langtag(I18n.locale)%>" lang="<%=langtag(I18n.locale)%>">
+<head<%= raw " prefix=\"#{@head_prefix}\"" if @head_prefix%>>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="music player, audio player, mp3 player, free music player, free audio player, free mp3 player, stoffiplayer, stoffi" />
+	<meta name="description" content="<%=d @description%>" />
+	<meta name="copyright" content="Simplare" />
+	<meta name="content-language" content="<%=langtag(I18n.locale)%>" />
+	<title><%=d title %></title>
+	
+	<% if @file && @autodownload %>
+		<meta http-equiv="Refresh" Content="2;URL=https://www.stoffiplayer.com<%=@file%>" />
+	<% end %>
+	
+	<%
+	if @meta_tags
+		@meta_tags.each do |meta_tag|
+			if meta_tag[:content] && meta_tag[:content] != ""
+				%>
+				<meta property="<%=meta_tag[:property].to_s%>" content="<%=meta_tag[:content].to_s%>"/>
+				<%
+			end
+		end
+	end
+	%>
+	
+	<link rel="shortcut icon" href="https://www.stoffiplayer.com/assets/gfx/logos/blue_on_transparent_16.png"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="https://ws.stoffiplayer.com:8080/application.js" type="text/javascript" charset="utf-8"></script>
+	
+	<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag "realtime" %>
+	<%= csrf_meta_tags %>
+	
+	<script>
+		var locale = "<%= I18n.locale %>";
+		<% unless channels.empty? %>
+			<% c = "["+channels.map{|c|"'#{c}'"}.join(",")+"]" %>
+			<% u = @current_user ? @current_user.id : "null" %>
+			<% d = @current_device ? @current_device.id : "null" %>
+			var realtimeChannels = <%=c.html_safe%>;
+			var realtimeUserID = <%=u%>;
+			var realtimeDeviceID = <%=d%>;
+			var realtimeSessionID = null;
+			var realtimeObject = null;
+			var realtimeReconnectInterval = null;
+
+			$(document).ready(function()
+			{
+				window.WEB_SOCKET_SWF_LOCATION = "https://ws.stoffiplayer.com:8080/socket.io/WebSocketMain.swf"
+				$.ajaxSetup({ beforeSend:function(xhr)
+				{
+					xhr.setRequestHeader("X-Session-ID", realtimeSessionID);
+					xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'));
+				}});
+			});
+	
+			connectRealtime();
+		<%end%>
+	</script>

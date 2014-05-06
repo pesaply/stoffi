@@ -1,0 +1,110 @@
+﻿<!--Associations.xaml
+	
+	The dialog used to finely configure the files and various
+	protocols that the application should associate itself with.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<Window x:Class="Stoffi.Associations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+		loc:Translate.Uid="AssociationsCustom"
+        Title="{loc:Translate Title}" Width="400"
+		SizeToContent="Height"
+		ResizeMode="NoResize"
+		Icon="../../../../Stoffi.ico"
+		SnapsToDevicePixels="True"
+		WindowStartupLocation="CenterScreen">
+	<StackPanel Orientation="Vertical">
+		<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="0" Padding="0" MaxHeight="400">
+			<Grid Margin="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Grid.ColumnSpan="2" Grid.Row="0" Margin="5" TextWrapping="WrapWithOverflow"
+					   Foreground="#003399" FontSize="16" loc:Translate.Uid="AssociationsCustomHeader" Text="{loc:Translate Text}"/>
+				<TextBlock Grid.ColumnSpan="2" Grid.Row="1" Margin="5" TextWrapping="WrapWithOverflow"
+					   loc:Translate.Uid="AssociationsCustomText" Text="{loc:Translate Text}"/>
+
+				<CheckBox Grid.Column="0" Grid.Row="2" loc:Translate.Uid="AssociationsCustomSongs" Content="{loc:Translate Content}" Margin="5" Name="Songs" Click="Songs_Click" IsChecked="True"/>
+				<Expander Grid.Column="0" Grid.Row="3" loc:Translate.Uid="AssociationsCustomExpander" Header="{loc:Translate Header}" Margin="5">
+					<StackPanel Margin="10">
+						<CheckBox Name="AAC" Content="AAC" Tag="aac" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="AC3" Content="AC3" Tag="ac3" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="AIF" Content="AIF" Tag="aif" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="AIFF" Content="AIFF" Tag="aiff" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="APE" Content="APE" Tag="ape" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="APL" Content="APL" Tag="apl" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="BWF" Content="BWF" Tag="bwf" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="FLAC" Content="FLAC" Tag="flac" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="M1A" Content="M1A" Tag="m1a" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="M2A" Content="M2A" Tag="m2a" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MPPlus" Content="MP+" Tag="mp+" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MP1" Content="MP1" Tag="mp1" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MP2" Content="MP2" Tag="mp2" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MP3" Content="MP3" Tag="mp3" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MP3Pro" Content="MP3Pro" Tag="mp3pro" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MPA" Content="MPA" Tag="mpa" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MPC" Content="MPC" Tag="mpc" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MPP" Content="MPP" Tag="mpp" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="MUS" Content="MUS" Tag="mus" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="OFR" Content="OFR" Tag="ofr" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="OFS" Content="OFS" Tag="ofs" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="OGG" Content="OGG" Tag="ogg" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="SPX" Content="SPX" Tag="spx" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="TTA" Content="TTA" Tag="tta" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="WAV" Content="WAV" Tag="wav" Click="Song_Click" IsChecked="True"/>
+						<CheckBox Name="WV" Content="WV" Tag="wv" Click="Song_Click" IsChecked="True"/>
+					</StackPanel>
+				</Expander>
+
+				<CheckBox Grid.Column="1" Grid.Row="2" loc:Translate.Uid="AssociationsCustomPlaylists" Content="{loc:Translate Content}" Margin="5" Name="Playlists"
+						  Click="Playlists_Click" IsChecked="True"/>
+				<Expander Grid.Column="1" Grid.Row="3" loc:Translate.Uid="AssociationsCustomExpander" Header="{loc:Translate Header}" Margin="5">
+					<StackPanel Margin="10">
+						<CheckBox Name="M3U" Content="M3U" Tag="m3u" Click="Playlist_Click" IsChecked="True"/>
+						<CheckBox Name="PLS" Content="PLS" Tag="pls" Click="Playlist_Click" IsChecked="True"/>
+					</StackPanel>
+				</Expander>
+
+				<CheckBox Grid.Column="2" Grid.Row="2" loc:Translate.Uid="AssociationsCustomOther" Content="{loc:Translate Content}" Margin="5" Name="Other"
+						  Click="Others_Click" IsChecked="True"/>
+				<Expander Grid.Column="2" Grid.Row="3" loc:Translate.Uid="AssociationsCustomExpander" Header="{loc:Translate Header}" Margin="5">
+					<StackPanel Margin="10">
+						<CheckBox Name="SPP" loc:Translate.Uid="AssociationsCustomSPP" Content="{loc:Translate Content}" Tag="spp" Click="Other_Click" IsChecked="True"/>
+						<CheckBox Name="SCX" loc:Translate.Uid="AssociationsCustomSCX" Content="{loc:Translate Content}" Tag="scx" Click="Other_Click" IsChecked="True"/>
+					</StackPanel>
+				</Expander>
+			</Grid>
+		</ScrollViewer>
+
+		<DockPanel Background="#f0f0f0" Margin="0">
+			<Label Foreground="Blue" loc:Translate.Uid="AssociationsCustomFootLink" Content="{loc:Translate Content}" DockPanel.Dock="Left" Cursor="Hand" Name="LearnMore"
+					MouseLeftButtonDown="LearnMore_MouseLeftButtonDown" VerticalAlignment="Center" Margin="5 0 0 0"/>
+			<Button DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalContentAlignment="Top" MinWidth="73" Padding="0" Height="21"
+					Margin="5" Name="OK" Click="OK_Click" loc:Translate.Uid="ButtonOK" Content="{loc:Translate Content}"/>
+		</DockPanel>
+	</StackPanel>
+</Window>

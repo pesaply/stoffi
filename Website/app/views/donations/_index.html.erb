@@ -1,0 +1,16 @@
+<div class="overlay_wrapper">
+	<div class="overlay" id="overlay" style="display: none;">
+		<%= image_tag "gfx/ajax_loading.gif" %>
+	</div>
+	<ul class="donations bigitems" id="donation_list">
+		<% @donations.each do |donation| %>
+			<li>
+				<%= donation_item donation %>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div class="center">
+	<%= will_paginate @donations,
+		:param_name => :donation_page %>
+</div>

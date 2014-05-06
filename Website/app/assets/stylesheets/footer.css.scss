@@ -1,0 +1,55 @@
+$color1: lighten(#FECB00, 10%);
+$color2: lighten(#005293, 20%);
+
+footer
+{
+	border-top: 2px solid rgba(255,255,255,0.5);
+	box-shadow: inset 0px 5px 10px rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.1);
+	text-transform: lowercase;
+	color: rgba(0,0,0,0.2);
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+	height: 100px;
+	margin-top: -112px;
+	position: relative;
+	clear: both;
+	padding: 10px 0px 0px;
+	
+	p
+	{
+		margin: 0px;
+		padding: 10px;
+	}
+	
+	a:hover { text-decoration: none; }
+	
+	.copyright
+	{
+		font-weight: bold;
+		letter-spacing: 5px;
+		a
+		{
+			color: rgba(0,0,0,0.2);
+			text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+			&:hover
+			{
+				color: rgba(0,0,0,0.3);
+			}
+		}
+	}
+	
+	.links
+	{
+		letter-spacing: 2px;
+		a
+		{
+			color: rgba(0,0,0,0.4);
+			padding: 5px 10px;
+			text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+			&:hover
+			{
+				color: rgba(0,0,0,0.6);
+			}
+		}
+	}
+}

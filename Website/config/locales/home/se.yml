@@ -1,0 +1,84 @@
+se:
+  home:
+    slides:
+      read_more: "Läs mer"
+
+      youtube:
+        title:      "Stoffi ♥ Stömmnig"
+        text_html:  "Lyssna på YouTube och SoundCloud direkt i Stoffi. Skapa spellistor, dela musik.</p><p>Musik direkt vid dina fingertoppar."
+
+      charity:
+        title:      "Rädda världen"
+        text_html:  "Vi älskar världen. Därför genererar varje donation välgörenhet.</p><p>Rädda världen och stöd dina artister med Stoffi."
+
+      playlists:
+        title:      "Skapa spellistor snabbt"
+        text_html:  "Att skapa spellistor är enkelt i Stoffi.</p><p>Skapa dem genom sök eller bara dra. Du kan även skapa en temporär lista med kön."
+
+      remote:
+        title:      "Fjärrstyrning"
+        text_html:  "Förvandla din iPad, iPhone eller iPod till en fjärrkontroll.</p><p>Se vad som spelas, ändra volym eller byt låt."
+
+      formats:
+        title:      "Spelar all din musik"
+        text_html:  "Stoffi stödjer över 20 olika filformat: mp3, wav, flac, ogg och mycket mer.</p><p>Den spelar till och med från YouTube och SoundCloud!"
+
+      mind_reader:
+        title:      "Tankeläsare"
+        text_html:  "Luta dig tillbaka och låt Stoffi välja låt åt dig.</p><p>Stoffi lär sig din smak för att kunna ge dig de bästa förslagen."
+
+      interface:
+        title:      "Vackert gränssnitt"
+        text_html:  "Stoffi har ett vackert gränssnitt som passar in i ditt system.</p><p>Den är gjord för att se ut som en del av datorn."
+
+      social:
+        title:      "Musik är socialt"
+        text_html:  "Dela din musikupplevelse.</p><p>Hitta musik du aldrig lyssnat på tidigare och dela dina favoritlåtar med dina vänner."
+
+      focus:
+        title:      "Fokus på din musik"
+        text_html:  "Med automatisk skanner och tysta uppgraderingar håller sig Stoffi i bakgrunden.</p><p>Inga mer dialoger, inga mer avbrott."
+
+      cloud:
+        title:      "Molnuppkoppling"
+        text_html:  "Stoffi kommer med flera molntjänster.</p><p>Synkronisera din stationära och bärbara enkelt. Logga in med Twitter, Facebook, Google och mer."
+
+      bookmarks:
+        title:      "Bokmärk dina låtar"
+        text_html:  "Markera de bra delarna. Med bara ett klick.</p><p>Hoppa till de bästa topparna eller ta bort det dåliga introt på nolltid."
+
+    download_button:
+      title: "Ladda ner nu"
+      os:
+        windows7: "För Windows 7"
+      size: "Storlek"
+      
+    latest:
+      title: "Senaste nytt"
+      text_html: "<p>I den senaste versionen handlar allt om mer musik. Du kan nu strömma musik från SoundCloud och Internetradio.</p><p>Det nya pluginsystemet låter dig bygga ut din musikupplevelse ännu mer. Lägg till vackra visualiserare eller installera filter som kan manipulera ljudet.</p><p>Nu kan man dela spellistor och musik i ett enda klick. Alla länkar spelas automatiskt upp i Stoffi.</p>"
+      more: "Mer nytt"
+      
+    highlights:
+      music:
+        title: "All musik"
+        text: "Direkt strömmning från SoundCloud och YouTube."
+      face:
+        title: "Ur vägen"
+        text: "Tysta uppgraderingar och automatiskt skanner."
+      social:
+        title: "Sociala vibbar"
+        text: "Dela på Twitter och Facebook med ett enda klick."
+      remote:
+        title: "Du styr"
+        text: "Fjärrkontroll via hemsida eller iPhone app."
+
+    quotes:
+      winajuda: "...integrerar bra med Windows 7..."
+      softonic: "...gränssnittet är väldigt vackert..."
+      3d2f: "...lätt att använda och vacker att se på"
+
+    old:
+      title: "Du är i fara!"
+      subtitle: "Du använder en gammal webbläsare för att surfa på nätet. Detta ökar risken för att få dina uppgifter stulna och dator infekterad. Det innebär också att den här sidan kanske inte ser bra ut eller ens fungerar som den ska."
+      call: "Snälla, uppgradera till en modern webbläsare. Här är vad som är populärt hos kidsen idag:"
+      link: "Jag kan inte uppgradera."

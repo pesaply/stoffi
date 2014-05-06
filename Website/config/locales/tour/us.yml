@@ -1,0 +1,63 @@
+us:
+  barfoo: "barzfooz"
+  tour:
+    youtube:
+      title: "Any music you want"
+      text1: "Find any music you want and listen to it instantly."
+      text2: "There's millions of tracks waiting for you."
+    sources:
+      title: "Discover your music"
+      text1: "Stoffi automatically searches your default music folders."
+      text2: "Add more music with a simple drag-n-drop."
+    playlists:
+      title: "Quickly create playlists"
+      text1: "Create playlists by drag-n-drop or right-click on a search to add the results."
+      text2: "You can also use the queue to create a temporary playlist."
+    interface:
+      title: "Beautiful interface"
+      text1: "A beautiful interface that just looks good."
+      text2: "No more vomit on your screen."
+    shortcuts:
+      title: "Extensive keyboard shortcuts"
+      text1: "Hate that mouse? Stoffi lets you use the keyboard for <b>everything</b>."
+      text2: "If you're used to the shortcuts of another music player you can keep using them, no problem..."
+    bookmarks:
+      title: "Remember that special peak"
+      text1: "Place bookmarks at those great peaks."
+      text2: "Now you can quickly skip the bad parts."
+    jumplists:
+      title: "Windows 7 integration"
+      text1: "Stoffi loves Windows 7."
+      text2: "Use Jumplists or Taskbar buttons to quickly access your music."
+    formats:
+      title: "No codecs needed"
+      text1: "We hate having to install extra codec packs."
+      text2: "That's why Stoffi supports over 25 formats out of the box."
+    focus:
+      title: "Upgrades automatically"
+      text1: "No more popups, no more interruptions."
+      text2: "Stoffi upgrades itself in the background, so you can focus on more important stuff. Like your music!"
+    settings:
+      title: "Easy but powerful configuration"
+      text1: "We want settings to be easy to use."
+      text2: "Stoffi features a simplified Control Panel clone that just looks great and feels light."
+    history:
+      title: "What was that song again?"
+      text1: "Want to go back and see what that song was?"
+      text2: "Use the History to see all tracks that have been played."
+    backup:
+      title: "Backup your stuff"
+      text1: "Save your playlists, settings and queue."
+      text2: "Even your sorting and he list you were currently looking at will be saved!"
+    quickedit:
+      title: "Quickly edit tracks"
+      text1: "Fix that title or change that year with ease."
+      text2: "Stoffi gives you quick access to meta data."
+    equalizer:
+      title: "Tune the sound"
+      text1: "Turn up the bass or create the sound of a great hall."
+      text2: "The equalizer doesn't work on YouTube tracks yet, though."
+    generator:
+      title: "Generate random playlists"
+      text1: "Need to create a playlist for the car or your MP3 player?"
+      text2: "Generate a random playlist in just a few seconds."

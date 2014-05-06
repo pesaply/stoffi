@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58D25A22-7243-4D55-84DC-C545C079DC03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stoffi</RootNamespace>
+    <AssemblyName>Stoffi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://stoffiplayer.com/download/</InstallUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Stoffi</ProductName>
+    <PublisherName>Simplare</PublisherName>
+    <SuiteName>Stoffi Music Player</SuiteName>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>9944</ApplicationRevision>
+    <ApplicationVersion>1.39.930.9944</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Stoffi.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Stoffi.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Stoffi.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6A1A9E3DD407ACE8A54496050562235CE04F0C59</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bass.Net, Version=2.4.8.6, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\Bass.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DwmWrapper">
+      <HintPath>External\DwmWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client, Version=1.8.0.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions, Version=1.8.0.0, Culture=neutral, PublicKeyToken=0b4c5df2ebf20876, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.YouTube">
+      <HintPath>External\Google.GData.YouTube.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>External\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>External\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>External\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="taglib-sharp">
+      <HintPath>External\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Tomers.WPF.Localization">
+      <HintPath>External\Tomers.WPF.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>External\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Platform\Windows 7\GUI\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Core\PluginManager.cs" />
+    <Compile Include="Core\FilesystemManager.cs" />
+    <Compile Include="Core\MediaManager.cs" />
+    <Compile Include="Core\OAuth.cs" />
+    <Compile Include="Core\PlaylistManager.cs" />
+    <Compile Include="Core\ServiceManager.cs" />
+    <Compile Include="Core\SettingsManager.cs" />
+    <Compile Include="Core\SoundCloudManager.cs" />
+    <Compile Include="Core\YouTubeManager.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Controls\Bookmark.xaml.cs">
+      <DependentUpon>Bookmark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\ControlPanel\Plugins.xaml.cs">
+      <DependentUpon>Plugins.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\ControlPanel\Services.xaml.cs">
+      <DependentUpon>Services.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\Details.xaml.cs">
+      <DependentUpon>Details.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\Navigation.xaml.cs">
+      <DependentUpon>Navigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\Playback.xaml.cs">
+      <DependentUpon>Playback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\EnhancedSlider.xaml.cs">
+      <DependentUpon>EnhancedSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\SoundCloudTracks.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Controls\Visualizer.xaml.cs">
+      <DependentUpon>Visualizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\YouTubeTracks.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Windows\OpenURL.xaml.cs">
+      <DependentUpon>OpenURL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\Support\Image.cs" />
+    <Compile Include="Platform\Windows 7\Support\Keyboard.cs" />
+    <Compile Include="Platform\Windows 7\Support\Utilities.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Welcome.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Windows\Associations.xaml.cs">
+      <DependentUpon>Associations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Windows\CloseProgress.xaml.cs">
+      <DependentUpon>CloseProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\ViewDetails.xaml.cs">
+      <DependentUpon>ViewDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Languages\XmlLanguageDictionary.cs" />
+    <Compile Include="Platform\Windows 7\GUI\Windows\GeneratePlaylist.xaml.cs">
+      <DependentUpon>GeneratePlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Windows\Equalizer.xaml.cs">
+      <DependentUpon>Equalizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Windows\NameDialog.xaml.cs">
+      <DependentUpon>NameDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\TrayNotification.xaml.cs">
+      <DependentUpon>TrayNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Controls\TrayToolTip.xaml.cs">
+      <DependentUpon>TrayToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\UpgradeManager.cs" />
+    <Compile Include="Core\Utilities.cs" />
+    <Page Include="Platform\Windows 7\GUI\Controls\Bookmark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\ControlPanel\Plugins.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\ControlPanel\Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\Details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\Navigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\Playback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\SearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\EnhancedSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\Visualizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\Associations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\CloseProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\ViewDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\GeneratePlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\Equalizer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\NameDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\EditableTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\TrayNotification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Controls\TrayToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Platform\Windows 7\GUI\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Platform\Windows 7\GUI\Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Platform\Windows 7\GUI\Windows\OpenURL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Platform\Windows 7\GUI\Windows\PropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DescriptionConverters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Platform\Windows 7\GUI\Windows\PropertiesWindow.xaml.cs">
+      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Platform\Windows 7\Support\PowerManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Clock.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Disc.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\DiscAudio.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\DiscAudioPlus.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Drive.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\FileAudio.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\help.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Library.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Minus.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\NoteDouble.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\NoteSingle.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Plus.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Queue.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Next.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Next Shine.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Pause Shine.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Pause.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Play Shine.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Play.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Previous Shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Backgrounds\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Small Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Repeat All.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Search.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\SearchClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\SearchClear Shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\AlbumArt\Default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultAlbumArt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\AudioPlayer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\FolderPlus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Stoffi.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\FolderAudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\test.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\test.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Previous.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Platform\Windows 7\GUI\Images\Icons\Next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Platform\Windows 7\GUI\Images\Icons\Pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Platform\Windows 7\GUI\Images\Icons\Play.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="External\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Backgrounds\ControlLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".mp3">
+      <Visible>False</Visible>
+      <Description>Stoffi Music Track</Description>
+      <Progid>StoffiMP3</Progid>
+      <DefaultIcon>Stoffi.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Platform\Windows 7\GUI\Images\Stoffi.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Upgrade.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Close Notification.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Backgrounds\Notification Image.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Repeat Gray.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Shuffle Gray.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Tray.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Misc\SortArrowUp.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Misc\SortArrowDown.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Repeat One.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\AlbumArt\BackgroundMultiple.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\AlbumArt\BackgroundSingle.png" />
+    <Resource Include="Platform\Windows 7\GUI\Images\AlbumArt\Classic.jpg" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\YouTube.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Languages\en-US.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Languages\sv-SE.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Languages\pt-BR.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Languages\zh-CN.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Images\Buttons\Close.gif" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Error.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Warning.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Folder.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\LeftArrow.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\RightArrow.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Video.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Search.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Visualizer.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Languages\de-DE.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Favorite.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Radio.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\SoundCloud.ico" />
+    <Content Include="Codecs\bassflac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\basswma.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\basswv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_aac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ac3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_alac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ape.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_fx.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_mpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ofr.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_spx.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_tta.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\FileAudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\FolderAudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\scx.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\soundcloud.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\spp.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\youtube.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\MidiSynth.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Package.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Languages\it-IT.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Platform\Windows 7\GUI\Images\Icons\Refresh.ico" />
+    <Resource Include="Platform\Windows 7\GUI\Images\Misc\DropDownSelected.png" />
+    <Resource Include="Platform\Windows 7\GUI\Languages\nb-NO.xml" />
+    <Resource Include="Platform\Windows 7\GUI\Languages\hu-HU.xml" />
+    <Content Include="Stoffi.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Project>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

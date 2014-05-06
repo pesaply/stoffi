@@ -1,0 +1,81 @@
+// Place all the styles related to the languages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.translatee
+{
+	border-radius: 3px;
+	padding: 0px 2px;
+	
+	h3
+	{
+		margin: 0;
+		padding: 5px;
+		font-size: 10pt;
+	}
+	
+	.field
+	{
+		margin: 2px 0px 0px;
+		background: rgba(0,0,0,0.1);
+		border-left: 1px solid rgba(0,0,0,0.2);
+		border-top: 1px solid rgba(0,0,0,0.2);
+		border-right: 1px solid rgba(255,255,255,0.4);
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		border-radius: 2px;
+		color: black;
+	}
+	
+	p
+	{
+		margin: 5px;
+		padding: 0;
+		font-size: 8pt;
+	}
+}
+
+.translations
+{
+	margin: 5px;
+}
+
+.translation
+{
+	padding: 1px 5px 3px;
+	border-radius: 2px;
+	
+	.vote
+	{
+		a
+		{
+			display: inline-block;
+			border-radius: 20px;
+			min-width: 16px;
+			text-align: center;
+			padding: 0px 1px 1px 0px;
+			margin: 2px;
+			color: rgba(0,0,0,0.5);
+			text-shadow: none;
+			line-height: 12px;
+			height: 15px;
+			&:hover
+			{
+				background: -webkit-linear-gradient(top,
+					rgba(255,255,255,0) 0%,
+					rgba(0,0,0,0.2) 100%
+				);
+				color: rgba(0,0,0,0.8);
+			}
+		}
+		
+		.active
+		{
+			font-weight: bold;
+			background: -webkit-linear-gradient(top,
+				rgba(255,255,255,0) 0%,
+				rgba(0,0,0,0.4) 100%
+			);
+			color: black;
+		}
+	}
+}

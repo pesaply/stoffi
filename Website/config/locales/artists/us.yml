@@ -1,0 +1,17 @@
+us:
+  artists:
+    points: "Fan points"
+    unknown: "Unknown artist"
+    listens: "Plays"
+    songs:
+      title: "Songs"
+      remove: "Remove %{artist} as maker of %{song}"
+      empty: "No songs have been made by %{artist}"
+      
+    places:
+      title: "Other places"
+      
+    support:
+      title: "Support"
+      charity: "Charity"
+    

@@ -1,0 +1,38 @@
+.white.box .add.button { margin-top: 50px; }
+.app h1 { margin: 0; }
+.app .head
+{
+	img { width: 64px; }
+	.text { width: 530px; }
+}
+
+ul.apps
+{
+	margin: 20px 0px 50px;
+	li.app
+	{
+		margin: 15px 0px 20px;
+		.button { float: right; }
+		.app-img { vertical-align: top; }
+		
+		.content
+		{
+			display: inline-block;
+			font-style: normal;
+			height: 64px;
+			
+			strong { color: rgba(0,0,0,0.7); }
+			.author a { color: rgba(0,0,0,0.5); }
+			
+			
+			p { margin: 0; }
+			
+			.description { font-style: italic; }
+			
+			.meta
+			{
+				font-size: 8pt;
+			}
+		}
+	}
+}

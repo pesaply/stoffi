@@ -1,0 +1,201 @@
+<%= render :partial => "layouts/common" %>
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFQ6PulvKZ8cd4dK4Ex1HLkiVHXzp_izQ&sensor=false"></script>
+	
+	<%= stylesheet_link_tag "application" %>
+	<%= stylesheet_link_tag "chrome" if @browser == "chrome" %>
+	<% if @track %>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-15959893-4']);
+			_gaq.push(['_setDomainName', 'stoffiplayer.com']);
+			_gaq.push(['_setCustomVar', 1, 'UserType', '<%=user_type%>', 2]);
+			_gaq.push(['_trackPageview']);
+			_gaq.push(['_setAllowLinker', true]);
+			_gaq.push(['_trackPageLoadTime']);
+
+			(function() {
+			  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<% end %>
+
+	<!-- Load Twitter JS-API asynchronously -->
+	<script type="text/javascript" charset="utf-8">	
+	window.twttr = (function (d,s,id)
+	{
+		var t, js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+		js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+		return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+	}(document, "script", "twitter-wjs"));
+
+	// Wait for the asynchronous resources to load
+	twttr.ready(function(twttr)
+	{
+		_ga.trackTwitter(); //Google Analytics tracking
+	});
+	</script>
+	
+	<script>
+	$.widget("custom.catcomplete", $.ui.autocomplete,
+	{
+		_renderMenu: function(ul, items)
+		{
+			var self = this, currentCategory = "";
+			catCount = 0;
+			$.each(items, function(index, item)
+			{
+				if (item.category != currentCategory)
+				{
+					if (catCount != 0)
+						ul.append("<li style='clear:left'>&nbsp;</li>");
+					ul.append("<li class='ui-autocomplete-category' style='clear:left'><span class='strike'></span>"+
+						"<span class='text'>" + item.category + "</span><span class='strike'></span></li>");
+					currentCategory = item.category;
+					catCount++;
+				}
+				self._renderItem(ul, item);
+			});
+		}
+	});
+	$(function()
+	{
+		$("#search").catcomplete(
+		{
+			minLength: 2,
+			source: "/search.json?limit=3",
+			appendTo: "#search-menu",
+			messages:
+			{
+				noResults: "",
+				results: function() {}
+			},
+			focus: function(event, ui)
+			{
+				event.preventDefault();
+			},
+			select: function(event, ui)
+			{
+				if (ui.item.kind == "song")
+				{
+					url = "<%=songs_url%>";
+					$('<form action="'+url+'" method="POST">'+
+						'<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>'+
+						'<input type="hidden" name="song[path]" value="'+ui.item.path+'"/>'+
+						'</form>').submit();
+				}
+				else
+					location.href = ui.item.url;
+			}
+		})
+		.data("custom-catcomplete")._renderItem = function(ul, item)
+		{
+			icon = "";
+			if (item.icon)
+				icon = "<img src='"+item.icon+"' alt='"+item.display+"' class='icon'/>";
+				
+			return $("<li></li>")
+				.data("ui-autocomplete-item", item)
+				.append("<a>"+icon+"<h1>" + item.display + "</h1></a>")
+				.appendTo(ul);
+		};
+	});
+	</script>
+	
+</head>
+
+<body>
+	<header id="header">
+		<div class="blue container">
+			<%= render "pages/header" %>
+		</div>
+	</header>
+	
+	<div class="clear"></div>
+
+	<div id="root"><div id="wrap">
+		<%= yield %>
+		<div class="clear">&nbsp;</div>
+	</div></div>
+	
+	<footer id="footer">
+		<p class="copyright">
+			© <%= Time.now.year %> <a href="http://www.simplare.com">simplare</a>
+		</p>
+		<p class="links">
+			<%= link_to t("money.link"),   money_path %>
+			<%= link_to t("legal.link"),   legal_path %>
+			<%= link_to t("contact.link"), contact_path %>
+			<%= link_to t("contribute.link"), "http://dev.stoffiplayer.com/wiki/Welcome?tm=6" %>
+			<%= link_to t("blog"),    "https://blog.stoffiplayer.com" %>
+			<%= link_to t("project"), "http://dev.stoffiplayer.com" %>
+			<% if user_signed_in? %>
+				<%= link_to t("apps.link"), apps_path %>
+			<% end %>
+			<%= link_to t("switch.mobile"), { :mobile => 1 } %>
+		</p>
+	</footer>
+	
+	<div id="dimmer" onclick="closeDialog();" style="display: none;"></div>
+
+	<div id="dialog" class="left" style="display: none;">
+	</div>
+
+	<script>
+		// Facebook
+		/*
+		window.fbAsyncInit = function() {
+			// init the FB JS SDK
+			FB.init({
+			appId      : '243125052401100', // App ID from the App Dashboard
+			channelUrl : '//beta.stoffiplayer.com/channel.html', // Channel File for x-domain communication
+			status     : true, // check the login status upon init?
+			cookie     : true, // set sessions cookies to allow your server to access the session?
+			xfbml      : true  // parse XFBML tags on this page?
+			});
+
+			// Additional initialization code such as adding Event Listeners goes here
+			FB.Event.subscribe('edge.create', function(response)
+			{
+				trackSocial('Facebook', 'Like');
+			});
+			
+			FB.Event.subscribe('edge.remove', function(response)
+			{
+				trackSocial('Facebook', 'Unlike');
+			});
+		};
+		(function(d, debug){	
+			var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement('script'); js.id = id; js.async = true;
+			js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+			ref.parentNode.insertBefore(js, ref);
+		}(document, /*debug*//* false));
+		*/
+		
+		// Google+
+		window.___gcfg = {lang: '<%=I18n.locale%>'};
+		(function()
+		{
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+		
+		// Twitter
+		/*
+		window.twttr = (function (d,s,id) {
+			var t, js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+			js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+			return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+		}(document, "script", "twitter-wjs"));
+		*/
+	</script>
+</body>
+</html>

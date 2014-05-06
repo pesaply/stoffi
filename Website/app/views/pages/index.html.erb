@@ -1,0 +1,208 @@
+<div class="gold slideshow box">
+
+	<%
+	slides =
+	[
+		{ :name => "youtube" },
+		{ :name => "interface" },
+		{ :name => "playlists" },
+		{ :name => "remote", :url => "http://dev.stoffiplayer.com/wiki/ProjectRemote" },
+		{ :name => "formats", :url => "http://dev.stoffiplayer.com/wiki/Formats" },
+		{ :name => "charity", :url => money_path(:ref => "slide_charity") },
+		{ :name => "social", :url => "http://dev.stoffiplayer.com/wiki/ProjectSocial" },
+		{ :name => "focus" },
+		{ :name => "cloud", :url => "http://dev.stoffiplayer.com/wiki/ProjectGenesis" },
+		{ :name => "bookmarks" }
+	]
+	%>
+	
+	<div class="slide" id="slide0">
+		<div class="image" onclick="window.location = '/download?ref=slide_empty';"></div>
+		<h1></h1>
+		<p></p>
+		<p></p>
+		<span class="controls">
+			<% slides.each do |s| %>
+				<%= link_to "●", "#", :title => t("home.slides.#{s[:name]}.title") %>
+			<% end %>
+		</span>
+	</div>
+	
+	<% i=1 %>
+	<% slides.each do |slide| %>
+		<% c = "slide-#{slide[:name]}-#{I18n.locale}" %>
+		<% id = "slide#{i}" %>
+		<% url = slide[:url] || download_path(:ref => "slide_#{slide[:name]}") %>
+		<% h1 = t("home.slides.#{slide[:name]}.title") %>
+		<% p = t("home.slides.#{slide[:name]}.text_html") %>
+		<% s = "style='display:none;'" %>
+		<% s = "" if i==1 %>
+		
+		<div class="slide <%=c%>" id="<%=id%>" <%=s.html_safe%>>
+			<div class="image" onclick="window.location = '<%=url%>';"></div>
+			<h1><%= h1 %></h1>
+			<p><%= p %></p>
+			<span class="controls">
+				<% j=1 %>
+				<% slides.each do |s| %>
+					<% cl = "" %>
+					<% cl = "active" if s[:name] == slide[:name] %>
+					<%= link_to_function "●", "jumpToSlide(#{j});", :class => cl, :title => t("home.slides.#{s[:name]}.title") %>
+					<% j+=1 %>
+				<% end %>
+				<% if slide[:url] %>
+					<%= link_to t("home.slides.read_more"), url, :class => "more" %>
+				<% end %>
+			</span>
+		</div>
+		<% i+=1 %>
+	<% end %>
+</div>
+
+<div class="center">
+	<% if @os == "windows 7" %>
+		<% subtitle = "#{t("home.download_button.os.windows7")} &nbsp; &nbsp; #{t("home.download_button.size")}: 5.1 Mb" %>
+		<%=button_tag t("home.download_button.title"), download_path, "arrow_down", { :color => :green, :subtitle => subtitle, :id => "download-button" } %>
+	<% end %>
+	
+	<div class="social-buttons">
+		<div id="fb-root"></div>
+		
+		<!-- +1 button -->
+		<span class="plus-button">
+			<div class="g-plusone" data-href="https://plus.google.com/111751169971055410532"
+				data-size="medium" data-lang="<%=langtag(I18n.locale)%>">
+			</div>
+		</span>
+		
+		<!-- like button -->
+		<span class="like-button">
+			<div class="fb-like"
+				data-send="false" data-layout="button_count" data-width="80" data-show-faces="false"
+				data-font="segoe ui" data-href="https://www.facebook.com/stoffiplayer">
+			</div>
+		</span>
+		
+		<!-- tweet button -->
+		<span class="tweet-button">
+			<a href="https://twitter.com/StoffiPlayer" class="twitter-follow-button"
+				data-show-count="false" data-lang="<%=langtag(I18n.locale)%>">Follow @StoffiPlayer</a>
+		</span>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="white intro box">
+	<% if text_ads? %>
+		<div class="ad">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Leader Black -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-5639501338860736"
+			     data-ad-slot="1033329665"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	<% end %>
+	
+	<span class="donation">
+		<h1><%= t "donations.title" %></h1>
+		<% if too_many_donations? %>
+			<%= t "donations.full_text_html" %>
+		<% else %>
+			<%=t "donations.front_text_html" %>
+		<% end %>
+	</span>
+	<span class="latest">
+		<h1><%=t "home.latest.title" %></h1>
+		<%=t "home.latest.text_html" %>
+	</span>
+	<div>
+		<span id="donation-button">
+			<%=button_tag t("donations.button"), "donate()", "dollar", { :type => :function, :color => :gold } %>
+		</span>
+		<span>
+			<% unless too_many_donations? %>
+				<%=button_tag t("home.latest.more"), news_path, "star", { :color => :blue } %>
+			<% end %>
+		</span>
+	</div>
+	<div class="highlights">
+		<span>
+			<h2><%=t "home.highlights.music.title" %></h2>
+			<p><%=t "home.highlights.music.text" %></p>
+		</span>
+		<span>
+			<h2><%=t "home.highlights.face.title" %></h2>
+			<p><%=t "home.highlights.face.text" %></p>
+		</span>
+		<span>
+			<h2><%=t "home.highlights.social.title" %></h2>
+			<p><%=t "home.highlights.social.text" %></p>
+		</span>
+		<span>
+			<h2><%=t "home.highlights.remote.title" %></h2>
+			<p><%=t "home.highlights.remote.text" %></p>
+		</span>
+	</div>
+</div>
+
+<div class="ingraved quotes box">
+	<div class="quote" id="quote1">
+		<div class="quotemark">"</div>
+		<div class="text">
+			<h1><%= t "home.quotes.winajuda" %></h1>
+			<h2>- <a href="http://winajuda.com/downloads/stoffi-music-player.html">WinAjuda</a></h2>
+		</div>
+	</div>
+	<div class="quote" id="quote2">
+		<div class="quotemark">"</div>
+		<div class="text">
+			<h1><%= t "home.quotes.softonic" %></h1>
+			<h2>- <a href="http://stoffi.softonic.it/">Softonic</a></h2>
+		</div>
+	</div>
+	<div class="quote" id="quote3">
+		<div class="quotemark">"</div>
+		<div class="text">
+			<h1><%= t "home.quotes.3d2f" %></h1>
+			<h2>- <a href="http://3d2f.com/smartreviews/1-686-stoffi-music-player-everything-you-have-been-looking-for-in-an-audio-player-read.shtml">3D2F</a></h2>
+		</div>
+	</div>
+</div>
+
+<script>
+	var images = [
+		"youtube.png", "interface.png", "playlist_from_search.png", "remote.png",
+		"formats.jpg", "mind_reader.png", "save_the_world.png", "social.jpg",
+		"music_list.png", "cloud.png", "bookmarks.jpg"
+	];
+	for (i in images)
+		images[i] = '/assets/' + locale + '/slideshow/' + images[i];
+	preloadImages(images);
+
+	slideshow();
+	
+	// like button
+	(function(d)
+	{
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/<%=full_locale(I18n.locale)%>/all.js#appId=243125052401100&xfbml=1";
+		d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+	
+	// +1 button
+	window.___gcfg = {lang: '<%=langtag(I18n.locale)%>'};
+	(function()
+	{
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	
+	// tweet button
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>

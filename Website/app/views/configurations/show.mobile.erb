@@ -1,0 +1,106 @@
+<% if @configuration
+	conf = @configuration
+	id = conf.id.to_s
+	%>
+	<%= hidden_field_tag "volume_level_#{id}", conf.volume %>
+
+	<table id="remote-control">
+		<tr>
+			<td class="display" id="playing" colspan="3">
+				<h1><%=t "remote.playing" %></h1>
+				<div class="window">
+					<h1 data-field="configuration-<%=id%>-now-playing" class="ellipsis">
+						<%=d conf.now_playing %>
+					</h1>
+				</div>
+			</td>
+			<td class="display list" id="devices-v" rowspan="4" style="display:none;">
+				<h1><%=t "remote.devices.title" %></h1>
+				<div class="window">
+					<ul class="vertical" data-list="devices">
+						<% @devices.each do |device| %>
+							<%= item device.name, device, "device-#{device.id}-name" %>
+						<% end %>
+					</ul>
+					<p class="message" data-field="no-devices"<%= "style=display:none;" if @devices.length > 0 %>>
+						<%=t "remote.devices.empty" %>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="previous button" id="prev_button_<%=id%>" onclick="prev(<%=id%>)">
+				<%= image_tag "media/prev.png" %>
+			</td>
+			<td class="play-pause button" id="play_pause_button_<%=id%>" onclick="playPause(<%=id%>)" data-state="<%=conf.media_state%>">
+				<%= image_tag play_pause_image(conf), :id => "play_pause_img_#{id}" %>
+			</td>
+			<td class="next button" id="next_button_<%=id%>" onclick="next(<%=id%>)">
+				<%= image_tag "media/next.png" %>
+			</td>
+		</tr>
+		<tr>
+			<td class="volume-down button" id="volume_down_button_<%=id%>" onclick="volumeDown(<%=id%>)">
+				<%= image_tag "media/volume_down.png" %>
+			</td>
+			<td class="volume-indicator display" id="volume_indicator_<%=id%>">
+				<div id="level-1"></div>
+				<div id="level-2"></div>
+				<div id="level-3"></div>
+				<div id="level-4"></div>
+				<div id="level-5"></div>
+			</td>
+			<td class="volume-up button" id="volume_up_button_<%=id%>" onclick="volumeUp(<%=id%>)">
+				<%= image_tag "media/volume_up.png" %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="repeat button" id="repeat_button_<%=id%>" onclick="repeat(<%=id%>)" data-state="<%=conf.repeat%>">
+				<%= image_tag repeat_image(conf), :id => "repeat_img_#{id}" %>
+			</td>
+			<td class="back button" onclick="history.go(-1);">
+				<%=t "back" %>
+			</td>
+			<td class="shuffle button" id="shuffle_button_<%=id%>" onclick="shuffle(<%=id%>)" data-state="<%=conf.shuffle%>">
+				<%= image_tag shuffle_image(conf), :id => "shuffle_img_#{id}" %>
+			</td>
+		</tr>
+		
+		<tr id="devices-h-row" style="display:none;">
+			<td class="display compact list" id="devices-h" colspan="3">
+				<h1><%=t "remote.devices.title" %></h1>
+				<div class="window">
+					<ul class="vertical" data-list="devices">
+						<% @devices.each do |device| %>
+							<%= item device.name, device, "device-#{device.id}-name" %>
+						<% end %>
+					</ul>
+					<p class="message" data-field="no-devices"<%= "style=display:none;" if @devices.length > 0 %>>
+						<%=t "remote.devices.empty" %>
+					</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<script>
+	updateVolumeIndicator(<%=id%>);
+
+	images = ["play","pause","shuffle_on","shuffle_off","repeat_all","repeat_one","repeat_off"];
+	for (i in images)
+		images[i] = "/assets/media/"+images[i]+".png";
+	preloadImages(images);
+	</script>
+	
+<% else %>
+	<table id="remote-control">
+		<tr>
+			<td id="message">
+				<p><%=raw t("remote.text1")%></p>
+				<p><%=raw t("remote.text2")%></p>
+				<p><%=raw t("remote.text3")%></p>
+			</td>
+		</tr>
+	</table>
+<% end %>

@@ -1,0 +1,62 @@
+se:
+  tour:
+    youtube:
+      title: "Vilken musik du vill"
+      text1: "Hitta vilken musik du vill och lyssna på den direkt."
+      text2: "Det finns miljontals låtar som väntar på dig."
+    sources:
+      title: "Upptäck din musik"
+      text1: "Stoffi söker automatiskt de vanligaste musikmapparna."
+      text2: "Lägg till mer musik genom att dra och släppa."
+    playlists:
+      title: "Skapa spellistor snabbt"
+      text1: "Skapa spellistor genom dra-och-släpp eller högerklicka på en sökning för att lägga till resultatet."
+      text2: "Du kan även använda kön för att skapa en temporär spellista."
+    interface:
+      title: "Vackert gränssnitt"
+      text1: "Ett vackert gränssnitt som helt enkelt ser bra ut."
+      text2: "Inge mer spya på skärmen."
+    shortcuts:
+      title: "Omfattande snabbkommandon"
+      text1: "Hatar du musen? Stoffi låter dig använda tangentbordet för <b>allt</b>."
+      text2: "Om du är van vid ett annat musikprograms snabbkommandon så kan du fortsätta att använda dem, inga problem..."
+    bookmarks:
+      title: "Kom ihåg den där speciella toppen"
+      text1: "Placera bokmärken vid de där underbara topparna."
+      text2: "Nu kan du enkelt hoppa över de dåliga delarna."
+    jumplists:
+      title: "Integrering med Windows 7"
+      text1: "Stoffi älskar Windows 7."
+      text2: "Använd Hopplistor och knappar i Aktivitetsfältet för att snabbt komma åt din musik."
+    formats:
+      title: "Inga kodekar behövs"
+      text1: "Vi hatar att behöva installera extra kodekpaket."
+      text2: "Det är därför Stoffi stödjer över 25 format. Inget extra pill behövs."
+    focus:
+      title: "Uppgraderar sig automatiskt"
+      text1: "Inga fler popups, inga mer avbrott."
+      text2: "Stoffi uppgraderar sig själv i bakgrunden, så du kan fokusera på viktigare saker. Som din musik!"
+    settings:
+      title: "Enkla men kraftfulla inställningar"
+      text1: "Vi vill att inställningar ska vara enkla att använda."
+      text2: "Stoffi kommer med en förenklad klon av Kontrollpanelen som bara känns rätt och känns lätt."
+    history:
+      title: "Vad var det där för sång?"
+      text1: "Vill du gå tillbaka och se vad det var för låt?"
+      text2: "Använd Historik för att se alla låtar som spelats."
+    backup:
+      title: "Säkerhetskopiera dina saker"
+      text1: "Spara spellistor, inställningar och kö."
+      text2: "Till och med din sortering och vilken lista du just nu tittar på kommer att sparas!"
+    quickedit:
+      title: "Ändra dina låtar snabbt"
+      text1: "Fixa den där titeln eller ändra det där året enkelt."
+      text2: "Stoffi ger dig snabb tillgång till meta data."
+    equalizer:
+      title: "Justera ljudet"
+      text1: "Dra upp basen eller skapa ljudet av en stor sal."
+      text2: "Equalizern fungerar dock tyvärr inte med YouTube än."
+    generator:
+      title: "Generera slumpmässig spellista"
+      text1: "Behöver du en spellista för bilen eller MP3-spelaren?"
+      text2: "Generera en slumpmässig spellista på bara några sekunder."

@@ -1,0 +1,113 @@
+us:
+  dashboard:
+    meta: "Show dashboard"
+    songs:
+      title: "Top songs"
+      empty: "You have not listened to any music yet."
+      
+    artists:
+      title: "Top artists"
+      empty: "You have not listened to any music yet."
+      
+    listens:
+      title: "Recent"
+      empty: "You have not listened to any music yet."
+      
+    playlists:
+      title: "Playlists"
+      button: "Create"
+      
+    devices:
+      title: "Devices"
+      
+    support:
+      title: "Support"
+      empty: "You haven't helped any artists yet."
+      button: "Donate"
+      
+    remote:
+      title: "Remote"
+      empty: "You haven't enabled synchronization in any player yet."
+      button: "Control"
+      
+    logged_in: "Logged in as %{name} (%{email})"
+    
+  user:
+    name:
+      unknown: "Unknown"
+  
+  settings:
+    title: "Settings"
+    deregister: "Remove account"
+    
+    profile: "Profile"
+    change_password: "Change password"
+    create_password: "Create password"
+    
+    custom: "Custom"
+    default: "Default"
+    
+    ads:
+      all: "Text and image"
+      text: "Text only"
+      none: "Don't show ads"
+    
+    links:
+      title:
+        existing: "Connected services"
+        new: "Connect more"
+        
+      share:
+        label: "Share"
+        info: "Publish the stuff you share."
+        
+      listens:
+        label: "Plays"
+        info: "Publish the songs you listen to."
+        
+      playlists:
+        label: "Playlists"
+        info: "Publish the playlists you create."
+        
+      donations:
+        label: "Donations"
+        info: "Publish the artists you support."
+        
+      buttons:
+        label: "Social buttons"
+        info: "Show %{button} on your profile and playlists."
+        twitter: "follow button"
+        google_oauth2: "+ button"
+        
+      empty: "You can connect Stoffi to other services."
+      link: "Link"
+      unlink: "Unlink"
+      confirm: "Do you really want to remove the link to %{provider}?"
+      
+  profile:
+    registered: "Joined Stoffi"
+    points: "Fan points"
+    
+    songs:
+      title: "Top songs"
+      empty:
+        you: "You have not listened to any music yet."
+        user: "%{user} has not listened to any music yet."
+    
+    artists:
+      title: "Top artists"
+      empty:
+        you: "You have not listened to any music yet."
+        user: "%{user} has not listened to any music yet."
+    
+    donations:
+      title: "Support"
+      empty:
+        you: "You haven't helped any artists yet."
+        user: "%{user} hasn't helped any artists yet."
+    
+    listens:
+      title: "Recent"
+      empty:
+        you: "You have not listened to any music yet."
+        user: "%{user} has not listened to any music yet."

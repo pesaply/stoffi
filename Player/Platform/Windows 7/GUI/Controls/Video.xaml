@@ -1,0 +1,70 @@
+﻿<!--Video.xaml
+	
+	The "Video" screen.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<DockPanel x:Class="Stoffi.Platform.Windows7.GUI.Controls.Video"
+		   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		   xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+		   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		   mc:Ignorable="d"
+		   Background="Black"
+		   SnapsToDevicePixels="True"
+		   MouseLeftButtonDown="Browser_MouseLeftButtonDown"
+		   d:DesignHeight="300" d:DesignWidth="300">
+	<DockPanel LastChildFill="False" VerticalAlignment="Center" x:Name="NoVideoMessage" HorizontalAlignment="Stretch">
+
+		<TextBlock loc:Translate.Uid="NoVideoAvailable"
+						Text="{loc:Translate Text}"
+						Foreground="White" 
+						HorizontalAlignment="Center" 
+						DockPanel.Dock="Top"
+						FontSize="30"/>
+		<TextBlock FontSize="30"
+						loc:Translate.Uid="NoVideoAvailable"
+						Text="{loc:Translate Text}"
+						DockPanel.Dock="Top"
+						RenderTransformOrigin="0.5,0.5" 
+						Opacity="1" 
+						HorizontalAlignment="Center">
+				<TextBlock.RenderTransform>  
+					<TransformGroup>  
+						<ScaleTransform ScaleX="1" ScaleY="-1"/>  
+						<SkewTransform AngleX="0" AngleY="0"/>  
+						<RotateTransform Angle="0"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>    
+				<TextBlock.Foreground>  
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">  
+						<GradientStop Color="#33FFFFFF" Offset="1"/>  
+						<GradientStop Color="#00FFFFFF" Offset="0"/>  
+					</LinearGradientBrush>  
+				</TextBlock.Foreground>
+		</TextBlock>
+	</DockPanel>
+	<WebBrowser x:Name="Browser" 
+				Visibility="Collapsed"
+				Margin="2" 
+				Height="0" Width="0" 
+				VerticalAlignment="Center" 
+				HorizontalAlignment="Right" 
+				MouseLeftButtonDown="Browser_MouseLeftButtonDown"
+				LoadCompleted="Browser_LoadCompleted"
+				DockPanel.Dock="Top"/>
+</DockPanel>

@@ -1,0 +1,46 @@
+﻿<!--Bookmark.xaml
+	
+	A bookmark shown over the track timeline.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<UserControl x:Class="Stoffi.Bookmark"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:Stoffi"
+			 mc:Ignorable="d" 
+			 MouseLeftButtonDown="Bookmark_MouseLeftButtonDown"
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<DockPanel>
+		<Canvas Height="10" Width="10" DockPanel.Dock="Bottom" VerticalAlignment="Top" SnapsToDevicePixels="True">
+			<Rectangle Width="4" Height="3" x:Name="Box" SnapsToDevicePixels="True">
+				<Rectangle.Fill>
+					<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+						<GradientStop Color="#FF0000" Offset="0.0" />
+						<GradientStop Color="#FF8888" Offset="0.8" />
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+			</Rectangle>
+		</Canvas>
+	</DockPanel>
+	<UserControl.ContextMenu>
+		<ContextMenu>
+			<MenuItem loc:Translate.Uid="MenuRemoveBookmark" Header="{loc:Translate Header}" Click="Remove_Click"/>
+		</ContextMenu>
+	</UserControl.ContextMenu>
+</UserControl>

@@ -1,0 +1,7 @@
+alice_one_love:
+  user: alice
+  resource: one_love (Song)
+    
+alice_foo:
+  user: alice
+  resource: foo (Playlist)

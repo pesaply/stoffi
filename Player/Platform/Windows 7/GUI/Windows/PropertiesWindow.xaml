@@ -1,0 +1,240 @@
+﻿<!--PropertiesWindow.xaml
+	
+	The dialog showing information about one or several
+	tracks.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<Window x:Class="Stoffi.PropertiesWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:Stoffi="clr-namespace:Stoffi"
+		loc:Translate.Uid="PropertiesTitle"
+		Title="{loc:Translate Title}"
+		MinHeight="400" MinWidth="400"
+		Width="400" Height="500"
+		Icon="../../../../Stoffi.ico"
+		WindowStartupLocation="CenterScreen"
+		Background="#D4D0C8"
+		TextOptions.TextFormattingMode="Display">
+	<Window.Resources>
+		<Stoffi:BoolToVisibilityConverter x:Key="boolToVis" />
+		
+		<Style TargetType="{x:Type TextBlock}"
+			   x:Key="GridBlockStyle">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Style.Triggers>
+				<DataTrigger Binding="{Binding Path=Edit}" Value="False">
+					<Setter Property="Visibility" Value="Visible"/>
+				</DataTrigger>
+				<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,
+					AncestorType={x:Type ListViewItem}}, Path=DataContext.Edit}" Value="True">
+					<Setter Property="Visibility" Value="Hidden"/>
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+		<Style TargetType="{x:Type FrameworkElement}" 
+			   x:Key="GridEditStyle">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Style.Triggers>
+				<DataTrigger Binding="{Binding Path=Edit}" Value="True">
+					<Setter Property="Visibility" Value="Visible"/>
+				</DataTrigger>
+				<DataTrigger Binding="{Binding Path=Edit}" Value="False">
+					<Setter Property="Visibility" Value="Hidden"/>
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+
+		<Style x:Key="PropertyRowStyle" TargetType="{x:Type ListViewItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Margin" Value="0,0,0,1"/>
+			<Setter Property="Padding" Value="5,13,5,3"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListViewItem}">
+						<Border Background="Transparent" Name="Border1">
+							<GridViewRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="2" />
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background" TargetName="Border1" Value="DodgerBlue"/>
+								<Setter Property="Foreground" Value="White"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+	<Grid Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"    Name="TabsRow"/>
+			<RowDefinition Height="Auto" Name="ButtonRow"/>
+		</Grid.RowDefinitions>
+		
+		<TabControl Name="Tabs"  Grid.Row="0">
+			<!-- General tab -->
+			<TabItem loc:Translate.Uid="PropertiesGeneral" Header="{loc:Translate Header}">
+				<ScrollViewer Padding="5"
+							  Margin="-5"
+							  HorizontalScrollBarVisibility="Disabled"
+							  VerticalScrollBarVisibility="Auto"
+							  HorizontalContentAlignment="Stretch"
+							  HorizontalAlignment="Stretch">
+					<Grid HorizontalAlignment="Stretch">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Border Margin="0 0 10 0" Grid.Row="0" Grid.Column="0"
+								Width="50" Height="50" Padding="0" SnapsToDevicePixels="True">
+							<Border.Background>
+								<VisualBrush>
+									<VisualBrush.Visual>
+										<Grid>
+											<Image Source="../Images/AlbumArt/BackgroundMultiple.png" x:Name="ArtBackgroundMultiple" SnapsToDevicePixels="True"/>
+											<Image Source="../Images/AlbumArt/BackgroundSingle.png" x:Name="ArtBackgroundSingle" SnapsToDevicePixels="True" Visibility="Collapsed"/>
+										</Grid>
+									</VisualBrush.Visual>
+								</VisualBrush>
+							</Border.Background>
+							<Image Source="../Images/AlbumArt/Default.jpg" x:Name="AlbumArt" Width="46" Height="46"/>
+						</Border>
+
+						<TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Name="Filename" KeyUp="Filename_KeyUp"/>
+						<TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="Filecount" Visibility="Collapsed"/>
+
+						<Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="SlateGray" Margin="5 10"/>
+
+						<TextBlock Grid.Row="2" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralType" Text="{loc:Translate Text}" />
+						<TextBlock Grid.Row="2" Grid.Column="1" Margin="0  5" Name="Filetype" TextTrimming="CharacterEllipsis"/>
+
+						<Separator Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="Gray" Margin="5 10"/>
+
+						<TextBlock Grid.Row="4" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralLength" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="4" Grid.Column="1" Margin="0  5" Name="Length" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="5" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralChannels" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="5" Grid.Column="1" Margin="0  5" Name="Channels" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="6" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralCodec" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="6" Grid.Column="1" Margin="0  5" Name="Codec" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="7" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralBitrate" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="7" Grid.Column="1" Margin="0  5" Name="Bitrate" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="8" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralSamplingrate" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="8" Grid.Column="1" Margin="0  5" Name="SampleRate" TextTrimming="CharacterEllipsis"/>
+
+						<Separator Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Background="Gray" Margin="5 10"/>
+
+						<TextBlock Grid.Row="10" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralLocation" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="10" Grid.Column="1" Margin="0  5" Name="Filepath" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="11" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralSize" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="11" Grid.Column="1" Margin="0  5" Name="Filesize" TextTrimming="CharacterEllipsis"/>
+
+						<Separator Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" Background="Gray" Margin="5 10"/>
+
+						<TextBlock Grid.Row="13" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralPlayCount" Text="{loc:Translate Text}"/>
+						<TextBlock Grid.Row="13" Grid.Column="1" Margin="0  5" Name="PlayCount" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="14" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralLastPlayed" Text="{loc:Translate Text}" Name="LastPlayedLabel"/>
+						<TextBlock Grid.Row="14" Grid.Column="1" Margin="0  5" Name="LastPlayed" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="15" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralCreated" Text="{loc:Translate Text}" Name="CreatedAtLabel"/>
+						<TextBlock Grid.Row="15" Grid.Column="1" Margin="0  5" Name="CreatedAt" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="16" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralModified" Text="{loc:Translate Text}" Name="ModifiedAtLabel"/>
+						<TextBlock Grid.Row="16" Grid.Column="1" Margin="0  5" Name="ModifiedAt" TextTrimming="CharacterEllipsis"/>
+
+						<TextBlock Grid.Row="17" Grid.Column="0" Margin="10 5" loc:Translate.Uid="PropertiesGeneralAccessed" Text="{loc:Translate Text}" Name="AccessedAtLabel"/>
+						<TextBlock Grid.Row="17" Grid.Column="1" Margin="0  5" Name="AccessedAt" TextTrimming="CharacterEllipsis"/>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+
+			<!-- Details tab-->
+			<TabItem loc:Translate.Uid="PropertiesDetails" Header="{loc:Translate Header}">
+				<ListView x:Name="DetailsList" Margin="5" BorderBrush="Gray" BorderThickness="1" SelectionMode="Single" Foreground="Black" SnapsToDevicePixels="True"
+						  ItemContainerStyle="{StaticResource PropertyRowStyle}">
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Width="140" DisplayMemberBinding="{Binding Name}">
+								<GridViewColumnHeader loc:Translate.Uid="PropertiesDetailsProperty" Content="{loc:Translate Content}" HorizontalContentAlignment="Left"
+													  Margin="-2,0,0,0" Padding="5,3"/>
+							</GridViewColumn>
+							<GridViewColumn Width="200">
+								<GridViewColumnHeader Tag="Value" loc:Translate.Uid="PropertiesDetailsValue" Content="{loc:Translate Content}" HorizontalContentAlignment="Left"
+													  Padding="5,3" />
+								<GridViewColumn.CellTemplate>
+									<DataTemplate>
+										<Stoffi:EditableTextBlock Tag="{Binding Path=Name}" ClickToEdit="True" SimpleHover="False" Text="{Binding Path=Value}" Edited="EditableTextBlock_Edited" />
+									</DataTemplate>
+								</GridViewColumn.CellTemplate>
+							</GridViewColumn>
+						</GridView>
+					</ListView.View>
+				</ListView>
+			</TabItem>
+			
+		</TabControl>
+		
+		<!-- Buttons -->
+		<DockPanel Name="Buttons" HorizontalAlignment="Stretch" Grid.Row="1" LastChildFill="False">
+			<Button DockPanel.Dock="Left" Width="25" Margin="0  5" Name="Prev" Click="Previous_Click">
+				<Button.Content>
+					<Image Name="PrevImage"/>
+				</Button.Content>
+			</Button>
+			<Button DockPanel.Dock="Left" Width="25" Margin="10 5" Name="Next" Click="Next_Click">
+				<Button.Content>
+					<Image Name="NextImage"/>
+				</Button.Content>
+			</Button>
+			<Button DockPanel.Dock="Right" loc:Translate.Uid="ButtonApply" Content="{loc:Translate Content}"   Visibility="Collapsed" MinWidth="80" Margin="5 5 0 5" Name="Apply"    Click="Apply_Click"/>
+			<Button DockPanel.Dock="Right" loc:Translate.Uid="ButtonClose" Content="{loc:Translate Content}"   Visibility="Visible"   MinWidth="80" Margin="0 5"     Name="Cancel"   Click="CloseCancel_Click"/>
+			<Button DockPanel.Dock="Right" loc:Translate.Uid="ButtonOK"    Content="{loc:Translate Content}"   Visibility="Collapsed" MinWidth="80" Margin="5 5"     Name="OK"       Click="OK_Click"/>
+		</DockPanel>
+	</Grid>
+</Window>

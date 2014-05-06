@@ -1,0 +1,51 @@
+us:
+  contribute:
+    header: "What would you like to do?"
+    
+    test:
+      asd: "Test drive"
+      
+    translate:
+      asd: "Translate"
+      
+    promote:
+      asd: "Promote"
+      
+    design:
+      asd: "Design"
+      
+    write:
+      asd: "Document"
+      
+    hack:
+      header: "Being a Stoffi developer"
+      intro_html: "<p>Stoffi is essentially split into two parts: the music player and the server platform. On the server we run Ruby on Rails and the client is built with C# and WPF. Even though it would be easy to just say that the server is backend and the client is front end, things are not really that simple. The server still serves the website which is itself a front end and the client contains a \"core\" part which could be consider a bit lower level than the actual interface.</p>"
+      client:
+        header: "Hacking on the client"
+        checkout_html: "<p>To hack on the client you first need to install Visual Studio 2010 (it could work with other versions or other IDEs but I haven't tried). Then you need to download the source code and after that you are ready to go.</p>"
+        checkout_link: "Download source code"
+        convention_html: "<p>If you want your changes to be accepted you should follow our convention for naming and structure. This ensures that the code looks good and a developer can expect the code to work, look and behave the same regardless of where s/he might be hacking.</p>"
+        convention_link: "Coding convention"
+        suggestions_html: "<p>If you already know what exactly you want to do you could get started right away. But if not, there's a wiki page with a list of some suggestions for you. There's everything from small tasks that can be done in a day or two, to larger tasks that require a few weeks.</p>"
+        suggestions_link: "Work suggestions"
+        overview_html: "<p>There's also a wiki page which gives you an overview of the whole project, what the different files are and serves as a great starting point for getting familiarized with the code. There's no need for you to know every bit of the project, but by skimming the page you should be able to find the relevant part for your task.</p>"
+        overview_link: "Project overview"
+        
+      server:
+        header: "Hacking on the server"
+        account_html: "<p>The server code is so far not available for anyone to download. So right now you need to get an account on our server in order to get started. To request an account on the server you can just send us an email using the form on the contact page.</p>"
+        technologies_html: "<p>If you have worked with Rails before you should have no problem getting started in just a few minutes. Our server code is very much standard Rails stuff. We use Devise for account management, OmniAuth for authing with other services such as Facebook and Twitter, and we are using the OAuth Plugin by Pelle to act as a OAuth provider ourselves.</p>"
+      
+    apps:
+      asd: "Create app"
+      
+    plugins:
+      asd: "Create plugin"
+      
+    idea:
+      asd: "Suggest idea"
+    
+    why:
+      header: "Why Stoffi is the best project to work on"
+      intro_html: "<p>Intro goes here.</p>"
+      

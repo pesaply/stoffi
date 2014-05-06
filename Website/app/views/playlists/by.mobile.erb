@@ -1,0 +1,11 @@
+<% isize = 80 %>
+<h1><%=t "playlists.title.user", :users => @user.name.possessive %></h1>
+<ul class="horizontal" data-list="playlists">
+	<% @playlists.each do |playlist| %>
+		<%= item playlist.name, playlist, "playlist_#{playlist.id}-name",
+				:image => "/assets/media/disc.png", :image_size => isize %>
+	<% end %>
+</ul>
+<p class="message" data-field="no-playlists"<%= "style=display:none;" if @playlists.length > 0 %>>
+	<%=t "playlists.empty.user", :user => @user.name %>
+</p>

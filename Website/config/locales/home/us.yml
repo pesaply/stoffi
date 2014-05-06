@@ -1,0 +1,84 @@
+us:
+  home:
+    slides:
+      read_more: "Read more"
+
+      youtube:
+        title:      "Stoffi ♥ Streaming"
+        text_html:  "Listen to YouTube and SoundCloud tracks directly from Stoffi. Create playlists, share music.</p><p>Instant streaming at your fingertips."
+
+      charity:
+        title:      "Save the world"
+        text_html:  "We love the world. That's why each donation will generate a small amount of charity.</p><p>Save the world and support your artists with Stoffi."
+
+      playlists:
+        title:      "Quickly create playlists"
+        text_html:  "Creating playlists is easy in Stoffi.</p><p>Create them by search or by just dragging. You can even create a temporary list using the queue."
+
+      remote:
+        title:      "Remote control"
+        text_html:  "Turn your iPad, iPhone or iPod into a remote control.</p><p>See what's playing, change volume or change tracks."
+
+      formats:
+        title:      "Plays all your music"
+        text_html:  "Stoffi supports over 20 different file formats: mp3, wav, flac, ogg and many more right out of the box.</p><p>It even plays from YouTube and SoundCloud!"
+
+      mind_reader:
+        title:      "Mind reader"
+        text_html:  "Sit back and let Stoffi select the tracks for you.</p><p>Stoffi will learn your taste in order to give you the best suggestions possible."
+
+      interface:
+        title:      "Beautiful interface"
+        text_html:  "Stoffi has a beautiful interface that integrates well with your system.</p><p>It was made to look like a default application."
+
+      social:
+        title:      "Music is social"
+        text_html:  "Share your music experience.</p><p>Find music you've never listen to before or share your favorite tracks with your friends."
+
+      focus:
+        title:      "Focus on your music"
+        text_html:  "With automatic file synchronization and silent upgrades Stoffi stays out of your face.</p><p>No more dialogs, no more interruptions."
+
+      cloud:
+        title:      "Cloud connected"
+        text_html:  "Stoffi comes with several cloud services.</p><p>Synchronize your desktop and laptop with ease. Sign up in one click via Twitter, Facebook, Google and more."
+
+      bookmarks:
+        title:      "Bookmark your songs"
+        text_html:  "Mark the good spots. In just one click.</p><p>Jump to the highest peaks and or remove that annoying intro with the click of a button."
+
+    download_button:
+      title: "Download now"
+      os:
+        windows7: "For Windows 7"
+      size: "Size"
+      
+    latest:
+      title: "Latest features"
+      text_html: "<p>The latest version is all about more music. You can now stream music from SoundCloud and Internet radio.</p><p>The new plugin system allows you to extend your music experience even further. Add beautiful visualizers or install filters which can manipulate the audio.</p><p>Sharing playlists and music can now be done with a single click. All links will automatically start playing in Stoffi.</p>"
+      more: "More features"
+    
+    highlights:
+      music:
+        title: "Any music"
+        text: "Instant streaming from SoundCloud and YouTube."
+      face:
+        title: "Out of your face"
+        text: "Silent upgrades and automatic scanner."
+      social:
+        title: "Social vibes"
+        text: "Share on Twitter and Facebook in a single click."
+      remote:
+        title: "Keep control"
+        text: "Remote control via website or iPhone app."
+
+    quotes:
+      winajuda: "...integrates nicely with Windows 7..."
+      softonic: "...the interface is very beautiful..."
+      3d2f: "...easy to use and a pleasure to look at"
+
+    old:
+      title: "You are in danger!"
+      subtitle: "You are using an old browser to surf the Internet. This increases the risk of having credentials stolen and your computer infected. It also means that this website may not look good or even work properly."
+      call: "Please upgrade to a modern browser. Here's what's popular with the kids today:"
+      link: "I cannot upgrade."

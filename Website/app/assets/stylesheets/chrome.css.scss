@@ -1,0 +1,146 @@
+form
+{
+	.radio
+	{
+		.choice
+		{
+			display: inline-block;
+			text-align: center;
+			margin-right: 20px;
+			margin-top: 5px;
+			.value
+			{
+				display: block;
+				img { display: block; }
+			}
+			.label
+			{
+				display: block;
+				font-size: 8pt;
+				color: rgba(0,0,0,0.4);
+			}
+			.control
+			{
+				display: block;
+				input { margin-top: 5px; }
+			}
+		}
+	}
+	
+	.radio.text
+	{
+		.choice
+		{
+			text-align: left;
+			.label
+			{
+				padding-left: 24px;
+			}
+			.control
+			{
+				display: inline-block;
+				line-height: 20px;
+				vertical-align: middle;
+				input { margin: 0; }
+			}
+			.value
+			{
+				display: inline-block;
+				line-height: 20px;
+			}
+		}
+	}
+	
+	.checkbar
+	{
+		margin: 5px 0px;
+		vertical-align: middle;
+		img
+		{
+			vertical-align: middle;
+		}
+		
+		input[type="checkbox"]
+		{
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+	}
+	
+	.bottom
+	{
+		border-top: 1px solid rgba(0,0,0,0.2);
+		padding-top: 15px;
+		margin-top: 40px;
+	}
+}
+
+select, form select
+{
+	border-radius: 0px;
+	padding: 4px 30px 4px 10px;
+	-webkit-appearance: button;
+	-khtml-appearance: button;
+	-moz-appearance: button;
+	-ms-appearance: button;
+	-o-appearance: button;
+	appearance: button;
+	background: url(/assets/gfx/select_arrow.png), white;
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+input[type="radio"], input[type="checkbox"], form input[type="radio"], form input[type="checkbox"]
+{
+	-webkit-appearance: none;
+	-khtml-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	background: white;
+	border: 1px solid black;
+}
+
+input[type="radio"], form input[type="radio"]
+{
+	border-radius: 10px;
+	margin: 0;
+	&:checked
+	{
+		background-image: url(/assets/gfx/radiobutton_tick.png);
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+input[type="checkbox"], form input[type="checkbox"]
+{
+	&:checked
+	{
+		background-image: url(/assets/gfx/checkbox_tick.png);
+	}
+}
+
+.dialog
+{
+	form
+	{
+		input[type="checkbox"]
+		{
+			border-bottom: 1px solid rgba(255,255,255,0.2);
+			border-right: 1px solid rgba(255,255,255,0.2);
+			border-top: 1px solid rgba(0,0,0,0.2);
+			border-left: 1px solid rgba(0,0,0,0.2);
+			background: transparent;
+		}
+		
+		input[type="checkbox"]:checked
+		{
+			background-image: url(/assets/gfx/checkbox_tick_gray.png);
+		}
+	}
+}

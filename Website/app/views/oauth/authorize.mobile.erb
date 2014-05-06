@@ -1,0 +1,14 @@
+<h1>Authorize</h1>
+<p>Can <%= @token.client_application.name %> access your account?</p>
+<%= form_tag authorize_url do %>
+  <%= hidden_field_tag "oauth_token", @token.token %>
+  <%- if params[:oauth_callback] -%>
+  <%= hidden_field_tag "oauth_callback", params[:oauth_callback] %>
+<%- end -%>
+<p>
+  <%= check_box_tag 'authorize' %> Authorize access
+</p>
+<p>
+  <%= submit_tag %>
+</p>
+<% end %>

@@ -1,0 +1,68 @@
+<div id="main">
+	
+	<div class="white box">
+		<% @artist = nil %>
+		<%= render "form" %>
+	</div>
+	
+	<% if @artists.length > 0 or @users.length > 0 or admin? %>
+		<div class="white box">
+			<% if @artists.length > 0 %>
+				<h1><%=t "donations.list.artists.title"%></h1>
+				<ul class="vertical" data-list="donations_artists">
+					<% @artists.each do |artist| %>
+						<%= item artist.name, artist, "artist-#{artist.id}-name",
+							:meta => :donations, :image => artist.picture, :image_size => 30 %>
+					<% end %>
+				</ul>
+				<p class="message" id="no-donations"<%= "style='display:none;'".html_safe if @artists.length > 0 %>>
+					<%=t "donations.list.artists.empty" %>
+				</p>
+			<% end %>
+			
+			<% if @users.length > 0 %>
+				<h1><%=t "donations.list.users.title"%></h1>
+				<ul class="vertical" data-list="donations_users">
+					<% @users.each do |user| %>
+						<%= item user.name, user, "user-#{user.id}-name",
+							:meta => :donations, :image => user.picture, :image_size => 30 %>
+					<% end %>
+				</ul>
+				<p class="message" id="no-donations"<%= "style='display:none;'".html_safe if @users.length > 0 %>>
+					<%=t "donations.list.users.empty" %>
+				</p>
+			<% end %>
+			
+			<% if admin? %>
+				<h1>Admin stuff</h1>
+				<% if @pending.count > 0 %>
+					<h1><%=t "donations.pending" %></h1>
+					<ul class="vertical" data-list="pending_donations">
+						<% @pending.each do |donation| %>
+							<%= item donation.artist.name, donation, "artist-#{donation.artist.id}-name" %>
+						<% end %>
+					</ul>
+				<% end %>
+				
+				<% if @revoked.count > 0 %>
+					<h1><%=t "donations.revoked" %></h1>
+					<ul class="vertical" data-list="pending_donations">
+						<% @revoked.each do |donation| %>
+							<%= item donation.artist.name, donation, "artist-#{donation.artist.id}-name" %>
+						<% end %>
+					</ul>
+				<% end %>
+				
+				<% if @charity > 0 %>
+					<h1><%=t "donations.distribution.charity" %></h1>
+					<p>$<%= @charity %></p>
+				<% end %>
+			<% end %>
+			
+		</div>
+	<% end %>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => (user_signed_in? ? "sidebars/user" : "sidebars/main") %>
+</div>

@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="Hungarian" CultureName="Magyar" Culture="hu-HU">
+	
+	<Value Id="Application"              FlowDirection="LeftToRight" Title="Stoffi zenelejátszó" Tagline="The world's next music player" />
+	
+	<Value Id="ToolbarAdd"                        Text="Hozzáadás" />
+	<Value Id="ToolbarAddTrack"                   Text="Fájl"/>
+	<Value Id="ToolbarAddFolder"                  Text="Mappa"/>
+	<Value Id="ToolbarAddPlaylist"                Text="Lejátszási lista"/>
+	<Value Id="ToolbarAddRadioStation"            Text="Rádióállomás"/>
+	<Value Id="ToolbarAddApp"                     Text="Alkalmazás"/>
+	<Value Id="ToolbarShow"                       Text="Nézet" />
+	<Value Id="ToolbarDetailsPane"                Text="Részletek panel" />
+	<Value Id="ToolbarMenuBar"                    Text="Menü sor" />
+	<Value Id="ToolbarTools"                      Text="Eszközök" />
+	<Value Id="ToolbarImporter"                   Text="Konfiguráció importálása" />
+	<Value Id="ToolbarExporter"                   Text="Konfiguráció exportálása" />
+	<Value Id="ToolbarGeneratePlaylist"           Text="Lejátszási lista készítése" />
+	<Value Id="ToolbarPreferences"             Content="Tulajdonságok" />
+	<Value Id="ToolbarEqualizer"               Content="Equalizer" />
+	<Value Id="ToolbarUpgrade"                 ToolTip="A Stoffi frissítésre került. Kérlek indítsd újra!"/>
+	<Value Id="ToolbarScanning"                Content="Ellenőrzés..."/>
+
+	<Value Id="Searching"                         Text="Keresés..."/>
+
+	<Value Id="MenuFile"                        Header="Fájl"/>
+	<Value Id="MenuAddTrack"                    Header="Zeneszám hozzáadása"/>
+	<Value Id="MenuAddFolder"                   Header="Mappa hozzáadása"/>
+	<Value Id="MenuAddPlaylist"                 Header="Lejátszási lista hozzáadása"/>
+	<Value Id="MenuAddRadioStation"             Header="Rádióállomás hozzáadása"/>
+	<Value Id="MenuAddApp"                      Header="Alkalmazás telepítése"/>
+	<Value Id="MenuHide"                        Header="Elrejtés"/>
+	<Value Id="MenuClose"                       Header="Bezárás"/>
+	<Value Id="MenuView"                        Header="Nézet"/>
+	<Value Id="MenuMenuBar"                     Header="Menü sor"/>
+	<Value Id="MenuDetailsPane"                 Header="Részletek panel"/>
+	<Value Id="MenuTools"                       Header="Eszközök"/>
+	<Value Id="MenuImporter"                    Header="Konfiguráció importálása"/>
+	<Value Id="MenuExporter"                    Header="Konfiguráció exportálása"/>
+	<Value Id="MenuGeneratePlaylist"            Header="Lejátszási lista készítése"/>
+	<Value Id="MenuEqualizer"                   Header="Equalizer"/>
+	<Value Id="MenuPreferences"                 Header="Tulajdonságok"/>
+	<Value Id="MenuHelp"                        Header="Súgó"/>
+	<Value Id="MenuAbout"                       Header="Stoffi névjegy"/>
+
+	<Value Id="MenuAddToPlaylist"               Header="Hozzáadás lejátszási listához"/>
+	<Value Id="MenuCreateNew"                   Header="Új készítése"/>
+	<Value Id="MenuRemoveFromPlaylist"          Header="Eltávolítás lejátszási listából"/>
+	<Value Id="MenuRemoveBookmark"              Header="Könyvjelző eltávolítása"/>
+
+	<Value Id="MenuEnable"                      Header="Engedélyezés"/>
+	<Value Id="MenuDisable"                     Header="Letiltás"/>
+	<Value Id="MenuUninstall"                   Header="Eltávolítás"/>
+
+	<Value Id="MenuRenamePlaylist"                Text="Lista átnevezése"/>
+	<Value Id="MenuRemovePlaylist"                Text="Lista eltávolítása"/>
+	<Value Id="MenuSavePlaylist"                  Text="Lista mentése"/>
+	<Value Id="MenuSharePlaylist"                 Text="Lista megosztása"/>
+
+	<Value Id="MenuRemove"                        Text="Eltávolítás"/>
+	<Value Id="MenuDelete"                        Text="Törlés a merevlemezről"/>
+	<Value Id="MenuInclude"                       Text="Felvétel"/>
+	<Value Id="MenuIgnore"                        Text="Kihagyás"/>
+	<Value Id="MenuQueue"                         Text="Hozzáadás a várakozási listához"/>
+	<Value Id="MenuDequeue"                       Text="Levétel a várakozási listáról"/>
+	<Value Id="MenuInfo"                          Text="Tulajdonságok"/>
+	<Value Id="MenuCopy"                          Text="Másolás..."/>
+	<Value Id="MenuMove"                          Text="Áthelyezés..."/>
+	<Value Id="MenuPlay"                          Text="Lejátszás"/>
+	<Value Id="MenuPause"                         Text="Szünet"/>
+	<Value Id="MenuWatchOnYouTube"                Text="Megtekintés a YouTube-on"/>
+	<Value Id="MenuListenOnSoundCloud"            Text="Meghallgatás a SoundCloud-on"/>
+	<Value Id="MenuOpenFolder"                    Text="Megnyitás a Windows Intézőben"/>
+	<Value Id="MenuShareSong"                     Text="Megosztás"/>
+	<Value Id="MenuVisitWebsite"                Header="Weboldal megnyitása"/>
+  
+	<Value Id="MenuClearSort"                     Text="Rendezés kikapcsolása"/>
+
+	<Value Id="ColumnType"                        Text="Típus"/>
+	<Value Id="ColumnLocation"                    Text="Elérési hely"/>
+	<Value Id="ColumnArtist"                      Text="Előadó"/>
+	<Value Id="ColumnAlbum"                       Text="Album"/>
+	<Value Id="ColumnTitle"                       Text="Cím"/>
+	<Value Id="ColumnGenre"                       Text="Műfaj"/>
+	<Value Id="ColumnLength"                      Text="Hossz"/>
+	<Value Id="ColumnTrack"                       Text="Sorszám"/>
+	<Value Id="ColumnYear"                        Text="Év"/>
+	<Value Id="ColumnPlayCount"                   Text="Lejátszások száma"/>
+	<Value Id="ColumnLastPlayed"                  Text="Utoljára lejátszva"/>
+	<Value Id="ColumnPlayed"                      Text="Utoljára lejátszva"/>
+	<Value Id="ColumnPath"                        Text="Elérési hely"/>
+	<Value Id="ColumnViews"                       Text="Nézettség"/>
+	<Value Id="ColumnSize"                        Text="Méret"/>
+	<Value Id="ColumnBitrate"                     Text="Bitráta"/>
+	<Value Id="ColumnChannels"                    Text="Csatornák"/>
+	<Value Id="ColumnSamplingRate"                Text="Mintavételezési frekvencia"/>
+	<Value Id="ColumnCodecs"                      Text="Codec-ek"/>
+	<Value Id="ColumnURL"                         Text="URL"/>
+	<Value Id="ColumnName"                        Text="Név"/>
+	<Value Id="ColumnAuthor"                      Text="Készítő"/>
+	<Value Id="ColumnInstalled"                   Text="Telepítve"/>
+	<Value Id="ColumnVersion"                     Text="Verzió"/>
+	<Value Id="ColumnEnabled"                     Text="Aktív"/>
+	<Value Id="ColumnDescription"                 Text="Leírás"/>
+
+	<Value Id="TotalSize"                         Text="Teljes méret"/>
+	<Value Id="TotalLength"                       Text="Teljes hossz"/>
+	<Value Id="AverageSize"                       Text="Átlagos méret"/>
+	<Value Id="AverageLength"                     Text="Átlagos hossz"/>
+	<Value Id="AverageTracks"                     Text="Dalok átlagos száma"/>
+	<Value Id="Tracks"                            Text="Zeneszámok"/>
+	<Value Id="Stations"                          Text="Állomások"/>
+
+	<Value Id="MostViewed"                        Text="Legtöbbet nézett"/>
+	<Value Id="TopRated"                          Text="Legnépszerűbb"/>
+	
+	<Value Id="TaskbarPrev"                       Text="Előző dal"/>
+	<Value Id="TaskbarPlay"                       Text="Dal lejátszása"/>
+	<Value Id="TaskbarNext"                       Text="Következő dal"/>
+
+	<Value Id="TrayShow"                          Text="Megjelenítés"/>
+	<Value Id="TrayExit"                          Text="Kilépés"/>
+	<Value Id="TrayPrev"                          Text="Előző"/>
+	<Value Id="TrayPlay"                          Text="Lejátszás"/>
+	<Value Id="TrayNext"                          Text="Következő"/>
+
+	<Value Id="JumpPlay"                         Title="Lejátszás/szünet" Description="Jelenlegi zeneszám lejátszása vagy szüneteltetése"/>
+	<Value Id="JumpNext"                         Title="Következő" Description="Ugrás a következő zeneszámra"/>
+	<Value Id="JumpPrev"                         Title="Előző" Description="Előző zeneszám lejátszása"/>
+
+	<Value Id="NavigationFavorites"               Text="Kedvencek"/>
+	<Value Id="NavigationNowPlaying"              Text="Most játszott"/>
+	<Value Id="NavigationVideo"                   Text="Videó"/>
+	<Value Id="NavigationVisualizer"              Text="Vizualizáció"/>
+	<Value Id="NavigationVisualizerTitle"         Text="Nincs aktív vizualizáló"/>
+	<Value Id="NavigationVisualizerDescription"   Text="Jelenleg nincs aktív vizualizáló"/>
+	<Value Id="NavigationMusic"                   Text="Zene"/>
+	<Value Id="NavigationMusicDescription"        Text="A világ összes zenéje"/>
+	<Value Id="NavigationFiles"                   Text="Fájlok"/>
+	<Value Id="NavigationFilesTitle"              Text="Zenei gyűjtemény"/>
+	<Value Id="NavigationYouTube"                 Text="YouTube"/>
+	<Value Id="NavigationYouTubeTitle"            Text="YouTube"/>
+	<Value Id="NavigationYouTubeDescription"      Text="Hallgass zenét a YouTube-ról"/>
+	<Value Id="NavigationSoundCloud"              Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudTitle"         Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudDescription"   Text="Hallgass zenét a SoundCloud-ról"/>
+	<Value Id="NavigationRadio"                   Text="Rádió"/>
+	<Value Id="NavigationRadioTitle"              Text="Rádióállomások"/>
+	<Value Id="NavigationDisc"                    Text="Lemez"/>
+	<Value Id="NavigationDiscTitle"               Text="Audió lemez"/>
+	<Value Id="NavigationQueue"                   Text="Várakozási sor"/>
+	<Value Id="NavigationQueueTitle"              Text="Várakozási sor"/>
+	<Value Id="NavigationHistory"                 Text="Előzmények"/>
+	<Value Id="NavigationHistoryTitle"            Text="Előzmények"/>
+	<Value Id="NavigationPlaylists"               Text="Lejátszási listák"/>
+	<Value Id="NavigationCreateNew"               Text="Új létrehozása"/>
+	<Value Id="NavigationPlaylistTitle"           Text="Lejátszási lista:"/>
+
+	<Value Id="PlaybackEmpty"                     Text="Jelenleg nincs lejátszás"/>
+	<Value Id="PlaybackSearch"                    Text="Keresés"/>
+
+	<Value Id="ControlBack"                    Content="Vissza a zenékhez"/>
+	<Value Id="ControlGeneral"                 Content="Általános"/>
+	<Value Id="ControlSources"                 Content="Források"/>
+	<Value Id="ControlServices"                Content="Felhő"/>
+	<Value Id="ControlApps"                    Content="Alkalmazások"/>
+	<Value Id="ControlShortcuts"               Content="Gyorsbillentyűk"/>
+	<Value Id="ControlAbout"                   Content="Névjegy"/>
+	<Value Id="ControlSeeAlso"                    Text="Továbbiak:"/>
+	<Value Id="ControlProject"                 Content="Projekt"/>
+	<Value Id="ControlBlog"                    Content="Blog"/>
+	<Value Id="ControlWebsite"                 Content="Weboldal"/>
+	
+	<Value Id="SourcesTitle"                      Text="Add meg zenéid elérési helyét"/>
+	<Value Id="SourcesSubTitle"                   Text="Források"/>
+	<Value Id="SourcesText"                       Text="Add meg az elérési útvonalakat, ahol szeretnéd, hogy a Stoffi zenéket keressen. A program minden megadott helyen történt változást észlelni fog, így a zenei gyűjteményed automatikusan frissítésre kerül.
+Megadhatsz egyéni fájlokat vagy teljes mappákat. Továbbá megadhatod, hogy a Stoffi melyik mappákat és fájlokat hagyja figyelmen kívül."/>
+
+	<Value Id="SourcesTypeFile"                   Text="Fájl"/>
+	<Value Id="SourcesTypeFolder"                 Text="Mappa"/>
+	<Value Id="SourcesTypeLibrary"                Text="Gyűjtemény"/>
+	
+	<Value Id="SourcesAddFolder"               Content="Mappa felvétele"/>
+	<Value Id="SourcesAddFile"                 Content="Fájl felvétele"/>
+	<Value Id="SourcesIgnoreFolder"            Content="Mappa kihagyása"/>
+	<Value Id="SourcesIgnoreFile"              Content="Fájl kihagyása"/>
+
+	<Value Id="ServicesTitle"                     Text="Felhőszolgáltatások a Stoffihoz"/>
+	<Value Id="ServicesAccountTitle"              Text="A Te fiókod"/>
+	<Value Id="ServicesAccountText"               Text="A Stoffi felhőszolgáltatások összekapcsolják a Stoffit a világgal, más szolgáltatásokon keresztül."/>
+	<Value Id="ServicesAccountDelink"          Content="Leválasztás"/>
+	<Value Id="ServicesUserName"                  Text="A következőként vagy belépve:"/>
+	<Value Id="ServicesDeviceName"                Text="Eszköz neve:"/>
+
+	<Value Id="ServicesLinksTitle"                Text="Fiók társítása"/>
+	<Value Id="ServicesLinksText"                 Text="Csatlakoztasd Stoffi fiókodat más szolgáltatások fiókjaival, így emelve a zenei élményt!"/>
+	<Value Id="ServicesCheckShare"             Content="A megosztott dolgaim közzététele"/>
+	<Value Id="ServicesCheckListen"            Content="A meghallgatott dalok közzététele"/>
+	<Value Id="ServicesCheckDonate"            Content="Az általam támogatott előadók közzététele"/>
+	<Value Id="ServicesCheckCreatePlaylist"    Content="Az általam készített lejátszási listák közzététele"/>
+	<Value Id="ServicesUnlink"                 Content="Lecsatlakozás"/>
+	<Value Id="ServicesLink"                   Content="{0} csatolása"/>
+	<Value Id="ServicesRefresh"                   Text="Frissítés"/>
+	<Value Id="ServicesLinkDisconnected"          Text="A kapcsolat megszűnt a következővel: {0}"/>
+	<Value Id="ServicesReconnect"                 Text="Újracsatlakozás"/>
+
+	<Value Id="ServicesPrivacyTitle"              Text="Adatvédelem"/>
+	<Value Id="ServicesPrivacyText"               Text="Itt választhatod ki, hogy mely adatok mozogjanak a számítógéped és a szolgáltatásaink között."/>
+	<Value Id="ServicesSubmit"                    Text="Válaszd ki, milyen információkat szeretnél megosztani másokkal:"/>
+	<Value Id="ServicesSubmitSongs"               Text="Az általam meghallgatott dalok"/>
+	<Value Id="ServicesSubmitPlaylists"           Text="A lejátszási listáim"/>
+	<Value Id="ServicesSynchronize"               Text="Szinkronizáld beállításaidat a többi számítógépeden levő Stoffival."/>
+	<Value Id="ServicesSynchronizeProfile"        Text="Szinkronizációs profil"/>
+	<Value Id="ServicesSynchronizeCheckbox"       Text="Szinkronizáció"/>
+	<Value Id="ServicesNoSynchronize"          Content="Ne szinkronizáljon"/>
+	<Value Id="ServicesSynchronizeManage"       Header="Mely adatok legyenek szinkronizálva?"/>
+	<Value Id="ServicesNewSyncProfile"         Content="Új profil"/>
+	<Value Id="ServicesSynchronizeConfig"      Content="Konfiguráció"/>
+	<Value Id="ServicesSynchronizePlaylists"   Content="Lejátszási listák"/>
+	<Value Id="ServicesSynchronizeQueue"       Content="Várakozási sor"/>
+	<Value Id="ServicesDisconnected"              Text="Probléma történhetett az internetkapcsolattal.
+Győződj meg róla, hogy csatlakozva vagy az internethez és próbálkozz újra!"/>
+	<Value Id="ServicesConnect"                Content="Csatlakozás"/>
+
+	<Value Id="AppsTitle"                         Text="A Stoffi kiegészítése alkalmazásokkal"/>
+	<Value Id="AppsInstalledTitle"                Text="Telepített alkalmazások"/>
+	<Value Id="AppsInstalledText"                 Text="Itt találod azon alkalmazások listáját, melyek már telepítve lettek. Az elemeket kiválasztva konfigurálhatod őket, valamint újakat is telepíthetsz."/>
+	<Value Id="AppsInstall"                    Content="Telepítés"/>
+	<Value Id="AppsLabelDescription"              Text="Leírás:"/>
+	<Value Id="AppsLabelAuthor"                   Text="Készítő:"/>
+	<Value Id="AppsLabelVersion"                  Text="Verzió:"/>
+	<Value Id="AppsLabelType"                     Text="Típus:"/>
+	<Value Id="AppsLabelEnabled"                  Text="Aktív:"/>
+	<Value Id="AppsSettingsTitle"                 Text="Alkalmazás beállításai"/>
+	<Value Id="AppsSettingsText"                  Text="Az alkalmazás konfigurálása."/>
+
+	<Value Id="AppTypeFilter"                     Text="Szűrő"/>
+	<Value Id="AppTypeSource"                     Text="Zenei forrás"/>
+	<Value Id="AppTypeVisualizer"                 Text="Vizualizáló"/>
+
+	<Value Id="ShortcutsTitle"                    Text="Gyorsbillentyűk testreszabása"/>
+	<Value Id="ShortcutsProfileTitle"             Text="Profil"/>
+	<Value Id="ShortcutsProfileText"              Text="Ha már hozzászoktál egy bizonyos alkalmazás gyorsbillentyűihez, akkor itt kiválaszthatod a hozzá tartozó profilt.
+Ezen felül létrehozhatsz saját profilokat is."/>
+	<Value Id="ShortcutsProfileCustom"            Text="Egyéni"/>
+	<Value Id="ShortcutsProfileSelect"            Text="Válassz profilt"/>
+	<Value Id="ShortcutsProfileNew"            Content="Új profil"/>
+	<Value Id="ShortcutsProfileRename"         Content="Profil átnevezése"/>
+	<Value Id="ShortcutsProfileDelete"         Content="Profil törlése"/>
+	
+	<Value Id="AboutTitle"                        Text="Információk a Stoffi zenelejátszóról"/>
+	<Value Id="AboutDescriptionTitle"             Text="Leírás"/>
+	<Value Id="AboutDescriptionText"              Text="A Stoffi zenelejátszó egy egyszerű lehetőség a zenehallgatásra.
+
+Célunk az volt, hogy könnyen használható legyen, tiszta és esztétikus felülettel, miközben egy teljes értékű, élvezhető zenelejátszót biztosít.
+
+A Stoffi kevés erőforrást használ és gyors, így a háttérben futva nem befolyásolja a rendszer teljesítményét. Szorosan integrálódik a rendszer többi részével, így beleolvad és annak természetes részévé válik.
+
+A Stoffi lejátszóval egyszerűen, és saját elképzeléseid szerint rendszerezheted zenéidet: könnyen és gyorsan készíthetsz és módosíthatsz lejátszási listákat, valamint tarthatod karban zeneszámaid és albumaid.
+
+A zenehallgatás még soha nem volt ilyen szórakoztató!"/>
+	<Value Id="AboutPropertiesTitle"              Text="Alkalmazás tulajdonságai"/>
+	<Value Id="AboutPropertiesRelease"            Text="Kiadás:"/>
+	<Value Id="AboutPropertiesDetails"          Header="Technikai részletek"/>
+	<Value Id="AboutPropertiesVersion"            Text="Verzió neve:"/>
+	<Value Id="AboutPropertiesStamp"              Text="Verziószám:"/>
+	<Value Id="AboutPropertiesArch"               Text="Architektúra:"/>
+	<Value Id="AboutPropertiesChannel"            Text="Csatorna:"/>
+	<Value Id="AboutPropertiesCheck"              Text="Frissítés legutóbbi keresése:"/>
+	<Value Id="AboutPropertiesUpgraded"           Text="A Stoffi frissítve lett. A frissítések életbe léptetéséhez a program újraindítása szükséges."/>
+	<Value Id="AboutCreditsTesters"               Text="Tesztelők"/>
+	<Value Id="AboutCreditsDevelopers"            Text="Fejlesztők"/>
+	<Value Id="AboutCreditsTranslators"           Text="Fordítók"/>
+
+	<Value Id="GeneralTitle"                      Text="Alap beállítások testreszabása"/>
+	<Value Id="GeneralLookTitle"                  Text="Megjelenés"/>
+	<Value Id="GeneralLookText"                   Text="Itt tudod megváltoztatni az alkalmazás felületével kapcsolatos beállításokat. Megadhatod, hogy mi és hogyan jelenjen meg."/>
+	<Value Id="GeneralLanguage"                   Text="Language/Nyelv"/>
+	<Value Id="GeneralOSD"                        Text="Asztali értesítések"/>
+	<Value Id="GeneralMinimize"                   Text="Kicsinyítés az értesítési területre"/>
+	<Value Id="GeneralFeelTitle"                  Text="Viselkedés"/>
+	<Value Id="GeneralFeelText"                   Text="Itt változtathatod meg a Stoffi viselkedésére vonatkozó beállításokat, és adhatod meg, hogy adott körülmények között milyen műveletet végezzen."/>
+	<Value Id="GeneralSearchPolicy"               Text="Keresés"/>
+	<Value Id="GeneralSearchPolicyGlobal"      Content="Ugyanaz a keresés mindenhol"/>
+	<Value Id="GeneralSearchPolicyPartial"     Content="Ugyanaz a keresés minden lejátszási listához"/>
+	<Value Id="GeneralSearchPolicyIndividual"  Content="Külön keresés minden lista esetén"/>
+	<Value Id="GeneralUpgradePolicy"              Text="Frissítések keresése"/>
+	<Value Id="GeneralUpgradePolicyManual"     Content="Saját magam ellenőrzöm"/>
+	<Value Id="GeneralUpgradePolicyNotify"     Content="Értesítsen, ha van új verzió"/>
+	<Value Id="GeneralUpgradePolicyAuto"       Content="Automatikus frissítés"/>
+	<Value Id="GeneralDoUpgrade"               Content="Frissítés"/>
+	<Value Id="GeneralDoCheck"                 Content="Ellenőrzés"/>
+	<Value Id="GeneralRestart"                 Content="Újraindítás"/>
+	<Value Id="GeneralAddPlayText"                Text="Ha a Windows Intézőben egy fájlra kétszer kattintassz a következő történjen:"/>
+	<Value Id="GeneralAddPolicy"                  Text="Hozzáadás:"/>
+	<Value Id="GeneralAddPolicyDont"           Content="Ne legyen"/>
+	<Value Id="GeneralAddPolicyLibrary"        Content="a zenei gyűjteményhez"/>
+	<Value Id="GeneralAddPolicyBoth"           Content="a zenei gyűjteményhez és az aktuális lejátszási listához"/>
+	<Value Id="GeneralPlayPolicy"                 Text="Lejátszás módja"/>
+	<Value Id="GeneralPlayPolicyPlay"          Content="Lejátszás"/>
+	<Value Id="GeneralPlayPolicyDont"          Content="Ne játssza le"/>
+	<Value Id="GeneralPlayPolicyBack"          Content="Hozzáadás a várakozási sor végére"/>
+	<Value Id="GeneralPlayPolicyFront"         Content="Hozzáadás a várakozási sor elejére"/>
+	<Value Id="GeneralPausePlayback"              Text="Lejátszás szüneteltetése, ha:"/>
+	<Value Id="GeneralPausePlaybackLocked"        Text="a számítógép zárolva van"/>
+	<Value Id="GeneralPausePlaybackEnd"           Text="a zeneszám véget ért"/>
+	<Value Id="GeneralPausePlaybackLoggedOut"     Text="kijelentkezem"/>
+
+	<Value Id="SourceFieldType"                 Header="Típus"/>
+	<Value Id="SourceFieldLocation"             Header="Elérési hely"/>
+
+	<Value Id="ShortcutNotUsed"                   Text="Nincs használva"/>
+	<Value Id="ShortcutPress"                     Text="Billentyűk megadása"/>
+	<Value Id="ShortcutApplicationTitle"          Text="Az alkalmazáshoz tartozó parancsok"/>
+	<Value Id="ShortcutApplicationText"           Text="Ezek a gyorsbillentyűk az alkalmazáson belül bárhol használhatóak."/>
+	<Value Id="ShortcutMainWindowTitle"           Text="Főablak navigációja"/>
+	<Value Id="ShortcutMainWindowText"            Text="Ezek a gyorsbillentyűk a főablakban való navigálásra és az azzal történő interakcióra használhatók.
+Ez magában foglalja a navigációs panelt (Zenei gyűjtemény, Várakozási sor, Lejátszási listák és továbbiak), a zeneszámok listáját és a részletek panelt."/>
+	<Value Id="ShortcutMediaCommandsTitle"        Text="Médialejátszással kapcsolatos parancsok"/>
+	<Value Id="ShortcutMediaCommandsText"         Text="Ezek a gyorsbillentyűk szolgálnak a médialejátszás vezérlésére."/>
+	<Value Id="ShortcutTrackTitle"                Text="Zeneszámok listája"/>
+	<Value Id="ShortcutTrackText"                 Text="Ezeket a parancsokat a zeneszámok listáiban használhatod egy kiválasztott elemre vonatkozóan."/>
+	<Value Id="ShortcutGlobal"                    Text="Globális" ToolTip="Parancs végrehajtása akkor is, ha a Stoffi csak a háttérben fut."/>
+
+	<Value Id="Shortcut_Add_track"                Text="Zeneszám hozzáadása"/>
+	<Value Id="Shortcut_Add_folder"               Text="Mappa hozzáadása"/>
+	<Value Id="Shortcut_Add_playlist"             Text="Lejátszási lista hozzáadása"/>
+	<Value Id="Shortcut_Add_radio_station"        Text="Rádióállomás hozzáadása"/>
+	<Value Id="Shortcut_Add_app"                  Text="Alkalmazás hozzáadása"/>
+	<Value Id="Shortcut_Generate_playlist"        Text="Lejátszási lista generálása"/>
+	<Value Id="Shortcut_Minimize"                 Text="Kicsinyítés a tálcára"/>
+	<Value Id="Shortcut_Restore"                  Text="Teljes méret"/>
+	<Value Id="Shortcut_Help"                     Text="Súgó"/>
+	<Value Id="Shortcut_Close"                    Text="Bezárás"/>
+	<Value Id="Shortcut_Video"                    Text="Videó"/>
+	<Value Id="Shortcut_Visualizer"               Text="Vizualizáló"/>
+	<Value Id="Shortcut_Files"                    Text="Fájlok"/>
+	<Value Id="Shortcut_YouTube"                  Text="YouTube"/>
+	<Value Id="Shortcut_SoundCloud"               Text="SoundCloud"/>
+	<Value Id="Shortcut_Radio"                    Text="Rádió"/>
+	<Value Id="Shortcut_Queue"                    Text="Várakozási sor"/>
+	<Value Id="Shortcut_History"                  Text="Előzmények"/>
+	<Value Id="Shortcut_Playlists"                Text="Lejátszási listák"/>
+	<Value Id="Shortcut_Tracklist"                Text="Fókusz a zeneszámokra"/>
+	<Value Id="Shortcut_Search"                   Text="Keresés"/>
+	<Value Id="Shortcut_General_preferences"      Text="Általános beállítások"/>
+	<Value Id="Shortcut_Music_sources"            Text="Források"/>
+	<Value Id="Shortcut_Services"                 Text="Felhő"/>
+	<Value Id="Shortcut_Apps"                     Text="Alkalmazások"/>
+	<Value Id="Shortcut_Keyboard_shortcuts"       Text="Gyorsbillentyűk"/>
+	<Value Id="Shortcut_About"                    Text="Névjegy"/>
+	<Value Id="Shortcut_Toggle_details_pane"      Text="Részletek panel ki/be"/>
+	<Value Id="Shortcut_Toggle_menu_bar"          Text="Menü sor ki/be"/>
+	<Value Id="Shortcut_Create_playlist"          Text="Lejátszási lista készítése"/>
+	<Value Id="Shortcut_Play_or_pause"            Text="Lejátszás/szünet"/>
+	<Value Id="Shortcut_Next"                     Text="Következő"/>
+	<Value Id="Shortcut_Previous"                 Text="Előző"/>
+	<Value Id="Shortcut_Toggle_shuffle"           Text="Véletlen sorrend ki/be"/>
+	<Value Id="Shortcut_Toggle_repeat"            Text="Ismétlés ki/be"/>
+	<Value Id="Shortcut_Increase_volume"          Text="Hangerő növelése"/>
+	<Value Id="Shortcut_Decrease_volume"          Text="Hangerő csökkentése"/>
+	<Value Id="Shortcut_Seek_forward"             Text="Ugrás előre"/>
+	<Value Id="Shortcut_Seek_backward"            Text="Ugrás vissza"/>
+	<Value Id="Shortcut_Add_bookmark"             Text="Könyvjelző hozzáadása"/>
+	<Value Id="Shortcut_Jump_to_previous_bookmark" Text="Ugrás az előző könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_next_bookmark"    Text="Ugrás a köv. könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_first_bookmark"   Text="Ugrás az első könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_last_bookmark"    Text="Ugrás az utolsó könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_1"       Text="Ugrás az 1-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_2"       Text="Ugrás a 2-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_3"       Text="Ugrás a 3-as könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_4"       Text="Ugrás a 4-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_5"       Text="Ugrás az 5-ös könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_6"       Text="Ugrás a 6-os könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_7"       Text="Ugrás a 7-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_8"       Text="Ugrás a 8-as könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_9"       Text="Ugrás a 9-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_bookmark_10"      Text="Ugrás a 10-es könyvjelzőhöz"/>
+	<Value Id="Shortcut_Jump_to_current_track"    Text="Ugrás a most játszott dalra"/>
+	<Value Id="Shortcut_Jump_to_selected_track"   Text="Ugrás a kiválasztott dalra"/>
+	<Value Id="Shortcut_Play_track"               Text="Zeneszám lejátszása"/>
+	<Value Id="Shortcut_Queue_and_dequeue"        Text="Ki/be a várakozási sorból/-ba"/>
+	<Value Id="Shortcut_Open_folder"              Text="Mappa megnyitása"/>
+	<Value Id="Shortcut_Remove"                   Text="Eltávolítás"/>
+	<Value Id="Shortcut_Remove_from_harddrive"    Text="Eltávolítás a számítógépről"/>
+	<Value Id="Shortcut_Copy"                     Text="Másolás"/>
+	<Value Id="Shortcut_Move"                     Text="Áthelyezés"/>
+	<Value Id="Shortcut_View_information"         Text="Tulajdonságok"/>
+	<Value Id="Shortcut_Share"                    Text="Megosztás"/>
+
+	<Value Id="ButtonOK"                       Content="OK"/>
+	<Value Id="ButtonApply"                    Content="Alkalmaz"/>
+	<Value Id="ButtonCancel"                   Content="Mégse"/>
+	<Value Id="ButtonAdd"                      Content="Hozzáadás"/>
+	<Value Id="ButtonClose"                    Content="Bezárás"/>
+	<Value Id="ButtonNew"                      Content="Új"/>
+	<Value Id="ButtonRename"                   Content="Átnevezés"/>
+	<Value Id="ButtonRemove"                   Content="Eltávolítás"/>
+	
+	<Value Id="PropertiesTitle"                  Title="Tulajdonságok"/>
+	<Value Id="PropertiesMultipleFiles"           Text="{0} zeneszám"/>
+	<Value Id="PropertiesGeneral"               Header="Általános"/>
+	<Value Id="PropertiesGeneralType"             Text="Fájl típusa:"/>
+	<Value Id="PropertiesGeneralTypeFormat"       Text="{0} formátumú hangfájl (.{1})"/>
+	<Value Id="PropertiesGeneralVariousFormats"   Text="Különböző formátumú fájlok"/>
+	<Value Id="PropertiesGeneralLength"           Text="Hossz:"/>
+	<Value Id="PropertiesGeneralChannels"         Text="Csatornák:"/>
+	<Value Id="PropertiesGeneralVariousChannels"  Text="Különböző csatornák"/>
+	<Value Id="PropertiesGeneralCodec"            Text="Codec:"/>
+	<Value Id="PropertiesGeneralVariousCodecs"    Text="Különböző codec-ek"/>
+	<Value Id="PropertiesGeneralBitrate"          Text="Bitráta:"/>
+	<Value Id="PropertiesGeneralVariousBitrates"  Text="Különböző bitráta"/>
+	<Value Id="PropertiesGeneralSamplingrate"     Text="Mintavételezési frekvencia:"/>
+	<Value Id="PropertiesGeneralVariousSamplingrates" Text="Különböző frekvenciák"/>
+	<Value Id="PropertiesGeneralLocation"          Text="Elérési útvonal:"/>
+	<Value Id="PropertiesGeneralVariousLocations" Text="Különböző mappák"/>
+	<Value Id="PropertiesGeneralSize"             Text="Méret:"/>
+	<Value Id="PropertiesGeneralPlayCount"        Text="Lejátszások száma:"/>
+	<Value Id="PropertiesGeneralLastPlayed"       Text="Utoljára játszva:"/>
+	<Value Id="PropertiesGeneralCreated"          Text="Létrehozva:"/>
+	<Value Id="PropertiesGeneralModified"         Text="Módosítva:"/>
+	<Value Id="PropertiesGeneralAccessed"         Text="Hozzáférés:"/>
+	<Value Id="PropertiesDetails"               Header="Részletek"/>
+	<Value Id="PropertiesDetailsProperty"      Content="Tulajdonság"/>
+	<Value Id="PropertiesDetailsValue"         Content="Érték"/>
+	<Value Id="PropertiesDetailsMultipleValues"   Text="(többféle érték)"/>
+
+	<Value Id="EqualizerTitle"                   Title="Equalizer"/>
+	<Value Id="EqualizerProfile"                  Text="Profil:"/>
+	<Value Id="EqualizerHertz"                    Text="Hz:"/>
+	<Value Id="EqualizerEcho"                     Text="Visszhang"/>
+	<Value Id="EqualizerProfileTuned"             Text="Behangolt"/>
+	<Value Id="EqualizerProfileBass"              Text="Basszus"/>
+	<Value Id="EqualizerProfileJazz"              Text="Jazz"/>
+	<Value Id="EqualizerProfileDance"             Text="Dance"/>
+	<Value Id="EqualizerProfileRnB"               Text="R&amp;B"/>
+	<Value Id="EqualizerProfileSpeech"            Text="Beszéd"/>
+	<Value Id="EqualizerProfileLoud"              Text="Hangos"/>
+	<Value Id="EqualizerProfileHeadphones"        Text="Fejhallgató"/>
+	<Value Id="EqualizerProfileFlat"              Text="Alap"/>
+	<Value Id="EchoWet"                           Text="Sok visszhang"/>
+	<Value Id="EchoDry"                           Text="Nincs visszahang"/>
+
+	<Value Id="AddURLTitle"                      Title="Rádióállomás hozzáadása"/>
+	<Value Id="AddURLLabel"                       Text="URL:"/>
+	<Value Id="AddURLWait"                        Text="Kérlek, várj..."/>
+
+	<Value Id="GeneratePlaylistTitle"            Title="Lejátszási lista generálása"/>
+	<Value Id="FromList"                          Text="Létező listából"/>
+	<Value Id="AllTracks"                      Content="Minden zeneszám"/>
+	<Value Id="NumberOfTracks"                    Text="Dalok száma"/>
+	<Value Id="ApplySearch"                       Text="Jelenlegi keresési találatok használata"/>
+	<Value Id="Name"                              Text="Név"/>
+	<Value Id="ButtonGenerate"                 Content="Generálás"/>
+
+	<Value Id="DateDays"                      Singular="nap" Plural="nap"/>
+	<Value Id="DateHours"                     Singular="óra" Plural="óra"/>
+	<Value Id="DateMinutes"                   Singular="perc" Plural="perc"/>
+	<Value Id="DateSeconds"                   Singular="másodperc" Plural="másodperc"/>
+
+	<Value Id="Filter"                            Text="Szűrő:"/>
+	<Value Id="FilterNone"                     Content="Nincs szűrő"/>
+	<Value Id="FilterMusic"                    Content="Zene"/>
+	<Value Id="Quality"                           Text="Minőség:"/>
+	<Value Id="QualityLow"                     Content="Alacsony"/>
+	<Value Id="QualityMedium"                  Content="Közepes"/>
+	<Value Id="QualityHigh"                    Content="Magas"/>
+	<Value Id="Quality720"                     Content="720p"/>
+	<Value Id="Quality1080"                    Content="1080p"/>
+	<Value Id="QualityHighres"                 Content="Magas felbontás"/>
+	<Value Id="QualityDefault"                 Content="Automatikus"/>
+
+	<Value Id="SizeByte"                          Text="{0} bájt"/>
+	<Value Id="SizeKb"                            Text="{0} kB"/>
+	<Value Id="SizeMb"                            Text="{0} MB"/>
+	<Value Id="SizeGb"                            Text="{0} GB"/>
+	<Value Id="SizeTb"                            Text="{0} TB"/>
+	<Value Id="SizePb"                            Text="{0} PB"/>
+	<Value Id="SizeEb"                            Text="{0} EB"/>
+	
+	<Value Id="BeatsPerMinute"                    Text="{0} bpm"/>
+	<Value Id="KilobitsPerSecond"                 Text="{0} kbps"/>
+	<Value Id="KiloHertz"                         Text="{0} kHz"/>
+
+	<Value Id="MultipleSelectedTracks"            Text="{0} zeneszám"/>
+	<Value Id="FileTypeYouTube"                   Text="YouTube fájl" Plural="YouTube fájlok"/>
+	<Value Id="FileTypeSoundCloud"                Text="SoundCloud fájl" Plural="SoundCloud fájlok"/>
+	<Value Id="FileTypeRadio"                     Text="Rádióállomás" Plural="Rádióállomások"/>
+	<Value Id="FileTypeUnknown"                   Text="Ismeretlen típus" Plural="Ismeretlen típusok"/>
+	<Value Id="FileTypeExtension"                 Text="{0} fájl" Plural="{0} fájl"/>
+	<Value Id="FileTypeLocal"                     Text="Helyi fájl" Plural="Helyi fájlok"/>
+
+	<Value Id="SearchTooltip"                     Text="Keresés: {0}"/>
+
+	<Value Id="UpgradeConnecting"                 Text="Kapcsolódás..."/>
+	<Value Id="UpgradeDownloading"                Text="Letöltés..."/>
+	<Value Id="UpgradeProcessing"                 Text="Feldolgozás..."/>
+	<Value Id="UpgradeNotChecked"                 Text="Még nem volt ellenőrizve"/>
+	<Value Id="UpgradeWait"                       Text="Kérlek, várj..."/>
+	<Value Id="UpgradePending"                    Text="A frissítések telepítve. Indítsd újra a programot!"/>
+	<Value Id="UpgradeNotFound"                   Text="A legfrissebb verzió fut nálad."/>
+	<Value Id="UpgradeFound"                      Text="Van elérhető frissítés."/>
+	<Value Id="UpgradeDebug"                      Text="A frissítések ki vannak kapcsolva a DEBUG (hibakeresési) mód miatt."/>
+	<Value Id="UpgradeInProgress"                 Text="A frissítés folyamatban.
+Kérlek, várj..."/>
+
+	<Value Id="AssociationsCaption"               Text="A Stoffi legyen az alapértelmezett zenelejátszó"/>
+	<Value Id="AssociationsInstruction"           Text="Szeretnéd, hogy a Stoffi legyen az alapértelmezett zenelejátszó?"/>
+	<Value Id="AssociationsText"                  Text="Állítsd be a Stoffit az alapértelmezett zenelejátszónak és kezeld zenéidet könnyedén az interneten és számítógépeden egyaránt."/>
+	<Value Id="AssociationsSkip"                  Text="Kihagyás"/>
+	<Value Id="AssociationsSkipText"              Text="Ne hajtson végre változtatást a rendszeren"/>
+	<Value Id="AssociationsChoose"                Text="Magam választok"/>
+	<Value Id="AssociationsChooseText"            Text="Válaszd ki, mely fájlokat kezelje a Stoffi"/>
+	<Value Id="AssociationsYes"                   Text="Igen"/>
+	<Value Id="AssociationsYesText"               Text="A Stoffi legyen az alapértelmezett zenelejátszó"/>
+
+	<Value Id="AssociationsCustom"               Title="Társítások"/>
+	<Value Id="AssociationsCustomHeader"          Text="Válassz fájltípusokat"/>
+	<Value Id="AssociationsCustomText"            Text="Válaszd ki, hogy mely fájltípusokat kezelje a Stoffi. A Stoffi képes lejátszási listák és dalok kezelésére is."/>
+	<Value Id="AssociationsCustomSongs"        Content="Dalok"/>
+	<Value Id="AssociationsCustomPlaylists"    Content="Lejátszási listák"/>
+	<Value Id="AssociationsCustomOther"        Content="Egyebek"/>
+	<Value Id="AssociationsCustomInternet"     Content="Internet"/>
+	<Value Id="AssociationsCustomSPP"          Content="Alkalmazás"/>
+	<Value Id="AssociationsCustomSCX"          Content="Konfiguráció"/>
+	<Value Id="AssociationsCustomExpander"      Header="Egyéni"/>
+	<Value Id="AssociationsCustomFootLink"     Content="Tudj meg többet"/>
+
+	<Value Id="FileAssociationSong"               Text="Zeneszám ({0})"/>
+	<Value Id="FileAssociationPlaylist"           Text="Lejátszási lista ({0})"/>
+	<Value Id="FileAssociationSPP"                Text="Stoffi alkalmazás"/>
+	<Value Id="FileAssociationSCX"                Text="Stoffi konfiguráció"/>
+	<Value Id="URIAssociationOpen"                Text="Lejátszás"/>
+	<Value Id="FileAssociationOpen"               Text="Lejátszás"/>
+	<Value Id="FileAssociationInstall"            Text="Telepítés"/>
+	<Value Id="FileAssociationLoad"               Text="Betöltés"/>
+	<Value Id="FileAssociationPlay"               Text="Lejátszás a Stoffival"/>
+
+	<Value Id="DialogOpenPlaylistTitle"           Text="Lejátszási lista megnyitása"/>
+	<Value Id="DialogInstallAppTitle"             Text="Alkalmazás telepítése"/>
+	<Value Id="DialogNameCreateTitle"             Text="Profil készítése"/>
+	<Value Id="DialogNameRenameTitle"             Text="Profil átnevezése"/>
+	<Value Id="DialogNameDescription"             Text="Adj meg egy nevet a profilodnak:"/>
+	<Value Id="DialogNameExistsError"             Text="Egy ugyanilyen nevű profil már létezik."/>
+	<Value Id="DialogNameInvalidError"            Text="Csak az angol abécé betűi és számok használhatók"/>
+	<Value Id="DialogNameEmptyError"              Text="Adj meg egy nevet"/>
+	<Value Id="DialogNumberTooSmall"              Text="A szám nagyobb kell legyen, mint {0}"/>
+	<Value Id="DialogNumberTooLarge"              Text="A szám kisebb kell legyen, mint {0}"/>
+	<Value Id="DialogNumberInvalid"               Text="A szám helytelen"/>
+
+	<Value Id="MessageOldWindows"                Title="Az Old School nem király" Message="Ahhoz, hogy élvezhesd a Stoffi nyújtotta élményt, egy újabb Windows verzió telepítése szükséges."/>
+	<Value Id="MessageShortcutClash"             Title="A gyorsbillentyű már meg van adva" Message="Ez a gyorsbillentyű a következő parancshoz van hozzárendelve: %name (%category)
+Le szeretnéd cserélni?"/>
+	<Value Id="MessageDeletePlaylist"            Title="Lejátszási lista törlése" Message="Biztos, hogy törölni szeretnéd a '%name' lejátszási listát?"/>
+	<Value Id="MessageSavingPlaylist"            Title="A lejátszási lista nem menthető" Message="Probléma adódott a lejátszási lista mentése során."/>
+	<Value Id="MessageContactingServer"           Text="Nem lehetett kapcsolódni a szerverhez."/>
+	<Value Id="MessageSaveProfile"               Title="Profil változásainak mentése" Message="Néhány érték megváltozott.
+		Szeretnéd menteni őket?"/>
+	<Value Id="MessageUpgradeInProgress"         Title="Frissítés folyamatban" Message="Egy frissítés van folyamatban.
+		Biztos, hogy kilépsz?"/>
+	<Value Id="MessageNoFlash"                   Title="A Flash Player nincs telepítve" Message="A Flash Player nincs telepítve az Internet Explorer-hez.
+Szeretnéd most letölteni?"/>
+	<Value Id="MessageYouTubeBadParams"          Title="YouTube lejátszó hiba" Message="Hibás paraméterek küldve a YouTube lejátszónak."/>
+	<Value Id="MessageYouTubeNotFound"           Title="YouTube lejátszó hiba" Message="A zeneszám el lett távolítva vagy privátnak lett minősítve."/>
+	<Value Id="MessageYouTubeUnknown"            Title="YouTube lejátszó hiba" Message="Ismeretlen hiba (kód: {0})."/>
+	<Value Id="MessageAlreadyAddedSource"        Title="A forrás már hozzá van adva" Message="A forrás, amit hozzá szeretnél adni, már szerepel a listában."/>
+	<Value Id="MessageConnectionProblem"         Title="Kapcsolódási probléma" Message="Nem lehetett kapcsolódni a szerverhez.
+
+Lehetséges okai: gond van az internetkapcsolatoddal
+vagy probléma akadt a szerverünkkel."/>
+	<Value Id="MessageConfirmDelete"             Title="Törlés a merevlemezről" Message="Biztos, hogy törölni szeretnéd a fájlt a merevlemezről?"/>
+	<Value Id="MessageErrorDeleting"             Title="Nem lehetett törölni a fájlt"/>
+	<Value Id="MessageErrorUpdating"             Title="Nem lehetett frissíteni a fájlt"/>
+	<Value Id="MessageErrorRenaming"             Title="Nem lehetett átnevezni a fájlt"/>
+	<Value Id="MessageErrorMoving"	             Title="Nem lehetett áthelyezni a fájlt"/>
+	<Value Id="MessageErrorCopying"	             Title="Nem lehetett átmásolni a fájlt"/>
+	<Value Id="MessageErrorInstallingApp"        Title="Nem lehetett telepíteni az alkalmazást"/>
+	<Value Id="MessageErrorStartingApp"          Title="Nem lehetett elindítani az alkalmazást"/>
+	
+	<Value Id="HeaderTracks"                      Text="{0} zeneszám"/>
+	<Value Id="HeaderStations"                    Text="{0} állomás"/>
+	<Value Id="HeaderPlaylists"                   Text="{0} lejátszási lista"/>
+	<Value Id="MetaDataLoading"                   Text="Betöltés..."/>
+	<Value Id="NoVideoAvailable"                  Text="Nincs elérhető videó"/>
+	<Value Id="NoVisualizerAvailable"             Text="Nincs elérhető vizualizáló"/>
+	<Value Id="NoVisualizer"                      Text="Nincs vizualizáló"/>
+	<Value Id="SavingSettings"                 Content="Beállítások mentése."/>
+	<Value Id="Closing"                        Content="Stoffi bezárása."/>
+	<Value Id="Unknown"                           Text="Ismeretlen"/>
+</Dictionary>

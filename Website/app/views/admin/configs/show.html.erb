@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_config.name %>
+</p>
+
+<p>
+  <b>Pending donations limit:</b>
+  <%= @admin_config.pending_donations_limit %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_config_path(@admin_config) %> |
+<%= link_to 'Back', admin_configs_path %>

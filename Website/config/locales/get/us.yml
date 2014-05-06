@@ -1,0 +1,77 @@
+us:
+  get:
+    versions: "All versions"
+    mirrors: "Other places"
+    checksums: "Checksums"
+    awards: "Awards"
+    os: "Operating system"
+    bundle: "Include .NET"
+    download: "Download"
+    getsum: "Get checksum"
+    channel: "Channel"
+    channels:
+      stable: "Stable"
+      beta: "Beta"
+      alpha: "Alpha"
+    arch: "Architecture"
+    archs:
+      32bits: "32 bits"
+  
+    thanks: "Thank you for downloading Stoffi"
+    manual_start_html: "The download should start any time now.<br/>If not you can %{click_here} to start it manually."
+    click_here: "click here"
+    instruction1:
+      title: "Run the installer"
+      text:
+        chrome: "Select to save the file \"%{fname}.exe\" and click on it when it has been downloaded."
+        firefox: "Select to save the file \"%{fname}.exe\" and double-click on it when it has been downloaded."
+        opera: "Select to run the file \"%{fname}.exe\"."
+        safari: "Select to run the file \"%{fname}.exe\"."
+        ie: "Select to run the file \"%{fname}.exe\"."
+
+    instruction2:
+      title: "Agree to run"
+      text: "Agree to run the Stoffi Installer."
+
+    instruction3:
+      title: "Complete installation"
+      text: "Follow the instructions and Stoffi Music Player will be installed."
+      
+    mobile:
+      player:
+        text: "Right now there's no music player app, but we are working really hard to create one as soon as possible."
+        
+      remote:
+        text: "We have an awesome app which gives you the ability to remotely control your Stoffi from an iPhone, iPod or iPad."
+        link: "Download Stoffi Remote"
+        
+    message:
+      linux: "We are working hard on a Linux version which will meet the same high standards of quality and integration as our Windows version."
+      osx: "We are working hard on an OS X version which will meet the same high standards of quality and integration as our Windows version."
+      win_old: "Stoffi cannot run on older versions of Windows since it is extremely integrated with Windows 7 specifically."
+      win8: "A Windows 8 version is on the way.</p><p>You can install our Windows 7 version but it will contain some glitches and bugs."
+      bot: "Download Stoffi for Windows 7 for free.</p><p>Millions of tracks inside an extremely beautiful music player."
+      unknown: "We couldn't detect your operating system.</p><p>Check out \"All versions\" and select a version for your platform."
+     
+  check:
+    file: "checksum file"
+    brief:
+      title: "Verify installer integrity"
+      text: "To verify that your downloaded installer is free from malware,<br/>backdoors and other nasty stuff follow these simple steps."
+      
+    install:
+      title: "Install hash tool"
+      text_html: "Download the tool %{link}."
+      
+    get:
+      title: "Get checksum file"
+      text_html: "Place the %{click_here} in the same folder as the tool."
+      notice_html: "Always download the file from <strong>stoffiplayer.com</strong>"
+      
+    run:
+      title: "Run the tool"
+      text_html: "Run the command<br><strong>hashdeep -l -a -k %{fname}.sum %{fname}.exe</strong>."
+      
+    verify:
+      title: "Verify result"
+      text: "Verify that the output states \"Audit passed\"."

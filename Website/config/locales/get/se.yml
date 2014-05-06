@@ -1,0 +1,77 @@
+se:
+  get:
+    versions: "Alla versioner"
+    mirrors: "Andra platser"
+    checksums: "Checksummor"
+    awards: "Priser"
+    os: "Operativsystem"
+    bundle: "Inkludera .NET"
+    download: "Ladda ner"
+    getsum: "Skaffa checksumma"
+    channel: "Kanal"
+    channels:
+      stable: "Stabil"
+      beta: "Beta"
+      alpha: "Alpha"
+    arch: "Arkitektur"
+    archs:
+      32bits: "32 bitar"
+  
+    thanks: "Tack för att du laddar ner Stoffi"
+    manual_start_html: "Nedladdning borde börja när som helst.<br/>Om inte kan du %{click_here} för att starta den manuellt."
+    click_here: "klicka här"
+    instruction1:
+      title: "Kör installeraren"
+      text:
+        chrome: "Välj att spara filen \"InstallStoffi.exe\" och klicka på den när den laddats klart."
+        firefox: "Välja att spara filen \"InstallStoffi.exe\" och dubbelklicka på den när den laddats klart."
+        opera: "Välj att köra filen \"InstallStoffi.exe\"."
+        safari: "Välj att köra filen \"InstallStoffi.exe\"."
+        ie: "Välj att köra filen \"InstallStoffi.exe\"."
+
+    instruction2:
+      title: "Godkänn körning"
+      text: "Godkänn att köra Stoffis installerare."
+
+    instruction3:
+      title: "Fullfölj installationen"
+      text: "Följ instruktionerna och Stoffi Musikspelare kommer att installeras."
+      
+    mobile:
+      player:
+        text: "Just nu finns det ingen musikspelar-app, men vi jobbar stenhårt på att den ska komma så snabbt som möjligt."
+        
+      remote:
+        text: "Vi har en cool app som gör att du kan fjärrstyra ditt Stoffi från din iPhone, iPod eller iPad."
+        link: "Ladda ner Stoffi Remote"
+        
+    message:
+      linux: "Vi jobbar hårt på en version till Linux som håller samma höga standard för kvalitet och integration som vår version för Windows."
+      osx: "Vi jobbar hårt på en version till OS X som håller samma höga standard för kvalitet och integration som vår version för Windows."
+      win_old: "Stoffi kan inte köras på äldre versioner av Windows eftersom den är extremt integrerad med just Windows 7."
+      win8: "En version till Windows 8 är på gång.</p><p>Du kan installera vår version för Windows 7 med det finns en del buggar då."
+      bot: "Ladda hem Stoffi för Windows 7 gratis.</p><p>Miljoner låtar inuti en extremt snygg musikspelare."
+      unknown: "Vi kunde inte avgöra ditt operativsystem.</p><p>Spana in \"Alla versioner\" och välj en version för din plattform."
+      
+  check:
+    brief:
+      title: "Verifiera installationsfilens integritet"
+      text: "För att verifiera att installationsfilen du laddat hem inte innehåller skadlig kod, bakdörrar eller andra hemskheter så kan du följa dessa enkla steg."
+      
+    install:
+      title: "Installera hashverktyg"
+      text_html: "Ladda hem verktyget %{link}. Packa upp verktyget och lägg i samma mapp som du lagt installationsfilen du vill verifiera."
+      
+    get:
+      title: "Skaffa checksumfil"
+      text_html: "Checksumfilen kommer att laddas hem automatiskt. Annars %{click_here}. Spara den i samma mapp som installationsfilen och verktyget."
+      notice_html: "Se till att du bara laddar hem checksumfilen från <strong>www.stoffiplayer.com</strong>"
+      
+    run:
+      title: "Kör verktyget"
+      text_html: "Öppna kommandofönstret genom att trycka Win+R och skriva <strong>cmd</strong><br/>Gå till mappen genom att skriva <strong>cd mappen\\där\\filerna\\finns</strong><br/>Kör kommandot <strong>hashdeep -l -a -k %{fname}.sum %{fname}.exe</strong>."
+      
+    verify:
+      title: "Verifiera resultatet"
+      text: "Verifiera att det står \"Audit passed\". Om det gör det så kan du vara säker på att du laddat hem rätt fil."
+      

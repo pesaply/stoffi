@@ -1,0 +1,13 @@
+us:
+  legal:
+    intro: "When it comes to a project of this size there's bound to be some legal stuff to cover. But we've tried to keep it short and understandable, drawing much on common sense and avoiding overreaching mumbo jumbo."
+    privacy:
+      title: "Your privacy"
+      text: "We do our best to protect your privacy. That's why we have made account security a high priority among other things. We do use tracking to see how many visitors we have on our website. This tracking is done with Google Analytics. We can't track down individual visitors but we do get a grasp on how many of you use a certain browser or which pages are most visited and so on. If you do not wish to be tracked there's always an %{opt_out_plugin}"
+      link: "opt-out plugin"
+    rules:
+      title: "Our rules"
+      text: "We do not have a \"Terms of Service\". We think the law is sufficient for us. Don't abuse our system, don't be mean, use common sense."
+    license:
+      title: "Licenses"
+      text: "The code is licensed under %{gpl_link} and the content and graphics are licensed under %{cc_link}."

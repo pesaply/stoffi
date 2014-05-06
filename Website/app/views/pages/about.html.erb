@@ -1,0 +1,28 @@
+<div id="main">
+	<div class="white box">
+		<h1 class="center"><%=t "about.header" %></h1>
+			<div class="center"><%= image_tag "#{I18n.locale}/start_thumb.png", :width => "400px", :height => "135px" %></div>
+		<%=t "about.intro_html" %>
+		<p>&nbsp;</p>
+		
+		<div id="team">
+			<h1><%=t "about.team.title" %></h1>
+			<ul>
+				<% team = ["Maggie Man", "Hylton Clarke", "Tianwen Zhang", "Tom Sokolinski", "Fredrik Gadnell", "Carl Carenvall", "Mark Tibblin", "Francesco Roberto", "Ryan Zeigler", "Fredrik Weinestad", "Balog Tamás"] %>
+				<% team.each do |mate| %>
+					<li title="<%=t "about.team.#{mate.downcase.gsub(' ','_')}"%>"><%=mate%></li>
+				<% end %>
+			</ul>
+		</div>
+		
+		<h1><a name="future"><%=t "about.future.title" %></a></h1>
+		<ul><%=t "about.future.list_html" %></ul>
+		
+		<div class="clear"></div>
+		
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/main" %>
+</div>

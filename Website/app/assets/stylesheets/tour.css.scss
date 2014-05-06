@@ -1,0 +1,63 @@
+$color1: lighten(#FECB00, 10%);
+$color2: lighten(#005293, 20%);
+
+#tour
+{
+	padding: 5px;
+	margin-bottom: 50px;
+	.handle
+	{
+		font-size: 100pt;
+		display: inline-block;
+		cursor: pointer;
+		height: 310px;
+		width: 60px;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 300px;
+		color: rgba(0,0,0,0.4);
+		font-family: 'Dorsa', Helvetica, Arial, sans-serif;
+		&:hover
+		{
+			background: rgba(255,255,255,0.1);
+			color: rgba(0,0,0,0.8);
+		}
+	}
+	
+	h1
+	{
+		text-align: center;
+		color: rgba(0,0,0,0.5);
+		font-size: 28pt;
+		padding: 0px 0px 10px;
+		margin: 0;
+	}
+
+	.view
+	{
+		vertical-align: top;
+		display: inline-block;
+		width: 770px;
+		text-align: center;
+		
+		#image-wrap
+		{
+			height: 300px;
+			margin: 0px auto;
+			padding: 0px;
+			line-height: 300px;
+			img { vertical-align: middle; }
+		}
+	}
+		
+	#text-wrap
+	{
+		margin: 0px 20px;
+		padding: 0px;
+		text-align: center;
+		border-top: 1px solid rgba(0,0,0,0.2);
+		color: rgba(0,0,0,0.5);
+		font-size: 14pt;
+		font-style: italic;
+	}
+}

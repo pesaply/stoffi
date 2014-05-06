@@ -1,0 +1,22 @@
+us:
+  about:
+    header: "Welcome to the Stoffi Music Player!"
+    intro_html: "<p>Stoffi Music Player is a new beautiful, integrated, compact & free music player. Stoffi focuses on consolidating the key features spread over various music players into one unified music player. It is also aimed at being simple but powerful at the same time.</p><p>The solution to reach these goals was to create a new music player from the ground up. Made to be simple, light and easy to use including a beautiful interface.</p><p>The project was created by Christoffer Brodd-Reijer, a student at Uppsala University in Sweden.</p>"
+  
+    future:
+      title: "Future Plans"
+      list_html: "<li>More music sources</li><li>CD device support</li><li>Lyrics</li><li>Guitar tabs</li><li>Album art downloader</li><li>Wikipedia integration</li><li>More synchronization</li><li>Mobile application</li><li>Speed improvements</li><li>Meta data tools</li><li>Linux and Mac support</li><li>Better bookmarks</li>"
+    
+    team:
+      title: "With help from"
+      maggie_man: "♥ Support and love. ♥"
+      hylton_clarke: "Beta testing and feedback."
+      tianwen_zhang: "Chinese translation."
+      tom_sokolinski: "German translation."
+      fredrik_gadnell: "Created a remote app for iOS."
+      carl_carenvall: "Layed the foundation of the plugin system."
+      mark_tibblin: "Various development tasks."
+      francesco_roberto: "Italian translation."
+      ryan_zeigler: "Prevented hibernation and sleep while synchronizing with cloud."
+      fredrik_weinestad: "Logo design."
+      

@@ -1,0 +1,144 @@
+us:
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      half_a_minute: "half a minute"
+
+      less_than_x_seconds:
+        one: "less than a second"
+        other: "less than %{count} seconds"
+
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
+
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+
+      x_minutes:
+        one: "a minute"
+        other: "%{count} minutes"
+
+      about_x_hours:
+        one: "about an hour"
+        other: "about %{count} hours"
+
+      x_hours:
+        one: "one hour"
+        other: "%{count} hours"
+
+      x_days:
+        one: "a day"
+        other: "%{count} days"
+
+      about_x_weeks:
+        one: "about a week"
+        other: "about %{count} weeks"
+
+      x_weeks:
+        one: "a week"
+        other: "%{count} weeks"
+
+      about_x_months:
+        one: "about a month"
+        other: "about %{count} months"
+
+      x_months:
+        one: "a month"
+        other: "%{count} months"
+
+      about_x_years:
+        one: "about a year"
+        other: "about %{count} year"
+
+      over_x_years:
+        one: "over a year"
+        other: "over %{count} year"
+
+      almost_x_years:
+        one: "almost a year"
+        other: "almost %{count} year"
+
+      x_years:
+        one: "a year"
+        other: "%{count} years"
+
+      about_x_centuries:
+        one: "about a century"
+        other: "about %{count} centuries"
+
+      x_centuries:
+        one: "a century"
+        other: "%{count} centuries"
+
+    prompts:
+      year: "Year"
+      month: "Month"
+      day: "Day"
+      hour: "Hour"
+      minute: "Minute"
+      second: "Seconds"
+
+    ago_at: "%{ago} ago at %{at}"
+    ago: "%{ago} ago"
+    
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm

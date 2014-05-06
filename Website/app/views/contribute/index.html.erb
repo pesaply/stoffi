@@ -1,0 +1,32 @@
+<%
+links =
+[
+	"design", "translate", "test",
+	"sep",
+	"hack", "apps", "plugins",
+	"sep",
+	"promote", "write", "idea"
+]
+%>
+
+<div class="center">
+<div id="contribute">
+	<h1><%=t "contribute.header" %></h1>
+	
+	<p class="center notice">
+		<%=link_to t("contribute.why.link"), contribute_path(:action => :why) %>
+	</p>
+	
+	<% links.each do |link| %>
+		<% if link == "sep" %>
+			<div class="clear"></div>
+		<% else %>
+			<div class="button gridbox throw-left"
+				onclick="window.location = '<%=contribute_path(:action => link)%>';">
+				<%= image_tag "gfx/contrib_#{link}.png" %><br/>
+				<%=t "contribute.#{link}.link" %>
+			</div>
+		<% end %>
+	<% end %>
+	
+</div></div>

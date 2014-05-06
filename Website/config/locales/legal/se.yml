@@ -1,0 +1,13 @@
+se:
+  legal:
+    intro: "När det kommer till ett projekt av den här storleken så finns det lite juridiska saker som behöver täckas. Vi har försökt att hålla det kort och lättförståeligt genom att basera det på sunt förnuft och undvika extremt pladder."
+    privacy:
+      title: "Ditt privatliv"
+      text: "Vi gör vårt bästa för att skydda ditt privatliv. Därför har vi prioriterat kontosäkerhet bland annat. Vi använder tracking för att se hur många besökare vi har på hemsidan. Denna spårning görs med Google Analytics. Vi kan inte spåra individuella besökare men vi får ett hum om hur många av er som använder en viss webbläsare eller vilka sidor som är mest besökta och så vidare. Om du inte vill bli spårad så finns det ett %{opt_out_plugin}"
+      link: "plugin"
+    rules:
+      title: "Våra regler"
+      text: "Vi har inget \"Användaravtal\". Vi tycker att lagen är tillräcklig för oss. Missbruka inte vårt system, var inte elak, använd sunt bondförnuft."
+    license:
+      title: "Licenser"
+      text: "Koden är licenserad under %{gpl_link} och innehållet samt grafiken är licenserad under %{cc_link}."

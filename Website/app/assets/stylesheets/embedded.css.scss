@@ -1,0 +1,155 @@
+body
+{
+	font-size: 9pt;
+	font-family: segoe, helvetica;
+	margin: 0;
+	padding: 0;
+}
+
+.label
+{
+	width: 150px;
+}
+
+.right
+{
+	text-align: right;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.notice
+{
+	margin-bottom: 10px;
+}
+
+a
+{
+	color: blue;
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: underline;
+}
+
+img
+{
+	border: 0;
+}
+
+input.button
+{
+	padding: 2px 10px;
+	width: 0; /* ie table-cell margin fix */
+	overflow: visible;
+	font-size: 9pt;
+	min-width: 80px;
+	min-height: 20px;
+}
+
+input.button[class] /* ie ignores [class] */
+{
+	width: auto; /* cancel margin fix for other browsers */
+}
+
+.rotator
+{
+	display: inline-block;
+	padding: 0;
+	margin: 40px 18px;
+	width: 100px;
+	height: 82px;
+}
+	
+.rotator-image
+{
+}
+	
+.handle
+{
+	position: relative;
+	z-index: 2;
+	width: 6px;
+	height: 6px;
+	background: black;
+	top: 37px;
+	left: 87px;
+}
+	
+.handle:hover
+{
+	cursor: pointer;
+}
+
+table
+{
+}
+
+td
+{
+	padding: 10px 10px 10px 0px;
+}
+
+td.inactive
+{
+	color: #777777;
+}
+
+.app
+{
+}
+
+.app td, .auth-buttons td
+{
+	padding: 0;
+	vertical-align: top;
+}
+
+.app .title
+{
+}
+
+.app .description
+{
+	height: 30px;
+}
+
+.app h1
+{
+	margin: 0;
+	padding: 0;
+}
+
+.auth-buttons
+{
+	margin: 10px 0px 0px 0px;
+}
+.auth-buttons input
+{
+	font-size: 1em;
+	padding: 2px 25px;
+	margin: 0px 10px 0px 0px;
+}
+
+.devise-link
+{
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+
+.root-link-table td
+{
+	padding: 0px 20px 0px 0px;
+	vertical-align: top;
+}
+
+.link-table td
+{
+	padding: 5px 10px;
+	vertical-align: middle;
+}

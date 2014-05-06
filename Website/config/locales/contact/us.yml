@@ -1,0 +1,31 @@
+us:
+  contact:
+    issue:
+      title: "Found a bug? Need a feature?"
+      text_html: "Go to our %{link} and submit an issue."
+      link: "project"
+      
+    email:
+      title: "Email us"
+      name: "Your name"
+      email: "Your email"
+      subject: "Subject"
+      message: "Message"
+      captcha: "Are you human?"
+      send: "send"
+      sent: "Message has been sent. You should hear from us soon."
+    
+    phone:
+      title: "Call us"
+    
+    visit:
+      title: "Visit us"
+      sweden: "SWEDEN"
+      map_link: "View larger map"
+    
+    errors:
+      subject: "Subject must be at least four characters."
+      name: "Your name is certainly more than one character."
+      message: "Message must be at least twenty characters."
+      email: "You forgot your e-mail."
+      captcha: "I'm sure you are a human. Try again."

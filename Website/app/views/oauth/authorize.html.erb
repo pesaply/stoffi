@@ -1,0 +1,46 @@
+<%
+c = @token.client_application
+%>
+
+<div class="white box" style="width: 500px; margin: auto;">
+	<div class="center">
+		<p>Can <%= c.name %> access your account?</p>
+	</div>
+
+	<table class="app place-center">
+		<tr>
+			<td rowspan="2"><%= image_tag c.large_icon %></td>
+			<td class="title"><h1><%= c.name %></h1></td>
+		</tr>
+		<tr>
+			<td class="description"><%= c.description %></td>
+		</tr>
+	</table>
+	
+	<p>&nbsp;</p>
+
+	<table class="auth-buttons place-center">
+		<tr>
+			<td>
+				<%= form_tag authorize_url do %>
+					<%= hidden_field_tag "oauth_token", @token.token %>
+					<%= hidden_field_tag "authorize", "0" %>
+					<%- if params[:oauth_callback] -%>
+					  <%= hidden_field_tag "oauth_callback", params[:oauth_callback] %>
+					<%- end -%>
+					<%=button_tag "Deny", nil, "", { :type => :form, :color => :gray } %>
+				<%- end -%>
+			</td>
+			<td>
+				<%= form_tag authorize_url do %>
+					<%= hidden_field_tag "oauth_token", @token.token %>
+					<%= hidden_field_tag "authorize", "1" %>
+					<%- if params[:oauth_callback] -%>
+					  <%= hidden_field_tag "oauth_callback", params[:oauth_callback] %>
+					<%- end -%>
+					<%=button_tag "Allow", nil, "", { :type => :form, :color => :blue } %>
+				<%- end -%>
+			</td>
+		</tr>
+	</table>
+</div>

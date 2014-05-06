@@ -1,0 +1,12 @@
+<div id="main">
+	<div class="white box">
+		<h1><%=t "app.create" %></h1>
+		<%= form_for :app, :url => { :action => :create } do |f| %>
+			<%= render :partial => "form", :locals => { :f => f } %>
+		<% end %>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/user" %>
+</div>

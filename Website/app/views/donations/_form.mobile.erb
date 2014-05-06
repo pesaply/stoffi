@@ -1,0 +1,150 @@
+<%
+a = !@artist.to_s.empty?
+aid = a ? @artist.id : 0
+anm = a ? @artist.name : t("donations.artist")
+cnc = a ? artist_url(@artist) : donate_url
+ret = a ? artist_url(@artist) : money_url
+%>
+
+<script>
+var values = [80.0, 10.0, 10.0];
+var donate_artist_id = <%=aid%>;
+var user_id = <%= user_signed_in? ? current_user.id : -1 %>;
+$(function()
+{
+	$("#0_slider").slider({ min: 0, max: 100, value: values[0], stop: refresh0, slide: refresh0 });
+	$("#1_slider").slider({ min: 0, max: 100, value: values[1], stop: refresh1, slide: refresh1 });
+	$("#2_slider").slider({ min: 0, max: 100, value: values[2], stop: refresh2, slide: refresh2 });
+	refreshLabels();
+	$(document).ready(function()
+	{
+		$("#return_policy").qtip({
+			content: "<%=t "donations.return.tip_html" %>",
+			show: "mouseover",
+			hide: "mouseout",
+			style:
+			{
+				tip: true
+			},
+			position:
+			{
+				corner:
+				{
+					target: 'topMiddle',
+					tooltip: 'bottomMiddle'
+				}
+			}
+		});
+	});
+	$("#item_name").autocomplete(
+	{
+		minLength: 2,
+		source: "/search.json?category=artists",
+		appendTo: "#artist-menu",
+		select: function(event, ui)
+		{
+			$("#item_name").val(ui.item.display);
+			return false;
+		},
+		focus: function(event, ui)
+		{
+			$("#item_name").val(ui.item.display);
+			return false;
+		}
+	})
+	.data("autocomplete")._renderItem = function(ul, item)
+	{
+		return $("<li></li>")
+			.data("item.autocomplete", item)
+			.append("<a><h1>" + item.display + "</h1></a>")
+			.appendTo(ul);
+	};
+});
+</script>
+
+
+<% if too_many_donations? && (@artist.to_s.empty? || @artist.pending == 0) %>
+	<%= t "donations.full_text_html" %>
+
+<% else %>
+	<%= form_for Donation.new, :html => { :onsubmit => "return verifyDonation();" } do |f| %>
+		<%= hidden_field_tag "create", "1" %>
+		<%= hidden_field_tag "item_number", aid %>
+		<%= hidden_field_tag "custom", "", :id => "pp_param" %>
+		<%= hidden_field_tag "ret", ret %>
+		<%= hidden_field_tag "cnc", cnc %>
+		
+		<% e = flash[:error].to_s != "" %>
+		<div class="error" id="notice"<%= "style='display:none;'".html_safe unless e %>>
+			<%= flash[:error] if e %>
+		</div>
+		
+		<% unless @artist %>
+			<%= text_field_tag "item_name", "", :class => "field", :placeholder => t("donations.artist") %>			
+			<div id="artist-menu">&nbsp;</div>
+			
+		<% else %>
+			<%= hidden_field_tag "item_name", @artist.name %>
+			
+		<% end %>
+			
+		<%= text_field_tag "amount", "", :class => "field", :placeholder => t("donations.amount.note", :minimum => 0.99) %>
+		<%= select_tag "currency_code", options_for_select(["USD"]) %>
+		
+		<div class="field">
+			<label>
+				<%=t "donations.return.label" %>
+				<%= image_tag "gfx/tooltip.png", :id => "return_policy" %>
+			</label>
+			<%= select_tag "return", options_for_select([
+				[t("donations.return.charity"), "1"],
+				[t("donations.return.stoffi"), "0"],
+				[t("donations.return.me"), "2"]]),
+				:onchange => "refreshLabels();"
+			%>
+		</div>
+		
+		<div style="display:none;">
+			<div class="interactive" onclick="javascript:toggleDistribution();">
+				<%=t "donations.distribution.title" %>
+				<span id="dist_indicator">
+					<%= image_tag "gfx/distribution_closed.png" %>
+				</span>
+			</div>
+			
+			<div id="sliders" style="display: none;">
+				<div class="distribution_slider">
+					<div class="distribution_label">
+						<%=anm%>: <span id="0_label">0</span>%
+					</div>
+					<div id="0_slider"></div>
+				</div>
+				
+				<div class="distribution_slider">
+					<div class="distribution_label">
+						<%=t "donate.distribution.charity" %>: <span id="2_label">0</span>%
+					</div>
+					<div id="2_slider"></div>
+				</div>
+				
+				<div class="distribution_slider">
+					<div class="distribution_label">
+						<%=t "donate.distribution.stoffi" %>: <span id="1_label">0</span>%
+					</div>
+					<div id="1_slider"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="center">
+			<%=button_tag t("donations.learn"), money_path, "info", { :color => :blue } %>
+			<%=button_tag t("donations.send"), nil, "dollar", { :type => :form, :color => :gold } %>
+			<p>
+				<%= image_tag "gfx/cards.png" %>
+			</p>
+		</div>
+		
+		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+	
+	<% end %>
+<% end %>

@@ -1,0 +1,34 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/music" %>
+</div>
+
+<div class="main">
+	<% if user_signed_in? %>
+		<div class="goldenbox">
+			<h1 class="title">Personal top</h1>
+			<p>&nbsp;</p>
+					
+			<ul class="artists bigitems">
+				<% Song.top(5, current_user).each do |song| %>
+					<li>
+						<%= song_item song %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="goldenbox">
+		<h1 class="title">Global top</h1>
+		<p>&nbsp;</p>
+				
+		<ul class="artists bigitems">
+			<% Song.top(5).each do |song| %>
+				<li>
+					<%= song_item song %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+</div>

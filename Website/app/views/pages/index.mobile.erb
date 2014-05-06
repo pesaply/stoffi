@@ -1,0 +1,75 @@
+<h1><%=t "home.latest.title" %></h1>
+<%=t "home.latest.text_html" %>
+<%=button_tag t("home.latest.more"), news_path, "star", { :color => :blue } %>
+
+<h1><%= t "donations.title" %></h1>
+<% if too_many_donations? %>
+	<%= t "donations.full_text_html" %>
+<% else %>
+	<%=t "donations.front_text_html" %>
+	<%=button_tag t("donations.button"), new_donation_url, "dollar", { :color => :gold } %>
+<% end %>
+
+<div class="social-buttons">
+	<div id="fb-root"></div>
+	
+	<!-- +1 button -->
+	<span class="plus-button">
+		<div class="g-plusone" data-href="https://plus.google.com/111751169971055410532"
+			data-size="medium" data-lang="<%=langtag(I18n.locale)%>">
+		</div>
+	</span>
+	
+	<!-- like button -->
+	<span class="like-button">
+		<div class="fb-like"
+			data-send="false" data-layout="button_count" data-width="80" data-show-faces="false"
+			data-font="segoe ui" data-href="https://www.facebook.com/stoffiplayer">
+		</div>
+	</span>
+	
+	<!-- tweet button -->
+	<span class="tweet-button">
+		<a href="https://twitter.com/StoffiPlayer" class="twitter-follow-button"
+			data-show-count="false" data-lang="<%=langtag(I18n.locale)%>">Follow @StoffiPlayer</a>
+	</span>
+</div>
+
+<div class="blue box">
+	<div class="section">
+		<h1>"<%= t "home.quotes.winajuda" %>"</h1>
+		<h2>- <a href="http://winajuda.com/downloads/stoffi-music-player.html">WinAjuda</a></h2>
+	</div>
+	<div class="section">
+		<h1>"<%= t "home.quotes.softonic" %>"</h1>
+		<h2>- <a href="http://stoffi.softonic.it/">Softonic</a></h2>
+	</div>
+	<div class="section bottommost">
+		<h1>"<%= t "home.quotes.3d2f" %>"</h1>
+		<h2>- <a href="http://3d2f.com/smartreviews/1-686-stoffi-music-player-everything-you-have-been-looking-for-in-an-audio-player-read.shtml">3D2F</a></h2>
+	</div>
+</div>
+
+<script>
+	
+	// like button
+	(function(d)
+	{
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/<%=full_locale(I18n.locale)%>/all.js#appId=243125052401100&xfbml=1";
+		d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+	
+	// +1 button
+	window.___gcfg = {lang: '<%=langtag(I18n.locale)%>'};
+	(function()
+	{
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	
+	// tweet button
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>

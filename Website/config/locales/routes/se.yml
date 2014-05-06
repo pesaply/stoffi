@@ -1,0 +1,21 @@
+se:
+  resources:
+    devices: "enheter"
+
+  path_names:
+    new: "ny"
+    edit: "andra"
+    create: "skapa"
+    destroy: "fortstor"
+    update: "uppdatera"
+
+  named_routes_path:
+    news: "nyheter"
+    get: "ladda_ner"
+    download: "ladda_ner"
+    about: "om"
+    contact: "kontakt"
+    legal: "regler"
+    money: "pengar"
+    tour: "rundtur"
+    contribute: "hjälp_till"

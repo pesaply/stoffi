@@ -1,0 +1,17 @@
+<%= form_for(resource, :as => resource_name, :url => edit_password_path(resource_name), :html => { :method => :put }) do |f| %>
+	<% if any_errors?(resource) %>
+		<div class="error">
+			<%= pretty_error(resource) %>
+		</div>
+	<% end %>
+	
+	<%= f.hidden_field :reset_password_token %>
+	<%= f.hidden_field :email, :value => @email %>
+	
+	<%= f.password_field :password, :class => "field", :placeholder => t("dialog.password_choose_placeholder") %>
+	<%= f.password_field :password_confirmation, :class => "field", :placeholder => t("dialog.password_confirm_placeholder") %>
+	
+	<%=button_tag t("reset.link"), "hashPasswords();", "login", { :type => :form, :color => :gold } %>
+
+	<%= render :partial => "devise/shared/links" %>
+<% end %>

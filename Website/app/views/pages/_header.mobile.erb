@@ -1,0 +1,42 @@
+<%
+all_tabs =
+{
+	:outside =>
+	[
+		{ :name => "index",      :path => root_path, :disp => image_tag("gfx/home.png") },
+		{ :name => "donations",  :path => new_donation_path },
+		{ :name => "about",      :path => about_path },
+		{ :name => "news",       :path => news_path, :hidable => true },
+		{ :name => "join",       :path => join_path, :hidable => true },
+		{ :name => "login",      :path => login_path }
+	],
+	:inside =>
+	[
+		{ :name => "index",      :path => root_path, :disp => image_tag("gfx/home.png") },
+		{ :name => "donations",  :path => new_donation_path, :hidable => true },
+		{ :name => "remote",     :path => remote_path },
+		{ :name => "dashboard",  :path => dashboard_path },
+		{ :name => "playlists",  :path => playlists_path, :hidable => true },
+		{ :name => "logout",     :path => logout_path }
+	]
+}
+tabs = all_tabs[user_signed_in? ? :inside : :outside]
+
+tabs.each do |tab|
+	if tab[:separator]
+		%>
+		<div class="separator">&nbsp;</div>
+		<%
+	else
+		name = tab[:name]
+		path = tab[:path]
+		css = @tab == name ? "active" : ""
+		disp = tab[:disp] ? tab[:disp] : t("#{name}.link")
+		data = tab[:hidable] ? "yes" : "no"
+		%>
+		<%= link_to disp, path, :class => css, :data => { :hidable => data } %>
+		<%
+	end
+end
+%>
+<a id="toggleNavigation" onclick="javascript:toggleNavigation();">▼</a>

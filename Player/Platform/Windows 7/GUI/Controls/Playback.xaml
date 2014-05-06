@@ -1,0 +1,102 @@
+﻿<!--Playback.xaml
+	
+	All buttons and controls used to manage playback such as
+	play, pause, next and previous along with seek, volume and
+	search.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<UserControl x:Class="Stoffi.Playback"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:Stoffi"
+			 mc:Ignorable="d" 
+			 Loaded="Control_Loaded"
+			 d:DesignHeight="100" d:DesignWidth="300">
+	<DockPanel LastChildFill="True">
+
+		<!-- playback buttons -->
+		<Button Style="{StaticResource PreviousButtonStyle}" DockPanel.Dock="Left" Click="Previous_Click" VerticalAlignment="Center" TabIndex="10"/>
+		<Button Style="{StaticResource PlayButtonStyle}" DockPanel.Dock="Left" Click="PausePlay_Click" x:Name="PausePlayButton" VerticalAlignment="Center" TabIndex="20"/>
+		<Button Style="{StaticResource NextButtonStyle}" DockPanel.Dock="Left" Click="Next_Click" VerticalAlignment="Center" TabIndex="30"/>
+
+		<!-- search box -->
+		<local:SearchBox x:Name="Search" TextChanged="Search_TextChanged" VerticalAlignment="Center"
+						 Add="Search_AddClick" AddToNew="Search_AddToNewClick" Remove="Search_RemoveClick"
+						 Cleared="Search_Cleared" DockPanel.Dock="Right" TabIndex="80"/>
+
+		<!-- repeat and shuffle -->
+		<StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="10 0" x:Name="RepeatShuffleContainer" VerticalAlignment="Center">
+			<Button Style="{StaticResource RepeatGrayButtonStyle}" Click="Repeat_Click" Margin="0" x:Name="RepeatButton" TabIndex="60"/>
+			<Button Style="{StaticResource ShuffleGrayButtonStyle}" Click="Shuffle_Click" Margin="0" x:Name="ShuffleButton" TabIndex="70"/>
+		</StackPanel>
+
+		<!-- volume slide -->
+		<Slider DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10 0" Width="70" Style="{DynamicResource VolumeSlideStyle}" ValueChanged="VolumeSlide_ValueChanged" 
+				x:Name="VolumeSlide" Maximum="100" MouseWheel="VolumeSlide_MouseWheel" TabIndex="40" IsMoveToPointEnabled="True" LargeChange="5" SmallChange="1" Value="50" />
+
+		<!-- now playing info -->
+		<Border BorderBrush="#40FFFFFF" BorderThickness="1" CornerRadius="2" DockPanel.Dock="Right" Height="40" HorizontalAlignment="Stretch" x:Name="InfoWindow" SnapsToDevicePixels="True">
+			<Border BorderBrush="#80000000" BorderThickness="1,1,0,0" CornerRadius="2" x:Name="InfoWindowBorder1" SnapsToDevicePixels="True">
+				<Border BorderBrush="#30000000" BorderThickness="0,0,1,1" CornerRadius="2" x:Name="InfoWindowBorder2" SnapsToDevicePixels="True">
+					<Border BorderBrush="#F0FFFFFF" BorderThickness="1" CornerRadius="1" x:Name="InfoWindowBorder3" SnapsToDevicePixels="True">
+						<StackPanel Orientation="Vertical" Background="#C0FFFFFF" x:Name="InfoWindowInner" SnapsToDevicePixels="True">
+							
+							<DockPanel LastChildFill="True">
+								<Label x:Name="InfoTimePlus" Foreground="#595a5a" FontSize="10" VerticalAlignment="Bottom" DockPanel.Dock="Left">N/A</Label>
+								<Label x:Name="InfoTimeMinus" Foreground="#595a5a" FontSize="10" VerticalAlignment="Bottom" DockPanel.Dock="Right">N/A</Label>
+								<TextBlock x:Name="InfoName" 
+										   Foreground="#595a5a" 
+										   Height="25" 
+										   HorizontalAlignment="Center" 
+										   FontSize="12" 
+										   TextTrimming="CharacterEllipsis"
+										   loc:Translate.Uid="PlaybackEmpty"
+										   Text="{loc:Translate Text}"/>
+							</DockPanel>
+
+							<!-- now playing slide -->
+							<local:EnhancedSlider x:Name="SongProgress"
+												  HorizontalAlignment="Stretch"
+												  Value="0"
+												  Height="5"
+												  Margin="10 0"
+												  ValueChanged="SongProgress_ValueChanged"
+												  SecondValue="0"
+												  Maximum="2000"
+												  TabIndex="50"
+												  IsMoveToPointEnabled="True"/>
+							<!--
+							<Slider x:Name="SongProgress"
+											HorizontalAlignment="Stretch"
+											Value="0"
+											Height="10"
+											Margin="10 0"
+											ValueChanged="SongProgress_ValueChanged"
+											Style="{DynamicResource TrackSlideStyle}"
+											IsMoveToPointEnabled="True">
+							</Slider>
+							-->
+						</StackPanel>
+					</Border>
+				</Border>
+			</Border>
+		</Border>
+
+	</DockPanel>
+</UserControl>

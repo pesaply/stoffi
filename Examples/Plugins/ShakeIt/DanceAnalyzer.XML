@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DanceAnalyzer</name>
+    </assembly>
+    <members>
+        <member name="T:Simplare.DanceAnalyzer">
+            <summary>
+            A class containing logic for interacting with a Kinect for Windows
+            device and using its depth data to quantify the movement in the room.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.isEnabled">
+            <summary>
+            Whether or not the analyzer is running.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.isConnected">
+            <summary>
+            Whether or not a device is connected.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.quantity">
+            <summary>
+            The quantity of movement in the room.
+            </summary>
+            <remarks>
+            Between 0 (no movement) and 10 (full movement).
+            </remarks>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.viscosity">
+            <summary>
+            The amount of sensitivity to changes in movement
+            that the Quantity property has.
+            </summary>
+            <remarks>
+            Between 0 (fast changes) and 10 (slow changes).
+            </remarks>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.sensitivity">
+            <summary>
+            The amount of sensitivity to movement
+            that the Quantity property has.
+            </summary>
+            <remarks>
+            Between 0 (much movement needed) and 10 (little movement needed).
+            </remarks>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.isProcessing">
+            <summary>
+            Whether or not a frame is currently being processed.
+            </summary>
+            <remarks>
+            Used to skip frames if analyzing becomes slower than
+            the speed the sensor spits out frames.
+            </remarks>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.sensor">
+            <summary>
+            The Kinect device sensor.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.sensorChooser">
+            <summary>
+            A sensor chooser used to detect presence of device.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.depthFrame">
+            <summary>
+            Intermediate storage for the depth frame received from the sensor.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.depthPixels">
+            <summary>
+            Intermediate storage for the depth pixel data received from the camera.
+            </summary>
+        </member>
+        <member name="F:Simplare.DanceAnalyzer.colorPixels">
+            <summary>
+            Intermediate storage for the depth data converted to color.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.#cctor">
+            <summary>
+            Initializes the DanceAnalyzer class.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.StartDeviceDetection">
+            <summary>
+            Starts the listening for Kinect devices
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.RefreshDevices">
+            <summary>
+            Checks the state of any connected devices and updates the internal state accordingly.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.AnalyzeDepthMap">
+            <summary>
+            Analyzes the depth map and creates a color pixel map.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.PrepareFrame">
+            <summary>
+            Removes "noise" pixels (non-positive pixels or pixels outside
+            the depth sensor's range).
+            
+            This is done by setting every noise pixel to the average of all
+            nearest neighboring non-noise pixels.
+            
+            The image will also be smoothen out by averaging all 2x2 pixels
+            areas.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.QuantifyMovement">
+            <summary>
+            Gives the average difference between two images in millimeters.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.OnPropertyChanged(System.String)">
+            <summary>
+            Dispatches the PropertyChanged event
+            </summary>
+            <param name="name">The name of the property that was changed</param>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.SensorChooser_KinectChanged(System.Object,Microsoft.Kinect.Toolkit.KinectChangedEventArgs)">
+            <summary>
+            Invoked when a Kinect sensor changes.
+            </summary>
+            <param name="sender">The sender of the event</param>
+            <param name="e">The event data</param>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.SensorChooser_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Invoked when a property of the Kinect sensor chooser changes.
+            </summary>
+            <param name="sender">The sender of the event</param>
+            <param name="e">The event data</param>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.Sensor_DepthFrameReady(System.Object,Microsoft.Kinect.DepthImageFrameReadyEventArgs)">
+            <summary>
+            Event handler for Kinect sensor's DepthFrameReady event
+            </summary>
+            <param name="sender">object sending the event</param>
+            <param name="e">event arguments</param>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.DispatchConnect">
+            <summary>
+            Dispatches the Connect event.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.DispatchDisconnect">
+            <summary>
+            Dispatches the Disconnect event.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.DispatchEnable">
+            <summary>
+            Dispatches the Enable event.
+            </summary>
+        </member>
+        <member name="M:Simplare.DanceAnalyzer.DispatchDisable">
+            <summary>
+            Dispatches the Disable event.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Sensor">
+            <summary>
+            Gets the currently connected sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Range">
+            <summary>
+            Gets or sets the range of the depth sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Format">
+            <summary>
+            Gets the format of the depth stream.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.MinDepth">
+            <summary>
+            Gets the minimum depth value that can be detected by the sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.MaxDepth">
+            <summary>
+            Gets the maximum depth value that can be detected by the sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.IsConnected">
+            <summary>
+            Gets whether or not the Kinect device is connected.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Elevation">
+            <summary>
+            Gets or sets the angle of the Kinect device as a value between 0 (min) and 10 (max).
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.IsEnabled">
+            <summary>
+            Gets or sets whether or not the analyzer is enabled.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.FrameWidth">
+            <summary>
+            Gets the width of the depth data frame.
+            -1 if no device detected.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.FrameHeight">
+            <summary>
+            Gets the height of the depth data frame.
+            -1 if no device detected.
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Quantity">
+            <summary>
+            Gets the quantity of dancing in the room expressed between
+            0 (no dancing) and 10 (full on party).
+            </summary>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Viscosity">
+            <summary>
+            Gets or sets the amount of sensitivity to
+            changes in movement that the Quantity property has.
+            </summary>
+            <remarks>
+            Between 0 (fast changes) and 10 (slow changes).
+            </remarks>
+        </member>
+        <member name="P:Simplare.DanceAnalyzer.Sensitivity">
+            <summary>
+            Gets or sets the amount of sensitivity
+            to movement that the Quantity property has.
+            </summary>
+            <remarks>
+            Between 0 (much movement needed) and
+            10 (little movement needed).
+            </remarks>
+        </member>
+        <member name="E:Simplare.DanceAnalyzer.Connect">
+            <summary>
+            Occurs when a Kinect device is connected.
+            </summary>
+        </member>
+        <member name="E:Simplare.DanceAnalyzer.Disconnect">
+            <summary>
+            Occurs when a Kinect device is disconnected.
+            </summary>
+        </member>
+        <member name="E:Simplare.DanceAnalyzer.Enable">
+            <summary>
+            Occurs when the analyzer is enabled.
+            </summary>
+        </member>
+        <member name="E:Simplare.DanceAnalyzer.Disable">
+            <summary>
+            Occurs when the analyzer is disabled.
+            </summary>
+        </member>
+        <member name="E:Simplare.DanceAnalyzer.PropertyChanged">
+            <summary>
+            Occurs when the property of the item is changed
+            </summary>
+        </member>
+        <member name="T:Simplare.IDanceAnalyzer">
+            <summary>
+            Interface of the DanceAnalyzer API.
+            </summary>
+        </member>
+        <member name="M:Simplare.IDanceAnalyzer.RefreshDevices">
+            <summary>
+            Checks the state of any connected devices and updates the internal state accordingly.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.Sensor">
+            <summary>
+            Gets the currently connected sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.Range">
+            <summary>
+            Gets or sets the range of the depth sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.Format">
+            <summary>
+            Gets the format of the depth stream.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.MinDepth">
+            <summary>
+            Gets the minimum depth value that can be detected by the sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.MaxDepth">
+            <summary>
+            Gets the maximum depth value that can be detected by the sensor.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.IsConnected">
+            <summary>
+            Gets whether or not the Kinect device is connected.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.Elevation">
+            <summary>
+            Gets or sets the angle of the Kinect device as a value between 0 (min) and 10 (max).
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.IsEnabled">
+            <summary>
+            Gets or sets whether or not the analyzer is enabled.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.FrameWidth">
+            <summary>
+            Gets the width of the depth data frame.
+            -1 if no device detected.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.FrameHeight">
+            <summary>
+            Gets the height of the depth data frame.
+            -1 if no device detected.
+            </summary>
+        </member>
+        <member name="P:Simplare.IDanceAnalyzer.Quantity">
+            <summary>
+            Gets the quantity of dancing in the room expressed between
+            0 (no dancing) and 10 (full on party).
+            </summary>
+        </member>
+        <member name="E:Simplare.IDanceAnalyzer.Connect">
+            <summary>
+            Occurs when a Kinect device is connected.
+            </summary>
+        </member>
+        <member name="E:Simplare.IDanceAnalyzer.Disconnect">
+            <summary>
+            Occurs when a Kinect device is disconnected.
+            </summary>
+        </member>
+        <member name="E:Simplare.IDanceAnalyzer.Enable">
+            <summary>
+            Occurs when the analyzer is enabled.
+            </summary>
+        </member>
+        <member name="E:Simplare.IDanceAnalyzer.Disable">
+            <summary>
+            Occurs when the analyzer is disabled.
+            </summary>
+        </member>
+        <member name="T:Simplare.DepthImageEventArgs">
+            <summary>
+            Contains frame data for depth images.
+            </summary>
+        </member>
+        <member name="M:Simplare.DepthImageEventArgs.#ctor(System.Byte[])">
+            <summary>
+            Creates an instance of the class.
+            </summary>
+            <param name="frame">The pixels of the frame encoded as colors</param>
+        </member>
+        <member name="P:Simplare.DepthImageEventArgs.Frame">
+            <summary>
+            Gets the pixels of the frame encoded as colors.
+            </summary>
+        </member>
+    </members>
+</doc>

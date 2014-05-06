@@ -1,0 +1,9 @@
+share_by_alice:
+  link: alice_facebook
+  error: some error
+  resource: alice_foo (Share)
+      
+listen_by_alice:
+  link: alice_lastfm
+  error: a descriptive error
+  resource: alice_one_love (Listen)

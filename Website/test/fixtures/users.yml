@@ -1,0 +1,14 @@
+alice:
+  email: alice@example.com
+  has_password: 0
+  unique_token: DrMfD8UvEqFBcDWbcnW4
+
+bob:
+  email: bob@mail.net
+  has_password: 0
+  playlist_subscriptions: foo
+  has_password: false
+  
+charlie:
+  email: charlie@goodson.me
+  has_password: false

@@ -1,0 +1,21 @@
+$color1: #FFAA00;
+$color2: #1240AB;
+$color3: #BBBBBB;
+
+#listens
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	
+	.listen
+	{
+		margin: 5px 0px;
+		a
+		{
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+			color: darken($color1, 35%);
+			&:hover { color: black; }
+		}
+	}
+}

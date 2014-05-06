@@ -1,0 +1,104 @@
+<script>
+var values = [80.0, 10.0, 10.0];
+var donate_artist_id = <%= @artist.id %>;
+var user_id = <%= user_signed_in? ? current_user.id : -1 %>;
+$(function()
+{
+	$("#0_slider").slider({ min: 0, max: 100, value: values[0], stop: refresh0, slide: refresh0 });
+	$("#1_slider").slider({ min: 0, max: 100, value: values[1], stop: refresh1, slide: refresh1 });
+	$("#2_slider").slider({ min: 0, max: 100, value: values[2], stop: refresh2, slide: refresh2 });
+	refreshLabels();
+	$(document).ready(function()
+	{
+		$("#return_policy").qtip({
+			content: "<%=t "donate.return.tip_html" %>",
+			show: "mouseover",
+			hide: "mouseout",
+			style:
+			{
+				tip: true
+			}
+		});
+	});
+});
+</script>
+<h1 class="title"><%=t "donate.title" %></h1>
+
+<!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" onSubmit="return verifyDonation();">-->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" onSubmit="return verifyDonation();">
+	<input type="hidden" name="cmd" value="_donations"/>
+	<input type="hidden" name="return" value="https://www.stoffiplayer.com/money"/>
+	<input type="hidden" name="cancel_return" value="http://beta.stoffiplayer.com/artists/<%=@artist.id%>"/>
+	<input type="hidden" name="notify_url" value="http://beta.stoffiplayer.com/donations.json"/>
+	<input type="hidden" name="no_shipping" value="1"/>
+	<input type="hidden" name="no_note" value="1"/>
+	<input type="hidden" name="rm" value="1"/>
+	<input type="hidden" name="cbt" value="Back to Stoffi"/>
+	<input type="hidden" name="cn" value="Send us a little message"/>
+	<input type="hidden" name="bn" value="Stoffi_Donate_X_SE"/>
+	<input type="hidden" name="custom" id="pp_param"/>
+	<input type="hidden" name="item_name" id="<%=@artist.name%>"/>
+	<input type="hidden" name="item_number" id="<%=@artist.id%>"/>
+	<!--<input type="hidden" name="business" value="WRZ495N8TFAWQ">-->
+	<input type="hidden" name="business" value="MFFVEJ94GKGVQ">
+	<div class="notice" id="notice"></div>
+	<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+		
+	<div>
+		<%=t "donate.amount", :minimum => 0.99 %><br/>
+		<%= text_field_tag "amount", "20", :class => "field" %>
+		<%= select_tag "currency_code", options_for_select(["USD"]) %>
+	</div>
+	
+	<div>&nbsp;</div>
+	
+	<div>
+		<%=t "donate.return.label" %>
+		<%= image_tag "gfx/tooltip.png", :id => "return_policy" %>
+		<br/>
+		<%= select_tag "return", options_for_select([
+			[t("donate.return.stoffi"), "0"],
+			[t("donate.return.charity"), "1"],
+			[t("donate.return.me"), "2"]]),
+			:onchange => "refreshLabels();"
+		%>
+	</div>
+	
+	<div>&nbsp;</div>
+	
+	<div>
+		<div class="interactive" onclick="javascript:toggleDistribution();">
+			<%=t "donate.distribution.title" %>
+			<span id="dist_indicator">▸</span>
+		</div>
+		
+		<div id="sliders" style="display: none;">
+			<div class="distribution_slider">
+				<div class="distribution_label">
+					<%= @artist.name %>: <span id="0_label">0</span>%
+				</div>
+				<div id="0_slider"></div>
+			</div>
+			
+			<div class="distribution_slider">
+				<div class="distribution_label">
+					<%=t "donate.distribution.charity" %>: <span id="2_label">0</span>%
+				</div>
+				<div id="2_slider"></div>
+			</div>
+			
+			<div class="distribution_slider">
+				<div class="distribution_label">
+					<%=t "donate.distribution.stoffi" %>: <span id="1_label">0</span>%
+				</div>
+				<div id="1_slider"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom">
+		<div class="throw-right">
+			<%= submit_tag t("donate.send"), :class => "button" %>
+		</div>
+	</div>
+</form>

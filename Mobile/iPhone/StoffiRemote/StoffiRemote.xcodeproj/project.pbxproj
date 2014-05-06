@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B21C98314372716004F4C05 /* SimulatedServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B21C98214372716004F4C05 /* SimulatedServer.m */; };
+		8B27AEA91426283E00EAC63E /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B27AEA81426283E00EAC63E /* RESTClient.m */; };
+		8B27E3981426034B00E86508 /* RESTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E3971426034B00E86508 /* RESTRequest.m */; };
+		8B38FA121429EEE3006804C0 /* StoffiOAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B38FA111429EEE3006804C0 /* StoffiOAuthManager.m */; };
+		8B3F1766141CEAD300B70015 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3F1765141CEAD300B70015 /* UIKit.framework */; };
+		8B3F1768141CEAD300B70015 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3F1767141CEAD300B70015 /* Foundation.framework */; };
+		8B3F176A141CEAD300B70015 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3F1769141CEAD300B70015 /* CoreGraphics.framework */; };
+		8B3F1770141CEAD300B70015 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B3F176E141CEAD300B70015 /* InfoPlist.strings */; };
+		8B3F1773141CEAD300B70015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3F1772141CEAD300B70015 /* main.m */; };
+		8B3F1776141CEAD300B70015 /* StoffiRemoteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3F1775141CEAD300B70015 /* StoffiRemoteAppDelegate.m */; };
+		8B3F1779141CEAD300B70015 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3F1777141CEAD300B70015 /* MainWindow.xib */; };
+		8B56D4C31425F7D8004D4CED /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4B81425F7D8004D4CED /* NSObject+SBJSON.m */; };
+		8B56D4C41425F7D8004D4CED /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4BA1425F7D8004D4CED /* NSString+SBJSON.m */; };
+		8B56D4C51425F7D8004D4CED /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4BC1425F7D8004D4CED /* SBJSON.m */; };
+		8B56D4C61425F7D8004D4CED /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4BE1425F7D8004D4CED /* SBJsonBase.m */; };
+		8B56D4C71425F7D8004D4CED /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4C01425F7D8004D4CED /* SBJsonParser.m */; };
+		8B56D4C81425F7D8004D4CED /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B56D4C21425F7D8004D4CED /* SBJsonWriter.m */; };
+		8B73C8381435D4E400EB593B /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B73C8371435D4E400EB593B /* Configuration.m */; };
+		8BB0022E1434F70C008F1558 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB0022D1434F70C008F1558 /* User.m */; };
+		8BB002371434FACA008F1558 /* RESTClientSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB002361434FAC9008F1558 /* RESTClientSimulator.m */; };
+		8BB6CE381430A73A00B1971D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6CE361430A73A00B1971D /* LoginViewController.m */; };
+		8BB6CE391430A73A00B1971D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6CE371430A73A00B1971D /* LoginViewController.xib */; };
+		8BB6CE3E1430A97100B1971D /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6CE3C1430A97100B1971D /* RemoteViewController.m */; };
+		8BB6CE3F1430A97100B1971D /* RemoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6CE3D1430A97100B1971D /* RemoteViewController.xib */; };
+		8BBEEFC414276AC9009932A5 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEEFBC14276AC9009932A5 /* GTMHTTPFetcher.m */; };
+		8BBEEFC514276AC9009932A5 /* GTMOAuthAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEEFBE14276AC9009932A5 /* GTMOAuthAuthentication.m */; };
+		8BBEEFC614276AC9009932A5 /* GTMOAuthSignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEEFC014276AC9009932A5 /* GTMOAuthSignIn.m */; };
+		8BBEEFC714276AC9009932A5 /* GTMOAuthViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEEFC214276AC9009932A5 /* GTMOAuthViewControllerTouch.m */; };
+		8BBEEFC814276AC9009932A5 /* GTMOAuthViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BBEEFC314276AC9009932A5 /* GTMOAuthViewTouch.xib */; };
+		8BBEEFCC14276B0C009932A5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBEEFCA14276B0C009932A5 /* Security.framework */; };
+		8BBEEFCD14276B0C009932A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBEEFCB14276B0C009932A5 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B21C98114372716004F4C05 /* SimulatedServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulatedServer.h; sourceTree = "<group>"; };
+		8B21C98214372716004F4C05 /* SimulatedServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulatedServer.m; sourceTree = "<group>"; };
+		8B27AEA71426283E00EAC63E /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
+		8B27AEA81426283E00EAC63E /* RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTClient.m; sourceTree = "<group>"; };
+		8B27AEB4142629BE00EAC63E /* GaddREST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaddREST.h; sourceTree = "<group>"; };
+		8B27E3961426034B00E86508 /* RESTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTRequest.h; sourceTree = "<group>"; };
+		8B27E3971426034B00E86508 /* RESTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTRequest.m; sourceTree = "<group>"; };
+		8B38FA0E1429EE38006804C0 /* StoffiOauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoffiOauth.h; path = OAuth/StoffiOauth.h; sourceTree = "<group>"; };
+		8B38FA101429EEE3006804C0 /* StoffiOAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoffiOAuthManager.h; path = OAuth/StoffiOAuthManager.h; sourceTree = "<group>"; };
+		8B38FA111429EEE3006804C0 /* StoffiOAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoffiOAuthManager.m; path = OAuth/StoffiOAuthManager.m; sourceTree = "<group>"; };
+		8B3F1761141CEAD300B70015 /* StoffiRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoffiRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B3F1765141CEAD300B70015 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8B3F1767141CEAD300B70015 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8B3F1769141CEAD300B70015 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8B3F176D141CEAD300B70015 /* StoffiRemote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoffiRemote-Info.plist"; sourceTree = "<group>"; };
+		8B3F176F141CEAD300B70015 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B3F1771141CEAD300B70015 /* StoffiRemote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoffiRemote-Prefix.pch"; sourceTree = "<group>"; };
+		8B3F1772141CEAD300B70015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8B3F1774141CEAD300B70015 /* StoffiRemoteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoffiRemoteAppDelegate.h; sourceTree = "<group>"; };
+		8B3F1775141CEAD300B70015 /* StoffiRemoteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoffiRemoteAppDelegate.m; sourceTree = "<group>"; };
+		8B3F1778141CEAD300B70015 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		8B56D4B61425F7D8004D4CED /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		8B56D4B71425F7D8004D4CED /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		8B56D4B81425F7D8004D4CED /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		8B56D4B91425F7D8004D4CED /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		8B56D4BA1425F7D8004D4CED /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		8B56D4BB1425F7D8004D4CED /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		8B56D4BC1425F7D8004D4CED /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		8B56D4BD1425F7D8004D4CED /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		8B56D4BE1425F7D8004D4CED /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		8B56D4BF1425F7D8004D4CED /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		8B56D4C01425F7D8004D4CED /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		8B56D4C11425F7D8004D4CED /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		8B56D4C21425F7D8004D4CED /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		8B73C8361435D4E400EB593B /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		8B73C8371435D4E400EB593B /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		8BB0022C1434F70C008F1558 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		8BB0022D1434F70C008F1558 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8BB002351434FAC9008F1558 /* RESTClientSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RESTClientSimulator.h; path = StoffiRemote.xcodeproj/RESTClientSimulator.h; sourceTree = SOURCE_ROOT; };
+		8BB002361434FAC9008F1558 /* RESTClientSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RESTClientSimulator.m; path = StoffiRemote.xcodeproj/RESTClientSimulator.m; sourceTree = SOURCE_ROOT; };
+		8BB6CE351430A73A00B1971D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8BB6CE361430A73A00B1971D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8BB6CE371430A73A00B1971D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8BB6CE3B1430A97100B1971D /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
+		8BB6CE3C1430A97100B1971D /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
+		8BB6CE3D1430A97100B1971D /* RemoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemoteViewController.xib; sourceTree = "<group>"; };
+		8BBEEFBB14276AC9009932A5 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		8BBEEFBC14276AC9009932A5 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		8BBEEFBD14276AC9009932A5 /* GTMOAuthAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthAuthentication.h; sourceTree = "<group>"; };
+		8BBEEFBE14276AC9009932A5 /* GTMOAuthAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthAuthentication.m; sourceTree = "<group>"; };
+		8BBEEFBF14276AC9009932A5 /* GTMOAuthSignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthSignIn.h; sourceTree = "<group>"; };
+		8BBEEFC014276AC9009932A5 /* GTMOAuthSignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthSignIn.m; sourceTree = "<group>"; };
+		8BBEEFC114276AC9009932A5 /* GTMOAuthViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuthViewControllerTouch.h; sourceTree = "<group>"; };
+		8BBEEFC214276AC9009932A5 /* GTMOAuthViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuthViewControllerTouch.m; sourceTree = "<group>"; };
+		8BBEEFC314276AC9009932A5 /* GTMOAuthViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuthViewTouch.xib; sourceTree = "<group>"; };
+		8BBEEFCA14276B0C009932A5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8BBEEFCB14276B0C009932A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B3F175E141CEAD300B70015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BBEEFCC14276B0C009932A5 /* Security.framework in Frameworks */,
+				8BBEEFCD14276B0C009932A5 /* SystemConfiguration.framework in Frameworks */,
+				8B3F1766141CEAD300B70015 /* UIKit.framework in Frameworks */,
+				8B3F1768141CEAD300B70015 /* Foundation.framework in Frameworks */,
+				8B3F176A141CEAD300B70015 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B21C9841437271A004F4C05 /* Simulation */ = {
+			isa = PBXGroup;
+			children = (
+				8BB002351434FAC9008F1558 /* RESTClientSimulator.h */,
+				8BB002361434FAC9008F1558 /* RESTClientSimulator.m */,
+				8B21C98114372716004F4C05 /* SimulatedServer.h */,
+				8B21C98214372716004F4C05 /* SimulatedServer.m */,
+			);
+			name = Simulation;
+			sourceTree = "<group>";
+		};
+		8B27AEB31426299100EAC63E /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				8B27AEB4142629BE00EAC63E /* GaddREST.h */,
+				8B27AEA71426283E00EAC63E /* RESTClient.h */,
+				8B27AEA81426283E00EAC63E /* RESTClient.m */,
+				8B27E3961426034B00E86508 /* RESTRequest.h */,
+				8B27E3971426034B00E86508 /* RESTRequest.m */,
+				8B21C9841437271A004F4C05 /* Simulation */,
+			);
+			name = REST;
+			sourceTree = "<group>";
+		};
+		8B3F1756141CEAD300B70015 = {
+			isa = PBXGroup;
+			children = (
+				8B3F176B141CEAD300B70015 /* StoffiRemote */,
+				8B3F1764141CEAD300B70015 /* Frameworks */,
+				8B3F1762141CEAD300B70015 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B3F1762141CEAD300B70015 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B3F1761141CEAD300B70015 /* StoffiRemote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B3F1764141CEAD300B70015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BBEEFCA14276B0C009932A5 /* Security.framework */,
+				8BBEEFCB14276B0C009932A5 /* SystemConfiguration.framework */,
+				8B3F1765141CEAD300B70015 /* UIKit.framework */,
+				8B3F1767141CEAD300B70015 /* Foundation.framework */,
+				8B3F1769141CEAD300B70015 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B3F176B141CEAD300B70015 /* StoffiRemote */ = {
+			isa = PBXGroup;
+			children = (
+				8B3F1774141CEAD300B70015 /* StoffiRemoteAppDelegate.h */,
+				8B3F1775141CEAD300B70015 /* StoffiRemoteAppDelegate.m */,
+				8BB6CE3B1430A97100B1971D /* RemoteViewController.h */,
+				8BB6CE3C1430A97100B1971D /* RemoteViewController.m */,
+				8BB6CE3D1430A97100B1971D /* RemoteViewController.xib */,
+				8B62E54A1430AEA400BC3BDE /* User */,
+				8B27AEB31426299100EAC63E /* REST */,
+				8B56D4B51425F7D8004D4CED /* JSON */,
+				8BA4F3D5142A7AC800C5948D /* StoffiOAuth */,
+				8BBEEFBA14276AC9009932A5 /* OAuth */,
+				8B3F176C141CEAD300B70015 /* Supporting Files */,
+			);
+			path = StoffiRemote;
+			sourceTree = "<group>";
+		};
+		8B3F176C141CEAD300B70015 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B3F1777141CEAD300B70015 /* MainWindow.xib */,
+				8B3F176D141CEAD300B70015 /* StoffiRemote-Info.plist */,
+				8B3F176E141CEAD300B70015 /* InfoPlist.strings */,
+				8B3F1771141CEAD300B70015 /* StoffiRemote-Prefix.pch */,
+				8B3F1772141CEAD300B70015 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B56D4B51425F7D8004D4CED /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				8B56D4B61425F7D8004D4CED /* JSON.h */,
+				8B56D4B71425F7D8004D4CED /* NSObject+SBJSON.h */,
+				8B56D4B81425F7D8004D4CED /* NSObject+SBJSON.m */,
+				8B56D4B91425F7D8004D4CED /* NSString+SBJSON.h */,
+				8B56D4BA1425F7D8004D4CED /* NSString+SBJSON.m */,
+				8B56D4BB1425F7D8004D4CED /* SBJSON.h */,
+				8B56D4BC1425F7D8004D4CED /* SBJSON.m */,
+				8B56D4BD1425F7D8004D4CED /* SBJsonBase.h */,
+				8B56D4BE1425F7D8004D4CED /* SBJsonBase.m */,
+				8B56D4BF1425F7D8004D4CED /* SBJsonParser.h */,
+				8B56D4C01425F7D8004D4CED /* SBJsonParser.m */,
+				8B56D4C11425F7D8004D4CED /* SBJsonWriter.h */,
+				8B56D4C21425F7D8004D4CED /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		8B62E54A1430AEA400BC3BDE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8BB6CE351430A73A00B1971D /* LoginViewController.h */,
+				8BB6CE361430A73A00B1971D /* LoginViewController.m */,
+				8BB6CE371430A73A00B1971D /* LoginViewController.xib */,
+				8BB0022C1434F70C008F1558 /* User.h */,
+				8BB0022D1434F70C008F1558 /* User.m */,
+				8B73C8361435D4E400EB593B /* Configuration.h */,
+				8B73C8371435D4E400EB593B /* Configuration.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		8BA4F3D5142A7AC800C5948D /* StoffiOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				8B38FA0E1429EE38006804C0 /* StoffiOauth.h */,
+				8B38FA101429EEE3006804C0 /* StoffiOAuthManager.h */,
+				8B38FA111429EEE3006804C0 /* StoffiOAuthManager.m */,
+			);
+			name = StoffiOAuth;
+			sourceTree = "<group>";
+		};
+		8BBEEFBA14276AC9009932A5 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				8BBEEFBB14276AC9009932A5 /* GTMHTTPFetcher.h */,
+				8BBEEFBC14276AC9009932A5 /* GTMHTTPFetcher.m */,
+				8BBEEFBD14276AC9009932A5 /* GTMOAuthAuthentication.h */,
+				8BBEEFBE14276AC9009932A5 /* GTMOAuthAuthentication.m */,
+				8BBEEFBF14276AC9009932A5 /* GTMOAuthSignIn.h */,
+				8BBEEFC014276AC9009932A5 /* GTMOAuthSignIn.m */,
+				8BBEEFC114276AC9009932A5 /* GTMOAuthViewControllerTouch.h */,
+				8BBEEFC214276AC9009932A5 /* GTMOAuthViewControllerTouch.m */,
+				8BBEEFC314276AC9009932A5 /* GTMOAuthViewTouch.xib */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B3F1760141CEAD300B70015 /* StoffiRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B3F177C141CEAD300B70015 /* Build configuration list for PBXNativeTarget "StoffiRemote" */;
+			buildPhases = (
+				8B3F175D141CEAD300B70015 /* Sources */,
+				8B3F175E141CEAD300B70015 /* Frameworks */,
+				8B3F175F141CEAD300B70015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StoffiRemote;
+			productName = StoffiRemote;
+			productReference = 8B3F1761141CEAD300B70015 /* StoffiRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B3F1758141CEAD300B70015 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 8B3F175B141CEAD300B70015 /* Build configuration list for PBXProject "StoffiRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8B3F1756141CEAD300B70015;
+			productRefGroup = 8B3F1762141CEAD300B70015 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B3F1760141CEAD300B70015 /* StoffiRemote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B3F175F141CEAD300B70015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3F1770141CEAD300B70015 /* InfoPlist.strings in Resources */,
+				8B3F1779141CEAD300B70015 /* MainWindow.xib in Resources */,
+				8BBEEFC814276AC9009932A5 /* GTMOAuthViewTouch.xib in Resources */,
+				8BB6CE391430A73A00B1971D /* LoginViewController.xib in Resources */,
+				8BB6CE3F1430A97100B1971D /* RemoteViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B3F175D141CEAD300B70015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3F1773141CEAD300B70015 /* main.m in Sources */,
+				8B3F1776141CEAD300B70015 /* StoffiRemoteAppDelegate.m in Sources */,
+				8B56D4C31425F7D8004D4CED /* NSObject+SBJSON.m in Sources */,
+				8B56D4C41425F7D8004D4CED /* NSString+SBJSON.m in Sources */,
+				8B56D4C51425F7D8004D4CED /* SBJSON.m in Sources */,
+				8B56D4C61425F7D8004D4CED /* SBJsonBase.m in Sources */,
+				8B56D4C71425F7D8004D4CED /* SBJsonParser.m in Sources */,
+				8B56D4C81425F7D8004D4CED /* SBJsonWriter.m in Sources */,
+				8B27E3981426034B00E86508 /* RESTRequest.m in Sources */,
+				8B27AEA91426283E00EAC63E /* RESTClient.m in Sources */,
+				8BBEEFC414276AC9009932A5 /* GTMHTTPFetcher.m in Sources */,
+				8BBEEFC514276AC9009932A5 /* GTMOAuthAuthentication.m in Sources */,
+				8BBEEFC614276AC9009932A5 /* GTMOAuthSignIn.m in Sources */,
+				8BBEEFC714276AC9009932A5 /* GTMOAuthViewControllerTouch.m in Sources */,
+				8B38FA121429EEE3006804C0 /* StoffiOAuthManager.m in Sources */,
+				8BB6CE381430A73A00B1971D /* LoginViewController.m in Sources */,
+				8BB6CE3E1430A97100B1971D /* RemoteViewController.m in Sources */,
+				8BB0022E1434F70C008F1558 /* User.m in Sources */,
+				8BB002371434FACA008F1558 /* RESTClientSimulator.m in Sources */,
+				8B73C8381435D4E400EB593B /* Configuration.m in Sources */,
+				8B21C98314372716004F4C05 /* SimulatedServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B3F176E141CEAD300B70015 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3F176F141CEAD300B70015 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8B3F1777141CEAD300B70015 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3F1778141CEAD300B70015 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B3F177A141CEAD300B70015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8B3F177B141CEAD300B70015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		8B3F177D141CEAD300B70015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoffiRemote/StoffiRemote-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "StoffiRemote/StoffiRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8B3F177E141CEAD300B70015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoffiRemote/StoffiRemote-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "StoffiRemote/StoffiRemote-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B3F175B141CEAD300B70015 /* Build configuration list for PBXProject "StoffiRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3F177A141CEAD300B70015 /* Debug */,
+				8B3F177B141CEAD300B70015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B3F177C141CEAD300B70015 /* Build configuration list for PBXNativeTarget "StoffiRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3F177D141CEAD300B70015 /* Debug */,
+				8B3F177E141CEAD300B70015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B3F1758141CEAD300B70015 /* Project object */;
+}

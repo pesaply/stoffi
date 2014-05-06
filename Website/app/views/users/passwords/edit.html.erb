@@ -1,0 +1,69 @@
+<div class="ingraved dialog box">
+	<h1 class="title"><%= t "reset.title" %></h1>
+
+	<%= form_for(resource, :as => resource_name, :url => edit_password_path(resource_name), :html => { :method => :put }) do |f| %>
+		<% if any_errors?(resource) %>
+			<div class="alert">
+				<%= pretty_error(resource) %>
+			</div>
+		<% end %>
+		
+		<%= f.hidden_field :reset_password_token %>
+		<%= f.hidden_field :email, :value => @email %>
+
+		<div>
+			<%= f.label :password, t("dialog.password") %>
+			<%= f.password_field :plain, :class => "field",
+				:placeholder => t("dialog.password_choose_placeholder"),
+				:onkeyup => "evaluatePassword();", :autofocus => true %>
+			<div class="red note" style="display:none;" id="crack_time">
+				<span id="crack_time_text"></span>
+				<%= image_tag "gfx/tooltip.png", :id => "crack_time_img" %>
+			</div>
+			<%= f.hidden_field :password %>
+		</div>
+
+		<div>
+			<%= f.label :password_confirmation, t("dialog.password_confirm") %>
+			<%= f.password_field :plain_confirmation, :class => "field", :placeholder => t("dialog.password_confirm_placeholder") %>
+			<%= f.hidden_field :password_confirmation %>
+		</div>
+
+		<div class="bottom">
+			<div class="throw-left">
+				<%= render :partial => "devise/shared/links" %>
+			</div>
+			<div class="throw-right">
+				<%=button_tag t("reset.link"), "hashPasswords();", "login", { :type => :form, :color => :gold } %>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<% end %>
+</div>
+
+<script>
+<%
+bots = 20000
+speed = 1000000000
+l = I18n.locale
+l = :en if l == :us
+bots = number_with_delimiter(bots, :locale => l)
+speed = number_to_human(speed, :locale => l).downcase
+%>
+$(function()
+{
+	$(document).ready(function()
+	{
+		$("#crack_time_img").qtip({
+			content: "<%=t "notice.password.explanation", :botsize => bots, :speed => speed %>",
+			show: "mouseover",
+			hide: "mouseout",
+			style:
+			{
+				name: 'light',
+				tip: true
+			}
+		});
+	});
+});
+</script>

@@ -1,0 +1,92 @@
+us:
+  donations:
+    artist: "Artist"
+    title_with_artist: "Support %{artist}"
+    text: "Support %{receiver}"
+    front_text_html: "<p>You can send money to artists to show your support.</p><p>When you send money you can ensure that all money goes to the artist and no one takes a cut on the way.</p>"
+    short_front_text_html: "<p>Send money directly to artists and control how the money is distributed.</p><p>No middle men, no fuzz.</p>"
+    long_text_html: "<p>You can send money to %{receiver} to show your support.</p><p>When you send money you can ensure that all money goes to %{receiver} and no one takes a cut on the way.</p>"
+    short_text_html: "Send money directly to %{receiver} and control how the money is distributed.<br/>No middle men, no fuzz."
+    full_text_html: "<p>We cannot accept any more money at the moment due to a high workload.</p><p>Please check in later when we have processed some of the donations and can take on more work.</p><p>Thank you.</p>"
+    full_notice: "We cannot accept any more money at the moment. Please try again later."
+    button: "Support"
+    
+    amount:
+      label: "How much?"
+      note: "Minimum %{minimum}..."
+      
+    learn: "Learn more"
+    
+    return:
+      label: "Return policy"
+      note: "Sometimes the artist won't answer our calls..."
+      tip_html: "<p>We will do our best to deliver the money.</p><p>If we fail within 60 days you can choose to have the money returned to you or donate it to either charity or the Stoffi project.</p>"
+      stoffi: "Donate to Stoffi"
+      charity: "Donate to charity"
+      me: "Return to me"
+      
+    distribution:
+      title: "Distribution"
+      artist: "Artist"
+      charity: "Charity"
+      stoffi: "Stoffi"
+      
+    send: "Donate"
+    revoke: "Revoke"
+    revoked: "Revoked"
+    revoke_tooltip: "Revoke this donation"
+    too_little: "Amount is too small."
+    invalid_amount: "Amount is not a valid number."
+    missing_artist: "You must specify an artist."
+    pending: "Pending"
+      
+    list:
+      title: "Donations"
+      empty: "You haven't made any donations yet."
+      
+      artists:
+        title: "Most beloved artists"
+        empty: "No one has helped any artists yet"
+        
+      users:
+        title: "Most loving users"
+        empty: "No one has helped any artists yet"
+      
+    label: "Donated"
+    user: "Donor"
+    to: "To %{artist}"
+    date: "Was donated"
+    
+    status:
+      label: "Status"
+      pending: "Pending"
+      pending_descr: "The donation can be revoked for %{days} more days, after that it will be processed."
+      processing: "Processing"
+      processing_descr: "We are working on getting the money to the artist."
+      delivered: "Sent"
+      delivered_descr: "The donation has been sent to the artist."
+      confirmed: "Arrived"
+      confirmed_descr: "The artist has confirmed that the donation has arrived."
+      failed: "Failed"
+      failed_descr: "We were unable to deliver the donation and has returned it according to the return policy set by the donor."
+      revoked: "Revoked"
+      revoked_descr: "The donation has been revoked and all money will be returned as soon as possible."
+      returned: "Returned"
+      returned_descr: "The donation was revoked by the donor and all money has been returned."
+    
+    donatable_status:
+      label: "Donatable status"
+      notice: "We can therefore unfortunately not accept any donations for %{artist}. We hope that you can find some other artist to donate to."
+      ok: "OK"
+      dead: "%{artist} is dead"
+      split: "%{artist} has split up"
+      refuse: "%{artist} is refusing money from us"
+      unreachable: "We cannot reach %{artist}"
+  
+    sum:
+      total: "%{sum} donated total"
+      charity: "%{sum} charity generated"
+    
+  paypal:
+    return: "Back to Stoffi"
+    message: "Send us a little message"

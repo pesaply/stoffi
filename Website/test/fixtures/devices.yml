@@ -1,0 +1,5 @@
+alice_pc:
+  name: Alice PC
+  user: alice
+  app: myapp
+  last_ip: 127.0.0.1

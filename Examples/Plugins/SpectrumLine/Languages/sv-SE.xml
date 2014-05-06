@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfTranslation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Translation ID="Name" Text="Spektrumlinje"/>
+	<Translation ID="Description" Text="En linje som representerar ljudnivåer över frekvenser"/>
+	<Translation ID="ShowSecondLine" Text="Visa andra linjen"/>
+	<Translation ID="ColorFirstLine" Text="Färg på första linjen"/>
+	<Translation ID="ColorSecondLine" Text="Färg på andra linjen"/>
+</ArrayOfTranslation>

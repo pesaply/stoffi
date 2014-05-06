@@ -1,0 +1,39 @@
+us:
+  side:
+    activity:
+      title: "Activity"
+      share_html: "%{person} shared %{obj}"
+      listen_html: "%{person} listened to %{song}"
+    devices: "Devices"
+    donations: "Latest donations"
+    playlists: "Playlists"
+    remote: "Remote"
+    apps: "Apps"
+    
+    follow:
+      title: "Follow Us"
+      link: "%{service}"
+      
+    learn:
+      title: "Learn More"
+      history: "Our history"
+      wiki: "Our wiki"
+      
+    features:
+      title: "Features"
+      list_html: "<li>YouTube</li><li>SoundCloud</li><li>Internet radio</li><li>Facebook, Last.fm + 10 more</li><li>Remote control</li><li>Clean and beautiful interface</li><li>Synchronization</li><li>Extensive keyboard shortcuts</li><li>Silent upgrades</li><li>Automatic scanner</li><li>Queue your music</li><li>Bookmarks</li>"
+      
+    sponsors: "Sponsors"
+      
+    team:
+      title: "The Team"
+    
+    top_songs:
+      title: "Top songs"
+      
+    top_artists:
+      title: "Top artists"
+    
+    songs:
+      one: "One track"
+      other: "%{count} tracks"

@@ -1,0 +1,134 @@
+<% isize = 80 %>
+<h1><%=t "dashboard.songs.title" %></h1>
+<% if @songs.length > 0 %>
+	<ul class="horizontal">
+		<% @songs.each do |song| %>
+			<%= item song.title, song, "song_#{song.id}", :image => song.picture(:small),
+			         :image_size => isize %>
+		<% end %>
+	</ul>
+<% else %>
+	<p class="message"><%=t "dashboard.songs.empty" %></p>
+<% end %>
+
+<h1><%=t "dashboard.artists.title" %></h1>
+<% if @artists.length > 0 %>
+	<ul class="horizontal">
+		<% @artists.each do |artist| %>
+			<%= item artist.name, artist, "artist_#{artist.id}", :image => artist.picture,
+			         :image_size => isize %>
+		<% end %>
+	</ul>
+<% else %>
+	<p class="message"><%=t "dashboard.artists.empty" %></p>
+<% end %>
+
+<h1><%=t "dashboard.listens.title" %></h1>
+<% if @listens.length > 0 %>
+	<ul class="horizontal">
+		<% @listens.each do |listen| %>
+			<%= item listen.song.title, listen, "listen_#{listen.id}", :url => url_for(listen.song),
+			         :image => listen.song.picture(:small), :image_size => isize %>
+		<% end %>
+	</ul>
+<% else %>
+	<p class="message"><%=t "dashboard.listens.empty" %></p>
+<% end %>
+
+<% if false %>
+<% if current_user.configurations.size > 0 %>
+	<% current_user.configurations.each do |conf| %>
+		<div class="bluebox">
+			<div class="section topmost thin"%>
+				<h2><%= conf.name %></h2>
+			</div>
+			<% if conf.devices.any? %>
+				<% conf.devices.each do |device| %>
+					<div class="section">
+						<h3><%= device.name %></h3>
+						<h4>
+							<% if device.client_application %>
+								<%= image_tag device.client_application.small_icon %>
+								<%= device.client_application.name %>
+							<% else %>
+								<%= t "app.unknown" %>
+							<% end %>
+						</h4>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="section">
+					<div class="notice">
+						<%=t "dashboard.conf.no_devices" %>
+					</div>
+				</div>
+			<% end %>
+			
+			<div class="section bottommost center thin">
+				<%= link_to t("dashboard.conf.remote_control"), configuration_path(conf), :class => "button" %>
+			</div>
+		</div>
+	<% end %>
+<% else %>
+	<div class="bluebox">
+		<div class="section topmost thin">
+			<h1><%= t "dashboard.conf.no_found.title" %></h1>
+		</div>
+		<div class="section bottommost">
+			<div class="notice">
+				<%=t "dashboard.conf.no_found.description" %>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<div class="bluebox">
+	<div class="section topmost thin">
+		<h2><%=t "donate.list.title" %></h2>
+	</div>
+	<% if current_user.donations.count > 0 %>
+		<% donations = current_user.donations.limit(10) %>
+		<% donations.each do |donation| %>
+			<div class="section<%= " bottommost" if donation == donations.last %>">
+				<% if donation.revokable? %>
+					<div class="delete throw-right">
+						<%= link_to "x",
+							"#{donation_url(donation, :format => :json)}?donation[status]=revoked",
+							:method => :put, :remote => true, :id => "dash_revoke_link_#{donation.id}",
+							:title => t("donate.revoke_tooltip") %>
+					</div>
+				<% end %>
+				<h3><%=donation.artist.name.strip%></h3>
+				<div class="meta">
+					<%= t "datetime.ago", :ago => time_ago_in_words(donation.created_at) %>
+				</div>
+				<div class="meta">
+					<%=t "donate.status.label"%>: <span  class="inline"><%= t "donate.status.#{donation.status}" %></span>
+				</div>
+				<div>
+					$<%=donation.amount%>
+					<script>
+						$("#dash_revoke_link_<%=donation.id%>")
+						.bind('ajax:beforeSend', function()
+						{
+							$("#dash_donation_status_<%=donation.id%>").text("<%=t "donate.status.revoked" %>");
+							$("#dash_revoke_link_<%=donation.id%>").hide();
+						})
+						.bind('ajax:error', function()
+						{
+							$("#dash_donation_status_<%=donation.id%>").text("<%=t "donate.status.#{donation.status}" %>");
+							$("#dash_revoke_link_<%=donation.id%>").show();
+						});
+					</script>
+				</div>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="section bottommost">
+			<div class="notice">
+				<%= t "donate.list.empty" %>
+			</div>
+		</div>
+	<% end %>
+</div>
+<% end %>

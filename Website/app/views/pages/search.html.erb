@@ -1,0 +1,58 @@
+<div id="main">
+	<div class="white box">
+		<%= form_tag search_path, :class => "search-form", :method => :get do %>
+			<%= text_field_tag "q", "", :placeholder => t("search.placeholder"), :class => "search", :id => "search", :value => params[:q] %>
+		<% end %>
+		
+	<% if false && @exact_artist %>
+	</div>
+	<div class="interactive gold card box" onclick="location.href='<%=url_for @exact_artist %>';">
+		<%=image_tag @exact_artist.picture%>
+		<div class="buttons">
+			<%= button_tag(t("donations.button"), "donate(#{@exact_artist.id})", "dollar_small",
+				:type => :function, :color => :gold, :class => :small) unless @exact_artist.undonatable %>
+		</div>
+		<h2><%=@exact_artist.name%></h2>
+		<div class="meta">
+			<% if user_signed_in? %>
+			<p>
+				<strong><%=t "artists.points" %>:</strong>
+				<%= number_with_delimiter current_user.points(@exact_artist), :locale => current_locale %>
+			</p>
+			<% end %>
+			<p>
+				<strong><%=t "artists.plays" %>:</strong>
+				<%=number_with_delimiter @exact_artist.listens.count, :locale => current_locale %>
+			</p>
+			<p>
+				<strong><%=t "artists.support.title" %>:</strong>
+				<%=number_to_currency @exact_artist.donated_sum, :locale => :en, :precision => 0 %>
+			</p>
+		</div>
+		<div class="songs">
+			songs
+		</div>
+	</div>
+	<div class="white box">
+	<% end %>
+		
+		<div class="list">
+			<% currentCat = nil %>
+			<% @result.each do |i| %>
+				<% if currentCat != i[:category] %>
+					<%=raw "</ul>" unless currentCat == nil %>
+					<h2><%=i[:category]%></h2>
+					<ul class="vertical">
+					<% currentCat = i[:category] %>
+				<% end %>
+				
+				<%=item i[:display], i, i[:field], :link => i[:url], :image => i[:icon], :image_size => 12 %>
+			<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => "sidebars/main" %>
+</div>

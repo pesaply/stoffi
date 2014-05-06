@@ -1,0 +1,49 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/user" %>
+</div>
+
+<div class="main">
+
+	<h1><%=t "language.list" %></h1>
+	
+	
+	<% @languages.each do |language| %>
+		<p>
+			<%= link_to image_tag(language.flag) + " #{language.english_name} (#{language.native_name})", 
+				language, :class => "button" %>
+		</p>
+	<% end %>
+
+	<!--
+	<table>
+	  <tr>
+		<th><%=t "language.native_name" %></th>
+		<th><%=t "language.english_name" %></th>
+		<th><%=t "language.iso_tag" %></th>
+		<th><%=t "language.ietf_tag" %></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% @languages.each do |language| %>
+		<tr>
+			<td><%= language.native_name %></td>
+			<td><%= language.english_name %></td>
+			<td><%= language.iso_tag %></td>
+			<td><%= language.ietf_tag %></td>
+			<td><%= link_to t("links.show"), language %></td>
+			<% if current_user && current_user.is_admin? %>
+				<td><%= link_to t("links.edit"), edit_language_path(language) %></td>
+				<td><%= link_to t("links.delete"), language, :confirm => t("confirm"), :method => :delete %></td>
+			<% end %>
+		</tr>
+	<% end %>
+	
+	</table>
+	-->
+
+	<br />
+
+	<%= link_to t("language.create"), new_language_path, :class => "button" %>
+</div>

@@ -1,0 +1,33 @@
+<% if @song %>
+
+	<%= div_for @song, :class => "item" do %>
+	
+		<table>
+			<tr>
+				<td class="picture">
+					<div class="clip">
+						<%= link_to image_tag(@song.picture), @song %>
+					</div>
+				</td>
+				<td class="content">
+					<span class='title'>
+						<%=link_to(@song.title.strip, @song)%>
+					</span>
+					<% if @song.artist && @options[:artist] == true %>
+						<span><%=raw t("by", :name => link_to(@song.artist.name, @song.artist)) %></span>
+					<% end %>
+					<span>
+						<%=t "plays", :count => @song.listens.count %>
+					</span>
+					<% if user_signed_in? %>
+						<span>
+							<%=t "user_plays", :count => @song.listens.where("user_id = #{current_user.id}").count %>
+						</span>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+		
+	<% end %>
+	
+<% end %>

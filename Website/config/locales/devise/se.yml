@@ -1,0 +1,72 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+se:
+  notice:
+    password:
+      explanation: "Antar att knäckaren har tillgång till ett botnät på %{botsize} datorer, där varje dator kan gissa %{speed} lösenord per sekund med hjälp av GPUn."
+      hint:
+        very_short: "Kan gissas på under en sekund."
+        very_long: "Kan inte gissas under överskådlig tid."
+        text: "Kan gissas på %{time}."
+
+  errors:
+    messages:
+      expired: "har gått ut, vänligen begär ny"
+      not_found: "inte finns"
+      already_confirmed: "var redan bekräftat, försök logga in"
+      not_locked: "inte är låst"
+      password_mismatch: "Lösenorden matchade inte"
+      not_saved:
+        one: "1 fel förhindrade denna %{resource} från att sparas:"
+        other: "%{count} fel förhindrade denna %{resource} från att sparas:"
+
+  devise:
+    failure:
+      already_authenticated: 'Du är redan inloggad.'
+      unauthenticated: 'Du måste logga in eller gå med för att fortsätta.'
+      unconfirmed: 'Du måste bekräfta ditt konto innan du kan fortsätta.'
+      locked: 'Ditt konto är låst.'
+      invalid: 'Fel mail eller lösenord.'
+      invalid_token: 'Felaktig token.'
+      timeout: 'Din session har gått ut, vänligen logga in igen.'
+      inactive: 'Ditt konto har inte aktiverats än.'
+      user:
+        not_found_in_database: 'Fel mail eller lösenord.'
+    sessions:
+      signed_in: 'Du är nu inloggad.'
+      signed_out: 'Du är nu utloggad.'
+    passwords:
+      send_instructions: 'Du kommer strax att få ett mail med instruktioner för att återställa ditt lösenord.'
+      updated: 'Ditt lösenord har ändrats och du är nu inloggad.'
+      updated_not_active: 'Ditt lösenord har ändrats.'
+      send_paranoid_instructions: "Om din mail är registrerad så kommer du strax att få ett mail med instruktioner."
+    confirmations:
+      send_instructions: 'Du kommer strax att få ett mail med instruktioner för att bekräfta ditt konto.'
+      send_paranoid_instructions: 'Om din mail är registrerad så kommer du strax att få ett mail med instruktioner.'
+      confirmed: 'Ditt konto har bekräftats och du är nu inloggad.'
+    registrations:
+      signed_up: 'Välkommen! Du har nu gått med.'
+      inactive_signed_up: 'Du har nu gått med. Det gick dock inte att logga in dig eftersom ditt konto är %{reason}.'
+      updated: 'Ditt konto har uppdaterats.'
+      destroyed: 'Hej då! Ditt konto är nu helt borttaget. Hoppas vi ses snart igen.'
+      reasons:
+        inactive: 'inaktivt'
+        unconfirmed: 'obekräftat'
+        locked: 'låst'
+    unlocks:
+      send_instructions: 'Du kommer strax att få ett mail med instruktioner för att låsa upp ditt konto.'
+      unlocked: 'Ditt konto är upplåst och du är nu inloggad.'
+      send_paranoid_instructions: 'Om din mail är registrerad så kommer du strax att få ett mail med instruktioner.'
+    omniauth_callbacks:
+      success: 'Du är nu inloggad via ditt %{kind}konto.'
+      failure: 'Kunde inte logga in med ditt %{kind}konto eftersom "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Bekräftelse av konto'
+      reset_password_instructions:
+        subject: 'Återställ lösenord'
+      unlock_instructions:
+        subject: 'Lås upp konto'
+  
+  forgot:
+    send: 'Skicka lösenord'

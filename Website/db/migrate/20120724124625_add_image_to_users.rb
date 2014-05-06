@@ -1,0 +1,6 @@
+# -*- encoding : utf-8 -*-
+class AddImageToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :image, :string
+  end
+end

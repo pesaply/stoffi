@@ -1,0 +1,25 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/user" %>
+</div>
+
+<div class="main">
+	<div class="bluebox form throw-center">
+		<h1 class="title"><%=t "language.edit" %></h1>
+		<%= form_for :language, :url => language_path(@language), :html => {:method => :put}  do |f| %>
+			<%= render :partial => "form", :locals => { :f => f } %>
+			
+			<div class="bottom">
+				<div class="throw-left">
+					<div class="links">
+						<%= link_to t("links.show"), language_path(@language) %>
+						<%= link_to t("links.back"), languages_path %>
+					</div>
+				</div>
+				<div class="throw-right">
+					<%= submit_tag t("links.save"), :class => "button" %>
+				</div>
+				<div>&nbsp;</div>
+			</div>
+		<% end %>
+	</div>
+</div>

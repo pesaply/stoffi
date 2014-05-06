@@ -1,0 +1,7 @@
+alice_myapp:
+  user: alice
+  type: AccessToken
+  client_application: myapp
+  token: arandomtoken
+  secret: arandomsecret
+  authorized_at: Time.now

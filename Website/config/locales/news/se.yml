@@ -1,0 +1,36 @@
+se:
+  news:
+    features: "Nya finesser"
+    screenshots: "Skärmdumpar"
+  
+    xia:
+      title: "En ny gryning har grytt"
+      subtitle: "Här börjar en ny era av din musik"
+      content_html: "<p>Vi är stolta över att få berätta att Stoffi - världens nästa musikspelare - har sett dagens ljus. Detta är fundamentet på vilket vi kommer att bygga en underbar musikupplevelse.</p><p>Stoffi kommer med ett snyggt gränssnitt som är byggt för att se ut som resten av ditt system och integrerar bra med datorn. Den håller sig ur vägen med automatisk skanner och automatiska uppdateringar.</p><p>Vi hoppas att du kommer att gilla Stoffi lika mycket som vi gillar att skapa den för dig. Följ oss när vi fortsätter att förbättra och uppgradera den med ännu fler funktioner. Kanske till och med <a href='http://dev.stoffiplayer.com/issues?ref=xia_content'>föreslå något</a> för oss att göra?</p>"
+      list_html: "<li>Bokmärken</li><li>Automatisk skanner</li><li>Tysta uppgraderingar</li><li>Vackert gränssnitt</li><li>Stort formatstöd</li><li>Utan kostnad</li><li>Tangentbordskommandon</li><li>Hantering av metadata</li><li>Equalizer</li><li>Realtidssök</li><li>Kö och historik</li>"
+    
+    shang:
+      title: "Vilken musik du vill, gratis"
+      subtitle: "Vi är stolta över att få presentera: All världens musik!"
+      content_html: "<p>Sex månader sen kom Stoffi till världen. Idag anländer vår första uppdatering.</p><p>Den största ändringen är möjligheten att spela vilken musik du vill via YouTube, vilket ger dig tillgång till i princip vilken låt som helst, direkt.</p><p>Det finns också förbättringar för hanteirng av metadata och både snabbheten och storleken av Stoffi blivit bättre.</p><p>Testa den och berätta vad du tycker. Vi jobbar redan på nästa uppdatering så <a href='http://dev.stoffiplayer.com/issues?ref=shang_content'>berätta vilka funktioner du vill ha</a>.</p>"
+      list_html: "<li>30% snabbare start</li><li>20% snabbare skanner</li><li>10% mindre paket</li><li>YouTube-stöd</li><li>Ändringsbara detaljer</li><li>Kraftfullt egenskapsfönster</li><li>Språkstöd</li><li>Backupverktyg</li><li>Equalizerprofiler</li><li>Polerat gränssnitt</li><li>En massa buggfixar</li>"
+    
+    zhou:
+      title: "Med sikte på molnen"
+      subtitle: "Vi kopplar upp dig till resten av världen"
+      content_html: "<p>Utvecklingen av Stoffi är fortfarande i full fart. Tack vare ett sammarbete med studenter på Uppsala Universitet så har vi fått många nya funktioner.</p><p>Vi kommer att börja rulla ut en ny molntjänst. Den ger dig personlig statistik, synkronisering, fjärrstyrning och mycket mer.</p><p>En annan förbättring är social integrering. Du kan nu dela din musik med vänner på både Facebook och Twitter i ett enda klick.</p><p>Spana in allt nytt och berätta vad du tycker.</p><p>Enjoy!</p>"
+      list_html: "<li>Twitter</li><li>Facebook</li><li>Synkronisering</li><li>Fjärrstyrning</li><li>Statistik</li><li>Donation till artister</li><li>Sökindikatorer</li><li>Spellistgenerator</li><li>En massa buggfixar</li>"
+    
+    qin:
+      title: "Mer musik, mer delning"
+      subtitle: "Strömma från fler ställen och dela på fler nätverk"
+      content_html: "<p>Trots att jag har haft ont om tid sen min dotter föddes så har jag lyckats jobba lite mer på Stoffi.</p><p>Den största nyheten är mer strömmning från både SoundCloud och via Internetradio. Detta gör att du kan kombinera ännu mer musik till ett och samma ställe.</p><p>Att dela musik är också lättare. Du kan nu dela länkar till låtar eller spellistor och spela upp de direkt i Stoffi. Du kan också visa vad du lyssnar på både på Last.fm och på Facebook.</p><p>Hoppas att du gillar alla nyheter!</p>"
+      list_html: "<li>SoundCloud</li><li>Last.fm</li><li>Filassociationer</li><li>Användarprofiler</li><li>Dela spellistor</li><li>Synka spellistor</li><li>Internetradio</li><li>En massa buggfixar</li>"
+  
+    actions:
+      download: "Ladda ner"
+      tour: "Rundtur"
+      contribute: "Engagera"
+      future: "Framtiden"
+      bug: "Rapportera"
+      feature: "Föreslå"

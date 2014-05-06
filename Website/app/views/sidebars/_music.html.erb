@@ -1,0 +1,60 @@
+<%
+top_songs = Song.top(5)
+top_artists = Artist.top(5)
+%>
+
+<% if top_songs.length > 0 %>
+	<div class="ingraved box">
+		<h1><%=t "side.top_songs.title" %></h1>
+		<ul class="vertical" data-field="devices">
+			<% top_songs.each do |song| %>
+				<%= item song.title, song, "side_song_#{song.id}" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-songs" style='display:none;'>
+			<%=t "songs.empty" %>
+		</p>
+	</div>
+<% end %>
+
+<% if image_ads? %>
+	<div class="ingraved box ad">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Sidebar -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:250px;height:250px"
+		     data-ad-client="ca-pub-5639501338860736"
+		     data-ad-slot="4330960222"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+<% end %>
+
+<% if top_artists.length > 0 %>
+	<div class="ingraved box">
+		<h1><%=t "side.top_artists.title" %></h1>
+		<ul class="vertical" data-field="devices">
+			<% top_artists.each do |artist| %>
+				<%= item artist.name, artist, "side_artist_#{artist.id}" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-artists" style='display:none;'>
+			<%=t "artists.empty" %>
+		</p>
+	</div>
+<% end %>
+
+<% if user_signed_in? and current_user.playlists.count > 0 and false %>
+	<div class="ingraved box">
+		<h1><%=t "side.playlists.title" %></h1>
+		<ul class="vertical" id="playlists">
+			<% current_user.playlists.order(:name).each do |playlist| %>
+				<%= item playlist.name, playlist, "side_playlist_#{playlist.id}" %>
+			<% end %>
+		</ul>
+		<p class="message" id="no_playlist"<%= "style='display:none;'".html_safe if current_user.playlists.count > 0 %>>
+			<%=t "playlists.empty" %>
+		</p>
+	</div>
+<% end %>

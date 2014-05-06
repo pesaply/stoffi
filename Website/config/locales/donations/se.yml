@@ -1,0 +1,92 @@
+se:
+  donations:
+    artist: "Artist"
+    title_with_artist: "Stöd %{artist}"
+    text: "Stöd %{receiver}"
+    front_text_html: "<p>Du kan skicka pengar till artister för att visa ditt stöd.</p><p>När du skickar pengar kan du vara säker på att alla pengarna går till artisten och inga tar några avgifter på vägen.</p>"
+    short_front_text_html: "<p>Skicka pengar direkt till artister och bestämma hur de fördelas.</p><p>Inga mellanhänder, inget krångel.</p>"
+    long_text_html: "<p>Du kan skicka pengar till %{receiver} för att visa ditt stöd.</p><p>När du skickar pengar kan du vara säker på att alla pengar går till %{receiver} och inga tar några avgifter på vägen.</p><p>Du kan välja att få tillbaka alla pengar eller donera dem till välgörenhet om vi inte lyckas leverera dem inom 60 dagar.</p>"
+    short_text_html: "Skicka pengar direkt till %{receiver} och bestämma hur de ska fördelas.<br/>Inga mellanhänder, inget krångel."
+    full_text_html: "<p>Vi kan tyvärr inte ta emot mer pengar just nu på grund av hög arbetsbelastning.</p><p>Var vänlig kom tillbaka senare när vi behandlat några av donationerna och kan ta emot mer arbete.</p>Tack så mycket.</p>"
+    full_notice: "Vi kan inte ta emot mer pengar för tillfället. Var vänlig försök igen senare."
+    button: "Stöd"  
+    
+    amount:
+      label: "Hur mycket?"
+      note: "Minst %{minimum}..."
+      
+    learn: "Läs mer"
+    
+    return:
+      label: "Returpolicy"
+      note: "Ibland svarar inte artister när vi ringer..."
+      tip_html: "<p>Vi kommer att göra vårt bästa för att leverera pengarna.</p><p>Om vi inte lyckas inom 60 dagar kan du välja att få tillbaka pengarna eller donera dem till antingen välgörenhet eller Stoffi-projektet.</p>"
+      stoffi: "Donera till Stoffi"
+      charity: "Donera till välgörenhet"
+      me: "Skicka tillbaka till mig"
+      
+    distribution:
+      title: "Fördelning"
+      artist: "Artist"
+      charity: "Välgörenhet"
+      stoffi: "Stoffi"
+      
+    send: "Donera"
+    revoke: "Återkalla"
+    revoked: "Återkallade"
+    revoke_tooltip: "Återkalla denna donation"
+    too_little: "Summan är för liten."
+    invalid_amount: "Summan är inte ett tal."
+    missing_artist: "Du måste ange en artist."
+    pending: "Väntande"
+      
+    list:
+      title: "Donationer"
+      empty: "Du har inte hjälpt någon artist än."
+      
+      artists:
+        title: "Mest älskade artisterna"
+        empty: "Ingen har hjälpt några artister än."
+        
+      users:
+        title: "Mest kärleksfulla personerna"
+        empty: "Ingen har hjälpt några artister än."
+    
+    label: "Donerat"
+    user: "Donator"
+    to: "Till %{artist}"
+    date: "Donerades"
+    
+    status:
+      label: "Status"
+      pending: "Väntande"
+      pending_descr: "Donationen kan återkallas i %{days} till dagar, efter det kommer den att behandlas."
+      processing: "Pågående"
+      processing_descr: "Vi jobbar på att få fram pengarna till artisten."
+      delivered: "Skickad"
+      delivered_descr: "Donationen har skickats till artisten."
+      confirmed: "Levererad"
+      confirmed_descr: "Artisten has bekräftat att donationen kommit fram."
+      failed: "Misslyckad"
+      failed_descr: "Vi kunde inte leverera donationen och har behandlat den enligt returpolicyn satt av donatorn."
+      revoked: "Återkallad"
+      revoked_descr: "Donationen har återkallats och alla pengar kommer att återbetalas så snart som möjligt."
+      returned: "Återbetald"
+      returned_descr: "Donationen var återkallad av donatorn och alla pengarna har återbetalats."
+    
+    donatable_status:
+      label: "Doneringsbar status"
+      notice: "Vi kan därför tyvärr inte ta emot några donationer till %{artist}. Vi hoppas att du kan hitta någon annan artist att donera till."
+      ok: "OK"
+      dead: "%{artist} är död"
+      split: "%{artist} har splittrats"
+      refuse: "%{artist} vägrar ta emot pengar från oss"
+      unreachable: "Vi kan inte nå %{artist}"
+  
+    sum:
+      total: "%{sum} donerat totalt"
+      charity: "%{sum} välgörenhet genererad"
+    
+  paypal:
+    return: "Tillbaka till Stoffi"
+    message: "Skicka oss ett litet meddelande"

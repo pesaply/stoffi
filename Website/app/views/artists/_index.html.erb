@@ -1,0 +1,17 @@
+<div class="overlay_wrapper">
+	<div class="overlay" id="artist_overlay" style="display: none;">
+		<%= image_tag "gfx/ajax_loading.gif" %>
+	</div>
+	<ul class="artists bigitems" id="artist_list">
+		<% @artists.each do |artist| %>
+			<li>
+				<%= artist_item artist, :show => show %>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div class="center">
+	<%= will_paginate @artists,
+		:param_name => :artist_page,
+		:params => params.merge(:show => show) %>
+</div>

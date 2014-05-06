@@ -1,0 +1,34 @@
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+
+	<% if any_errors?(resource) %>
+		<div class="error">
+			<%= pretty_error(resource) %>
+		</div>
+	<% end %>
+
+	<table>
+		<tr>
+			<td class="label">
+			
+				<%= f.label :email, I18n.t("dialog.email") %>
+				
+			</td>
+			<td class="value">
+				<%= f.email_field :email, :class => "field",
+					:placeholder => t("dialog.email_placeholder"), :size => 20 %>
+				
+			</td>
+		</tr>
+		<tr>
+			<td class="right" colspan="2">
+				<%= f.submit t("forgot.link"), :class => "forgot button" %>
+			</td>
+		</tr>
+		<tr>
+			<td class="center" colspan="2">
+				<%= render :partial => "devise/shared/links" %>
+			</td>
+		</tr>
+	</table>
+	
+<% end %>

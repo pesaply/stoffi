@@ -1,0 +1,40 @@
+se:
+  side:
+    activity:
+      title: "Aktivitet"
+      share_html: "%{person} delade %{obj}"
+      listen_html: "%{person} lyssnade på %{song}"
+    devices: "Enheter"
+    donations: "Senaste donationer"
+    playlists: "Spellistor"
+    remote: "Fjärr"
+    apps: "Appar"
+    
+    follow:
+      title: "Följ oss"
+      link: "%{service}"
+
+    learn:
+      title: "Lär Dig Mer"
+      history: "Vår historia"
+      wiki: "Vår wiki"
+
+    features:
+      title: "Finesser"
+      list_html: "<li>YouTube</li><li>SoundCloud</li><li>Internetradio</li><li>Facebook, Last.fm + 10 till</li><li>Fjärrstyrning</li><li>Rent och vackert gränssnitt</li><li>Synkronisering</li><li>Omfattande kortkommandon</li><li>Tysta uppgraderingar</li><li>Automatisk skanner</li><li>Köa din musik</li><li>Bokmärken</li>"
+      
+    sponsors: "Sponsorer"
+
+    team:
+      title: "Gänget"
+    
+    top_songs:
+      title: "Topplåtar"
+      
+    top_artists:
+      title: "Toppartister"
+    
+    songs:
+      one: "En låt"
+      other: "%{count} låtar"
+    

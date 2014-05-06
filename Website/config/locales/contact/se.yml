@@ -1,0 +1,31 @@
+se:
+  contact:
+    issue:
+      title: "Hittat en bugg? Behöver en funktion?"
+      text_html: "Gå till vårt %{link} och skicka en Issue."
+      link: "projekt"
+      
+    email:
+      title: "Maila oss"
+      name: "Ditt namn"
+      email: "Din mail"
+      subject: "Ärende"
+      message: "Meddelande"
+      captcha: "Är du människa?"
+      send: "skicka"
+      sent: "Meddelande har skickats. Du borde höra från oss inom kort."
+    
+    phone:
+      title: "Ring oss"
+    
+    visit:
+      title: "Besök oss"
+      sweden: "SVERIGE"
+      map_link: "Visa större karta"
+    
+    errors:
+      subject: "Ärendet måste vara minst fyra tecken."
+      name: "Ditt namn är väl ändå längre än ett tecken."
+      message: "Meddelandet måste vara minst tjugo tecken."
+      email: "Du glömde din mail."
+      captcha: "Jag är säker på att du är människa. Prova igen."

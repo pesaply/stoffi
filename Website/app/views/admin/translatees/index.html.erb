@@ -1,0 +1,32 @@
+<div class="column throw-right">
+	<%= render :partial => "sidebars/user" %>
+</div>
+
+<div class="main">
+
+	<h1><%=t "translatee.list" %></h1>
+
+	<table>
+	  <tr>
+		<th><%=t "translatee.name" %></th>
+		<th><%=t "translatee.description" %></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% @admin_translatees.each do |admin_translatee| %>
+	  <tr>
+		<td><%= admin_translatee.name %></td>
+		<td><%= admin_translatee.description %></td>
+		<td><%= link_to t("links.show"), admin_translatee %></td>
+		<td><%= link_to t("links.edit"), edit_admin_translatee_path(admin_translatee) %></td>
+		<td><%= link_to t("links.delete"), admin_translatee, :confirm => t("confirm"), :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%= link_to t("translatee.create"), new_admin_translatee_path, :class => "button" %>
+</div>

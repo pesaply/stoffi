@@ -1,0 +1,67 @@
+<h1>Listing configurations</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Media state</th>
+		<th>Current track</th>
+		<th>Currently selected navigation</th>
+		<th>Currently active navigation</th>
+		<th>Shuffle</th>
+		<th>Repeat</th>
+		<th>Volume</th>
+		<th>Seek</th>
+		<th>Search policy</th>
+		<th>Upgrade policy</th>
+		<th>Add policy</th>
+		<th>Play policy</th>
+		<th>History list config</th>
+		<th>Queue list config</th>
+		<th>Files list config</th>
+		<th>Youtube list config</th>
+		<th>Sources list config</th>
+		<th>Current shortcut profile</th>
+		<th>Current equalizer profile</th>
+	</tr>
+
+<% @configurations.each do |configuration| %>
+	<% id = configuration.id %>
+	<tr>
+		<td><span id="name_<%=id%>"><%=h configuration.name %></span></td>
+		<td><span id="media_state_<%=id%>"><%=h configuration.media_state %></span></td>
+		<td>
+			<span id="current_track_<%=id%>">
+			<% if configuration.current_track %>
+				<%=link_to configuration.current_track.artist.name, artist_path(configuration.current_track.artist) %>
+				 - 
+				<%=link_to configuration.current_track.title, song_path(configuration.current_track) %>
+			<% end %>
+			</span>
+		</td>
+		<td><span id="current_selected_navigation_<%=id%>"><%=h configuration.currently_selected_navigation %></span></td>
+		<td><span id="current_active_navigation_<%=id%>"><%=h configuration.currently_active_navigation %></span></td>
+		<td><span id="shuffle_<%=id%>"><%=h configuration.shuffle %></span></td>
+		<td><span id="repeat_<%=id%>"><%=h configuration.repeat %></span></td>
+		<td><span id="volume_<%=id%>"><%=h configuration.volume %></span></td>
+		<td><span id="seek_<%=id%>"><%=h configuration.seek %></span></td>
+		<td><span id="search_policy_<%=id%>"><%=h configuration.search_policy %></span></td>
+		<td><span id="upgrade_policy_<%=id%>"><%=h configuration.upgrade_policy %></span></td>
+		<td><span id="add_policy_<%=id%>"><%=h configuration.add_policy %></span></td>
+		<td><span id="play_policy_<%=id%>"><%=h configuration.play_policy %></span></td>
+		<td><span id="history_list_config_<%=id%>"><%=link_to configuration.history_list_config, list_config_path(configuration.history_list_config) if configuration.history_list_config %></span></td>
+		<td><span id="queue_list_config_<%=id%>"><%=link_to configuration.queue_list_config, list_config_path(configuration.queue_list_config) if configuration.queue_list_config %></span></td>
+		<td><span id="files_list_config_<%=id%>"><%=link_to configuration.files_list_config, list_config_path(configuration.files_list_config) if configuration.files_list_config %></span></td>
+		<td><span id="youtube_list_config_<%=id%>"><%=link_to configuration.youtube_list_config, list_config_path(configuration.youtube_list_config) if configuration.youtube_list_config %></span></td>
+		<td><span id="sources_list_config_<%=id%>"><%=link_to configuration.sources_list_config, list_config_path(configuration.sources_list_config) if configuration.sources_list_config %></span></td>
+		<td><span id="current_shortcut_profile_<%=id%>"><%=link_to configuration.current_shortcut_profile.name, keyboard_shortcut_profile_path(configuration.current_shortcut_profile) if configuration.current_shortcut_profile %></span></td>
+		<td><span id="current_equalizer_profile_<%=id%>"><%=link_to configuration.current_equalizer_profile.name, equalizer_profile_path(configuration.current_equalizer_profile) if configuration.current_equalizer_profile %></span></td>
+		<td><%= link_to 'Show', configuration %></td>
+		<td><%= link_to 'Edit', edit_configuration_path(configuration) %></td>
+		<td><%= link_to 'Destroy', configuration, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New configuration', new_configuration_path %>

@@ -1,0 +1,42 @@
+us:
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        name_source: "Name"
+        show_ads: "Advertisements"
+        
+      artist:
+        googleplus: "Google+"
+        soundcloud: "SoundCloud"
+        youtube: "YouTube"
+        myspace: "MySpace"
+        lastfm: "Last.fm"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        spotify: "Spotify"
+        website: "Website"
+    
+    errors:
+      messages:
+        blank: "is missing"
+        human: "Are you human?"
+        too_short:
+          one: "is too short (at least 1 character)"
+          other: "is too short (at least %{count} characters)"
+        too_long:
+          one: "is too long (max 1 character)"
+          other: "is too long (max %{count} characters)"
+        taken: "is taken"
+        confirmation: "doesn't match"
+        
+      models:
+        user:
+          attributes:
+            current_password:
+              invalid: "is incorrect"
+            reset_password_token:
+              invalid: "is incorrect"

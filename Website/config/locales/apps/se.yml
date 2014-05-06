@@ -1,0 +1,53 @@
+se:
+  apps:
+    personal: "Mina appar"
+    created: "Appar jag har skapat"
+    more: "Mer appar"
+    all: "Appar på Stoffi"
+    create: "Skapa app"
+    
+    revoke: "Ta bort"
+    
+    add:
+      button: "Lägg till"
+      hint: "Ge %{app} tillgång till mitt konto."
+      
+    permissions:
+      title: "Rättigheter"
+      picture:
+        label: "Bild"
+        tooltip: "Din profilbild."
+      name:
+        label: "Namn"
+        tooltip: "Ditt fulla namn."
+      playlists:
+        label: "Spellistor"
+        tooltip: "Skapa, ändra och ta bort spellistor."
+      listens:
+        label: "Lyssningar"
+        tooltip: "Se och lägga till låtar du lyssnat på."
+      shares:
+        label: "Delningar"
+        tooltip: "Se låtar och spellistor du delat samt dela fler."
+    
+    name: "Namn"
+    descr: "Beskrivning"
+    url: "Hemsida"
+    added: "Lades till för %{time} sen"
+    created_at: "Skapades för %{time} sen"
+    settings: "Inställningar"
+    large_icon: "URL till stor ikon (64x64)"
+    small_icon: "URL till liten ikon (16x16)"
+    support: "Support"
+    support_url: "Support URL"
+    author: "Skapare"
+    author_url: "Skapare URL"
+    key: "Nyckel"
+    secret: "Hemlighet"
+    callback: "Callback URL"
+    request: "Request Token URL"
+    access: "Access Token URL"
+    authorize: "Authorize Token URL"
+    mode_notice: "Vi stödjer HMAC-SHA1 (rekommenderas) såval som klartext i SSL läge."
+    
+    edit: "Ändra"

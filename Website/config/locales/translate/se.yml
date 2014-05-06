@@ -1,0 +1,35 @@
+se:
+  translatee:
+    create: "Skapa översättbar text"
+    edit: "Ändra översättbar text"
+    list: "Översättbara texter"
+    name: "Namn"
+    description: "Beskrivning"
+    size: "Storlek"
+    sizes:
+      short: "Kort"
+      long: "Lång"
+    params:
+      title: "Parametrar"
+      add: "Lägg till parameter"
+      new: "Ny parameter"
+      delete: "Ta bort denna parameter"
+      no_found: "Det finns inga parametrar."
+      missing:
+        name: "Namn saknas"
+        example: "Exempelvärde saknas"
+      name: "Namn"
+      example: "Exempelvärde"
+      example_short: "t ex:"
+  
+  language:
+    create: "Skapa språk"
+    edit: "Ändra språk"
+    list: "Språk"
+    native_name: "Inhemskt namn"
+    english_name: "Engelskt namn"
+    iso_tag: "ISO tagg"
+    iso_tag_example: "(tex: en, sv, zh)"
+    ietf_tag: "IETF tagg"
+    ietf_tag_example: "(tex: en-US, sv-SE, zh-CN)"
+    

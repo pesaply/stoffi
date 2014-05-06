@@ -1,0 +1,86 @@
+<%
+artist = nil
+artist = @song.artists.first if @song.artists.count > 0
+%>
+
+<h1><%=@song.title%></h1>
+<% if @song.artists.count > 0 %>
+	<h4>
+		<%=raw t("by", :name => link_to(@song.artists.first.name, @song.artists.first)) %>
+	</h4>
+<% end %>
+
+<div class="actions">
+
+	<% if artist and not artist.undonatable %>
+		<%= button_tag t("donations.text", :receiver => artist.name), "donate(#{artist.id})", "dollar_small",
+			:type => :function, :color => :gold, :class => :small %>
+	<% end %>
+	
+	<div class="social-buttons">
+		<div id="fb-root"></div>
+		
+		<!-- +1 button -->
+		<span class="plus-button">
+			<div class="g-plusone" data-size="medium" data-lang="<%langtag(I18n.locale)%>"
+				data-width="50">
+			</div>
+		</span>
+		
+		<!-- like button -->
+		<span class="like-button">
+			<div class="fb-like"
+				data-send="false" data-layout="button_count" data-width="50"
+				data-show-faces="false" data-font="segoe ui">
+			</div>
+		</span>
+		
+		<!-- tweet button -->
+		<span class="tweet-button">
+			<% if false %>
+				<a href="https://twitter.com/ephracis" class="twitter-follow-button"
+					data-show-count="false" data-lang="<%=langtag(I18n.locale)%>">Follow @ephracis</a>
+			<% else %>
+				<a href="https://twitter.com/share" class="twitter-share-button"
+					data-via="StoffiPlayer" data-lang="<%=langtag(I18n.locale)%>">Tweet</a>
+			<% end %>
+		</span>
+	</div>
+</div>
+
+<% if @song.youtube? %>
+	<div class="center">
+		<iframe class="youtube-player" type="text/html" width="640" height="385"
+			src="http://www.youtube.com/embed/<%=@song.youtube_id%>?wmode=transparent" frameborder="0">
+		</iframe>
+	</div>
+	
+<% elsif @song.soundcloud? %>
+	<div class="center">
+		<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<%=@song.soundcloud_id%>&amp;auto_play=false&amp;show_artwork=true&amp;color=008BF9">
+		</iframe>
+	</div>
+<% end %>
+
+<script>
+	// like button
+	(function(d)
+	{
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/<%=full_locale(I18n.locale)%>/all.js#appId=243125052401100&xfbml=1";
+		d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+	
+	// +1 button
+	window.___gcfg = {lang: '<%=I18n.locale%>'};
+	(function()
+	{
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	
+	// tweet button
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>

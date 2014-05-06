@@ -1,0 +1,30 @@
+us:
+  media:
+    shuffle:
+      disabled: "No shuffle"
+      random: "Shuffle"
+      mind_reader: "Mind reader"
+
+    repeat:
+      disabled: "Repeat off"
+      all: "Repeat all"
+      one: "Repeat one"
+      
+    nothing_playing: "Nothing is playing"
+    
+    song:
+      link_html: "%{title} by %{artist}"
+    
+  plays: 
+    label: "Plays"
+    zero: "No plays"
+    one: "One play"
+    other: "%{count} plays"
+    
+  user_plays: 
+    zero: "No plays by you"
+    one: "One play by you"
+    other: "%{count} plays by you"
+    
+  by: "by %{name}"
+    

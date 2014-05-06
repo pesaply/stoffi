@@ -1,0 +1,32 @@
+<%= form_for(resource, :as => resource_name, :url => user_unlock_path, :html => { :method => :post }) do |f| %>
+
+	<div class="notice">
+		<%= pretty_error(resource) %>
+	</div>
+
+	<table>
+		<tr>
+			<td class="label">
+			
+				<%= f.label :email, I18n.t("dialog.email") %>
+				
+			</td>
+			<td class="value">
+				<%= f.email_field :email, :class => "field",
+					:placeholder => t("dialog.email_placeholder"), :size => 20 %>
+				
+			</td>
+		</tr>
+		<tr>
+			<td class="right" colspan="2">
+				<%= f.submit t("unlock.link"), :class => "unlock button" %>
+			</td>
+		</tr>
+		<tr>
+			<td class="center" colspan="2">
+				<%= render :partial => "devise/shared/links" %>
+			</td>
+		</tr>
+	</table>
+	
+<% end %>

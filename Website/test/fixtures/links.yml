@@ -1,0 +1,31 @@
+alice_facebook:
+  provider: facebook
+  uid: 123
+  access_token: somerandomstring
+  do_listen: 1
+  do_create_playlist: 1
+  do_share: 1
+  user: alice
+
+alice_lastfm:
+  provider: lastfm
+  uid: alice
+  access_token: alongrandomstring
+  do_listen: 1
+  user: alice
+
+alice_twitter:
+  provider: twitter
+  uid: alice
+  access_token: atwittertoken
+  do_share: 1
+  user: alice
+
+charlie_facebook:
+  provider: facebook
+  uid: 567
+  access_token: thisisatoken
+  do_listen: 0
+  do_create_playlist: 0
+  do_share: 0
+  user: charlie

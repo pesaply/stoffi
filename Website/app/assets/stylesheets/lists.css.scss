@@ -1,0 +1,264 @@
+$color1: lighten(#FECB00, 10%);
+$color2: lighten(#005293, 20%);
+
+ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li
+	{
+		padding: 0;
+		margin: 5px 0px;
+		font-style: italic;
+		font-size: 12pt;
+		color: rgba(0,0,0,0.5);
+	}
+}
+.blue.box li { color: rgba(255,255,255,0.5); }
+
+ul.tick
+{
+	padding: 5px 8px;
+	list-style-image: url(/assets/gfx/tick.png);
+	li
+	{
+		margin-left: 15px;
+		padding: 5px 0px;
+		font-size: 10pt;
+		font-style: normal;
+	}
+}
+
+ul.large
+{
+	text-transform: uppercase;
+	list-style: none;
+	margin: 10px 0px;
+	li { font-style: normal; }
+}
+
+ul.links
+{
+	margin-left: 3px;
+	li
+	{
+		a
+		{
+			-webkit-transition: background 0.5s, color 0.5s;
+			-moz-transition: background 0.5s, color 0.5s;
+			-ms-transition: background 0.5s, color 0.5s;
+			-o-transition: background 0.5s, color 0.5s;
+			transition: background 0.5s, color 0.5s;
+			margin-bottom: 0px;
+			padding: 5px;
+			display: block;
+			font-style: normal;
+			img
+			{
+				margin-bottom: -3px;
+				margin-right: 5px;
+			}
+			
+			&:hover
+			{
+				text-decoration: none;
+				background: $color2;
+				color: white;
+			}
+		}
+	}
+}
+
+ul.horizontal, ul.vertical
+{
+	li
+	{
+		.delete
+		{
+			-webkit-transition: background 0.1s, color 0.1s;
+			-moz-transition: background 0.1s, color 0.1s;
+			-ms-transition: background 0.1s, color 0.1s;
+			-o-transition: background 0.1s, color 0.1s;
+			transition: background 0.1s, color 0.1s;
+			position: absolute;
+			right: 5px;
+			top: 0;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 8pt;
+			color: transparent;
+			&:hover { text-decoration: underline; }
+		}
+		
+		a.item
+		{
+			-webkit-transition: background 0.5s, color 0.5s;
+			-moz-transition: background 0.5s, color 0.5s;
+			-ms-transition: background 0.5s, color 0.5s;
+			-o-transition: background 0.5s, color 0.5s;
+			transition: background 0.5s, color 0.5s;
+			display: block;
+			padding: 5px;
+			margin: -5px;
+			font-size: 12pt;
+			color: rgba(0,0,0,0.5);
+			
+			p
+			{
+				margin: 0;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		}
+		
+		.meta
+		{
+			-webkit-transition: color 0.5s;
+			-moz-transition: color 0.5s;
+			-ms-transition: color 0.5s;
+			-o-transition: color 0.5s;
+			transition: color 0.5s;
+		}
+				
+		&:hover
+		{
+			a.item
+			{
+				background: $color2;
+				color: white;
+				text-decoration: none;
+			}
+			
+			a { color: white; }
+			.meta { color: white; }
+			
+			.delete
+			{
+				-webkit-transition: background 1.5s, color 2s;
+				-moz-transition: background 1.5s, color 2s;
+				-ms-transition: background 1.5s, color 2s;
+				-o-transition: background 1.5s, color 2s;
+				transition: background 1.5s, color 2s;
+			}
+		}
+		
+		&.inactive
+		{
+			opacity: 0.4;
+		}
+	}
+}
+
+ul.horizontal
+{
+	li
+	{
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		
+		a.item { font-size: 10pt; }
+		
+		p { max-width: 120px; }
+		
+		.delete-wrap
+		{
+			position: relative;
+			.delete
+			{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 20px;
+				height: 20px;
+				line-height: 15px;
+				font-size: 10pt;
+				text-align: center;
+			}
+		}
+		&:hover { .delete-wrap { .delete
+		{
+			background: $color2;
+		} } }
+	}
+	
+	.ui-effects-wrapper { display: inline-block; }
+}
+
+ul.vertical
+{
+	li
+	{
+		position: relative;
+		margin-bottom: 5px;
+		padding: 5px;
+		max-width: 250px;
+		
+		img, .text { display: inline-block; }
+		img { margin-right: 10px; }
+		
+		a.item, .meta
+		{
+			-webkit-transition: background 0.2s, color 0.2s;
+			-moz-transition: background 0.2s, color 0.2s;
+			-ms-transition: background 0.2s, color 0.2s;
+			-o-transition: background 0.2s, color 0.2s;
+			transition: background 0.2s, color 0.2s;
+		}
+		
+		p { max-width: 160px; }
+		.meta
+		{
+			font-size: 10pt;
+			color: rgba(0,0,0,0.4);
+		}
+	}
+}
+
+div.list
+{
+	h2
+	{
+		font-size: 8pt;
+		font-style: normal;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin: 20px 0px 0px 0px;
+	}
+	
+	ul.vertical li
+	{
+		font-size: 10pt;
+		max-width: none;
+		padding: 0px 0px;
+		margin: 2px 0px;
+		p { max-width: none; }
+		a.item { margin: 0px -5px; padding: 0px 5px 2px; }
+	}
+}
+
+dl
+{
+	font-size: 9pt;
+	dt
+	{
+		text-transform: uppercase;
+		margin: 15px 0px 0px 0px;
+		padding: 2px;
+		font-weight: bold;
+		color: rgba(0,0,0,0.3);
+		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+		
+		&:first-child { margin: 0; }
+	}
+	
+	dd
+	{
+		margin: 0px;
+		padding: 2px;
+		color: black;
+	}
+}

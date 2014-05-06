@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%=langtag(I18n.locale)%>" lang="<%=langtag(I18n.locale)%>">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="music player, audio player, mp3 player, free music player, free audio player, free mp3 player, stoffiplayer, stoffi" />
+	<meta name="description" content="<%=@description%>" />
+	<meta name="copyright" content="Simplare" />
+	<meta name="content-language" content="<%=langtag(I18n.locale)%>" />
+
+	<title>[BETA] <%= @title + " - " if @title && @title != "" %><%= I18n.t "title" %> [BETA]</title>
+	
+	<link rel="shortcut icon" href="/stoffi.ico"/>
+	
+	<style>
+	body
+	{
+		background-color: #CCCCCC;
+		background-image: url(/assets/gfx/backgrounds/solid.png);
+		color: #333333;
+		font-family: segoe ui, helvetica, arial;
+		font-size: 10pt;
+	}
+	img { border: 0; }
+	h1 { font-weight: normal; }
+	a { text-decoration: none; }
+	a:hover { color: black; }
+	.white.box
+	{
+		background: white;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		padding: 5px 20px;
+		margin: 5px 0px;
+		text-align: left;
+		border: 1px solid #666;
+	}
+	.warning
+	{
+		margin: 50px auto;
+		width: 800px;
+		text-align: right;
+	}
+	.browsers
+	{
+		text-align: center;
+		margin: 30px;
+	}
+	.browser
+	{
+		display: inline-block;
+		margin: 10px;
+	}
+	.large.browser { width: 180px; }
+	.small.browser { width: 90px; }
+	.large.browser .txt
+	{
+		font-size: 16pt;
+		color: #333333;
+	}
+	.small.browser .txt
+	{
+		font-size: 8pt;
+		color: #888888;
+	}
+	.txt
+	{
+		display: block;
+	}
+	.browsers a:hover { color: black; }
+	.skip
+	{
+		text-align: right;
+		color: #666666;
+	}
+	</style>
+	<script>
+		var locale = "<%= I18n.locale %>";
+	</script>
+	<% if @track %>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-15959893-4']);
+			_gaq.push(['_setDomainName', 'stoffiplayer.com']);
+			_gaq.push(['_trackPageview']);
+			_gaq.push(['_setAllowLinker', true]);
+			_gaq.push(['_trackPageLoadTime']);
+
+			(function() {
+			  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	<% end %>
+	
+</head>
+
+<body>
+	<div class="warning">
+		<div class="white box">
+			<h1><%=t "home.old.title" %></h1>
+			<p><%=t "home.old.subtitle" %></p>
+			<p><%=t "home.old.call" %></p>
+
+			<div class="browsers">
+			
+				<%
+				browsers = [
+					["Chrome", "chrome", "www.google.com/chrome"],
+					["Internet Explorer", "ie", "www.microsoft.com/ie/"],
+					["Firefox", "firefox", "getfirefox.com"],
+					["Safari", "safari", "support.apple.com/downloads/#safari"],
+					["Opera", "opera", "www.opera.com/download/"]
+				]
+				
+				hasBrowser = false
+				i = 0
+				browsers.each do |b|
+					if @browser == b[1]
+						hasBrowser = true
+						browsers.insert(2, browsers.delete_at(i))
+						break
+					end
+					i += 1
+				end
+				
+				browsers.each do |b|
+					if @browser == b[1]
+						img = b[1] + "_large"
+						style = "large browser"
+					else
+						img = b[1] + "_small"
+						style = "small browser"
+					end
+					%>
+					<span class="<%=style%>">
+						<%=link_to image_tag("gfx/browsers/#{img}.png") + content_tag(:span, b[0], :class => "txt"), "http://#{b[2]}" %>
+					</span>
+				<% end %>
+			</div>
+		</div>
+		<%=link_to t("home.old.link"), params.merge({:dangerous => :ok}), :class => "skip" %>
+	</div>
+</body>
+</html>

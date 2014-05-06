@@ -1,0 +1,33 @@
+﻿<!--CloseProgress.xaml
+	
+	The overlay dialog shown when the application is closing.
+	
+	= = = = = = = = = =
+	
+	Copyright 2012 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<Window x:Class="Stoffi.CloseProgress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Closing" Height="154" Width="367" Loaded="Window_Loaded"
+		WindowStyle="None" WindowStartupLocation="CenterOwner"
+		ShowInTaskbar="False"
+		ResizeMode="NoResize">
+	<Border BorderBrush="DarkBlue" BorderThickness="1" Background="AliceBlue">
+		<StackPanel VerticalAlignment="Center">
+			<Label loc:Translate.Uid="SavingSettings" Content="{loc:Translate Content}" Height="28" HorizontalAlignment="Center" Name="progressLabel" VerticalAlignment="Center" />
+			<ProgressBar Height="16" HorizontalAlignment="Center" Name="progressBar" VerticalAlignment="Top" Width="205" IsIndeterminate="True" />
+		</StackPanel>
+	</Border>
+</Window>

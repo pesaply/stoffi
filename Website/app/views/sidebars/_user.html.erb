@@ -1,0 +1,65 @@
+<div class="ingraved box">
+	<h1><%=t "side.donations" %></h1>
+	<ul class="vertical" data-list="donations">
+		<% current_user.donations.limit(5).each do |donation| %>
+			<%= item donation.artist.name, donation, "artist-#{donation.artist.id}-name" %>
+		<% end %>
+	</ul>
+	<p class="message" id="no-donations"<%= "style='display:none;'".html_safe if current_user.donations.count > 0 %>>
+		<%=t "donations.list.empty" %>
+	</p>
+</div>
+
+<% if image_ads? %>
+	<div class="ingraved box ad">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Sidebar -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:250px;height:250px"
+   		     data-ad-client="ca-pub-5639501338860736"
+   		     data-ad-slot="4330960222"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+<% end %>
+
+<% if current_user.playlists.count > 0 %>
+	<div class="ingraved box">
+		<h1><%=t "side.playlists" %></h1>
+		<ul class="vertical" id="playlists">
+			<% current_user.playlists.order(:name).each do |playlist| %>
+				<%= item playlist.name, playlist, "playlist-#{playlist.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" id="no_playlist"<%= "style='display:none;'".html_safe if current_user.playlists.count > 0 %>>
+			<%=t "playlists.empty.short" %>
+		</p>
+	</div>
+<% end %>
+
+<% if current_user.devices.count > 0 %>
+	<div class="ingraved box">
+		<h1><%=t "side.devices" %></h1>
+		<ul class="vertical" data-list="devices">
+			<% current_user.devices.order("updated_at DESC").each do |device| %>
+				<%= item device.name, device, "device-#{device.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-devices"<%= "style='display:none;'".html_safe if current_user.devices.count > 0 %>>
+			<%=t "devices.empty" %>
+		</p>
+	</div>
+<% end %>
+
+<div class="ingraved box">
+	<h1><%=t "side.remote" %></h1>
+	<% if current_user.configurations.count == 0 %>
+		<p><%=t "dashboard.remote.empty" %></p>
+		
+	<% else %>
+		<div class="center">
+			<%= button_tag t("dashboard.remote.button"), remote_path, "", { :color => :blue } %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectrumLine", "SpectrumLine\SpectrumLine.csproj", "{9E589C03-ABCA-4E0F-B63D-77EDA7BE1FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakeIt", "ShakeIt\ShakeIt.csproj", "{B6F10F63-802D-46CC-BA14-8C08D11DF58A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", "{32479CA9-9552-4283-9757-3E2B10BB773F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E589C03-ABCA-4E0F-B63D-77EDA7BE1FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E589C03-ABCA-4E0F-B63D-77EDA7BE1FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E589C03-ABCA-4E0F-B63D-77EDA7BE1FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E589C03-ABCA-4E0F-B63D-77EDA7BE1FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F10F63-802D-46CC-BA14-8C08D11DF58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F10F63-802D-46CC-BA14-8C08D11DF58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F10F63-802D-46CC-BA14-8C08D11DF58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F10F63-802D-46CC-BA14-8C08D11DF58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32479CA9-9552-4283-9757-3E2B10BB773F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32479CA9-9552-4283-9757-3E2B10BB773F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32479CA9-9552-4283-9757-3E2B10BB773F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32479CA9-9552-4283-9757-3E2B10BB773F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

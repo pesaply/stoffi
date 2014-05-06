@@ -1,0 +1,113 @@
+<div id="main" class="donation">
+	<div class="white box">
+		
+		<div class="wide center">
+			<% if ["revoked", "returned", "failed"].include? @donation.status %>
+				<h3><%=t "donations.status.#{@donation.status}" %></h3>
+			<% end %>
+			<h1><%= number_to_currency @donation.amount, :locale => :en %></h1>
+			<h2><%=raw t("donations.to", :artist => link_to(@donation.artist.name.strip, @donation.artist)) %></h2>
+			
+			<% if not admin? and user_signed_in? and current_user.id == @donation.user.id and @donation.revokable? %>
+				<%= form_for(@donation) do |f| %>
+					<%= f.hidden_field :status, { :value => "revoked" } %>
+					<%= button_tag t("donations.revoke"), "", "", { :color => :blue, :type => :form } %>
+				<% end %>
+			<% end %>
+		</div>
+		
+		<div class="narrow">
+			<dl>
+				<dt><%=t "donations.distribution.artist" %></dt>
+				<dd><%= number_to_currency @donation.artist_share, :locale => :en %></dd>
+				
+				<dt><%=t "donations.distribution.charity" %></dt>
+				<dd><%= number_to_currency @donation.charity, :locale => :en %></dd>
+				
+				<dt><%=t "donations.distribution.stoffi" %></dt>
+				<dd><%= number_to_currency @donation.stoffi, :locale => :en %></dd>
+				
+				<dt><%=t "donations.status.label" %></dt>
+				<dd title="<%=t "donations.status.#{@donation.status}_descr", :days => @donation.revoke_time %>">
+					<%=t "donations.status.#{@donation.status}" %>
+				</dd>
+				
+				<dt><%=t "donations.user" %></dt>
+				<dd><%=link_to @donation.user.name, @donation.user %></dd>
+				
+				<dt><%=t "donations.date" %></dt>
+				<dd title="<%=@donation.created_at %>">
+					<%=t "datetime.ago", :ago => time_ago_in_words(@donation.created_at) %>
+				</dd>
+			</dl>
+		</div>
+		
+	</div>
+	
+	<% if admin? %>
+		<div class="blue box">
+			<h1><%=t "admin" %></h1>
+			<%= form_for(@donation) do |f| %>
+	
+				<div> 
+					<%= f.label :name, t("donations.status.label") %>
+					<%= f.select :status, [
+						[t("donations.status.pending"), "pending"],
+						[t("donations.status.delivered"), "delivered"],
+						[t("donations.status.confirmed"), "confirmed"],
+						[t("donations.status.revoked"), "revoked"],
+						[t("donations.status.returned"), "returned"],
+						[t("donations.status.failed"), "failed"] ] %>
+				</div>
+
+				<div class="bottom">
+					<div class="right">
+						<%=button_tag t("save"), nil, "save", { :type => :form, :color => :blue } %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+
+<div id="sidebar">
+	<%= render :partial => (user_signed_in? ? "sidebars/user" : "sidebars/main") %>
+</div>
+
+<% if false %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Artist:</b>
+  <%= @donation.artist_id %>
+</p>
+
+<p>
+  <b>Artist percentage:</b>
+  <%= @donation.artist_percentage %>
+</p>
+
+<p>
+  <b>Stoffi percentage:</b>
+  <%= @donation.stoffi_percentage %>
+</p>
+
+<p>
+  <b>Charity percentage:</b>
+  <%= @donation.charity_percentage %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @donation.amount %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @donation.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_donation_path(@donation) %> |
+<%= link_to 'Back', donations_path %>
+<% end %>

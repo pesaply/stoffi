@@ -1,0 +1,108 @@
+se:
+  dashboard:
+    meta: "Visa panel"
+    songs:
+      title: "Bästa låtarna"
+      empty: "Du har inte lyssnat på någon musik än."
+      
+    artists:
+      title: "Bästa artisterna"
+      empty: "Du har inte lyssnat på någon musik än."
+      
+    listens:
+      title: "Senaste"
+      empty: "Du har inte lyssnat på någon musik än."
+      
+    devices:
+      title: "Enheter"
+      
+    support:
+      title: "Stöd"
+      empty: "Du har inte hjälpt några artister än."
+      
+    remote:
+      title: "Fjärr"
+      empty: "Du måste slå på synkronisering i en spelare för att kunna fjärrstyra den."
+      button: "Styr"
+      
+    logged_in: "Inloggad som %{name} (%{email})"
+    
+  user:
+    name:
+      unknown: "Okänd"
+  
+  settings:
+    title: "Inställningar"
+    deregister: "Ta bort konto"
+    
+    profile: "Profil"
+    change_password: "Ändra lösenord"
+    create_password: "Skapa lösenord"
+    
+    custom: "Eget"
+    default: "Standard"
+    
+    ads:
+      all: "Text och bild"
+      text: "Bara text"
+      none: "Visa inte reklam"
+    
+    links:
+      title:
+        existing: "Anslutna tjänster"
+        new: "Anslut fler"
+        
+      share:
+        label: "Dela"
+        info: "Publisera saker du delar."
+        
+      listens:
+        label: "Spelningar"
+        info: "Publisera låtar du lyssnar på."
+        
+      playlists:
+        label: "Spellistor"
+        info: "Publisera spellistor du skapar."
+        
+      donations:
+        label: "Donationer"
+        info: "Publisera artister du stödjer."
+        
+      buttons:
+        label: "Sociala knappar"
+        info: "Visa %{button} på din profil och dina spellistor."
+        twitter: "följknapp"
+        google_oauth2: "+knapp"
+        
+      empty: "Du kan koppla ihop Stoffi med andra tjänster."
+      link: "Länka"
+      unlink: "Avlänka"
+      confirm: "Vill du verkligen ta bort länk till %{provider}?"
+      
+  profile:
+    registered: "Registrerade sig för"
+    points: "Fan-poäng"
+    
+    songs:
+      title: "Topplåtar"
+      empty:
+        you: "Du har inte lyssnat på någon musik än."
+        user: "%{user} har inte lyssnat på någon musik än."
+    
+    artists:
+      title: "Toppartister"
+      empty:
+        you: "Du har inte lyssnat på någon musik än."
+        user: "%{user} har inte lyssnat på någon musik än."
+    
+    donations:
+      title: "Stöd"
+      empty:
+        you: "Du har inte hjälpt några artister än."
+        user: "%{user} har inte hjälpt några artister än."
+    
+    listens:
+      title: "Senaste"
+      empty:
+        you: "Du har inte lyssnat på någon musik än."
+        user: "%{user} har inte lyssnat på någon musik än."

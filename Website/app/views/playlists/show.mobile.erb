@@ -1,0 +1,22 @@
+<div id="playlist-<%=@playlist.id%>">
+	<% isize = 80 %>
+	<h1 data-field="playlist-<%=@playlist.id%>-name"><%=h @playlist.name %></h1>
+	<h4><%=t "playlists.created" %> <%=link_to @playlist.user.name, @playlist.user %></h4>
+	
+	<% if @playlist.dynamic? %>
+		<p>TODO: dynamic playlist</p>
+	
+	<% else %>
+		<ul class="horizontal" data-list="songs">
+			<% @playlist.songs.order(:title).each do |song| %>
+				<%= item song.title, song, "song_#{song.id}",
+					:image => song.picture, :image_size => isize,
+					:delete_func => "removeSong(#{@playlist.id}, #{song.id}, true, event)",
+					:delete => t("playlists.songs.remove", :song => song.title) %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-songs"<%= "style=display:none;" if @playlist.songs.length > 0 %>>
+			<%=t "playlists.songs.empty" %>
+		</p>
+	<% end %>
+</div>

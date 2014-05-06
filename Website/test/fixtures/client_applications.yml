@@ -1,0 +1,13 @@
+myapp:
+  name: MyApp
+  website: http://www.example.com
+  support_url: https://www.example.com/support
+  callback_url: http://www.example.com/dashboard?callback=myapp
+  key: somerandomappkey
+  secret: asecretrandomstringformyapp
+  user: alice
+  icon_16: http://example.com/myapp_16.png
+  icon_64: http://example.com/myapp_64.png
+  description: An example app
+  author: Alice
+  author_url: http://www.alice.com

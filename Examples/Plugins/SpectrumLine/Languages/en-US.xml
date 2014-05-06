@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfTranslation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Translation ID="Name" Text="Spectrum line"/>
+	<Translation ID="Description" Text="A line representing decibel levels over frequencies"/>
+	<Translation ID="ShowSecondLine" Text="Show second line"/>
+	<Translation ID="ColorFirstLine" Text="Color of first line"/>
+	<Translation ID="ColorSecondLine" Text="Color of second line"/>
+</ArrayOfTranslation>

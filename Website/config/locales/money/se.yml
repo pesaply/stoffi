@@ -1,0 +1,14 @@
+se:
+  money:
+    intro: "Vi tycker att musik är underbart. Men vi tycker också att industrin kring musik behöver uppgraderas. Framför allt tycker vi att en ny affärsmodell behövs för att stå emot piratkopiering, men det utan att skada vårt öppna Internet eller mänsklighetens och människors integritet. Vi behöver fred på jorden för alla; både fans och artister."
+    labels:
+      title: "För många tar en del av kakan"
+      text1: "Enligt The Root så fördelas i snitt pengarna så att en bandmedlem får 2,3% av pengarna i ett band med fyra medlemmar. En soloartist får alltså ungefär 9,2%."
+      text2: "Om du skickar en artist 70 kr så får han eller hon lika mycket som om du köpte 10 album på iTunes eller lyssnade på deras musik 18 000 gånger på Spotify (om vi utgår från 2001 års royalty på 3,7 öre per stream). Detta betyder att du måste lyssna på samma artist dygnet runt i en månad om låten är 2:30 lång. Det är enklare att bara skicka 70 kr."
+    process:
+      title: "Hur fungerar det?"
+      text1: "Vi använder PayPal för att hantera alla transaktioner. Detta innebär att vi inte sparar någon känslig information såsom kreditkortsnummer. Istället kan vi fokusera på att sköta om hemsidan och skicka pengar till artister, medan du kan känna dig säker på att dina pengar tas hand om på ett säkert sätt."
+      text2: "När vi får en donation så letar vi reda på artisten och erbjuder dem pengarna. Om de inte vill ta emot, eller vi inte kan hitta artisten, kan vi antingen skicka tillbaka pengarna till dig, donera dem till välgörenhet, eller använda dem för att sponsra projektet. Det är upp till dig."
+    charity:
+      title: "Rädda världen"
+      text: "När du skickar pengar så skickar vi av det 10% till välgörenhet. Så varje överföring bidrar till att skapa en bättre värld att leva i. Rädda världen! Stöd musik! Det blir inte bättre än så."

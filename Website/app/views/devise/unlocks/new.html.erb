@@ -1,0 +1,27 @@
+<div class="ingraved dialog box">
+	<h1 class="title"><%= t "unlock.title" %></h1>
+
+	<%= form_for(resource, :as => resource_name, :url => user_unlock_path, :html => { :method => :post }) do |f| %>
+		<% if any_errors?(resource) %>
+			<div class="alert">
+				<%= pretty_error(resource) %>
+			</div>
+		<% end %>
+
+		<div>
+			<%= f.label :email, t("dialog.email") %>
+			<%= f.email_field :email, :placeholder => t("dialog.email_placeholder"),
+				:class => "field", :autofocus => true, :onkeydown => "return submitIfEnter(this,event);" %>
+		</div>
+
+		<div class="bottom">
+			<div class="throw-left">
+				<%= render :partial => "devise/shared/links" %>
+			</div>
+			<div class="throw-right">
+				<%=button_tag t("unlock.link"), nil, "unlock", { :type => :form, :color => :gold } %>
+			</div>
+			<div class="clear"></div>
+		</div>
+	<% end %>
+</div>

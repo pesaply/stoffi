@@ -1,0 +1,58 @@
+$color1: #FFAA00;
+$color2: #1240AB;
+$color3: #BBBBBB;
+
+#config
+{
+	.volume-indicator
+	{
+		padding: 10px 0px;
+	}
+	.info
+	{
+		border-radius: 5px;
+		padding: 5px 5px;
+		width: 400px;
+		margin: auto;
+		text-align: center;
+		font-size: 10pt;
+		overflow: hidden;
+		text-wrap: none;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.play, .pause, .prev, .next, .repeat, .shuffle
+	{
+		margin: auto;
+		display: inline-block;
+		margin: 5px 0px;
+		vertical-align: middle;
+		img { vertical-align: middle; }
+		&:hover { cursor: pointer; }
+	}
+	.play, .pause, .prev, .next
+	{
+		border-radius: 100px;
+		padding: 0;
+		border: 1px solid lighten($color2, 20%);
+	}
+	.play, .pause
+	{
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+	}
+	.prev, .next
+	{
+		width: 50px;
+		height: 50px;
+		line-height: 48px;
+	}
+	.repeat, .shuffle
+	{
+		width: 100px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 12pt;
+	}
+}

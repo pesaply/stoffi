@@ -1,0 +1,13 @@
+<h1><%= t "legal.title" %></h1>
+<p><%=t "legal.intro"%></p>
+<h2><%=t "legal.privacy.title" %></h2>
+<p><%=raw t("legal.privacy.text", :opt_out_plugin => link_to(t("legal.privacy.link"), "http://tools.google.com/dlpage/gaoptout")) %><p>
+<h2><%=t "legal.rules.title" %></h2>
+<p><%=t "legal.rules.text" %><p>
+<h2><%=t "legal.license.title" %></h2>
+<p>
+	<%=raw t("legal.license.text",
+		:gpl_link => link_to("GPL", "http://www.gnu.org/licenses/gpl.html"),
+		:cc_link => link_to("CC", "http://creativecommons.org/licenses/by-sa/3.0/"))
+	%>
+<p>

@@ -1,0 +1,21 @@
+se:
+  about:
+    header: "Välkommen till Stoffi Musikspelare!"
+    intro_html: "<p>Stoffi Musikspelare är en ny vacker, integrerad, kompakt och gratis musikspelare. Stoffi fokuserar på att kombinera funktioner från flera olika musikspelare in i en enda enhetlig spelare. Den siktar också på att vara enkel men ändå kraftfull på samma gång.</p><p>Lösningen för att nå dessa mål var att skapa en ny musikspelare från grunden. Den är gjord för att vara simpel, lätt och enkel att använda.</p><p>Projektet skapades av Christoffer Brodd-Reijer, en student på Uppsala Universitet.</p>"
+  
+    future:
+      title: "Framtidsplaner"
+      list_html: "<li>Fler musikkällor</li><li>Stöd för CD skivor</li><li>Låttexter</li><li>Gitarrtabbar</li><li>Omslagsnedladdning</li><li>Wikipedia integrering</li><li>Mer synkronisering</li><li>Mobilapplikation</li><li>Hastighetsförbättringar</li><li>Verktyg för meta data</li><li>Linux- and Mac-stöd</li><li>Bättre bokmärken</li>"
+    
+    team:
+      title: "Med hjälp från"
+      maggie_man: "♥ Stöd och kärlek. ♥"
+      hylton_clarke: "Betatester och feedback."
+      tianwen_zhang: "Kinesisk översättning."
+      tom_sokolinski: "Tysk översättning."
+      fredrik_gadnell: "Skapade fjärrstyrnings-app till iOS."
+      carl_carenvall: "Lade grunden för pluginsystemet."
+      mark_tibblin: "Lite blandad programmering."
+      francesco_roberto: "Italiensk översättning."
+      ryan_zeigler: "Förhindrade vilo- och vänteläge under synkronisering med molnet."
+      fredrik_weinestad: "Design av logo."

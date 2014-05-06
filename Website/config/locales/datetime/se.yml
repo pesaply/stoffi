@@ -1,0 +1,145 @@
+se:
+  date:
+    abbr_day_names:
+    - sön
+    - mån
+    - tis
+    - ons
+    - tor
+    - fre
+    - lör
+    abbr_month_names:
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - maj
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+    day_names:
+    - söndag
+    - måndag
+    - tisdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lördag
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+    month_names:
+    - 
+    - januari
+    - februari
+    - mars
+    - april
+    - maj
+    - juni
+    - juli
+    - augusti
+    - september
+    - oktober
+    - november
+    - december
+    order:
+    - :day
+    - :month
+    - :year
+    
+  datetime:
+    distance_in_words:
+      half_a_minute: "en halv minut"
+
+      less_than_x_seconds:
+        one: "mindre än en sekund"
+        other: "mindre än %{count} sekunder"
+
+      x_seconds:
+        one: "1 sekund"
+        other: "%{count} sekunder"
+
+      less_than_x_minutes:
+        one: "mindre än en minut"
+        other: "mindre än %{count} minuter"
+
+      x_minutes:
+        one: "en minut"
+        other: "%{count} minuter"
+
+      about_x_hours:
+        one: "ungefär en timme"
+        other: "ungefär %{count} timmar"
+
+      x_hours:
+        one: "en timme"
+        other: "%{count} timmar"
+
+      x_days:
+        one: "en dag"
+        other: "%{count} dagar"
+
+      about_x_weeks:
+        one: "ungefär en vecka"
+        other: "ungefär %{count} veckor"
+
+      x_weeks:
+        one: "en vecka"
+        other: "%{count} veckor"
+
+      about_x_months:
+        one: "ungefär en månad"
+        other: "ungefär %{count} månader"
+
+      x_months:
+        one: "en månad"
+        other: "%{count} månader"
+
+      about_x_years:
+        one: "ungefär ett år"
+        other: "ungefär %{count} år"
+
+      over_x_years:
+        one: "över ett år"
+        other: "över %{count} år"
+
+      almost_x_years:
+        one: "nästan ett år"
+        other: "nästan %{count} år"
+
+      x_years:
+        one: "ett år"
+        other: "%{count} år"
+
+      about_x_centuries:
+        one: "ungefär ett sekel"
+        other: "ungefär %{count} sekel"
+
+      x_centuries:
+        one: "ett sekel"
+        other: "%{count} sekel"
+
+    prompts:
+      year: "År"
+      month: "Månad"
+      day: "Dag"
+      hour: "Timme"
+      minute: "Minut"
+      second: "Sekunder"
+
+    ago_at: "%{ago} sen vid %{at}"
+    ago: "%{ago} sen"
+
+  time:
+    am: ''
+    formats:
+      default: ! '%a, %e %b %Y %H:%M:%S %z'
+      long: ! '%e %B %Y %H:%M'
+      short: ! '%e %b %H:%M'
+    pm: ''

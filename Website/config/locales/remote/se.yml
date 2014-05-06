@@ -1,0 +1,18 @@
+se:
+  remote:
+    title: "Fjärrstyrning"
+    text1: "Du kan fjärrstyra Stoffi genom att använda antingen en smartphone eller en dator."
+    text2: "För att slå på fjärrstyrning i Stoffi måste du logga in med ditt konto genom att gå till <b>Inställningar</b> och välja <b>Tjänster</b>."
+    text3: "När du väl kopplat ihop ditt konto med Stoffi behöver du aktivera <b>Synkronisering</b>."
+    devices:
+      title: "Enheter"
+      empty: "Du har inte aktiverat några enheter för fjärrstyrning."
+    playing: "Spelas nu"
+    tooltips:
+      play: "Spela nuvarande låt."
+      pause: "Pausa nuvarande låt."
+      prev: "Ladda den förra låten."
+      next: "Hoppa till nästa låt."
+      shuffle: "Växla blandningsläge."
+      repeat: "Växla repetitionsläge."
+      volume: "Ändra volymnivå."

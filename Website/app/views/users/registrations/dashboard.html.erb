@@ -1,0 +1,97 @@
+<div class="white box" id="dashboard">
+
+	<div class="wide">
+
+		<h1><%=t "dashboard.songs.title" %></h1>
+		<% if @songs.length > 0 %>
+			<ul class="horizontal">
+				<% @songs.each do |song| %>
+					<%= item song.title, song, "song-#{song.id}-title", :image => song.picture %>
+				<% end %>
+			</ul>
+		<% else %>
+			<p class="message"><%=t "dashboard.songs.empty" %></p>
+		<% end %>
+		
+		<% if text_ads? %>
+			<div class="ad">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-5639501338860736";
+				/* Front Black */
+				google_ad_slot = "4189875527";
+				google_ad_width = 468;
+				google_ad_height = 60;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+		<% end %>
+		
+		<h1><%=t "dashboard.artists.title" %></h1>
+		<% if @artists.length > 0 %>
+			<ul class="horizontal">
+				<% @artists.each do |artist| %>
+					<%= item artist.name, artist, "artist-#{artist.id}-name", :image => artist.picture %>
+				<% end %>
+			</ul>
+		<% else %>
+			<p class="message"><%=t "dashboard.artists.empty" %></p>
+		<% end %>
+		
+		<h1><%=t "dashboard.listens.title" %></h1>
+		<ul class="horizontal" data-list="listens" data-maxLength="10">
+			<% @listens.each do |listen| %>
+				<%= item listen.song.title, listen, "song-#{listen.song.id}-title", :url => url_for(listen.song), :image => listen.song.picture %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-listens"<%= "style='display:none;'".html_safe if @listens.length > 0 %>>
+			<%=t "dashboard.listens.empty" %>
+		</p>
+	</div>
+
+	<div class="narrow">
+		<h1><%=t "playlists.title.list" %></h1>
+		<ul class="vertical" data-list="playlists">
+			<% @playlists.each do |playlist| %>
+				<%= item playlist.name, playlist, "playlist-#{playlist.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-playlists"<%= "style='display:none;'".html_safe if @playlists.length > 0 %>>
+			<%=t "playlists.empty.short" %>
+		</p>
+			
+		<%= button_tag t("create"), new_playlist_path, "", { :color => :blue } %>
+		
+		<h1><%=t "dashboard.support.title" %></h1>
+		<ul class="vertical" data-list="donations">
+			<% @donations.each do |donation| %>
+				<%= item donation.artist.name, donation, "artist-#{donation.artist.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-donations"<%= "style='display:none;'".html_safe if @donations.count > 0 %>>
+			<%=t "dashboard.support.empty" %>
+		</p>
+			
+		<%=button_tag t("donations.send"), "donate()", "dollar", { :type => :function, :color => :gold } %>
+		
+		<h1><%=t "dashboard.devices.title" %></h1>
+		<ul class="vertical" data-list="devices">
+			<% @devices.each do |device| %>
+				<%= item device.name, device, "device-#{device.id}-name" %>
+			<% end %>
+		</ul>
+		<p class="message" data-field="no-devices"<%= "style='display:none;'".html_safe if @devices.length > 0 %>>
+			<%=t "devices.empty" %>
+		</p>
+		
+		<h1><%=t "dashboard.remote.title" %></h1>
+		<% if @configuration != nil and @configuration.devices.count > 0 %>
+			<%= button_tag t("dashboard.remote.button"), remote_path, "", { :color => :blue } %>
+		<% else %>
+			<p class="message"><%=t "dashboard.remote.empty" %></p>
+		<% end %>
+	</div>
+	
+</div>

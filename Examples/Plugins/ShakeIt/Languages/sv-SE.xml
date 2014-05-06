@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfTranslation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Translation ID="Name" Text="Skaka Rumpa!"/>
+	<Translation ID="Description" Text="Mer dans = mer volym"/>
+	<Translation ID="MinimumVolume" Text="Lägsta volym"/>
+	<Translation ID="MaximumVolume" Text="Högsta volym"/>
+	<Translation ID="Viscosity" Text="Viskositet"/>
+	<Translation ID="Sensitivity" Text="Känslighet"/>
+	<Translation ID="KinectStatus" Text="Kinect status:"/>
+	<Translation ID="NotConnected" Text="Ej inkopplad"/>
+	<Translation ID="Connected" Text="Inkopplad"/>
+	<Translation ID="ErrorStarting" Text="Kunde inte starta.\nSe till att du har installerat drivrutiner för Kinect."/>
+</ArrayOfTranslation>

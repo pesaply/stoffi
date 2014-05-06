@@ -1,0 +1,111 @@
+<%
+all_tabs =
+{
+	:outside =>
+	[
+		{ :name => "index",      :path => root_path, :disp => image_tag("gfx/home.png"), :class => "logo" },
+		{ :name => "donations",  :path => donations_url },
+		{ :name => "news",       :path => news_url },
+		{ :name => "get",        :path => get_path },
+		{ :name => "tour",       :path => tour_path },
+		{ :name => "about",      :path => about_path },
+		{ :separator => true },
+		{ :name => "login",      :path => login_path },
+		{ :disp => image_tag("auth_buttons/twitter_16_white.png",   :width => 21, :height => 16),
+			:class => "auth", :path => "/auth/twitter",       :hover => t("auth.login", :service => "Twitter") },
+		{ :disp => image_tag("auth_buttons/facebook_16_white.png",   :width => 10, :height => 16),
+			:class => "auth", :path => "/auth/facebook",      :hover => t("auth.login", :service => "Facebook") },
+		{ :disp => image_tag("auth_buttons/google_16_white.png",     :width => 15, :height => 16),
+			:class => "auth", :path => "/auth/google_oauth2", :hover => t("auth.login", :service => "Google") },
+		{ :disp => image_tag("auth_buttons/vimeo_16_white.png",      :width => 17, :height => 16),
+			:class => "auth", :path => "/auth/vimeo",         :hover => t("auth.login", :service => "Vimeo") },
+		{ :disp => image_tag("auth_buttons/linkedin_16_white.png",   :width => 19, :height => 16),
+			:class => "auth", :path => "/auth/linked_in",     :hover => t("auth.login", :service => "LinkedIn") },
+		{ :disp => image_tag("auth_buttons/soundcloud_16_white.png", :width => 26, :height => 16),
+			:class => "auth", :path => "/auth/soundcloud",    :hover => t("auth.login", :service => "SoundCloud") }
+	],
+	:inside =>
+	[
+		{ :name => "index",      :path => root_path, :disp => image_tag("gfx/home.png"), :class => "logo" },
+		{ :name => "donations",  :path => donations_url },
+		{ :name => "news",       :path => news_path },
+		{ :name => "get",        :path => get_path },
+		{ :name => "tour",       :path => tour_path },
+		{ :name => "about",      :path => about_path },
+		{ :separator => true },
+	]
+}
+
+tabs = all_tabs[user_signed_in? ? :inside : :outside]
+
+tabs.each do |tab|
+	if tab[:separator]
+		%>
+		<div class="separator">&nbsp;</div>
+		<%
+	else
+		name = tab[:name]
+		path = tab[:path]
+		css = [tab[:class], @tab == name ? "active" : ""].join " "
+		disp = tab[:disp] ? tab[:disp] : t("#{name}.link")
+		%>
+		<%= link_to disp, path, :class => css, :title => tab[:hover] %>
+		<%
+	end
+end
+%>
+
+<% if user_signed_in? %>
+	<div class="dropdown">
+		<%= link_to t("dashboard.link")+" ▾", dashboard_path, :class => "dropdown-label",
+			:onmouseout => "hideMenu('user-menu');",
+			:onmouseover => "showMenu('user-menu');" %>
+		<ul class="dropdown-menu" style="display:none;" id="user-menu"
+			onmouseover="showMenu('user-menu');" onmouseout="hideMenu('user-menu');">
+			<li>
+				<%= link_to dashboard_path do %>
+					<div class="head">
+						<%= image_tag current_user.picture(:size => :small), :width => 32, :height => 32 %>
+						<h1><%= current_user.name %></h1>
+						<h2><%=t "dashboard.meta" %></h2>
+					</div>
+				<% end %>
+			</li>
+			<li class="divider"></li>
+			<li><%= link_to t("profile.link"), profile_path %></li>
+			<li><%= link_to t("playlists.link"), playlists_path %></li>
+			<li><%= link_to t("remote.link"), remote_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to t("settings.link"), settings_path %></li>
+			<li><%= link_to t("logout.link"), logout_path %></li>
+		</ul>
+	</div>
+<% end %>
+
+<div class="separator">&nbsp;</div>
+<%= form_tag search_path, :class => "search-form", :method => :get do %>
+	<%= text_field_tag "q", "", :placeholder => t("search.placeholder"), :class => "search", :id => "search",
+		:onfocus => "searchFocus('search');", :onblur => "searchBlur('search');" %>
+<% end %>
+<div class="separator">&nbsp;</div>
+
+<div class="dropdown">
+	<a onmouseover="showMenu('lang-menu');" onmouseout="hideMenu('lang-menu');" class="dropdown-label">
+		<%= t "languages.menu" %> ▾
+	</a>
+	<ul class="dropdown-menu" style="display:none;" id="lang-menu"
+	    onmouseover="showMenu('lang-menu');" onmouseout="hideMenu('lang-menu');">
+		<% I18n.available_locales.each do |l| %>
+			<% next if ["de", "uk", "cn", "en"].include? l.to_s %>
+			<li>
+				<% disp = image_tag(lang2flag(l)) + " #{lang(l)}" %>
+				<% if l == I18n.locale %>
+					<a><%= disp %></a>
+				<% else %>
+					<%=link_to_language disp, :l => l %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div id="search-menu"></div>

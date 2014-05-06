@@ -1,0 +1,40 @@
+<%
+c = @token.client_application
+%>
+
+<p>Can <%= c.name %> access your account?</p>
+
+<table class="app">
+	<tr>
+		<td rowspan="2"><%= image_tag c.large_icon %></td>
+		<td class="title"><h1><%= c.name %></h1></td>
+	</tr>
+	<tr>
+		<td class="description"><%= c.description %></td>
+	</tr>
+</table>
+
+<table class="auth-buttons">
+	<tr>
+		<td>
+			<%= form_tag authorize_url do %>
+				<%= hidden_field_tag "oauth_token", @token.token %>
+				<%= hidden_field_tag "authorize", "0" %>
+				<%- if params[:oauth_callback] -%>
+				  <%= hidden_field_tag "oauth_callback", params[:oauth_callback] %>
+				<%- end -%>
+				<%= submit_tag "Deny" %>
+			<%- end -%>
+		</td>
+		<td>
+			<%= form_tag authorize_url do %>
+				<%= hidden_field_tag "oauth_token", @token.token %>
+				<%= hidden_field_tag "authorize", "1" %>
+				<%- if params[:oauth_callback] -%>
+				  <%= hidden_field_tag "oauth_callback", params[:oauth_callback] %>
+				<%- end -%>
+				<%= submit_tag "Allow" %>
+			<%- end -%>
+		</td>
+	</tr>
+</table>

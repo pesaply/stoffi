@@ -1,0 +1,5 @@
+pt-PT:
+  will_paginate:
+    next_label: próximo →
+    page_gap: ! '&hellip;'
+    previous_label: ← anterior

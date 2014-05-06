@@ -1,0 +1,77 @@
+<div class="notice">
+	<%= pretty_error @admin_translatee %>
+</div>
+
+<div>
+	<%= f.label :name, t("translatee.name") %>
+	<%= f.text_field :name, :class => "field", :size => 40 %>
+</div>
+
+<div>
+	<%= f.label :description, t("translatee.description"), :style => "vertical-align: top;" %>
+	<%= f.text_area :description, :class => "field" %>
+</div>
+
+<div>
+	<%= f.label :size, t("translatee.size") %>
+	<%= f.select :size, [
+		[t("translatee.sizes.short"), "short"],
+		[t("translatee.sizes.long"), "long"]]
+	%>
+</div>
+
+<div class="engraved section">
+	<h2><%=t("translatee.params.title")%></h2>
+	<div id="params">
+		<div class="param goldenbox" id="param_0">
+			<div class="throw-right throw-top remove">
+				<a onclick="removeItem('', 'param_0');">x</a>
+			</div>
+			<input type="hidden" name="translatee[parameter_ids][]" value="0"/>
+			<span class="strong">%{count}</span> <span class="faint">(t ex: 69)</span>
+		</div>
+		<div class="param goldenbox" id="param_1">
+			<div class="throw-right throw-top remove">
+				<a onclick="removeItem('', 'param_1');">x</a>
+			</div>
+			<input type="hidden" name="translatee[parameter_ids][]" value="1"/>
+			<span class="strong">%{name}</span> <span class="faint">(t ex: Christoffer)</span>
+		</div>
+		<% if @admin_translatee.parameters.count > 0 %>
+			<% @admin_translatee.parameters.each do |p| %>
+				<div class="param goldenbox" id="param_<%=p.id%>">
+					<div class="throw-right throw-top remove">
+						<% url = translatees_url(t, :format => :json) %>
+						<%=link_to_function "x", "removeItem('#{url}', 'param_#{p.id}', event)", 
+							:title => t("translatee.params.delete") %>
+					</div>
+					<input type="hidden" name="translatee[parameter_ids][]" value="<%=p.id%>"/>
+					<span class="strong">%{<%=p.name%>}</span> 
+					<span class="faint">(<%=t "translatee.params.example_short"%> <%=p.example%>)</span>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<div>
+		<%= f.label :size, t("translatee.params.add") %>
+		<%= collection_select "parameters", "list",
+			Admin::TranslateeParam.all,
+			:id,
+			:name,
+			{ :prompt => true },
+			:onchange => "addItem(this, 'playlist', 'songs');"
+		%>
+	</div>
+	
+	<div id="new_param_error" class="center"></div>
+
+	<div>
+		<%= label_tag "new", t("translatee.params.new") %>
+		<%= text_field_tag "new_param_name", "", :size => 15,
+			:placeholder => t("translatee.params.name"), :class => "field" %>
+		<%= text_field_tag "new_param_example", "", :size => 20,
+			:placeholder => t("translatee.params.example"), :class => "field" %>
+		<%= button_tag t("create"), :class => "button", :type => "button",
+			:onclick => "createParam(#{@admin_translatee.id});" %>
+	</div>
+</div>

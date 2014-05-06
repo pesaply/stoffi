@@ -1,0 +1,35 @@
+se:
+  playlists:
+  
+    title:
+      new: "Skapa spellista"
+      edit: "Ändra spellista"
+      list: "Spellistor"
+      global: "Bästa spellistorna"
+      you: "Dina spellistor"
+      user: "%{users} spellistor"
+      
+    name: "Namn"
+    is_public: "Publik"
+    filter: "Filter"
+    
+    songs:
+      label: "Låtar"
+      empty: "Det finns inga låtar i den här spellistan."
+      remove: "Ta bort %{song} från spellistan."
+      
+    add:
+      label: "Lägg till låtar från"
+      youtube: "Ha med låtar från YouTube i sökresultaten."
+      soundcloud: "Ha med låtar från SoundCloud i sökresultaten."
+      files: "Ha med lokala filer i sökresultaten."
+      
+    empty:
+      you: "Du har inga spellistor än."
+      all: "Ingen har några spellistor än."
+      user: "%{user} har inga spellistor än."
+      short: "Inga spellistor än."
+    
+    created: "Skapad av"
+    
+    controls: "Inställningar"

@@ -1,0 +1,15 @@
+not_afraid:
+    title: Not Afraid
+    artists: eminem
+    path: /path/to/file.mp3
+    length: 123
+
+one_love:
+    title: One Love
+    artists: bob_marley
+    path: stoffi:track:youtube:abc
+    
+no_woman_no_cry:
+    title: No Woman No Cry
+    artists: bob_marley
+    path: stoffi:track:youtube:xyz
