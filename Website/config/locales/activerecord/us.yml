@@ -38,5 +38,3 @@ us:
           attributes:
             current_password:
               invalid: "is incorrect"
-            reset_password_token:
-              invalid: "is incorrect"

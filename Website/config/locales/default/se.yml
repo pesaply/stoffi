@@ -12,8 +12,8 @@ se:
     password: "Lösenord"
     password_placeholder: "Skriv ditt lösenord"
     password_choose_placeholder: "Välj lösenord"
-    password_confirm: "Lösenord igen"
-    password_confirm_placeholder: "Upprepa lösenord"
+    password_confirm: "Lösenord"
+    password_confirm_placeholder: "Lösenord igen"
     remember: "Kom ihåg"
     oauth: "Eller använd"
 

@@ -1,0 +1,188 @@
+﻿<!--Navigation.xaml
+	
+	The left-hand navigation tree.
+	
+	= = = = = = = = = =
+	
+	Copyright 2013 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<UserControl x:Class="Stoffi.Player.GUI.Controls.Navigation"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:Stoffi.Player.GUI.Controls"
+			 mc:Ignorable="d"
+			 Loaded="Navigation_Loaded"
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<Grid>
+		<TreeView BorderThickness="0" x:Name="NavigationTree" Padding="1 0 1 0" KeyUp="NavigationTree_KeyUp">
+
+			<TreeViewItem x:Name="Favorites" Margin="0 12" Selected="Favorites_Selected" Visibility="Collapsed"
+                          HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+				<TreeViewItem.Header>
+					<DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+						<Image Source="..\Images\Icons\Favorite.ico" Width="16" Height="16" Name="FavoritesIcon" Style="{StaticResource HandHover}"/>
+						<TextBlock loc:Translate.Uid="NavigationFavorites" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+					</DockPanel>
+				</TreeViewItem.Header>
+			</TreeViewItem>
+			
+			<TreeViewItem x:Name="NowPlaying" Margin="0 12" IsExpanded="True" Selected="NowPlaying_Selected">
+				<TreeViewItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<Image Source="..\Images\Icons\NoteSingle.ico" Width="16" Height="16" Name="NowPlayingIcon" Style="{StaticResource HandHover}"/>
+						<TextBlock loc:Translate.Uid="NavigationNowPlaying" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+					</StackPanel>
+				</TreeViewItem.Header>
+
+				<TreeViewItem x:Name="Video" Selected="Video_Selected" Padding="8 0 0 0">
+					<TreeViewItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<Image Source="..\Images\Icons\Video.ico" Width="16" Height="16" Name="VideoIcon" Style="{StaticResource HandHover}" />
+							<TextBlock loc:Translate.Uid="NavigationVideo" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}" />
+						</StackPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+
+				<TreeViewItem x:Name="Visualizer" Selected="Visualizer_Selected" Padding="8 0 0 0" Visibility="Collapsed">
+					<TreeViewItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<Image Source="..\Images\Icons\Visualizer.ico" Width="16" Height="16" Name="VisualizerIcon" Style="{StaticResource HandHover}" />
+							<TextBlock loc:Translate.Uid="NavigationVisualizer" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}" />
+						</StackPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+			</TreeViewItem>
+
+			<TreeViewItem x:Name="Music" Margin="0 12" IsExpanded="True" Selected="Music_Selected">
+				<TreeViewItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<Image Source="..\Images\Icons\Library.ico" Width="16" Height="16" Name="MusicIcon" Style="{StaticResource HandHover}" />
+						<TextBlock loc:Translate.Uid="NavigationMusic" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+					</StackPanel>
+				</TreeViewItem.Header>
+
+				<TreeViewItem x:Name="Files" Selected="Files_Selected" Padding="8 0 0 0"
+                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+					<TreeViewItem.Header>
+                        <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+							<Image Source="..\Images\Icons\FileAudio.ico" Width="16" Height="16" Name="FilesIcon" Style="{StaticResource HandHover}"/>
+							<TextBlock loc:Translate.Uid="NavigationFiles" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+                            <Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="FileSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+                        </DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+
+                <TreeViewItem x:Name="Youtube" Selected="Youtube_Selected" Padding="8 0 0 0"
+                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+					<TreeViewItem.Header>
+						<DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+							<Image Source="..\Images\Icons\YouTube.ico" Width="16" Height="16" Name="YoutubeIcon" Style="{StaticResource HandHover}"/>
+							<TextBlock loc:Translate.Uid="NavigationYouTube" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+                            <Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="YoutubeSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+                        </DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+
+				<TreeViewItem x:Name="SoundCloud" Selected="SoundCloud_Selected" Padding="8 0 0 0"
+                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+					<TreeViewItem.Header>
+						<DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+							<Image Source="..\Images\Icons\SoundCloud.ico" Width="16" Height="16" Name="SoundCloudIcon" Style="{StaticResource HandHover}"/>
+							<TextBlock loc:Translate.Uid="NavigationSoundCloud" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+							<Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="SoundCloudSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+						</DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+
+				<TreeViewItem x:Name="Radio" Selected="Radio_Selected" Padding="8 0 0 0"
+                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+					<TreeViewItem.Header>
+						<DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+							<Image Source="..\Images\Icons\Radio.ico" Width="16" Height="16" Name="RadioIcon" Style="{StaticResource HandHover}"/>
+							<TextBlock loc:Translate.Uid="NavigationRadio" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+							<Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="RadioSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+						</DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+
+				<TreeViewItem x:Name="Jamendo" Selected="Jamendo_Selected" Padding="8 0 0 0"
+                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+					<TreeViewItem.Header>
+						<DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+							<Image Source="..\Images\Icons\Jamendo.ico" Width="16" Height="16" Name="JamendoIcon" Style="{StaticResource HandHover}"/>
+							<TextBlock loc:Translate.Uid="NavigationJamendo" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+							<Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="JamendoSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+						</DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+			</TreeViewItem>
+
+            <TreeViewItem x:Name="Queue" Margin="0 12" Selected="Queue_Selected"
+                          HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+				<TreeViewItem.Header>
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+						<Image Source="..\Images\Icons\Queue.ico" Width="16" Height="16" Name="QueueIcon" Style="{StaticResource HandHover}"/>
+						<TextBlock loc:Translate.Uid="NavigationQueue" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+                        <Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="QueueSearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+                    </DockPanel>
+				</TreeViewItem.Header>
+			</TreeViewItem>
+
+            <TreeViewItem x:Name="History" Margin="0 12" Selected="History_Selected"
+                          HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+				<TreeViewItem.Header>
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+						<Image Source="..\Images\Icons\Clock.ico" Width="16" Height="16" Name="HistoryIcon" Style="{StaticResource HandHover}"/>
+						<TextBlock loc:Translate.Uid="NavigationHistory" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+                        <Image Source="..\Images\Icons\Search.ico" Width="16" Height="16" Name="HistorySearchIcon"
+                                   DockPanel.Dock="Right" Margin="5 0" Visibility="Collapsed"/>
+                    </DockPanel>
+				</TreeViewItem.Header>
+			</TreeViewItem>
+
+			<TreeViewItem x:Name="Playlists" Margin="0 12" Selected="Playlists_Selected" AllowDrop="True" IsExpanded="True">
+				<TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+						<Image Source="..\Images\Icons\DiscAudio.ico" Width="16" Height="16" Name="PlaylistsIcon" Style="{StaticResource HandHover}"/>
+						<TextBlock loc:Translate.Uid="NavigationPlaylists" Text="{loc:Translate Text}" Margin="5 0" Style="{StaticResource HandHover}"/>
+                    </StackPanel>
+				</TreeViewItem.Header>
+
+				<TreeViewItem x:Name="CreateNewPlaylist" Selected="CreateNewPlaylist_Selected" Drop="Playlist_Drop" Padding="8 0 0 0">
+					<TreeViewItem.Header>
+						<DockPanel LastChildFill="False">
+							<Image Source="..\Images\Icons\DiscAudioPlus.ico" Width="16" Height="16" Name="CreateNewIcon" Style="{StaticResource HandHover}"/>
+							<local:EditableTextBlock x:Name="CreateNewPlaylistETB"
+													 Margin="5 0"
+													 loc:Translate.Uid="NavigationCreateNew" 
+													 Text="{loc:Translate Text}" 
+													 FontStyle="Italic" 
+													 Edited="CreateNewPlaylist_Edited" 
+													 Canceled="CreateNewPlaylist_Canceled"
+													 HandHover="True"/>
+                        </DockPanel>
+					</TreeViewItem.Header>
+				</TreeViewItem>
+			</TreeViewItem>
+		</TreeView>
+	</Grid>
+</UserControl>

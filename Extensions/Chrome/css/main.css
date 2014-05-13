@@ -1,0 +1,23 @@
+body
+{
+	min-width:200px;
+	overflow-x:hidden;
+	font-family: segoe ui, verdana, sans serif;
+	font-size: 8pt;
+}
+
+h1
+{
+	font-size: 14pt;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
+	font-weight: normal;
+	border-bottom: 1px solid rgb(200,200,200);
+}
+
+h2
+{
+	font-size: 8pt;
+	margin: 0px 0px 5px 0px;
+	padding: 0;
+}

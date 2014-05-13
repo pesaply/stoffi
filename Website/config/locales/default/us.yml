@@ -15,7 +15,7 @@ us:
     password: "Password"
     password_placeholder: "Enter password"
     password_choose_placeholder: "Choose password"
-    password_confirm: "Password again"
+    password_confirm: "Password"
     password_confirm_placeholder: "Confirm password"
     remember: "Remember"
     oauth: "Or login with"

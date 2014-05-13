@@ -13,8 +13,6 @@ se:
               too_long: "är för långt (max %{count} tecken)"
             current_password:
               invalid: "är felaktigt"
-            reset_password_token:
-              invalid: "är felaktigt"
 
       full_messages:
         format: "%{attribute} %{message}"

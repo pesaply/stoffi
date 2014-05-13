@@ -1,0 +1,188 @@
+﻿<!--General.xaml
+	
+	The "General" screen inside the "Control Panel".
+    It shows general settings for appearance and behavior.
+	
+	= = = = = = = = = =
+	
+	Copyright 2013 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<ScrollViewer x:Class="Stoffi.Player.GUI.Controls.ControlPanel.General"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:Stoffi="clr-namespace:Stoffi.Player.GUI.Controls"
+              mc:Ignorable="d" 
+              d:DesignHeight="500" d:DesignWidth="800"
+			  DataContext="{Binding RelativeSource={RelativeSource Self}}"
+              Loaded="General_Loaded">
+	<DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True">
+		<TextBlock DockPanel.Dock="Top" 
+				   Style="{DynamicResource AeroControlPanelTitleStyle}" 
+				   Name="Title" 
+				   loc:Translate.Uid="GeneralTitle" 
+				   Text="{loc:Translate Text}"/>
+
+		<!-- APPEARANCE -->
+		<DockPanel DockPanel.Dock="Top" Margin="25 15 0 5" LastChildFill="True">
+			<TextBlock loc:Translate.Uid="GeneralLookTitle" Text="{loc:Translate Text}" DockPanel.Dock="Left"/>
+			<Separator Background="#CCCCCC" Height="2" Margin="5 0 5 0" SnapsToDevicePixels="True" />
+		</DockPanel>
+		<TextBlock Margin="50 5 0 5" TextWrapping="Wrap" DockPanel.Dock="Top" loc:Translate.Uid="GeneralLookText" Text="{loc:Translate Text}"/>
+		<Grid DockPanel.Dock="Top" Margin="50 5 0 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition MinWidth="170" Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Column="0" Grid.Row="0" loc:Translate.Uid="GeneralLanguage" Text="{loc:Translate Text}" VerticalAlignment="Center" Margin="0 0 10 0"/>
+			<ComboBox Grid.Column="1" Grid.Row="0" SelectedIndex="0" HorizontalAlignment="Left" x:Name="Language" Margin="0 5">
+				<ComboBoxItem Tag="en-US">English (US)</ComboBoxItem>
+				<ComboBoxItem Tag="de-DE">Deutsch</ComboBoxItem>
+				<ComboBoxItem Tag="it-IT">Italiano</ComboBoxItem>
+				<ComboBoxItem Tag="hu-HU">Magyar</ComboBoxItem>
+				<ComboBoxItem Tag="nb-NO">Norsk (bokmål)</ComboBoxItem>
+				<ComboBoxItem Tag="pt-BR">Português (Brasil)</ComboBoxItem>
+				<ComboBoxItem Tag="sv-SE">Svenska</ComboBoxItem>
+				<ComboBoxItem Tag="zh-CN">简体中文</ComboBoxItem>
+			</ComboBox>
+
+			<TextBlock Grid.Column="0" Grid.Row="1" loc:Translate.Uid="GeneralOSD" Text="{loc:Translate Text}" Margin="0 5 10 5" />
+			<CheckBox x:Name="OSD" Grid.Column="1" Grid.Row="1" Margin="0 5" IsChecked="{Binding ShowOSD}" />
+
+			<TextBlock Grid.Column="0" Grid.Row="2" loc:Translate.Uid="GeneralFastStart" Text="{loc:Translate Text}" ToolTip="{loc:Translate ToolTip}" Margin="0 5 10 5" />
+			<CheckBox x:Name="DoFastStart" Grid.Column="1" Grid.Row="2" Margin="0 5" IsChecked="{Binding FastStart}" loc:Translate.Uid="GeneralFastStart" ToolTip="{loc:Translate ToolTip}" />
+		</Grid>
+
+
+		<!-- BEHAVIOUR -->
+		<DockPanel DockPanel.Dock="Top" Margin="25 15 0 5" LastChildFill="True">
+			<TextBlock loc:Translate.Uid="GeneralFeelTitle" Text="{loc:Translate Text}" DockPanel.Dock="Left"/>
+			<Separator Background="#CCCCCC" Height="2" Margin="5 0 5 0" SnapsToDevicePixels="True" />
+		</DockPanel>
+		<TextBlock Margin="50 5 0 5" TextWrapping="Wrap" DockPanel.Dock="Top" loc:Translate.Uid="GeneralFeelText" Text="{loc:Translate Text}"/>
+		<Grid DockPanel.Dock="Top" Margin="50 5 0 25">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition MinWidth="170" Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" loc:Translate.Uid="GeneralSearchPolicy" Text="{loc:Translate Text}"/>
+			<ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="0 5" x:Name="SearchPolicyCombo">
+				<ComboBoxItem loc:Translate.Uid="GeneralSearchPolicyGlobal" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralSearchPolicyPartial" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralSearchPolicyIndividual" Content="{loc:Translate Content}"/>
+			</ComboBox>
+
+			<TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" loc:Translate.Uid="GeneralUpgradePolicy" Text="{loc:Translate Text}"/>
+			<DockPanel Grid.Column="1" Grid.Row="1" LastChildFill="false">
+				<ComboBox SelectedIndex="0" Margin="0 5" DockPanel.Dock="Left" x:Name="UpgradePolicyCombo">
+					<ComboBoxItem loc:Translate.Uid="GeneralUpgradePolicyAuto" Content="{loc:Translate Content}"/>
+					<ComboBoxItem loc:Translate.Uid="GeneralUpgradePolicyNotify" Content="{loc:Translate Content}"/>
+					<ComboBoxItem loc:Translate.Uid="GeneralUpgradePolicyManual" Content="{loc:Translate Content}"/>
+				</ComboBox>
+				<Button DockPanel.Dock="Left" 
+									VerticalAlignment="Center" 
+									Margin="5 0" 
+									x:Name="DoUpgrade" 
+									Visibility="Collapsed" 
+									Click="DoUpgrade_Click" 
+									loc:Translate.Uid="GeneralDoUpgrade" 
+									Content="{loc:Translate Text}"/>
+				<Button DockPanel.Dock="Left" 
+									VerticalAlignment="Center" 
+									Margin="5 0" 
+									x:Name="CheckForUpgrades" 
+									Visibility="Collapsed" 
+									Click="CheckForUpgrades_Click" 
+									loc:Translate.Uid="GeneralDoCheck" 
+									Content="{loc:Translate Text}"/>
+				<Button DockPanel.Dock="Left" 
+									VerticalAlignment="Center" 
+									Margin="5 0" 
+									x:Name="Restart" 
+									Visibility="Collapsed" 
+									Click="Restart_Click"
+									loc:Translate.Uid="GeneralRestart" 
+									Content="{loc:Translate Text}"/>
+			</DockPanel>
+			<DockPanel Grid.Column="1" Grid.Row="2" x:Name="UpgradeProgress" Visibility="Collapsed">
+				<TextBlock DockPanel.Dock="Left" loc:Translate.Uid="UpgradeDownloading" Text="{loc:Translate Text}" Margin="15 0" x:Name="UpgradeProgressLabel"/>
+				<ProgressBar DockPanel.Dock="Left" Width="150" HorizontalAlignment="Left" Value="0" x:Name="UpgradeProgressBar"/>
+				<TextBlock DockPanel.Dock="Left" Text="0%" Margin="15 0" MaxWidth="300" TextWrapping="Wrap" x:Name="UpgradeProgressInfo" Visibility="Collapsed"/>
+			</DockPanel>
+			<Border Grid.Row="3" Grid.Column="1" Visibility="Collapsed" x:Name="UpgradeMessage"
+								Padding="10 3 10 4" BorderThickness="1" HorizontalAlignment="Left" SnapsToDevicePixels="True">
+				<StackPanel Orientation="Horizontal">
+					<Image x:Name="UpgradeMessageIcon" Source="../../Images/Icons/Info.ico" Width="22" Height="22" Margin="0 0 5 0" VerticalAlignment="Center"/>
+					<TextBlock x:Name="UpgradeMessageText" VerticalAlignment="Center"/>
+					<Image x:Name="UpgradeMessageClose" Source="../../Images/Buttons/Close.gif" MouseLeftButtonDown="UpgradeMessageClose_MouseLeftButtonDown"
+									   Width="8" Height="8" Margin="10 0 0 0" Cursor="Hand" VerticalAlignment="Center"/>
+				</StackPanel>
+			</Border>
+
+			<TextBlock Grid.Row="4" 
+								   Grid.Column="0" 
+								   VerticalAlignment="Top" 
+								   Margin="0 25 0 5" 
+								   Grid.ColumnSpan="2" 
+								   loc:Translate.Uid="GeneralAddPlayText" 
+								   Text="{loc:Translate Text}"/>
+
+			<TextBlock Grid.Row="5" Grid.Column="0" loc:Translate.Uid="GeneralAddPolicy" Text="{loc:Translate Text}" VerticalAlignment="Center"/>
+			<ComboBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="0 5" x:Name="AddPolicyCombo">
+				<ComboBoxItem loc:Translate.Uid="GeneralAddPolicyDont" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralAddPolicyLibrary" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralAddPolicyBoth" Content="{loc:Translate Content}"/>
+			</ComboBox>
+
+			<TextBlock Grid.Row="6" Grid.Column="0" loc:Translate.Uid="GeneralPlayPolicy" Text="{loc:Translate Text}" VerticalAlignment="Center"/>
+			<ComboBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Margin="0 5" x:Name="PlayPolicyCombo">
+				<ComboBoxItem loc:Translate.Uid="GeneralPlayPolicyPlay" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralPlayPolicyDont" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralPlayPolicyBack" Content="{loc:Translate Content}"/>
+				<ComboBoxItem loc:Translate.Uid="GeneralPlayPolicyFront" Content="{loc:Translate Content}"/>
+			</ComboBox>
+
+
+			<TextBlock Grid.Column="0" Grid.Row="7" loc:Translate.Uid="GeneralPausePlayback" Text="{loc:Translate Text}" Margin="0 30 10 5" />
+
+			<TextBlock Grid.Column="0" Grid.Row="8" loc:Translate.Uid="GeneralPausePlaybackLocked" Text="{loc:Translate Text}" Margin="0 5 10 5" />
+			<CheckBox  Grid.Column="1" Grid.Row="8" x:Name="GeneralPauseWhenLocked" Margin="0 5" IsChecked="{Binding PauseWhenLocked}" />
+
+			<TextBlock Grid.Column="0" Grid.Row="9" loc:Translate.Uid="GeneralPausePlaybackEnd" Text="{loc:Translate Text}" Margin="0 5 10 5" />
+			<CheckBox  Grid.Column="1" Grid.Row="9" x:Name="GeneralPauseWhenSongEnds" Margin="0 5" IsChecked="{Binding PauseWhenSongEnds}" />
+		</Grid>
+
+	</DockPanel>
+</ScrollViewer>

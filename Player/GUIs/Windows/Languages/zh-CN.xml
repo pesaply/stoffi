@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="Simplified Chinese" CultureName="简体中文" Culture="zh-CN">
+
+	<Value Id="Application"                    FlowDirection="LeftToRight" Title="Stoffi 音乐播放器" Tagline="The world's next music player" />
+
+	<Value Id="ToolbarAdd"                     Content="添加" ToolTip="添加音乐或插件" />
+	<Value Id="ToolbarTrack"                    Header="文件"/>
+	<Value Id="ToolbarFolder"                   Header="文件夹"/>
+	<Value Id="ToolbarPlaylist"                 Header="播放列表"/>
+	<Value Id="AddPlaylistFile"                 Header="来自文件"/>
+	<Value Id="AddPlaylistYouTube"              Header="来自YouTube"/>
+	<Value Id="ToolbarRadioStation"             Header="电台"/>
+	<Value Id="ToolbarApp"                      Header="应用"/>
+	<Value Id="ToolbarShow"                    Content="显示" ToolTip="选择可见项" />
+	<Value Id="ToolbarDetails"                  Header="详细面板" />
+	<Value Id="ToolbarMenu"                     Header="菜单栏" />
+	<Value Id="ToolbarTools"                   Content="工具" ToolTip="为特殊任务启用工具" />
+	<Value Id="ToolbarImporter"                 Header="导入配置" />
+	<Value Id="ToolbarExporter"                 Header="导出配置" />
+	<Value Id="ToolbarGenerator"                Header="生成播放列表" />
+	<Value Id="ToolbarPreferences"             Content="选项" ToolTip="更改选项" />
+	<Value Id="ToolbarEqualizer"               Content="均衡器" ToolTip="自定义音效" />
+	<Value Id="ToolbarUpgrade"                 ToolTip="Stoffi已经升级到新版，重启应用程序后生效"/>
+	<Value Id="ToolbarFullscreen"              ToolTip="View fullscreen."/>
+	<Value Id="ToolbarHelp"                    ToolTip="帮助"/>
+	<Value Id="ToolbarMore"                    ToolTip="显示额外的命令"/>
+	<Value Id="ToolbarViewMode"                ToolTip="改变视图"/>
+	<Value Id="ToolbarViewExtraLargeIcons"      Header="超大图标"/>
+	<Value Id="ToolbarViewLargeIcons"           Header="大图标"/>
+	<Value Id="ToolbarViewMediumIcons"          Header="中图标"/>
+	<Value Id="ToolbarViewSmallIcons"           Header="小图标"/>
+	<Value Id="ToolbarViewList"                 Header="列表"/>
+	<Value Id="ToolbarViewDetails"              Header="详情"/>
+	<Value Id="ToolbarViewTiles"                Header="Tiles"/>
+	<Value Id="ToolbarViewContent"              Header="内容"/>
+	<Value Id="ToolbarScanning"                Content="扫描..."/>
+
+	<Value Id="Searching"                         Text="搜索..."/>
+	
+	<Value Id="MenuFile"                        Header="文件"/>
+	<Value Id="MenuAddTrack"                    Header="添加单曲"/>
+	<Value Id="MenuAddFolder"                   Header="添加目录"/>
+	<Value Id="MenuAddPlaylist"                 Header="添加播放列表"/>
+	<Value Id="MenuAddRadioStation"             Header="添加收音机电台"/>
+	<Value Id="MenuAddApp"                      Header="安装应用"/>
+	<Value Id="MenuHide"                        Header="隐藏"/>
+	<Value Id="MenuClose"                       Header="关闭"/>
+	<Value Id="MenuView"                        Header="查看"/>
+	<Value Id="MenuMenuBar"                     Header="菜单栏"/>
+	<Value Id="MenuDetailsPane"                 Header="详细面板"/>
+	<Value Id="MenuTools"                       Header="工具"/>
+	<Value Id="MenuImporter"                    Header="导入配置"/>
+	<Value Id="MenuExporter"                    Header="导出配置"/>
+	<Value Id="MenuGeneratePlaylist"            Header="生成播放列表"/>
+	<Value Id="MenuEqualizer"                   Header="均衡器"/>
+	<Value Id="MenuPreferences"                 Header="选项"/>
+	<Value Id="MenuHelp"                        Header="帮助"/>
+	<Value Id="MenuAbout"                       Header="关于Stoffi"/>
+
+	<Value Id="MenuAddToPlaylist"               Header="添加到播放列表"/>
+	<Value Id="MenuCreateNew"                   Header="新建"/>
+	<Value Id="MenuCreateNewDynamic"            Header="Create new dynamic"/>
+	<Value Id="MenuRemoveFromPlaylist"          Header="从播放列表删除"/>
+	<Value Id="MenuRemoveBookmark"              Header="删除标记"/>
+
+	<Value Id="MenuEnable"                      Header="启用"/>
+	<Value Id="MenuDisable"                     Header="禁用"/>
+	<Value Id="MenuUninstall"                   Header="卸载"/>
+
+	<Value Id="MenuRenamePlaylist"                Text="重命名播放列表"/>
+	<Value Id="MenuRemovePlaylist"                Text="移除播放列表"/>
+	<Value Id="MenuSavePlaylist"                  Text="保存播放列表"/>
+	<Value Id="MenuSharePlaylist"                 Text="分享播放列表"/>
+
+	<Value Id="MenuRemove"                        Text="移除"/>
+	<Value Id="MenuDelete"                        Text="从硬盘删除"/>
+	<Value Id="MenuInclude"                       Text="包括"/>
+	<Value Id="MenuIgnore"                        Text="忽略"/>
+	<Value Id="MenuQueue"                         Text="加入队列"/>
+	<Value Id="MenuDequeue"                       Text="从队列移除"/>
+	<Value Id="MenuCopy"                          Text="复制到..."/>
+	<Value Id="MenuMove"                          Text="移动到..."/>
+	<Value Id="MenuInfo"                          Text="详情"/>
+	<Value Id="MenuPlay"                          Text="播放"/>
+	<Value Id="MenuPause"                         Text="暂停"/>
+	<Value Id="MenuWatchOnYouTube"                Text="在YouTube上观看"/>
+	<Value Id="MenuListenOnSoundCloud"            Text="收听SoundCloud"/>
+	<Value Id="MenuListenOnJamendo"               Text="收听Jamendo"/>
+	<Value Id="MenuOpenFolder"                    Text="打开目录"/>
+	<Value Id="MenuShareSong"                     Text="共享"/>
+	<Value Id="MenuVisitWebsite"                Header="访问网站"/>
+
+	<Value Id="MenuClearSort"                     Text="清除排序"/>
+
+	<Value Id="ColumnType"                        Text="类型"/>
+	<Value Id="ColumnLocation"                    Text="位置"/>
+	<Value Id="ColumnArtist"                      Text="艺术家"/>
+	<Value Id="ColumnAlbum"                       Text="专辑"/>
+	<Value Id="ColumnTitle"                       Text="标题"/>
+	<Value Id="ColumnGenre"                       Text="流派"/>
+	<Value Id="ColumnLength"                      Text="长度"/>
+	<Value Id="ColumnTrack"                       Text="曲目"/> 
+	<Value Id="ColumnYear"                        Text="年份"/>
+	<Value Id="ColumnPlayCount"                   Text="播放次数"/>
+	<Value Id="ColumnLastPlayed"                  Text="上次播放"/>
+	<Value Id="ColumnPlayed"                      Text="已播放"/> 
+	<Value Id="ColumnPath"                        Text="路径"/>
+	<Value Id="ColumnViews"                       Text="查看" Format="{0} 次"/>
+	<Value Id="ColumnSize"                        Text="大小"/>
+	<Value Id="ColumnBitrate"                     Text="比特率"/>
+	<Value Id="ColumnChannels"                    Text="声道"/>
+	<Value Id="ColumnSamplingRate"                Text="采样率"/>
+	<Value Id="ColumnCodecs"                      Text="编码"/>
+	<Value Id="ColumnURL"                         Text="URL"/>
+	<Value Id="ColumnName"                        Text="名称"/>
+	<Value Id="ColumnAuthor"                      Text="作者"/>
+	<Value Id="ColumnInstalled"                   Text="已安装"/>
+	<Value Id="ColumnVersion"                     Text="版本"/>
+	<Value Id="ColumnEnabled"                     Text="激活"/>
+	<Value Id="ColumnDescription"                 Text="描述"/>
+	<Value Id="ColumnFilter"                      Text="Filter"/>
+
+	<Value Id="TotalSize"                         Text="总尺寸"/>
+	<Value Id="TotalLength"                       Text="总长度"/>
+	<Value Id="AverageSize"                       Text="平均尺寸"/>
+	<Value Id="AverageLength"                     Text="平均长度"/>
+	<Value Id="AverageTracks"                     Text="平均曲目"/>
+	<Value Id="Tracks"                            Text="音轨"/>
+	<Value Id="Stations"                          Text="电台"/>
+
+	<Value Id="MostViewed"                        Text="观看数量最多"/>
+	<Value Id="TopRated"                          Text="评价最高"/>
+
+	<Value Id="TaskbarPrev"                       Text="上一曲"/>
+	<Value Id="TaskbarPlay"                       Text="播放"/>
+	<Value Id="TaskbarNext"                       Text="下一曲"/>
+
+	<Value Id="TrayShow"                          Text="显示主界面"/>
+	<Value Id="TrayExit"                          Text="退出"/>
+	<Value Id="TrayPrev"                          Text="上一曲"/>
+	<Value Id="TrayPlay"                          Text="播放"/>
+	<Value Id="TrayNext"                          Text="下一曲"/>
+
+	<Value Id="JumpPlay"                         Title="播放/暂停" Description="播放或暂停当前曲目"/>
+	<Value Id="JumpNext"                         Title="下一曲" Description="转到下一曲"/>
+	<Value Id="JumpPrev"                         Title="上一曲" Description="转到上一曲"/>
+
+	<Value Id="NavigationFavorites"               Text="收藏夹"/>
+	<Value Id="NavigationNowPlaying"              Text="正在播放"/>
+	<Value Id="NavigationVideo"                   Text="视频"/>
+	<Value Id="NavigationVisualizer"              Text="可视化"/>
+	<Value Id="NavigationVisualizerTitle"         Text="可视化没有启用"/>
+	<Value Id="NavigationVisualizerDescription"   Text="当前没有启用可视化效果"/>
+	<Value Id="NavigationMusic"                   Text="音乐"/>
+	<Value Id="NavigationMusicDescription"        Text="全球音乐"/>
+	<Value Id="NavigationFiles"                   Text="文件"/>
+	<Value Id="NavigationFilesTitle"              Text="音乐库"/>
+	<Value Id="NavigationYouTube"                 Text="YouTube"/>
+	<Value Id="NavigationYouTubeTitle"            Text="YouTube"/>
+	<Value Id="NavigationYouTubeDescription"      Text="收听来自YouTube的音乐"/>
+	<Value Id="NavigationSoundCloud"              Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudTitle"         Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudDescription"   Text="收听来自SoundCloud的音乐"/>
+	<Value Id="NavigationJamendo"                 Text="Jamendo"/>
+	<Value Id="NavigationJamendoTitle"            Text="Jamendo"/>
+	<Value Id="NavigationJamendoDescription"      Text="收听来自Jamendo的音乐"/>
+	<Value Id="NavigationRadio"                   Text="收音机"/>
+	<Value Id="NavigationRadioTitle"              Text="收音机电台"/>
+	<Value Id="NavigationDisc"                    Text="光盘"/>
+	<Value Id="NavigationDiscTitle"               Text="音频CD"/>
+	<Value Id="NavigationQueue"                   Text="队列"/>
+	<Value Id="NavigationQueueTitle"              Text="播放队列"/>
+	<Value Id="NavigationHistory"                 Text="历史"/>
+	<Value Id="NavigationHistoryTitle"            Text="历史"/>
+	<Value Id="NavigationPlaylists"               Text="播放列表"/>
+	<Value Id="NavigationCreateNew"               Text="新建"/>
+	<Value Id="NavigationPlaylistTitle"           Text="播放列表"/>
+
+	<Value Id="PlaybackEmpty"                     Text="暂无歌曲播放"/>
+	<Value Id="PlaybackEmptyDescription"          Text="Turn on some tunes"/>
+	<Value Id="PlaybackSearch"                    Text="搜索"/>
+
+	<Value Id="ControlBack"                    Content="返回播放"/>
+	<Value Id="ControlGeneral"                 Content="常规"/>
+	<Value Id="ControlServices"                Content="服务"/>
+	<Value Id="ControlSources"                 Content="音乐源"/>
+	<Value Id="ControlApps"                    Content="应用"/>
+	<Value Id="ControlShortcuts"               Content="热键"/>
+	<Value Id="ControlAbout"                   Content="关于Stoffi"/>
+	<Value Id="ControlSeeAlso"                    Text="参见："/>
+	<Value Id="ControlProject"                 Content="项目"/>
+	<Value Id="ControlBlog"                    Content="博客"/>
+	<Value Id="ControlWebsite"                 Content="网站"/>
+
+	<Value Id="SourcesTitle"                      Text="选择音乐文件所在地址"/>
+	<Value Id="SourcesSubTitle"                   Text="源列表"/>
+	<Value Id="SourcesText"                       Text="添加音乐文件所在地，可以添加单个文件也可添加整个目录，还可以指定忽略的文件或目录，Stoffi会自动搜索并添加到音乐库中"/>
+	
+	
+	<Value Id="SourcesTypeFile"                   Text="文件"/>
+	<Value Id="SourcesTypeFolder"                 Text="目录"/>
+	<Value Id="SourcesTypeLibrary"                Text="库"/>
+
+	<Value Id="SourcesAddFolder"               Content="包含文件夹"/>
+	<Value Id="SourcesAddFile"                 Content="包含文件"/>
+	<Value Id="SourcesIgnoreFolder"            Content="忽略目录"/>
+	<Value Id="SourcesIgnoreFile"              Content="忽略文件"/>
+
+	<Value Id="ServicesTitle"                     Text="Stoffi云服务"/>
+	<Value Id="ServicesDataSourcesTitle"          Text="外部数据源"/>
+	<Value Id="ServicesDataSourcesText"           Text="控制Stoffi如何处理从外部站点下载的额外信息。"/>
+	<Value Id="ServicesAlbumArt"                  Text="下载封面"/>
+	<Value Id="ServicesAlbumArtDetails"         Header="详情"/>
+	<Value Id="ServicesAlbumArtSize"              Text="占用空间"/>
+	<Value Id="ServicesAlbumArtSizes"             Text="下载尺寸"/>
+	<Value Id="ServicesAlbumArtSmall"          Content="小" Tooltip="一般 {0}x{1} 像素. 磁盘占用空间: {2}"/>
+	<Value Id="ServicesAlbumArtMedium"         Content="中" Tooltip="一般 {0}x{1} 像素. 磁盘占用空间: {2}"/>
+	<Value Id="ServicesAlbumArtLarge"          Content="大" Tooltip="一般 {0}x{1} 像素. 磁盘占用空间: {2}"/>
+	<Value Id="ServicesAlbumArtHuge"           Content="超大" Tooltip="一般大于 {0}x{1} 像素. 磁盘占用空间: {2}"/>
+	<Value Id="ServicesAlbumArtClear"          Content="清除"/>
+	<Value Id="ServicesAccountTitle"              Text="连接帐号"/>
+	<Value Id="ServicesAccountText"               Text="在stoffiplayer.com创建一个新的账号能帮助你更好的使用Stoffi。"/>
+	<Value Id="ServicesAccountDelink"          Content="断开连接"/>
+	<Value Id="ServicesUserName"                  Text="登陆为："/>
+	<Value Id="ServicesDeviceName"                Text="设备名称:"/>
+
+	<Value Id="ServicesLinksTitle"                Text="连接你的账户"/>
+	<Value Id="ServicesLinksText"                 Text="将Stoffi账户连接到其他服务或网络，进一步扩展您的视听体验。"/>
+	<Value Id="ServicesCheckShare"             Content="发布我的分享"/>
+	<Value Id="ServicesCheckListen"            Content="发布我听的音乐"/>
+	<Value Id="ServicesCheckDonate"            Content="发布我支持的艺术家"/>
+	<Value Id="ServicesCheckCreatePlaylist"    Content="发布我创建的播放列表"/>
+	<Value Id="ServicesUnlink"                 Content="取消链接"/>
+	<Value Id="ServicesLink"                   Content="链接 {0}"/>
+	<Value Id="ServicesRefresh"                   Text="刷新"/>
+	<Value Id="ServicesLinkDisconnected"          Text="{0} 断开了我们的链接"/>
+	<Value Id="ServicesReconnect"                 Text="重连"/>
+
+	<Value Id="ServicesPrivacyTitle"              Text="保护你的隐私"/>
+	<Value Id="ServicesPrivacyText"               Text="你可以控制你的计算机和我们服务之间传递的数据"/>
+	<Value Id="ServicesSubmit"                    Text="选择你想和他人分享的信息"/>
+	<Value Id="ServicesSubmitSongs"               Text="我听过的歌"/>
+	<Value Id="ServicesSubmitPlaylists"           Text="我创建的播放列表"/>
+	<Value Id="ServicesSynchronize"               Text="这里您可以设置于其他Stoffi的实例同步的设置"/>
+	<Value Id="ServicesSynchronizeProfile"        Text="同步配置文件"/>
+	<Value Id="ServicesSynchronizeCheckbox"       Text="同步"/>
+	<Value Id="ServicesNoSynchronize"          Content="不要同步"/>
+	<Value Id="ServicesSynchronizeManage"       Header="选择同步项"/>
+	<Value Id="ServicesNewSyncProfile"         Content="新建配置"/>
+	<Value Id="ServicesSynchronizeConfig"         Text="配置"/>
+	<Value Id="ServicesSynchronizePlaylists"      Text="播放列表"/>
+	<Value Id="ServicesSynchronizeQueue"          Text="播放队列"/>
+	<Value Id="ServicesDisconnected"              Text="您的网络连接似乎出了故障.
+请确定您的因特网连接后重试。"/>
+	<Value Id="ServicesConnect"                Content="连接"/>
+
+	<Value Id="AppsTitle"                         Text="扩展Stoffi"/>
+	<Value Id="AppsInstalledTitle"                Text="已安装的应用"/>
+	<Value Id="AppsInstalledText"                 Text="查看并配置已安装的应用，同时你也可以安装新的应用。"/>
+	<Value Id="AppsInstall"                    Content="安装"/>
+	<Value Id="AppsLabelDescription"              Text="描述:"/>
+	<Value Id="AppsLabelAuthor"                   Text="作者:"/>
+	<Value Id="AppsLabelVersion"                  Text="版本:"/>
+	<Value Id="AppsLabelType"                     Text="类型:"/>
+	<Value Id="AppsLabelEnabled"                  Text="激活:"/>
+	<Value Id="AppsSettingsTitle"                 Text="应用设置:"/>
+	<Value Id="AppsSettingsText"                  Text="改变应用的配置。"/>
+
+	<Value Id="AppTypeFilter"                     Text="过滤器"/>
+	<Value Id="AppTypeSource"                     Text="音乐源"/>
+	<Value Id="AppTypeVisualizer"                 Text="可视化效果"/>
+
+	<Value Id="ShortcutsTitle"                    Text="配置快捷键"/>
+	<Value Id="ShortcutsProfileTitle"             Text="配置"/>
+	<Value Id="ShortcutsProfileText"              Text="如果您习惯了其他播放器的快捷键，您可以直接在下面选择相应的播放器名称将Stoffi的快捷键设置为该播放器的默认设置，或者你也能自己创建喜欢的配置"/>
+	
+	<Value Id="ShortcutsProfileCustom"            Text="自定义"/>
+	<Value Id="ShortcutsProfileSelect"            Text="选择配置"/>
+	<Value Id="ShortcutsProfileNew"            Content="新的配置"/>
+	<Value Id="ShortcutsProfileRename"         Content="重命名配置"/>
+	<Value Id="ShortcutsProfileDelete"         Content="删除配置"/>
+
+	<Value Id="AboutTitle"                        Text="关于Stoffi音乐播放器"/>
+	<Value Id="AboutDescriptionTitle"             Text="描述"/>
+	<Value Id="AboutDescriptionText"              Text="Stoffi音乐播放器是播放音乐的简易之选。
+
+它简洁易用，拥有极为干净的用户界面的同时带给您完整的功能。
+
+它建立在轻量并迅速的用户体验之上，因此您可以让Stoffi运行在系统后台而不必担心影响系统的性能。它与操作系统紧密结合，在您使用的时候会发现它很自然地融为了操作系统的一部分。
+
+使用Stoffi您可以非常容易的用您的方式来管理您的音乐，您可以很容易很快的创建和修改播放列表，同时也可以让您的曲目拥有合适的标题和专辑名称。
+
+音乐从未如此有趣。"/>
+	<Value Id="AboutPropertiesTitle"              Text="应用程序属性"/>
+	<Value Id="AboutPropertiesRelease"            Text="版本代号:"/>
+	<Value Id="AboutPropertiesDetails"          Header="详细"/>
+	<Value Id="AboutPropertiesVersion"            Text="版本:"/>
+	<Value Id="AboutPropertiesStamp"              Text="时间戳:"/>
+	<Value Id="AboutPropertiesArch"               Text="架构:"/>
+	<Value Id="AboutPropertiesChannel"            Text="修订:"/>
+	<Value Id="AboutPropertiesCheck"              Text="最后一次检查更新:"/>
+	<Value Id="AboutPropertiesUpgraded"           Text="Stoffi已经更新，需要重启应用程序才能生效"/>
+	<Value Id="AboutCreditsTesters"               Text="测试者"/>
+	<Value Id="AboutCreditsDevelopers"            Text="开发者"/>
+	<Value Id="AboutCreditsTranslators"           Text="翻译者"/>
+
+	<Value Id="GeneralTitle"                      Text="改变基本应用程序设置"/>
+	<Value Id="GeneralLookTitle"                  Text="外观"/>
+	<Value Id="GeneralLookText"                   Text="您可以选择不同的外观配置。改变视觉样式"/>
+	<Value Id="GeneralLanguage"                   Text="语言"/>
+	<Value Id="GeneralOSD"                        Text="托盘区屏显"/>
+	<Value Id="GeneralFastStart"                  Text="快速启动和关闭" ToolTip="让Stoffi常驻内存。"/>
+	<Value Id="GeneralFeelTitle"                  Text="行为"/>
+	<Value Id="GeneralFeelText"                   Text="您可以改变Stoffi在不同情况下的具体运作方式。"/>
+	<Value Id="GeneralSearchPolicy"               Text="搜索规则"/>
+	<Value Id="GeneralSearchPolicyGlobal"      Content="全局搜索"/>
+	<Value Id="GeneralSearchPolicyPartial"     Content="所有播放列表"/>
+	<Value Id="GeneralSearchPolicyIndividual"  Content="只搜索当前"/>
+	<Value Id="GeneralUpgradePolicy"              Text="更新规则"/>
+	<Value Id="GeneralUpgradePolicyManual"     Content="不检查更新"/>
+	<Value Id="GeneralUpgradePolicyNotify"     Content="有新版本先提示我"/>
+	<Value Id="GeneralUpgradePolicyAuto"       Content="自动更新到新版"/>
+	<Value Id="GeneralDoUpgrade"               Content="更新"/>
+	<Value Id="GeneralDoCheck"                 Content="检查更新"/>
+	<Value Id="GeneralRestart"                 Content="重新启动本程序"/>
+	<Value Id="GeneralAddPlayText"                Text="在资源管理器中双击音乐文件时进行如下操作："/>
+	<Value Id="GeneralAddPolicy"                  Text="添加规则"/>
+	<Value Id="GeneralAddPolicyDont"           Content="不要添加"/>
+	<Value Id="GeneralAddPolicyLibrary"        Content="添加到音乐库"/>
+	<Value Id="GeneralAddPolicyBoth"           Content="同时添加到音乐库和当前播放列表"/>
+	<Value Id="GeneralPlayPolicy"                 Text="播放规则"/>
+	<Value Id="GeneralPlayPolicyPlay"          Content="播放"/>
+	<Value Id="GeneralPlayPolicyDont"          Content="不要播放"/>
+	<Value Id="GeneralPlayPolicyBack"          Content="添加到播放队列尾部"/>
+	<Value Id="GeneralPlayPolicyFront"         Content="添加到播放队列头部"/>
+	<Value Id="GeneralPausePlayback"              Text="暂停播放当："/>
+	<Value Id="GeneralPausePlaybackLocked"        Text="电脑被锁定"/>
+	<Value Id="GeneralPausePlaybackEnd"           Text="曲目结束"/>
+	<Value Id="GeneralPausePlaybackLoggedOut"     Text="注销"/>
+
+	<Value Id="SourceFieldType"                 Header="类型"/>
+	<Value Id="SourceFieldLocation"             Header="路径"/>
+
+	<Value Id="ShortcutNotUsed"                   Text="没有使用"/>
+	<Value Id="ShortcutPress"                     Text="请按键"/>
+	<Value Id="ShortcutApplicationTitle"          Text="播放器操作"/>
+	<Value Id="ShortcutApplicationText"           Text="按下这些热键将会执行相应操作。"/>
+	<Value Id="ShortcutMainWindowTitle"           Text="主窗口导航"/>
+	<Value Id="ShortcutMainWindowText"            Text="这些热键用来在主窗口中导航。
+包括窗口左侧的导航栏和右侧的曲目列表和底部的详细面板。"/>
+	<Value Id="ShortcutMediaCommandsTitle"        Text="播放命令"/>
+	<Value Id="ShortcutMediaCommandsText"         Text="这些热键用来控制曲目的回放。"/>
+	<Value Id="ShortcutTrackTitle"                Text="曲目列表"/>
+	<Value Id="ShortcutTrackText"                 Text=" 当您操作曲目列表内的曲目时使用这些命令。"/>
+	<Value Id="ShortcutGlobal"                    Text="全局热键" ToolTip="当Stoffi在后台运行时也触发热键"/>
+
+	<Value Id="Shortcut_Add_track"                Text="添加曲目"/>
+	<Value Id="Shortcut_Add_folder"               Text="添加目录"/>
+	<Value Id="Shortcut_Add_playlist"             Text="打开播放列表"/>
+	<Value Id="Shortcut_Add_radio_station"        Text="添加收音机电台"/>
+	<Value Id="Shortcut_Add_app"                  Text="安装应用"/>
+	<Value Id="Shortcut_Generate_playlist"        Text="生成播放列表"/>
+	<Value Id="Shortcut_Minimize"                 Text="最小化"/>
+	<Value Id="Shortcut_Restore"                  Text="还原"/>
+	<Value Id="Shortcut_Help"                     Text="帮助"/>
+	<Value Id="Shortcut_Close"                    Text="关闭"/>
+	<Value Id="Shortcut_Video"                    Text="视频"/>
+	<Value Id="Shortcut_Visualizer"               Text="可视化"/>
+	<Value Id="Shortcut_Files"                    Text="文件"/>
+	<Value Id="Shortcut_YouTube"                  Text="YouTube"/>
+	<Value Id="Shortcut_SoundCloud"               Text="SoundCloud"/>
+	<Value Id="Shortcut_Radio"                    Text="电台"/>
+	<Value Id="Shortcut_Queue"                    Text="队列"/>
+	<Value Id="Shortcut_History"                  Text="历史"/>
+	<Value Id="Shortcut_Playlists"                Text="播放列表"/>
+	<Value Id="Shortcut_Tracklist"                Text="曲目列表"/>
+	<Value Id="Shortcut_Search"                   Text="搜索"/>
+	<Value Id="Shortcut_General_preferences"      Text="常规选项"/>
+	<Value Id="Shortcut_Music_sources"            Text="音乐源"/>
+	<Value Id="Shortcut_Services"                 Text="服务"/>
+	<Value Id="Shortcut_Apps"                     Text="应用"/>
+	<Value Id="Shortcut_Keyboard_shortcuts"       Text="热键"/>
+	<Value Id="Shortcut_About"                    Text="关于"/>
+	<Value Id="Shortcut_Toggle_details_pane"      Text="切换详细面板"/>
+	<Value Id="Shortcut_Toggle_menu_bar"          Text="切换菜单栏"/>
+	<Value Id="Shortcut_Create_playlist"          Text="创建播放列表"/>
+	<Value Id="Shortcut_Play_or_pause"            Text="播放或暂停"/>
+	<Value Id="Shortcut_Next"                     Text="下一曲"/>
+	<Value Id="Shortcut_Previous"                 Text="上一曲"/>
+	<Value Id="Shortcut_Toggle_shuffle"           Text="切换随机"/>
+	<Value Id="Shortcut_Toggle_repeat"            Text="切换重复"/>
+	<Value Id="Shortcut_Increase_volume"          Text="音量加"/>
+	<Value Id="Shortcut_Decrease_volume"          Text="音量减"/>
+	<Value Id="Shortcut_Seek_forward"             Text="快进"/>
+	<Value Id="Shortcut_Seek_backward"            Text="快退"/>
+	<Value Id="Shortcut_Add_bookmark"             Text="添加标记"/>
+	<Value Id="Shortcut_Jump_to_previous_bookmark" Text="转到前一个标记"/>
+	<Value Id="Shortcut_Jump_to_next_bookmark"    Text="转到后一个标记"/>
+	<Value Id="Shortcut_Jump_to_first_bookmark"   Text="转到第一个标记"/>
+	<Value Id="Shortcut_Jump_to_last_bookmark"    Text="转到最后一个标记"/>
+	<Value Id="Shortcut_Jump_to_bookmark_1"       Text="转到标记 1"/>
+	<Value Id="Shortcut_Jump_to_bookmark_2"       Text="转到标记 2"/>
+	<Value Id="Shortcut_Jump_to_bookmark_3"       Text="转到标记 3"/>
+	<Value Id="Shortcut_Jump_to_bookmark_4"       Text="转到标记 4"/>
+	<Value Id="Shortcut_Jump_to_bookmark_5"       Text="转到标记 5"/>
+	<Value Id="Shortcut_Jump_to_bookmark_6"       Text="转到标记 6"/>
+	<Value Id="Shortcut_Jump_to_bookmark_7"       Text="转到标记 7"/>
+	<Value Id="Shortcut_Jump_to_bookmark_8"       Text="转到标记 8"/>
+	<Value Id="Shortcut_Jump_to_bookmark_9"       Text="转到标记 9"/>
+	<Value Id="Shortcut_Jump_to_bookmark_10"      Text="转到标记 10"/>
+	<Value Id="Shortcut_Jump_to_current_track"    Text="转到当前曲目"/>
+	<Value Id="Shortcut_Jump_to_selected_track"   Text="转到已选曲目"/>
+	<Value Id="Shortcut_Play_track"               Text="播放曲目"/>
+	<Value Id="Shortcut_Queue_and_dequeue"        Text="加入或退出队列"/>
+	<Value Id="Shortcut_Open_folder"              Text="打开目录"/>
+	<Value Id="Shortcut_Remove"                   Text="移除"/>
+	<Value Id="Shortcut_Remove_from_harddrive"    Text="删除文件"/>
+	<Value Id="Shortcut_Copy"                     Text="复制"/>
+	<Value Id="Shortcut_Move"                     Text="移动"/>
+	<Value Id="Shortcut_View_information"         Text="查看详情"/>
+	<Value Id="Shortcut_Share"                    Text="分享"/>
+	
+	<Value Id="ButtonOK"                       Content="确定"/>
+	<Value Id="ButtonApply"                    Content="应用"/>
+	<Value Id="ButtonCancel"                   Content="取消"/>
+	<Value Id="ButtonAdd"                      Content="添加"/>
+	<Value Id="ButtonClose"                    Content="关闭"/>
+	<Value Id="ButtonNew"                      Content="新建"/>
+	<Value Id="ButtonRename"                   Content="重命名"/>
+	<Value Id="ButtonRemove"                   Content="移除"/>
+
+	<Value Id="PropertiesTitle"                  Title="属性"/>
+	<Value Id="PropertiesMultipleFiles"           Text="{0} 曲目"/>
+	<Value Id="PropertiesGeneral"               Header="常规"/>
+	<Value Id="PropertiesGeneralType"             Text="文件类型:"/>
+	<Value Id="PropertiesGeneralTypeFormat"       Text="{0} 类型声音(.{1})"/>
+	<Value Id="PropertiesGeneralVariousFormats"   Text="多格式"/>
+	<Value Id="PropertiesGeneralLength"           Text="长度:"/>
+	<Value Id="PropertiesGeneralChannels"         Text="声道:"/>
+	<Value Id="PropertiesGeneralVariousChannels"  Text="多声道"/>
+	<Value Id="PropertiesGeneralCodec"            Text="编码:"/>
+	<Value Id="PropertiesGeneralVariousCodecs"    Text="多编码"/>
+	<Value Id="PropertiesGeneralBitrate"          Text="比特率:"/>
+	<Value Id="PropertiesGeneralVariousBitrates"  Text="可变比特率"/>
+	<Value Id="PropertiesGeneralSamplingrate"     Text="抽样率:"/>
+	<Value Id="PropertiesGeneralVariousSamplingrates" Text="多比特率"/>
+	<Value Id="PropertiesGeneralLocation"          Text="路径:"/>
+	<Value Id="PropertiesGeneralVariousLocations" Text="多目录"/>
+	<Value Id="PropertiesGeneralSize"             Text="大小:"/>
+	<Value Id="PropertiesGeneralPlayCount"        Text="播放次数:"/>
+	<Value Id="PropertiesGeneralLastPlayed"       Text="上次播放:"/>
+	<Value Id="PropertiesGeneralCreated"          Text="创建时间:"/>
+	<Value Id="PropertiesGeneralModified"         Text="修改时间:"/>
+	<Value Id="PropertiesGeneralAccessed"         Text="上次访问:"/>
+	<Value Id="PropertiesDetails"               Header="详情"/>
+	<Value Id="PropertiesDetailsProperty"      Content="属性"/>
+	<Value Id="PropertiesDetailsValue"         Content="值"/>
+	<Value Id="PropertiesDetailsMultipleValues"   Text="(多值)"/>
+
+	<Value Id="EqualizerTitle"                   Title="均衡器"/>
+	<Value Id="EqualizerProfile"                  Text="配置:"/>
+	<Value Id="EqualizerHertz"                    Text="Hz:"/>
+	<Value Id="EqualizerEcho"                     Text="回声"/>
+	<Value Id="EqualizerProfileTuned"             Text="优化"/>
+	<Value Id="EqualizerProfileBass"              Text="贝斯"/>
+	<Value Id="EqualizerProfileJazz"              Text="爵士"/>
+	<Value Id="EqualizerProfileDance"             Text="舞台"/>
+	<Value Id="EqualizerProfileRnB"               Text="R&amp;B"/>
+	<Value Id="EqualizerProfileSpeech"            Text="演讲"/>
+	<Value Id="EqualizerProfileLoud"              Text="吵闹"/>
+	<Value Id="EqualizerProfileHeadphones"        Text="耳机"/>
+	<Value Id="EqualizerProfileFlat"              Text="平衡"/>
+	<Value Id="EchoWet"                           Text="干"/>
+	<Value Id="EchoDry"                           Text="湿"/>
+
+	<Value Id="AddURLTitle"                      Title="添加电台"/>
+	<Value Id="AddYouTubePlaylistTitle"          Title="添加YouTube播放列表"/>
+	<Value Id="AddURLLabel"                       Text="URL:"/>
+	<Value Id="AddURLWait"                        Text="请等待..."/>
+
+	<Value Id="GeneratePlaylistTitle"            Title="生成播放列表"/>
+	<Value Id="FromList"                          Text="表单列表"/>
+	<Value Id="AllTracks"                      Content="所有曲目"/>
+	<Value Id="NumberOfTracks"                    Text="曲目数量"/>
+	<Value Id="ApplySearch"                       Text="应用当前搜索过滤"/>
+	<Value Id="Name"                              Text="名称"/>
+	<Value Id="ButtonGenerate"                 Content="生成"/>
+
+	<Value Id="DateDays"                      Singular="天" Plural="天"/>
+	<Value Id="DateHours"                     Singular="小时" Plural="小时"/>
+	<Value Id="DateMinutes"                   Singular="分钟" Plural="分钟"/>
+	<Value Id="DateSeconds"                   Singular="秒" Plural="秒"/>
+
+	<Value Id="Filter"                            Text="过滤器:"/>
+	<Value Id="FilterNone"                     Content="没有过滤器"/>
+	<Value Id="FilterMusic"                    Content="音乐"/>
+	<Value Id="Quality"                           Text="质量:"/>
+	<Value Id="QualityLow"                     Content="低"/>
+	<Value Id="QualityMedium"                  Content="中"/>
+	<Value Id="QualityHigh"                    Content="高"/>
+	<Value Id="Quality720"                     Content="720p"/>
+	<Value Id="Quality1080"                    Content="1080p"/>
+	<Value Id="QualityHighres"                 Content="高清"/>
+	<Value Id="QualityDefault"                 Content="自动"/>
+
+	<Value Id="SizeByte"                          Text="{0} byte"/>
+	<Value Id="SizeKb"                            Text="{0} kB"/>
+	<Value Id="SizeMb"                            Text="{0} MB"/>
+	<Value Id="SizeGb"                            Text="{0} GB"/>
+	<Value Id="SizeTb"                            Text="{0} TB"/>
+	<Value Id="SizePb"                            Text="{0} PB"/>
+	<Value Id="SizeEb"                            Text="{0} EB"/>
+
+	<Value Id="BeatsPerMinute"                    Text="{0} bpm"/>
+	<Value Id="KilobitsPerSecond"                 Text="{0} kbps"/>
+	<Value Id="KiloHertz"                         Text="{0} kHz"/>
+
+	<Value Id="MultipleSelectedTracks"            Text="{0} 曲目"/>
+	<Value Id="FileTypeYouTube"                   Text="YouTube 文件" Plural="YouTube 文件"/>
+	<Value Id="FileTypeSoundCloud"                Text="SoundCloud 文件" Plural="SoundCloud 文件"/>
+	<Value Id="FileTypeJamendo"                   Text="Jamendo 文件" Plural="Jamendo 文件"/>
+	<Value Id="FileTypeRadio"                     Text="电台" Plural="电台"/>
+	<Value Id="FileTypeUnknown"                   Text="未知类型" Plural="未知类型"/>
+	<Value Id="FileTypeExtension"                 Text="{0}个文件" Plural="{0}个文件"/>
+	<Value Id="FileTypeLocal"                     Text="本地文件" Plural="本地文件"/>
+
+	<Value Id="SearchTooltip"                     Text="搜索: {0}"/>
+	
+	<Value Id="UpgradeConnecting"                 Text="正在连接..."/>
+	<Value Id="UpgradeDownloading"                Text="正在下载..."/>
+	<Value Id="UpgradeProcessing"                 Text="处理中..."/>
+	<Value Id="UpgradeNotChecked"                 Text="还没检查"/>
+	<Value Id="UpgradeWait"                       Text="请等待..."/>
+	<Value Id="UpgradePending"                    Text="升级安装完毕，请重新启动程序"/>
+	<Value Id="UpgradeNotFound"                   Text="暂无新版可用"/> 
+	<Value Id="UpgradeFound"                      Text="有新版可升级"/>
+	<Value Id="UpgradeDebug"                      Text="DEBUG模式下升级关闭"/>
+	<Value Id="UpgradeFoundTooltip"              Title="发现更新" Message="点击升级Stoffi。"/>
+	<Value Id="UpgradeInProgress"                 Text="正在升级.
+请耐心等待..."/>
+
+	<Value Id="AssociationsCaption"               Text="将Stoffi设为默认播放器"/>
+	<Value Id="AssociationsInstruction"           Text="确认要将Stoffi设为您的默认播放器？"/>
+	<Value Id="AssociationsText"                  Text="将Stoffi设为打开本地和网络音乐的默认播放器。"/>
+	<Value Id="AssociationsSkip"                  Text="跳过"/>
+	<Value Id="AssociationsSkipText"              Text="不要对我的系统做任何更改"/>
+	<Value Id="AssociationsChoose"                Text="让我选择"/>
+	<Value Id="AssociationsChooseText"            Text="自定义Stoffi处理的文件类型"/>
+	<Value Id="AssociationsYes"                   Text="是"/>
+	<Value Id="AssociationsYesText"               Text="将Stoffi设为默认播放器"/>
+
+	<Value Id="AssociationsCustom"               Title="关联"/>
+	<Value Id="AssociationsCustomHeader"          Text="选择文件关联"/>
+	<Value Id="AssociationsCustomText"            Text="选择需要用Stoffi打开的文件类型，Stoffi同时支持播放列表和音乐文件。"/>
+	<Value Id="AssociationsCustomSongs"        Content="歌曲"/>
+	<Value Id="AssociationsCustomPlaylists"    Content="播放列表"/>
+	<Value Id="AssociationsCustomOther"        Content="其他"/>
+	<Value Id="AssociationsCustomInternet"     Content="互联网"/>
+	<Value Id="AssociationsCustomSPP"          Content="应用"/>
+	<Value Id="AssociationsCustomSCX"          Content="配置"/>
+	<Value Id="AssociationsCustomExpander"      Header="自定义"/>
+	<Value Id="AssociationsCustomFootLink"     Content="更多"/>
+
+	<Value Id="FileAssociationSong"               Text="格式 ({0})"/>
+	<Value Id="FileAssociationPlaylist"           Text="播放列表 ({0})"/>
+	<Value Id="FileAssociationSPP"                Text="Stoffi应用"/>
+	<Value Id="FileAssociationSCX"                Text="Stoffi配置"/>
+	<Value Id="URIAssociationOpen"                Text="播放"/>
+	<Value Id="FileAssociationOpen"               Text="播放"/>
+	<Value Id="FileAssociationInstall"            Text="安装"/>
+	<Value Id="FileAssociationLoad"               Text="载入"/>
+	<Value Id="FileAssociationPlay"               Text="用Stoffi播放"/>
+
+	<Value Id="DialogOpenPlaylistTitle"           Text="打开播放列表"/>
+	<Value Id="DialogInstallAppTitle"             Text="安装应用"/>
+	<Value Id="DialogNameCreateTitle"             Text="新建配置"/>
+	<Value Id="DialogNameRenameTitle"             Text="重命名配置"/>
+	<Value Id="DialogNameDescription"             Text="给你的配置文件命名"/>
+	<Value Id="DialogNameExistsError"             Text="配置文件名称已经存在"/>
+	<Value Id="DialogNameInvalidError"            Text="只能使用字母A-Z与数字"/>
+	<Value Id="DialogNameEmptyError"              Text="输入名字"/>
+	<Value Id="DialogNumberTooSmall"              Text="必须大于 {0}"/>
+	<Value Id="DialogNumberTooLarge"              Text="必须小于 {0}"/>
+	<Value Id="DialogNumberInvalid"               Text="数量无效"/>
+
+	<Value Id="MessageOldWindows"                Title="您的系统太旧了" Message="对不起，您需要升级您的Windows系统才可以使用Stoffi"/>
+	<Value Id="MessageShortcutClash"             Title="热键已存在" Message="此热键已用于 %name (%category)
+您想替换掉它么？"/>
+	<Value Id="MessageDeletePlaylist"            Title="删除播放列表" Message="确定删除播放列表 '%name'吗？"/>
+	<Value Id="MessageSavingPlaylist"	           Title="无法保存播放列表" Message="保存过程中出错"/>
+	<Value Id="MessageContactingServer"           Text="无法连接到服务器"/>
+	<Value Id="MessageSaveProfile"               Title="保存配置" Message="某些设置已被改变。
+需要保存吗？"/>
+	<Value Id="MessageUpgradeInProgress"         Title="正在升级" Message="正在进行升级.
+确定要退出吗？"/>
+	<Value Id="MessageNoFlash"                   Title="没有安装Flash" Message="你需要为Internet Explorer安装Flash.
+现在就下载吗？"/>
+	<Value Id="MessageYouTubeBadParams"          Title="YouTube播放器错误" Message="YouTube播放器参数错误。"/>
+	<Value Id="MessageYouTubeNotFound"           Title="YouTube播放器错误" Message="该曲目已被删除或设为私有。"/>
+	<Value Id="MessageYouTubeUnknown"            Title="YouTube播放器错误" Message="未知错误(code: {0})."/>
+	<Value Id="MessageAlreadyAddedSource"        Title="该源已添加" Message="该源已添加。"/>
+	<Value Id="MessageCloseFastStart"            Title="完全退出Stoffi" Message="您开启了快速启动。
+				 
+完全退出Stoffi将致使下次启动变慢。
+确定要这样做吗？"/>
+	<Value Id="MessageConnectionProblem"         Title="连接错误" Message="无法连接到服务器.
+
+可能是您的网络链接或远程服务器故障."/>
+	
+	<Value Id="MessageConfirmDelete"             Title="从硬盘删除" Message="确定要从硬盘删除此文件吗？"/>
+	<Value Id="MessageErrorDeleting"             Title="无法删除文件"/>
+	<Value Id="MessageErrorUpdating"             Title="无法更新文件"/>
+	<Value Id="MessageErrorRenaming"             Title="无法重命名文件"/>
+	<Value Id="MessageErrorMoving"	             Title="无法移动文件"/>
+	<Value Id="MessageErrorCopying"	             Title="无法复制文件"/>
+	<Value Id="MessageErrorInstallingApp"        Title="无法安装应用"/>
+	<Value Id="MessageErrorStartingApp"          Title="无法启动应用"/>
+
+	<Value Id="ServiceDisconnected"               Text="服务已断开"/>
+	<Value Id="ServiceConnect"                 Content="连接"/>
+
+	<Value Id="HeaderTracks"                      Text="{0} 曲目"/>
+	<Value Id="HeaderStations"                    Text="{0} 电台"/>
+	<Value Id="MetaDataLoading"                   Text="载入中..."/>
+	<Value Id="NoVideoAvailable"                  Text="没有可用视频"/>
+	<Value Id="NoVisualizerAvailable"             Text="无可用可视化效果"/>
+	<Value Id="NoVisualizer"                      Text="无可视化效果"/>
+	<Value Id="SavingSettings"                 Content="正在保存设置."/>
+	<Value Id="Closing"                        Content="正在关闭Stoffi."/>
+	<Value Id="MinimizedShortcutDescription"      Text="将Stoffi载入内存以加速启动。"/>
+	<Value Id="Unknown"                           Text="未知"/>
+</Dictionary>

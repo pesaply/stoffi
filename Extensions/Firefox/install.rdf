@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+ 
+<RDF xmlns="<span class="plain"><a class="external linkification-ext" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#" title="Linkification: http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></span>"
+     xmlns:em="<span class="plain"><a class="external linkification-ext" href="http://www.mozilla.org/2004/em-rdf#" title="Linkification: http://www.mozilla.org/2004/em-rdf#">http://www.mozilla.org/2004/em-rdf#</a></span>">
+ 
+  <Description about="urn:mozilla:install-manifest">
+    <em:id><strong><a class="external linkification-ext" href="mailto:sample@example.net" title="Linkification: mailto:extension+firefox@stoffiplayer.com">extension+firefox@stoffiplayer.com</a></strong></em:id>
+    <em:version><strong>1.0</strong></em:version>
+    <em:type>2</em:type>
+    
+    <!-- Target Application this extension can install into, 
+         with minimum and maximum supported versions. -->
+    <em:targetApplication>
+      <Description>
+        <em:id><strong>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</strong></em:id>
+        <em:minVersion><strong>14.0</strong></em:minVersion>
+        <em:maxVersion><span style="font-weight: bold;">15</span><strong>.0.*</strong></em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    
+    <!-- Front End MetaData -->
+    <em:name><strong>Stoffi</strong></em:name>
+    <em:description><strong>A helper addon for Stoffi</strong></em:description>
+    <em:creator><strong>Simplare</strong></em:creator>
+    <em:homepageURL><strong><span class="plain">
+		<a class="external linkification-ext" href="http://www.example.com/" title="Linkification: http://alpha.stoffiplayer.com/extensions/firefox">http://alpha.stoffiplayer.com/extensions/firefox
+		</a>
+	</span></strong></em:homepageURL>
+  </Description>      
+</RDF>

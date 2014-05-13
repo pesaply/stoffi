@@ -1,0 +1,145 @@
+﻿<!--ControlPanel.xaml
+	
+	The "Control Panel" screen used to show all the preferences
+	of Stoffi.
+	
+	= = = = = = = = = =
+	
+	Copyright 2013 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<UserControl x:Class="Stoffi.Player.GUI.Controls.ControlPanelView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:Stoffi="clr-namespace:Stoffi.Player.GUI.Controls"
+			 xmlns:CP="clr-namespace:Stoffi.Player.GUI.Controls.ControlPanel"
+			 mc:Ignorable="d"
+			 Loaded="ControlPanel_Loaded"
+			 SizeChanged="ControlPanel_SizeChanged"
+			 TextOptions.TextFormattingMode="Display"
+			 d:DesignHeight="600" d:DesignWidth="900">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="..\Styles.xaml"/>
+				<ResourceDictionary Source="..\..\..\..\Resources\DescriptionConverters.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<DockPanel Background="#e7f1fd" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="ControlPanelMain">
+		<Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Container">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="200"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<DockPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="ControlPanelLeft">
+				<Button DockPanel.Dock="Top" 
+						Margin="10 13 0 0" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Back_Click"
+						loc:Translate.Uid="ControlBack"
+						Content="{loc:Translate Content}"/>
+				<Button x:Name="ControlPanelLink_General" 
+						DockPanel.Dock="Top" 
+						Margin="10 20 0 0" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="General_Click"
+						loc:Translate.Uid="ControlGeneral"
+						Content="{loc:Translate Content}"/>
+				<Button x:Name="ControlPanelLink_Sources" 
+						DockPanel.Dock="Top" Margin="10 5 0 0"  
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Sources_Click"
+						loc:Translate.Uid="ControlSources"
+						Content="{loc:Translate Content}"/>
+				<Button x:Name="ControlPanelLink_Services" 
+						DockPanel.Dock="Top" Margin="10 5 0 0"  
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Services_Click"
+						loc:Translate.Uid="ControlServices"
+						Content="{loc:Translate Content}"/>
+                <Button x:Name="ControlPanelLink_Plugins" 
+						DockPanel.Dock="Top" Margin="10 5 0 0"  
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Plugins_Click"
+						loc:Translate.Uid="ControlApps"
+						Content="{loc:Translate Content}"/>
+                <Button x:Name="ControlPanelLink_Shortcuts" 
+						DockPanel.Dock="Top" Margin="10 5 0 0"  
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Shortcuts_Click"
+						loc:Translate.Uid="ControlShortcuts"
+						Content="{loc:Translate Content}"/>
+				<Button x:Name="ControlPanelLink_About"
+						DockPanel.Dock="Top" 
+						Margin="10 20 0 0" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="About_Click"
+						loc:Translate.Uid="ControlAbout"
+						Content="{loc:Translate Content}"/>
+
+				<Button DockPanel.Dock="Bottom" 
+						Margin="10 5 0 20" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Project_Click"
+						loc:Translate.Uid="ControlProject"
+						Content="{loc:Translate Content}"/>
+				<Button DockPanel.Dock="Bottom" 
+						Margin="10 5 0 0" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Blog_Click"
+						loc:Translate.Uid="ControlBlog"
+						Content="{loc:Translate Content}"/>
+				<Button DockPanel.Dock="Bottom" 
+						Margin="10 5 0 0" 
+						Style="{StaticResource ControlPanelLinkStyle}" 
+						Click="Website_Click"
+						loc:Translate.Uid="ControlWebsite"
+						Content="{loc:Translate Content}"/>
+				<TextBlock DockPanel.Dock="Bottom" 
+						   Padding="28 5 0 0" 
+						   loc:Translate.Uid="ControlSeeAlso"
+						   Text="{loc:Translate Text}"
+						   Foreground="#808080" 
+						   VerticalAlignment="Bottom"/>
+				<DockPanel.Background>
+					<ImageBrush ImageSource="/Images/Backgrounds/ControlLeft.png" Stretch="None" AlignmentY="Top"/>
+				</DockPanel.Background>
+			</DockPanel>
+
+
+			<!-- Tab: Sources -->
+			<CP:Sources x:Name="Sources" Visibility="Collapsed" Grid.Column="1" Background="White"/>
+
+			<!-- Tab: Keyboard Shortcuts -->
+			<CP:Shortcuts x:Name="Shortcuts" Visibility="Collapsed" Grid.Column="1" Background="White"/>
+
+			<!-- Tab: About -->
+			<CP:About x:Name="About" Visibility="Collapsed" Grid.Column="1" Background="White"/>
+
+			<!-- Tab: General -->
+			<CP:General x:Name="General" Visibility="Collapsed" Grid.Column="1" Background="White"/>
+
+			<!-- Tab: Services -->
+			<CP:Services x:Name="Services" Visibility="Collapsed" Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="White"/>
+
+			<!-- Tab: Plugins -->
+            <CP:Plugins x:Name="Plugins" Visibility="Collapsed" Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="White"/>
+
+		</Grid>
+	</DockPanel>
+</UserControl>

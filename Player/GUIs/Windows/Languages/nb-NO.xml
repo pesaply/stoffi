@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="Norwegian" CultureName="Norsk bokmål" Culture="no-NO">
+
+	<Value Id="Application"              FlowDirection="LeftToRight" Title="Stoffi Musikkspiller" Tagline="The world's next music player" />
+
+	<Value Id="ToolbarAdd"                     Content="Legg til" ToolTip="Legg til mer musikk eller plug-in." />
+	<Value Id="ToolbarTrack"                    Header="Fil"/>
+	<Value Id="ToolbarFolder"                   Header="Mappe"/>
+	<Value Id="ToolbarPlaylist"                 Header="Spillelista"/>
+	<Value Id="AddPlaylistFile"                 Header="Fra fil"/>
+	<Value Id="AddPlaylistYouTube"              Header="Fra YouTube"/>
+	<Value Id="ToolbarRadioStation"             Header="Radiostasjon"/>
+	<Value Id="ToolbarApp"                      Header="App"/>
+	<Value Id="ToolbarShow"                    Content="Vis" ToolTip="Velg hva skal vises." />
+	<Value Id="ToolbarDetails"                  Header="Detaljevindu" />
+	<Value Id="ToolbarMenu"                     Header="Meny" />
+	<Value Id="ToolbarTools"                   Content="Verktøy" ToolTip="Kjør et verktøy for en bestemt oppgave." />
+	<Value Id="ToolbarImporter"                 Header="Importer konfigurasjon" />
+	<Value Id="ToolbarExporter"                 Header="Eksporter konfigurasjon" />
+	<Value Id="ToolbarGenerator"                Header="Lag spilleliste" />
+	<Value Id="ToolbarPreferences"             Content="Innstillinger" ToolTip="Endre innstillingene." />
+	<Value Id="ToolbarEqualizer"               Content="Equalizer" ToolTip="Utjevne lyden." />
+	<Value Id="ToolbarUpgrade"                 ToolTip="Stoffi er blitt oppgradert og må startes på nytt"/>
+	<Value Id="ToolbarFullscreen"              ToolTip="View fullscreen."/>
+	<Value Id="ToolbarHelp"                    ToolTip="Få hjelp."/>
+	<Value Id="ToolbarMore"                    ToolTip="Vis flere kommandoer."/>
+	<Value Id="ToolbarViewMode"                ToolTip="Endre visningen."/>
+	<Value Id="ToolbarViewExtraLargeIcons"      Header="Ekstra Store Ikoner"/>
+	<Value Id="ToolbarViewLargeIcons"           Header="Store Ikoner"/>
+	<Value Id="ToolbarViewMediumIcons"          Header="Medium Ikoner"/>
+	<Value Id="ToolbarViewSmallIcons"           Header="Små Ikoner"/>
+	<Value Id="ToolbarViewList"                 Header="Lista"/>
+	<Value Id="ToolbarViewDetails"              Header="Detaljer"/>
+	<Value Id="ToolbarViewTiles"                Header="Ruter"/>
+	<Value Id="ToolbarViewContent"              Header="Innhold"/>
+	<Value Id="ToolbarScanning"                Content="Søker..."/>
+
+	<Value Id="Searching"                         Text="Søker..."/>
+
+	<Value Id="MenuFile"                        Header="Filarkiv"/>
+	<Value Id="MenuAddTrack"                    Header="Legg til låt"/>
+	<Value Id="MenuAddFolder"                   Header="Legg til mappe"/>
+	<Value Id="MenuAddPlaylist"                 Header="Legg til spilleliste"/>
+	<Value Id="MenuAddRadioStation"             Header="Legg til radiostasjon"/>
+	<Value Id="MenuAddApp"                      Header="Installer app"/>
+	<Value Id="MenuHide"                        Header="Skjul"/>
+	<Value Id="MenuClose"                       Header="Lukk"/>
+	<Value Id="MenuView"                        Header="Vis"/>
+	<Value Id="MenuMenuBar"                     Header="Meny"/>
+	<Value Id="MenuDetailsPane"                 Header="Detaljevindu"/>
+	<Value Id="MenuTools"                       Header="Verktøy"/>
+	<Value Id="MenuImporter"                    Header="Importer konfigurasjon"/>
+	<Value Id="MenuExporter"                    Header="Eksporter konfigurasjon"/>
+	<Value Id="MenuGeneratePlaylist"            Header="Lag spilleliste"/>
+	<Value Id="MenuEqualizer"                   Header="Equalizer"/>
+	<Value Id="MenuPreferences"                 Header="Innstillinger"/>
+	<Value Id="MenuHelp"                        Header="Hjelp"/>
+	<Value Id="MenuAbout"                       Header="Om Stoffi"/>
+
+	<Value Id="MenuAddToPlaylist"               Header="Legg til i spilleliste"/>
+	<Value Id="MenuCreateNew"                   Header="Lag ny"/>
+	<Value Id="MenuCreateNewDynamic"            Header="Create new dynamic"/>
+	<Value Id="MenuRemoveFromPlaylist"          Header="Slett fra spilleliste"/>
+	<Value Id="MenuRemoveBookmark"              Header="Slett bokmerke"/>
+
+	<Value Id="MenuEnable"                      Header="Aktiver"/>
+	<Value Id="MenuDisable"                     Header="Deaktiver"/>
+	<Value Id="MenuUninstall"                   Header="Avinstallere"/>
+
+	<Value Id="MenuRenamePlaylist"                Text="Gi spilleliste nytt navn"/>
+	<Value Id="MenuRemovePlaylist"                Text="Slett spilleliste"/>
+	<Value Id="MenuSavePlaylist"                  Text="Lagre spilleliste"/>
+	<Value Id="MenuSharePlaylist"				  Text="Del spilleliste"/>
+
+	<Value Id="MenuRemove"                        Text="Fjern"/>
+	<Value Id="MenuDelete"                        Text="Slett fra disk"/>
+	<Value Id="MenuInclude"                       Text="Inkluder"/>
+	<Value Id="MenuIgnore"                        Text="Ignorer"/>
+	<Value Id="MenuQueue"                         Text="Legg i kø"/>
+	<Value Id="MenuDequeue"                       Text="Slett fra kø"/>
+	<Value Id="MenuInfo"                          Text="Egenskaper"/>
+	<Value Id="MenuCopy"                          Text="Kopiere..."/>
+	<Value Id="MenuMove"                          Text="Flytt..."/>
+	<Value Id="MenuPlay"                          Text="Spille av"/>
+	<Value Id="MenuPause"                         Text="Pause"/>
+	<Value Id="MenuWatchOnYouTube"                Text="Se på YouTube"/>
+	<Value Id="MenuListenOnSoundCloud"            Text="Lytte til på SoundCloud"/>
+	<Value Id="MenuListenOnJamendo"               Text="Lytte til på Jamendo"/>
+	<Value Id="MenuOpenFolder"                    Text="Åpne i Utforskeren"/>
+	<Value Id="MenuShareSong"                     Text="Del"/>
+	<Value Id="MenuVisitWebsite"                Header="Besøk nettstedet"/>
+
+	<Value Id="MenuClearSort"                     Text="Fjern sortering"/>
+
+	<Value Id="ColumnType"                        Text="Type"/>
+	<Value Id="ColumnLocation"                    Text="Sted"/>
+	<Value Id="ColumnArtist"                      Text="Artist"/>
+	<Value Id="ColumnAlbum"                       Text="Album"/>
+	<Value Id="ColumnTitle"                       Text="Tittel"/>
+	<Value Id="ColumnGenre"                       Text="Genre"/>
+	<Value Id="ColumnLength"                      Text="Lengde"/>
+	<Value Id="ColumnTrack"                       Text="Spor"/>
+	<Value Id="ColumnYear"                        Text="År"/>
+	<Value Id="ColumnPlayCount"                   Text="Antall spinn"/>
+	<Value Id="ColumnLastPlayed"                  Text="Sist spilt"/>
+	<Value Id="ColumnPlayed"                      Text="Spilt"/>
+	<Value Id="ColumnPath"                        Text="Sti"/>
+	<Value Id="ColumnViews"                       Text="Visninger" Format="{0} visninger"/>
+	<Value Id="ColumnSize"                        Text="Størrelse"/>
+	<Value Id="ColumnBitrate"                     Text="Bitrate"/>
+	<Value Id="ColumnChannels"                    Text="Kanaler"/>
+	<Value Id="ColumnSamplingRate"                Text="Samplingsfrekvens"/>
+	<Value Id="ColumnCodecs"                      Text="Codecs"/>
+	<Value Id="ColumnURL"                         Text="URL"/>
+	<Value Id="ColumnName"                        Text="Navn"/>
+	<Value Id="ColumnAuthor"                      Text="Forfatter"/>
+	<Value Id="ColumnInstalled"                   Text="Installert"/>
+	<Value Id="ColumnVersion"                     Text="Versjon"/>
+	<Value Id="ColumnEnabled"                     Text="Aktivert"/>
+	<Value Id="ColumnDescription"                 Text="Beskrivelse"/>
+	<Value Id="ColumnFilter"                      Text="Filter"/>
+
+	<Value Id="TotalSize"                         Text="Total størrelse"/>
+	<Value Id="TotalLength"                       Text="Total lengde"/>
+	<Value Id="AverageSize"                       Text="Snitt størrelse"/>
+	<Value Id="AverageLength"                     Text="Snitt lengde"/>
+	<Value Id="AverageTracks"                     Text="Snitt antall"/>
+	<Value Id="Tracks"                            Text="Låter"/>
+	<Value Id="Stations"                          Text="Stasjoner"/>
+
+	<Value Id="MostViewed"                        Text="Mest viste"/>
+	<Value Id="TopRated"                          Text="Topprankede"/>
+
+	<Value Id="TaskbarPrev"                       Text="Forrige sang"/>
+	<Value Id="TaskbarPlay"                       Text="Spille sang"/>
+	<Value Id="TaskbarNext"                       Text="Neste sang"/>
+
+	<Value Id="TrayShow"                          Text="Vis"/>
+	<Value Id="TrayExit"                          Text="Avslutt"/>
+	<Value Id="TrayPrev"                          Text="Forrige"/>
+	<Value Id="TrayPlay"                          Text="Spille"/>
+	<Value Id="TrayNext"                          Text="Neste"/>
+
+	<Value Id="JumpPlay"                         Title="Spille/pause" Description="Spille eller pause aktuell låt"/>
+	<Value Id="JumpNext"                         Title="Neste" Description="Gå til neste låt"/>
+	<Value Id="JumpPrev"                         Title="Forrige" Description="Spille forrige låt"/>
+
+	<Value Id="NavigationFavorites"               Text="Favoriter"/>
+	<Value Id="NavigationNowPlaying"              Text="Spilles nå"/>
+	<Value Id="NavigationVideo"                   Text="Video"/>
+	<Value Id="NavigationVisualizer"              Text="Visualizer"/>
+	<Value Id="NavigationVisualizerTitle"         Text="Ingen Visualizer aktiv"/>
+	<Value Id="NavigationVisualizerDescription"   Text="Ingen Visualizer er aktiv nå"/>
+	<Value Id="NavigationMusic"                   Text="Musikk"/>
+	<Value Id="NavigationMusicDescription"        Text="All verdens musikk"/>
+	<Value Id="NavigationFiles"                   Text="Filer"/>
+	<Value Id="NavigationFilesTitle"              Text="Musikksamling"/>
+	<Value Id="NavigationYouTube"                 Text="YouTube"/>
+	<Value Id="NavigationYouTubeTitle"            Text="YouTube"/>
+	<Value Id="NavigationYouTubeDescription"      Text="Lytte til musikk fra YouTube"/>
+	<Value Id="NavigationSoundCloud"              Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudTitle"         Text="SoundCloud"/>
+	<Value Id="NavigationSoundCloudDescription"   Text="Lytte til musikk fra SoundCloud"/>
+	<Value Id="NavigationJamendo"                 Text="Jamendo"/>
+	<Value Id="NavigationJamendoTitle"            Text="Jamendo"/>
+	<Value Id="NavigationJamendoDescription"      Text="Lytte til musikk fra Jamendo"/>
+	<Value Id="NavigationRadio"                   Text="Radio"/>
+	<Value Id="NavigationRadioTitle"              Text="Radiostasjoner"/>
+	<Value Id="NavigationDisc"                    Text="Plate"/>
+	<Value Id="NavigationDiscTitle"               Text="Lyd-CD"/>
+	<Value Id="NavigationQueue"                   Text="Spillekø"/>
+	<Value Id="NavigationQueueTitle"              Text="Spillekø"/>
+	<Value Id="NavigationHistory"                 Text="Historikk"/>
+	<Value Id="NavigationHistoryTitle"            Text="Historikk"/>
+	<Value Id="NavigationPlaylists"               Text="Spillelister"/>
+	<Value Id="NavigationCreateNew"               Text="Lag ny"/>
+	<Value Id="NavigationPlaylistTitle"           Text="Spilleliste"/>
+
+	<Value Id="PlaybackEmpty"                     Text="Ingenting spilles"/>
+	<Value Id="PlaybackEmptyDescription"          Text="Turn on some tunes"/>
+	<Value Id="PlaybackSearch"                    Text="Søk"/>
+
+	<Value Id="ControlBack"                    Content="Tilbake til musikk"/>
+	<Value Id="ControlGeneral"                 Content="Generellt"/>
+	<Value Id="ControlSources"                 Content="Kilder"/>
+	<Value Id="ControlServices"                Content="Sky"/>
+	<Value Id="ControlApps"                    Content="Apper"/>
+	<Value Id="ControlShortcuts"               Content="Snarveier"/>
+	<Value Id="ControlAbout"                   Content="Om Stoffi"/>
+	<Value Id="ControlSeeAlso"                    Text="Se også:"/>
+	<Value Id="ControlProject"                 Content="Projekt"/>
+	<Value Id="ControlBlog"                    Content="Blogg"/>
+	<Value Id="ControlWebsite"                 Content="Hjemmeside"/>
+
+	<Value Id="SourcesTitle"                      Text="Velg der du vil søke etter musikk"/>
+	<Value Id="SourcesSubTitle"                   Text="Liste av kilder"/>
+	<Value Id="SourcesText"                       Text="Legg til de stedene der Stoffi skal lete etter musikk. Alle steder blir overvåket for endringer. Du kan legge til både individuelle filer og hele mapper. Du kan også la Stoffi ignorere visse mapper og filer.
+Stoffi vil automatisk legge til alle Musikkbibliotek."/>
+
+	<Value Id="SourcesTypeFile"                   Text="Fil"/>
+	<Value Id="SourcesTypeFolder"                 Text="Mappe"/>
+	<Value Id="SourcesTypeLibrary"                Text="Bibliotek"/>
+
+	<Value Id="SourcesAddFolder"               Content="Inkluder mappe"/>
+	<Value Id="SourcesAddFile"                 Content="Inkluder fil"/>
+	<Value Id="SourcesIgnoreFolder"            Content="Ignorer mappe"/>
+	<Value Id="SourcesIgnoreFile"              Content="Ignorer fil"/>
+
+	<Value Id="ServicesTitle"                     Text="Sky-tjenester for Stoffi"/>
+	<Value Id="ServicesDataSourcesTitle"          Text="Eksterne datakilder"/>
+	<Value Id="ServicesDataSourcesText"           Text="Stoffi kan laste ned ekstra informasjon og data fra eksterne tjenester. Kontrollere og endre hvordan disse dataene hentes og anvendes."/>
+	<Value Id="ServicesAlbumArt"                  Text="Last ned plateomslag"/>
+	<Value Id="ServicesAlbumArtDetails"         Header="Avanserte innstillinger"/>
+	<Value Id="ServicesAlbumArtSize"              Text="Sted på plate"/>
+	<Value Id="ServicesAlbumArtSizes"             Text="Last ned størrelser"/>
+	<Value Id="ServicesAlbumArtSmall"          Content="Liten" Tooltip="Vanligvis {0}x{1} pixler. Total plass på plate: {2}"/>
+	<Value Id="ServicesAlbumArtMedium"         Content="Middels" Tooltip="Vanligvis {0}x{1} pixler. Total plass på plate: {2}"/>
+	<Value Id="ServicesAlbumArtLarge"          Content="Stor" Tooltip="Vanligvis {0}x{1} pixler. Total plass på plate: {2}"/>
+	<Value Id="ServicesAlbumArtHuge"           Content="Enorm" Tooltip="Vanligvis større enn {0}x{1} pixler. Total plass på plate: {2}"/>
+	<Value Id="ServicesAlbumArtClear"          Content="Fjern"/>
+	<Value Id="ServicesAccountTitle"              Text="Din Stoffi konto"/>
+	<Value Id="ServicesAccountText"               Text="Ved å opprette en gratis konto på stoffiplayer.com og koble den sammen med Stoffi, kan du få ut mye mer av din musikkspiller."/>
+	<Value Id="ServicesAccountDelink"          Content="datamaskin fra"/>
+	<Value Id="ServicesUserName"                  Text="Innlogget som:"/>
+	<Value Id="ServicesDeviceName"                Text="Enhetsnavn:"/>
+
+	<Value Id="ServicesLinksTitle"                Text="Link din konto"/>
+	<Value Id="ServicesLinksText"                 Text="Koble din konto på Stoffi med dine kontoer på andre tjenester og nettverk og bygg ut din musikkopplevelse enda mer."/>
+	<Value Id="ServicesCheckShare"             Content="Publiser det jeg deler"/>
+	<Value Id="ServicesCheckListen"            Content="Publiser låter jeg lytter til"/>
+	<Value Id="ServicesCheckDonate"            Content="Publiser artister jeg støtter"/>
+	<Value Id="ServicesCheckCreatePlaylist"    Content="Publiser spillelister jeg lager"/>
+	<Value Id="ServicesUnlink"                 Content="Avlinke"/>
+	<Value Id="ServicesLink"                   Content="Link {0}"/>
+	<Value Id="ServicesRefresh"                   Text="Gjenoppfrisk"/>
+	<Value Id="ServicesLinkDisconnected"          Text="{0} kicked us out"/>
+	<Value Id="ServicesReconnect"                 Text="Reconnect"/>
+
+	<Value Id="ServicesPrivacyTitle"              Text="Beskytt dine data"/>
+	<Value Id="ServicesPrivacyText"               Text="Her kan du kontrollere all data som deles mellon din datamaskin og våre tjenester."/>
+	<Value Id="ServicesSubmit"                    Text="Velg vilken informasjon du vil dele med andre"/>
+	<Value Id="ServicesSubmitSongs"               Text="Låtene jeg lytter til"/>
+	<Value Id="ServicesSubmitPlaylists"           Text="Spillelistene jeg lager"/>
+	<Value Id="ServicesSynchronize"               Text="Her kan du synkronisere dine innstillinger med andre forekomster av Stoffi."/>
+	<Value Id="ServicesSynchronizeProfile"        Text="Synkroniseringsprofil"/>
+	<Value Id="ServicesSynchronizeCheckbox"       Text="Synkroniser"/>
+	<Value Id="ServicesNoSynchronize"          Content="Synkroniser ikke"/>
+	<Value Id="ServicesSynchronizeManage"       Header="Velg hva som skal synkroniseres"/>
+	<Value Id="ServicesNewSyncProfile"         Content="Ny profil"/>
+	<Value Id="ServicesSynchronizeConfig"         Text="Konfigurasjon"/>
+	<Value Id="ServicesSynchronizePlaylists"      Text="Spillelister"/>
+	<Value Id="ServicesSynchronizeQueue"          Text="Spillekø"/>
+	<Value Id="ServicesDisconnected"              Text="Det ser ut til å være en feil med din tilkobling.
+Sjekk om du er tilkoblet Internett og forsøk å koble til igjen."/>
+	<Value Id="ServicesConnect"                Content="Koble til"/>
+
+	<Value Id="AppsTitle"                         Text="Bygg ut Stoffi med apper"/>
+	<Value Id="AppsInstalledTitle"                Text="Installerte apper"/>
+	<Value Id="AppsInstalledText"                 Text="Vis installerte apper og konfigurere dem ved å merke dem i lista. Du kan også installere nye apper."/>
+	<Value Id="AppsInstall"                    Content="Installer"/>
+	<Value Id="AppsLabelDescription"              Text="Beskrivelse:"/>
+	<Value Id="AppsLabelAuthor"                   Text="Forfatter:"/>
+	<Value Id="AppsLabelVersion"                  Text="Versjon:"/>
+	<Value Id="AppsLabelType"                     Text="Type:"/>
+	<Value Id="AppsLabelEnabled"                  Text="Aktivert:"/>
+	<Value Id="AppsSettingsTitle"                 Text="Innstillinger for app"/>
+	<Value Id="AppsSettingsText"                  Text="Endre appens konfigurasjon."/>
+
+	<Value Id="AppTypeFilter"                     Text="Filter"/>
+	<Value Id="AppTypeSource"                     Text="Musikk-kilde"/>
+	<Value Id="AppTypeVisualizer"                 Text="Visualizer"/>
+
+	<Value Id="ShortcutsTitle"                    Text="Konfigurere hurtigstaster"/>
+	<Value Id="ShortcutsProfileTitle"             Text="Profil"/>
+	<Value Id="ShortcutsProfileText"              Text="Dersom du er vant med et visst programs hurtigtast, kan du velge programmets profil her.
+Du kan även skalpa egna profiler om du vil."/>
+	<Value Id="ShortcutsProfileCustom"            Text="Egen"/>
+	<Value Id="ShortcutsProfileSelect"            Text="Velg profil"/>
+	<Value Id="ShortcutsProfileNew"            Content="Ny profil"/>
+	<Value Id="ShortcutsProfileRename"         Content="Endre navn"/>
+	<Value Id="ShortcutsProfileDelete"         Content="Ta bort profil"/>
+
+	<Value Id="AboutTitle"                        Text="Vis informasjon om Stoffi Musikk Spiller"/>
+	<Value Id="AboutDescriptionTitle"             Text="Beskrivelse"/>
+	<Value Id="AboutDescriptionText"              Text="Stoffi Musikk Spiller er en enkel tilnærming til musikk.
+
+Det er ment å være lett og enkelt å bruke, ha et rent og tilltalende grensesnitt, samtidig som det gir deg en full funksjons musikkspiller som du får glede av.
+
+Det er byggt for å være lett og kjapt, slik at det kan kjøre i bakgrunnen uten at det påvirker systemets ytelse. Det er sterkt integrert med resten av systemet, slik at passer inn og blir til en naturlig del av det.
+
+Med Stoffi kan du helt enkelt ha din musikk organisert som du vil ved å opprette og endre spillelister kjapt og enkelt samt sjekke at låtenes titler og album stemmer.
+
+Musikk har aldri vært så bra."/>
+	<Value Id="AboutPropertiesTitle"              Text="Programegenskaper"/>
+	<Value Id="AboutPropertiesRelease"            Text="Slipp:"/>
+	<Value Id="AboutPropertiesDetails"          Header="Tekniske detaljer"/>
+	<Value Id="AboutPropertiesVersion"            Text="Versjon:"/>
+	<Value Id="AboutPropertiesStamp"              Text="Stempel:"/>
+	<Value Id="AboutPropertiesArch"               Text="Arkitektur:"/>
+	<Value Id="AboutPropertiesChannel"            Text="Kanal:"/>
+	<Value Id="AboutPropertiesCheck"              Text="Siste sjekk etter ny versjon:"/>
+	<Value Id="AboutPropertiesUpgraded"           Text="Stoffi er oppgradert og må startes på nytt"/>
+	<Value Id="AboutCreditsTesters"               Text="Testere"/>
+	<Value Id="AboutCreditsDevelopers"            Text="Utviklere"/>
+	<Value Id="AboutCreditsTranslators"           Text="Oversettere"/>
+
+	<Value Id="GeneralTitle"                      Text="Endre grunnleggende innstillinger"/>
+	<Value Id="GeneralLookTitle"                  Text="Utseende"/>
+	<Value Id="GeneralLookText"                   Text="Her kan du velge ulike konfigurasjoner for å endre utseendet. Endre hva du ser og hvordan det vises."/>
+	<Value Id="GeneralLanguage"                   Text="Språk"/>
+	<Value Id="GeneralOSD"                        Text="Meldingsruta"/>
+	<Value Id="GeneralFastStart"                  Text="Hurtigstart og -avslutning" ToolTip="Behold Stoffi i minnet for hurtig oppstart og avslutning."/>
+	<Value Id="GeneralFeelTitle"                  Text="Atferd"/>
+	<Value Id="GeneralFeelText"                   Text="Her kan du endre Stoffis atferd i ulike situasjoner og bestemme vilke handlinger skal utføres."/>
+	<Value Id="GeneralSearchPolicy"               Text="Søkning"/>
+	<Value Id="GeneralSearchPolicyGlobal"      Content="Samme søk overallt"/>
+	<Value Id="GeneralSearchPolicyPartial"     Content="Samme søk for alle spillelister"/>
+	<Value Id="GeneralSearchPolicyIndividual"  Content="Ulike søk for hver liste"/>
+	<Value Id="GeneralUpgradePolicy"              Text="Oppgradering"/>
+	<Value Id="GeneralUpgradePolicyManual"     Content="La meg sjekke for oppgraderinger"/>
+	<Value Id="GeneralUpgradePolicyNotify"     Content="Gi beskjed når jeg kan oppgradere"/>
+	<Value Id="GeneralUpgradePolicyAuto"       Content="Oppgradere automatiskt"/>
+	<Value Id="GeneralDoUpgrade"               Content="Oppgradere"/>
+	<Value Id="GeneralDoCheck"                 Content="Sjekk for oppgraderinger"/>
+	<Value Id="GeneralRestart"                 Content="Start på nytt"/>
+	<Value Id="GeneralAddPlayText"                Text="Når en fil åpnes i Utforskeren, gjør følgende:"/>
+	<Value Id="GeneralAddPolicy"                  Text="Legg til"/>
+	<Value Id="GeneralAddPolicyDont"           Content="Ikke legg til"/>
+	<Value Id="GeneralAddPolicyLibrary"        Content="Legg i biblioteket"/>
+	<Value Id="GeneralAddPolicyBoth"           Content="Legg i biblioteket og i aktuell spilleliste"/>
+	<Value Id="GeneralPlayPolicy"                 Text="Spill"/>
+	<Value Id="GeneralPlayPolicyPlay"          Content="Spill direkte"/>
+	<Value Id="GeneralPlayPolicyDont"          Content="Ikke spill"/>
+	<Value Id="GeneralPlayPolicyBack"          Content="Legg sist i spillekøen"/>
+	<Value Id="GeneralPlayPolicyFront"         Content="Legg først i spillekøen"/>
+	<Value Id="GeneralPausePlayback"              Text="Pause avspillingen når:"/>
+	<Value Id="GeneralPausePlaybackLocked"        Text="Datamaskinen er låst"/>
+	<Value Id="GeneralPausePlaybackEnd"           Text="Låten slutter"/>
+	<Value Id="GeneralPausePlaybackLoggedOut"     Text="Jeg er utlogget"/>
+
+	<Value Id="SourceFieldType"                 Header="Type"/>
+	<Value Id="SourceFieldLocation"             Header="Sted"/>
+
+	<Value Id="ShortcutNotUsed"                   Text="Ikke i bruk"/>
+	<Value Id="ShortcutPress"                     Text="Velg taster"/>
+	<Value Id="ShortcutApplicationTitle"          Text="Programinstrukser"/>
+	<Value Id="ShortcutApplicationText"           Text="Disse instrukser påvirker hele programmet."/>
+	<Value Id="ShortcutMainWindowTitle"           Text="Instrukser for hovedvinduet"/>
+	<Value Id="ShortcutMainWindowText"            Text="Disse instrukser brukes for å påvirke hovedvinduet og navigere i det.
+Dette inkluderer navigationsruter (Musikk, Spillekø, Spillelister osv), låtlista og detaljrute."/>
+	<Value Id="ShortcutMediaCommandsTitle"        Text="Mediainstrukser"/>
+	<Value Id="ShortcutMediaCommandsText"         Text="Disse instrukser kontrollerer avspilling av din media."/>
+	<Value Id="ShortcutTrackTitle"                Text="Låtlista"/>
+	<Value Id="ShortcutTrackText"                 Text="Bruk disse instrukser for å utføre ting på merkede låter i låtlista."/>
+	<Value Id="ShortcutGlobal"                    Text="Global" ToolTip="Utfør instruks selv om Stoffi ikke er fokusert"/>
+
+	<Value Id="Shortcut_Add_track"                Text="Legg til låt"/>
+	<Value Id="Shortcut_Add_folder"               Text="Legg til mappe"/>
+	<Value Id="Shortcut_Add_playlist"             Text="Legg til spilleliste"/>
+	<Value Id="Shortcut_Add_radio_station"        Text="Legg til radiostasjon"/>
+	<Value Id="Shortcut_Add_app"                  Text="Legg til app"/>
+	<Value Id="Shortcut_Generate_playlist"        Text="Lag spilleliste"/>
+	<Value Id="Shortcut_Minimize"                 Text="Minimer"/>
+	<Value Id="Shortcut_Restore"                  Text="Tilbakestill"/>
+	<Value Id="Shortcut_Help"                     Text="Hjelp"/>
+	<Value Id="Shortcut_Close"                    Text="Avslutt"/>
+	<Value Id="Shortcut_Video"                    Text="Video"/>
+	<Value Id="Shortcut_Visualizer"               Text="Visualizer"/>
+	<Value Id="Shortcut_Files"                    Text="Filer"/>
+	<Value Id="Shortcut_YouTube"                  Text="YouTube"/>
+	<Value Id="Shortcut_SoundCloud"               Text="SoundCloud"/>
+	<Value Id="Shortcut_Radio"                    Text="Radio"/>
+	<Value Id="Shortcut_Queue"                    Text="Spillelista"/>
+	<Value Id="Shortcut_History"                  Text="Historik"/>
+	<Value Id="Shortcut_Playlists"                Text="Spillelister"/>
+	<Value Id="Shortcut_Tracklist"                Text="Låtlista"/>
+	<Value Id="Shortcut_Search"                   Text="Søk"/>
+	<Value Id="Shortcut_General_preferences"      Text="Generellt"/>
+	<Value Id="Shortcut_Music_sources"            Text="Kilder"/>
+	<Value Id="Shortcut_Services"                 Text="Sky"/>
+	<Value Id="Shortcut_Apps"                     Text="Apper"/>
+	<Value Id="Shortcut_Keyboard_shortcuts"       Text="Hurtigtaster"/>
+	<Value Id="Shortcut_About"                    Text="Om Stoffi"/>
+	<Value Id="Shortcut_Toggle_details_pane"      Text="Detaljerute av/på"/>
+	<Value Id="Shortcut_Toggle_menu_bar"          Text="Meny av/på"/>
+	<Value Id="Shortcut_Create_playlist"          Text="Lag spilleliste"/>
+	<Value Id="Shortcut_Play_or_pause"            Text="Spille eller pause"/>
+	<Value Id="Shortcut_Next"                     Text="Neste"/>
+	<Value Id="Shortcut_Previous"                 Text="Forrige"/>
+	<Value Id="Shortcut_Toggle_shuffle"           Text="Shuffle av/på"/>
+	<Value Id="Shortcut_Toggle_repeat"            Text="Gjenta av/på"/>
+	<Value Id="Shortcut_Increase_volume"          Text="Øk lydstyrke"/>
+	<Value Id="Shortcut_Decrease_volume"          Text="Demp lydstyrke"/>
+	<Value Id="Shortcut_Seek_forward"             Text="Spol fram"/>
+	<Value Id="Shortcut_Seek_backward"            Text="Spol tilbake"/>
+	<Value Id="Shortcut_Add_bookmark"             Text="Lag bokmerke"/>
+	<Value Id="Shortcut_Jump_to_previous_bookmark" Text="Gå til forrige bokmerke"/>
+	<Value Id="Shortcut_Jump_to_next_bookmark"    Text="Gå til neste bokmerke"/>
+	<Value Id="Shortcut_Jump_to_first_bookmark"   Text="Gå til første bokmerke"/>
+	<Value Id="Shortcut_Jump_to_last_bookmark"    Text="Gå til siste bokmerke"/>
+	<Value Id="Shortcut_Jump_to_bookmark_1"       Text="Gå til bokmerke 1"/>
+	<Value Id="Shortcut_Jump_to_bookmark_2"       Text="Gå til bokmerke 2"/>
+	<Value Id="Shortcut_Jump_to_bookmark_3"       Text="Gå til bokmerke 3"/>
+	<Value Id="Shortcut_Jump_to_bookmark_4"       Text="Gå til bokmerke 4"/>
+	<Value Id="Shortcut_Jump_to_bookmark_5"       Text="Gå til bokmerke 5"/>
+	<Value Id="Shortcut_Jump_to_bookmark_6"       Text="Gå til bokmerke 6"/>
+	<Value Id="Shortcut_Jump_to_bookmark_7"       Text="Gå til bokmerke 7"/>
+	<Value Id="Shortcut_Jump_to_bookmark_8"       Text="Gå til bokmerke 8"/>
+	<Value Id="Shortcut_Jump_to_bookmark_9"       Text="Gå til bokmerke 9"/>
+	<Value Id="Shortcut_Jump_to_bookmark_10"      Text="Gå til bokmerke 10"/>
+	<Value Id="Shortcut_Jump_to_current_track"    Text="Gå til aktuell låt"/>
+	<Value Id="Shortcut_Jump_to_selected_track"   Text="Gå til merket låt"/>
+	<Value Id="Shortcut_Play_track"               Text="Spill låt"/>
+	<Value Id="Shortcut_Queue_and_dequeue"        Text="I kø og ut kø"/>
+	<Value Id="Shortcut_Open_folder"              Text="Åpne mappe"/>
+	<Value Id="Shortcut_Remove"                   Text="Fjern"/>
+	<Value Id="Shortcut_Remove_from_harddrive"    Text="Fjern fra harddisken"/>
+	<Value Id="Shortcut_Copy"                     Text="Kopier"/>
+	<Value Id="Shortcut_Move"                     Text="Flytt"/>
+	<Value Id="Shortcut_View_information"         Text="Vis informasjon"/>
+	<Value Id="Shortcut_Share"                    Text="Dele"/>
+
+	<Value Id="ButtonOK"                       Content="OK"/>
+	<Value Id="ButtonApply"                    Content="Bruk"/>
+	<Value Id="ButtonCancel"                   Content="Avbryt"/>
+	<Value Id="ButtonAdd"                      Content="Legg til"/>
+	<Value Id="ButtonClose"                    Content="Avslutt"/>
+	<Value Id="ButtonNew"                      Content="Ny"/>
+	<Value Id="ButtonRename"                   Content="Gi nytt navn"/>
+	<Value Id="ButtonRemove"                   Content="Fjern"/>
+
+	<Value Id="PropertiesTitle"                  Title="Egenskaper"/>
+	<Value Id="PropertiesMultipleFiles"           Text="{0} låter"/>
+	<Value Id="PropertiesGeneral"               Header="Allment"/>
+	<Value Id="PropertiesGeneralType"             Text="Filtype:"/>
+	<Value Id="PropertiesGeneralTypeFormat"       Text="{0}fil (.{1})"/>
+	<Value Id="PropertiesGeneralVariousFormats"   Text="Ymse format"/>
+	<Value Id="PropertiesGeneralLength"           Text="Lengde:"/>
+	<Value Id="PropertiesGeneralChannels"         Text="Kanaler:"/>
+	<Value Id="PropertiesGeneralVariousChannels"  Text="Ymse kanaler"/>
+	<Value Id="PropertiesGeneralCodec"            Text="Kodek:"/>
+	<Value Id="PropertiesGeneralVariousCodecs"    Text="Ymse kodeks"/>
+	<Value Id="PropertiesGeneralBitrate"          Text="Bitrate:"/>
+	<Value Id="PropertiesGeneralVariousBitrates"  Text="Ymse bitrater"/>
+	<Value Id="PropertiesGeneralSamplingrate"      Text="Samplingsfrekvens:"/>
+	<Value Id="PropertiesGeneralVariousSamplingrates" Text="Ymse frekvenser"/>
+	<Value Id="PropertiesGeneralLocation"          Text="Sted:"/>
+	<Value Id="PropertiesGeneralVariousLocations" Text="Flere steder"/>
+	<Value Id="PropertiesGeneralSize"             Text="Størrelse:"/>
+	<Value Id="PropertiesGeneralPlayCount"        Text="Antall avspillinger:"/>
+	<Value Id="PropertiesGeneralLastPlayed"       Text="Sist spilt:"/>
+	<Value Id="PropertiesGeneralCreated"          Text="Laget:"/>
+	<Value Id="PropertiesGeneralModified"         Text="Endret:"/>
+	<Value Id="PropertiesGeneralAccessed"         Text="Anvendt:"/>
+	<Value Id="PropertiesDetails"               Header="Detaljer"/>
+	<Value Id="PropertiesDetailsProperty"      Content="Egenskaper"/>
+	<Value Id="PropertiesDetailsValue"         Content="Verdi"/>
+	<Value Id="PropertiesDetailsMultipleValues"   Text="(flere verdier)"/>
+
+	<Value Id="EqualizerTitle"                   Title="Equalizer"/>
+	<Value Id="EqualizerProfile"                  Text="Profil:"/>
+	<Value Id="EqualizerHertz"                    Text="Hz:"/>
+	<Value Id="EqualizerEcho"                     Text="Ekko"/>
+	<Value Id="EqualizerProfileTuned"             Text="Stemt"/>
+	<Value Id="EqualizerProfileBass"              Text="Bass"/>
+	<Value Id="EqualizerProfileJazz"              Text="Jazz"/>
+	<Value Id="EqualizerProfileDance"             Text="Dance"/>
+	<Value Id="EqualizerProfileRnB"               Text="R&amp;B"/>
+	<Value Id="EqualizerProfileSpeech"            Text="Tale"/>
+	<Value Id="EqualizerProfileLoud"              Text="Høyt"/>
+	<Value Id="EqualizerProfileHeadphones"        Text="Hodetelefon"/>
+	<Value Id="EqualizerProfileFlat"              Text="Flat"/>
+	<Value Id="EchoWet"                           Text="Vått"/>
+	<Value Id="EchoDry"                           Text="Tørt"/>
+
+	<Value Id="AddURLTitle"                      Title="Legg Til Radiostasjon"/>
+	<Value Id="AddYouTubePlaylistTitle"          Title="Legg Til Spillelista Fra YouTube"/>
+	<Value Id="AddURLLabel"                       Text="URL:"/>
+	<Value Id="AddURLWait"                        Text="Vent litt..."/>
+
+	<Value Id="GeneratePlaylistTitle"            Title="Lag spilleliste"/>
+	<Value Id="FromList"                          Text="Fra liste"/>
+	<Value Id="AllTracks"                      Content="Alle låter"/>
+	<Value Id="NumberOfTracks"                    Text="Antal låter"/>
+	<Value Id="ApplySearch"                       Text="Bruk nåværende søkfilter"/>
+	<Value Id="Name"                              Text="Navn"/>
+	<Value Id="ButtonGenerate"                 Content="Lag"/>
+
+	<Value Id="DateDays"                      Singular="dag" Plural="dager"/>
+	<Value Id="DateHours"                     Singular="time" Plural="timer"/>
+	<Value Id="DateMinutes"                   Singular="minutt" Plural="minutter"/>
+	<Value Id="DateSeconds"                   Singular="sekund" Plural="sekunder"/>
+
+	<Value Id="Filter"                            Text="Filter:"/>
+	<Value Id="FilterNone"                     Content="Ingen filter"/>
+	<Value Id="FilterMusic"                    Content="Musikk"/>
+	<Value Id="Quality"                           Text="Kvalitet:"/>
+	<Value Id="QualityLow"                     Content="Lav"/>
+	<Value Id="QualityMedium"                  Content="Middels"/>
+	<Value Id="QualityHigh"                    Content="Høy"/>
+	<Value Id="Quality720"                     Content="720p"/>
+	<Value Id="Quality1080"                    Content="1080p"/>
+	<Value Id="QualityHighres"                 Content="Høy oppløs."/>
+	<Value Id="QualityDefault"                 Content="Automatisk"/>
+
+	<Value Id="SizeByte"                          Text="{0} byte"/>
+	<Value Id="SizeKb"                            Text="{0} kB"/>
+	<Value Id="SizeMb"                            Text="{0} MB"/>
+	<Value Id="SizeGb"                            Text="{0} GB"/>
+	<Value Id="SizeTb"                            Text="{0} TB"/>
+	<Value Id="SizePb"                            Text="{0} PB"/>
+	<Value Id="SizeEb"                            Text="{0} EB"/>
+
+	<Value Id="BeatsPerMinute"                    Text="{0} bpm"/>
+	<Value Id="KilobitsPerSecond"                 Text="{0} kbps"/>
+	<Value Id="KiloHertz"                         Text="{0} kHz"/>
+
+	<Value Id="MultipleSelectedTracks"            Text="{0} låter"/>
+	<Value Id="FileTypeYouTube"                   Text="YouTubelåt" Plural="YouTubelåter"/>
+	<Value Id="FileTypeSoundCloud"                Text="SoundCloudlåt" Plural="SoundCloudlåter"/>
+	<Value Id="FileTypeJamendo"                   Text="Jamendolåt" Plural="Jamendolåter"/>
+	<Value Id="FileTypeRadio"                     Text="Radiostasjon" Plural="Radiostasjoner"/>
+	<Value Id="FileTypeUnknown"                   Text="Ukjent låttype" Plural="Ukjente låttyper"/>
+	<Value Id="FileTypeExtension"                 Text="{0}fil" Plural="{0}filer"/>
+	<Value Id="FileTypeLocal"                     Text="Lokal fil" Plural="Lokale filer"/>
+
+	<Value Id="SearchTooltip"                     Text="Søk: {0}"/>
+
+	<Value Id="UpgradeConnecting"                 Text="Kobler til..."/>
+	<Value Id="UpgradeDownloading"                Text="Laster ned..."/>
+	<Value Id="UpgradeProcessing"                 Text="Bearbeider..."/>
+	<Value Id="UpgradeNotChecked"                 Text="Ikke sjekket ennå"/>
+	<Value Id="UpgradeWait"                       Text="Vent litt..."/>
+	<Value Id="UpgradePending"                    Text="Oppgraderingen er installert, start på nytt"/>
+	<Value Id="UpgradeNotFound"                   Text="Du har den siste versjonen"/>
+	<Value Id="UpgradeFound"                      Text="En en oppgradering finns"/>
+	<Value Id="UpgradeDebug"                      Text="Oppgradering avslått pga. DEBUG modus"/>
+	<Value Id="UpgradeFoundTooltip"              Title="Upgrade found" Message="Click here to upgrade Stoffi."/>
+	<Value Id="UpgradeInProgress"                 Text="Oppgradering pågår.
+Var god vänta..."/>
+
+	<Value Id="AssociationsCaption"               Text="Gjør Stoffi til standard musikkspiller"/>
+	<Value Id="AssociationsInstruction"           Text="Gjør Stoffi til din standard musikkspiller?"/>
+	<Value Id="AssociationsText"                  Text="Velg Stoffi som din standard musikkspiller for musikk både på Internett og på datamaskinen."/>
+	<Value Id="AssociationsSkip"                  Text="Hopp over"/>
+	<Value Id="AssociationsSkipText"              Text="Ikke gjør noen endringer på mitt system"/>
+	<Value Id="AssociationsChoose"                Text="La meg velge"/>
+	<Value Id="AssociationsChooseText"            Text="Angi vilke filer skal behandles av Stoffi"/>
+	<Value Id="AssociationsYes"                   Text="Ja"/>
+	<Value Id="AssociationsYesText"               Text="Gjør Stoffi til min standard musikkspiller"/>
+
+	<Value Id="AssociationsCustom"               Title="Filtyper"/>
+	<Value Id="AssociationsCustomHeader"          Text="Velg filtyper"/>
+	<Value Id="AssociationsCustomText"            Text="Velg vilke filtyper skal behandles av Stoffi. Stoffi kan håndtere både spillelister og låter."/>
+	<Value Id="AssociationsCustomSongs"        Content="Låter"/>
+	<Value Id="AssociationsCustomPlaylists"    Content="Spillelister"/>
+	<Value Id="AssociationsCustomOther"        Content="Andre"/>
+	<Value Id="AssociationsCustomInternet"     Content="Internett"/>
+	<Value Id="AssociationsCustomSPP"          Content="App"/>
+	<Value Id="AssociationsCustomSCX"          Content="Konfigurasjon"/>
+	<Value Id="AssociationsCustomExpander"      Header="Tilpasse"/>
+	<Value Id="AssociationsCustomFootLink"     Content="Les mer"/>
+
+	<Value Id="FileAssociationSong"               Text="Musikkspor ({0})"/>
+	<Value Id="FileAssociationPlaylist"           Text="Spillelista ({0})"/>
+	<Value Id="FileAssociationSPP"                Text="App til Stoffi"/>
+	<Value Id="FileAssociationSCX"                Text="Konfigurasjon av Stoffi"/>
+	<Value Id="URIAssociationOpen"                Text="Spille"/>
+	<Value Id="FileAssociationOpen"               Text="Spille"/>
+	<Value Id="FileAssociationInstall"            Text="Installer"/>
+	<Value Id="FileAssociationLoad"               Text="Laste ned"/>
+	<Value Id="FileAssociationPlay"               Text="Spille med Stoffi"/>
+
+	<Value Id="DialogOpenPlaylistTitle"           Text="Åpne Spillelista"/>
+	<Value Id="DialogInstallAppTitle"             Text="Installer App"/>
+	<Value Id="DialogNameCreateTitle"             Text="Opprett profil"/>
+	<Value Id="DialogNameRenameTitle"             Text="Gi profil nytt navn"/>
+	<Value Id="DialogNameDescription"             Text="Gi din profil et navn"/>
+	<Value Id="DialogNameExistsError"             Text="En profil med det navnet finns allerede"/>
+	<Value Id="DialogNameInvalidError"            Text="Bruk bare A-Z og siffer"/>
+	<Value Id="DialogNameEmptyError"              Text="Velg et navn"/>
+	<Value Id="DialogNumberTooSmall"              Text="Tallet må være større enn {0}"/>
+	<Value Id="DialogNumberTooLarge"              Text="Tallet må være mindre enn {0}"/>
+	<Value Id="DialogNumberInvalid"               Text="Tallet er ugyldig"/>
+
+	<Value Id="MessageOldWindows"                Title="Old School Er Ikke Cool" Message="Dessverre, men du må oppgradere Windows for å kunne ha glede av Stoffi"/>
+	<Value Id="MessageShortcutClash"             Title="Snarveien Finns Allerede" Message="Denne snarveien brukes fra før av %name (%category)
+Vil du erstatte den?"/>
+	<Value Id="MessageDeletePlaylist"            Title="Slett Spilleliste" Message="Er du sikker på at du vil slette spilleliste '%name'?"/>
+	<Value Id="MessageSavingPlaylist"	           Title="Kunne Ikke Lagre Spillelista" Message="Det oppsto et problem når spillelista skulle lagres"/>
+	<Value Id="MessageContactingServer"           Text="Kunne ikke kontakte servern"/>
+	<Value Id="MessageSaveProfile"               Title="Lagre Endringer Til Profil" Message="Visse verdier har blitt endret.
+Vill du spara dem?"/>
+	<Value Id="MessageUpgradeInProgress"         Title="Oppgradering Pågår" Message="En oppgradering pågår.
+Er du sikker på at du vil avsluta?"/>
+	<Value Id="MessageNoFlash"                   Title="Flash Ikke Installert" Message="Du trenger Flash for Internet Explorer.
+Vill du laste ned det?"/>
+	<Value Id="MessageYouTubeBadParams"          Title="YouTube Feilmelding" Message="Felaktige parametre for YouTube-spiller."/>
+	<Value Id="MessageYouTubeNotFound"           Title="YouTube Feilmelding" Message="Låten har enten blitt fjernet eller merket som privat."/>
+	<Value Id="MessageYouTubeUnknown"            Title="YouTube Feilmelding" Message="Ukjent feil (kode: {0})."/>
+	<Value Id="MessageAlreadyAddedSource"        Title="Kilden Finns Allerede" Message="Kilden du forsøker å legge til, finns fra før som kilde."/>
+	<Value Id="MessageCloseFastStart"            Title="Avslutt Stoffi Helt" Message="Du har valgt 'Hurtigstart'.
+				 
+Hvis du avslutter Stoffi, kommer neste oppstart til å gå saktere.
+Er du sikker på at du vil avslutte Stoffi helt?"/>
+	<Value Id="MessageConnectionProblem"         Title="Problem Med Tilkobling" Message="Kunne ikke kontakte serveren.
+
+Årsaken er enten et problem med din tilkobling
+eller med våre serverer."/>
+	<Value Id="MessageConfirmDelete"             Title="Slett Fra Disk" Message="Er du sikker på at du vil slette filen fra disk?"/>
+	<Value Id="MessageErrorDeleting"             Title="Kunne Ikke Slette Fil"/>
+	<Value Id="MessageErrorUpdating"             Title="Kunne Ikke Oppdatere Fil"/>
+	<Value Id="MessageErrorRenaming"             Title="Kunne Ikke Gi Fil Nytt Navn"/>
+	<Value Id="MessageErrorMoving"	             Title="Kunne Ikke Flytte Fil"/>
+	<Value Id="MessageErrorCopying"	             Title="Kunne Ikke Kopiere Fil"/>
+	<Value Id="MessageErrorInstallingApp"        Title="Kunne Ikke Installere App"/>
+	<Value Id="MessageErrorStartingApp"          Title="Kunne Ikke Starte App"/>
+
+	<Value Id="ServiceDisconnected"               Text="Tjenesten er frakoblet."/>
+	<Value Id="ServiceConnect"                 Content="Koble opp"/>
+
+	<Value Id="HeaderTracks"                      Text="{0} låter"/>
+	<Value Id="HeaderStations"                    Text="{0} stasjoner"/>
+	<Value Id="MetaDataLoading"                   Text="Laster..."/>
+	<Value Id="NoVideoAvailable"                  Text="Det finns ingen video tilgjenglig"/>
+	<Value Id="NoVisualizerAvailable"             Text="Det finns ingen Visualizer tilgjenglig"/>
+	<Value Id="NoVisualizer"                      Text="Ingen Visualizer"/>
+	<Value Id="SavingSettings"                 Content="Lagrer innstillinger."/>
+	<Value Id="Closing"                        Content="Avslutter programmet."/>
+	<Value Id="MinimizedShortcutDescription"      Text="Laster Stoffi i minnet slik at oppstarten går raskere."/>
+	<Value Id="Unknown"                           Text="Ukjent"/>
+</Dictionary>

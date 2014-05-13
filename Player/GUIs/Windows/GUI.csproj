@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58D25A22-7243-4D55-84DC-C545C079DC03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stoffi</RootNamespace>
+    <AssemblyName>Stoffi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://www.stoffiplayer.com/get</InstallUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Stoffi</ProductName>
+    <PublisherName>Simplare</PublisherName>
+    <SuiteName>Stoffi Music Player</SuiteName>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>5771</ApplicationRevision>
+    <ApplicationVersion>1.29.586.5771</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WIN7</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Stoffi.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Stoffi.Player.GUI.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Stoffi.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6A1A9E3DD407ACE8A54496050562235CE04F0C59</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bass.Net, Version=2.4.9.1, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Core\Libraries\Bass.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DwmWrapper">
+      <HintPath>Libraries\DwmWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>Libraries\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Libraries\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="taglib-sharp, Version=2.0.5.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Tomers.WPF.Localization">
+      <HintPath>Libraries\Tomers.WPF.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>Libraries\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\ControlPanel\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPanel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPanel\Shortcuts.xaml.cs">
+      <DependentUpon>Shortcuts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Fullscreen.xaml.cs">
+      <DependentUpon>Fullscreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FullscreenOverLay.xaml.cs">
+      <DependentUpon>FullscreenOverLay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Support\DriveDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Bookmark.xaml.cs">
+      <DependentUpon>Bookmark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\JamendoTracks.cs" />
+    <Compile Include="Controls\ControlPanel\Plugins.xaml.cs">
+      <DependentUpon>Plugins.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPanel\Services.xaml.cs">
+      <DependentUpon>Services.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ControlPanel\Sources.xaml.cs">
+      <DependentUpon>Sources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Details.xaml.cs">
+      <DependentUpon>Details.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EnhancedStackPanel.cs" />
+    <Compile Include="Controls\Navigation.xaml.cs">
+      <DependentUpon>Navigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolbarButton.xaml.cs">
+      <DependentUpon>ToolbarButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Playback.xaml.cs">
+      <DependentUpon>Playback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EnhancedSlider.xaml.cs">
+      <DependentUpon>EnhancedSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SoundCloudTracks.cs" />
+    <Compile Include="Controls\VirtualizingWrapPanel.cs" />
+    <Compile Include="Controls\Visualizer.xaml.cs">
+      <DependentUpon>Visualizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\YouTubeTracks.cs" />
+    <Compile Include="Windows\OpenURL.xaml.cs">
+      <DependentUpon>OpenURL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Support\Image.cs" />
+    <Compile Include="Support\Keyboard.cs" />
+    <Compile Include="Support\Utilities.cs" />
+    <Compile Include="Welcome.cs" />
+    <Compile Include="Windows\Associations.xaml.cs">
+      <DependentUpon>Associations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CloseProgress.xaml.cs">
+      <DependentUpon>CloseProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewDetails.xaml.cs">
+      <DependentUpon>ViewDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\XmlLanguageDictionary.cs" />
+    <Compile Include="Windows\GeneratePlaylist.xaml.cs">
+      <DependentUpon>GeneratePlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Equalizer.xaml.cs">
+      <DependentUpon>Equalizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NameDialog.xaml.cs">
+      <DependentUpon>NameDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TrayToolTip.xaml.cs">
+      <DependentUpon>TrayToolTip.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\Bookmark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\Plugins.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\Shortcuts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ControlPanel\Sources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Navigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ToolbarButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Playback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EnhancedSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Visualizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Associations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CloseProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ViewDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Fullscreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FullscreenOverLay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GeneratePlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Equalizer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\NameDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EditableTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TrayToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\OpenURL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DescriptionConverters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Windows\PropertiesWindow.xaml.cs">
+      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Support\PowerManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Clock.ico" />
+    <Resource Include="Images\Icons\Disc.ico" />
+    <Resource Include="Images\Icons\DiscAudio.ico" />
+    <Resource Include="Images\Icons\DiscAudioPlus.ico" />
+    <Resource Include="Images\Icons\Drive.ico" />
+    <Resource Include="Images\Icons\FileAudio.ico" />
+    <Resource Include="Images\Icons\help.ico" />
+    <Resource Include="Images\Icons\Library.ico" />
+    <Resource Include="Images\Icons\Minus.ico" />
+    <Resource Include="Images\Icons\NoteDouble.ico" />
+    <Resource Include="Images\Icons\NoteSingle.ico" />
+    <Resource Include="Images\Icons\Plus.ico" />
+    <Resource Include="Images\Icons\Queue.ico" />
+    <Resource Include="Images\Icons\Settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\Next.png" />
+    <Resource Include="Images\Buttons\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\Next Shine.png" />
+    <Resource Include="Images\Buttons\Pause Shine.png" />
+    <Resource Include="Images\Buttons\Pause.png" />
+    <Resource Include="Images\Buttons\Play Shine.png" />
+    <Resource Include="Images\Buttons\Play.png" />
+    <Resource Include="Images\Buttons\Previous Shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\Small Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\Repeat All.png" />
+    <Resource Include="Images\Buttons\Shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\Search.png" />
+    <Resource Include="Images\Buttons\SearchClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\SearchClear Shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AlbumArt\Default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultAlbumArt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\AudioPlayer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\FolderPlus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Stoffi.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\FolderAudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\test.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buttons\test.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Previous.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Icons\Next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Icons\Pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Icons\Play.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Libraries\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\ControlLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".mp3">
+      <Visible>False</Visible>
+      <Description>Stoffi Music Track</Description>
+      <Progid>StoffiMP3</Progid>
+      <DefaultIcon>Stoffi.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stoffi.png" />
+    <Resource Include="Images\Icons\Upgrade.ico" />
+    <Resource Include="Images\Buttons\Close Notification.png" />
+    <Resource Include="Images\Backgrounds\Notification Image.png" />
+    <Resource Include="Images\Buttons\Repeat Gray.png" />
+    <Resource Include="Images\Buttons\Shuffle Gray.png" />
+    <Resource Include="Images\Icons\Tray.ico" />
+    <Resource Include="Images\Misc\SortArrowUp.png" />
+    <Resource Include="Images\Misc\SortArrowDown.png" />
+    <Resource Include="Images\Buttons\Repeat One.png" />
+    <Resource Include="Images\AlbumArt\BackgroundMultiple.png" />
+    <Resource Include="Images\AlbumArt\BackgroundSingle.png" />
+    <Resource Include="Images\AlbumArt\Classic.jpg" />
+    <Resource Include="Images\Icons\YouTube.ico" />
+    <Resource Include="Languages\en-US.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Languages\sv-SE.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Languages\pt-BR.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Languages\zh-CN.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Images\Buttons\Close.gif" />
+    <Resource Include="Images\Icons\Error.ico" />
+    <Resource Include="Images\Icons\Warning.ico" />
+    <Resource Include="Images\Icons\Folder.ico" />
+    <Resource Include="Images\Icons\LeftArrow.ico" />
+    <Resource Include="Images\Icons\RightArrow.ico" />
+    <Resource Include="Images\Icons\Video.ico" />
+    <Resource Include="Images\Icons\Search.ico" />
+    <Resource Include="Images\Icons\Visualizer.ico" />
+    <Resource Include="Languages\de-DE.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Images\Icons\Favorite.ico" />
+    <Resource Include="Images\Icons\Radio.ico" />
+    <Resource Include="Images\Icons\SoundCloud.ico" />
+    <Content Include="Art\Default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Art\Loading.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bassflac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\basswma.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\basswv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_aac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ac3.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_alac.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ape.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_fx.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_mpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_ofr.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_spx.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Codecs\bass_tta.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\FileAudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\FolderAudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\scx.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\soundcloud.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\spp.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Win7\youtube.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Icons\MidiSynth.ico" />
+    <Resource Include="Images\Icons\Package.ico" />
+    <Resource Include="Languages\it-IT.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Images\Icons\Refresh.ico" />
+    <Resource Include="Images\Misc\DropDownSelected.png" />
+    <Resource Include="Languages\nb-NO.xml" />
+    <Resource Include="Languages\hu-HU.xml" />
+    <Resource Include="Images\Icons\ViewDetails.png" />
+    <Resource Include="Images\Icons\ViewList.png" />
+    <Resource Include="Images\Icons\ViewSmallIcons.png" />
+    <Resource Include="Images\Icons\ViewContent.png" />
+    <Resource Include="Images\Icons\ViewExtraLargeIcons.png" />
+    <Resource Include="Images\Icons\ViewLargeIcons.png" />
+    <Resource Include="Images\Icons\ViewMediumIcons.png" />
+    <Resource Include="Images\Icons\ViewTiles.png" />
+    <Resource Include="Images\Icons\Share.ico" />
+    <Resource Include="Images\Icons\ToolbarMore.png" />
+    <Resource Include="Images\Icons\Burn.ico" />
+    <Resource Include="Images\Icons\Jamendo.ico" />
+    <Resource Include="Images\Icons\DiscSearch.ico" />
+    <Resource Include="Images\Icons\FullView.ico" />
+    <Resource Include="Images\Misc\OverlayLogo.png" />
+    <Content Include="Stoffi.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Plugin API\Plugin API.csproj">
+      <Project>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{F5B6E91A-6A1E-41BA-B27E-EB884CB67969}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

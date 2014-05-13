@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5B6E91A-6A1E-41BA-B27E-EB884CB67969}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stoffi.Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Description>The core of the Stoffi Music Player, responsible for managing
+settings, playing media, handling playlists, and other
+fundamental tasks.
+
+It's written to be portable and used on multiple platforms.</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Libraries\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>Libraries\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Tomers.WPF.Localization">
+      <HintPath>Libraries\Tomers.WPF.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client">
+      <HintPath>Libraries\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions">
+      <HintPath>Libraries\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.YouTube">
+      <HintPath>Libraries\Google.GData.YouTube.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="Bass.Net">
+      <HintPath>Libraries\Bass.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Upgrade.cs" />
+    <Compile Include="Services\Keys.cs" />
+    <Compile Include="Services\OAuth.cs" />
+    <Compile Include="Playlists\Playlists.cs" />
+    <Compile Include="Services\Services.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\Database.cs" />
+    <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\Track.cs" />
+    <Compile Include="Settings\KeyboardShortcut.cs" />
+    <Compile Include="Settings\KeyboardShortcutProfile.cs" />
+    <Compile Include="Settings\EqualizerProfile.cs" />
+    <Compile Include="Services\Echonest.cs" />
+    <Compile Include="Playlists\Playlist.cs" />
+    <Compile Include="Services\Identity.cs" />
+    <Compile Include="Services\Link.cs" />
+    <Compile Include="Plugins\Plugins.cs" />
+    <Compile Include="Plugins\Metadata.cs" />
+    <Compile Include="Plugins\Setting.cs" />
+    <Compile Include="Settings\ExportImport.cs" />
+    <Compile Include="Settings\ListItem.cs" />
+    <Compile Include="Settings\ListColumn.cs" />
+    <Compile Include="Settings\ListConfig.cs" />
+    <Compile Include="Settings\PropertyChangedBase.cs" />
+    <Compile Include="Sources\Sources.cs" />
+    <Compile Include="Sources\Source.cs" />
+    <Compile Include="Playlists\Parsers\PLS.cs" />
+    <Compile Include="Playlists\Parsers\M3U.cs" />
+    <Compile Include="Playlists\Parsers\Base.cs" />
+    <Compile Include="Playlists\Parsers\Cloud.cs" />
+    <Compile Include="Playlists\Parsers\YouTube.cs" />
+    <Compile Include="Playlists\Parsers\XSPF.cs" />
+    <Compile Include="Playlists\Parsers\WPL.cs" />
+    <Compile Include="Playlists\Parsers\WindowsMediaMetafile.cs" />
+    <Compile Include="Playlists\Parsers\B4S.cs" />
+    <Compile Include="Playlists\Parsers\RAM.cs" />
+    <Compile Include="Playlists\Parsers\iTunes.cs" />
+    <Compile Include="Utilities\PListParser.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Sources\Radio\DigitallyImported.cs" />
+    <Compile Include="Sources\Radio\JazzRadio.cs" />
+    <Compile Include="Sources\Radio\RockRadio.cs" />
+    <Compile Include="Sources\Files\Files.cs" />
+    <Compile Include="Sources\Streaming\Jamendo.cs" />
+    <Compile Include="Sources\Files\Location.cs" />
+    <Compile Include="Sources\Radio\Radio.cs" />
+    <Compile Include="Sources\Radio\SkyFM.cs" />
+    <Compile Include="Sources\Radio\SomaFM.cs" />
+    <Compile Include="Sources\Streaming\SoundCloud.cs" />
+    <Compile Include="Sources\Streaming\YouTube.cs" />
+    <Compile Include="Sources\Radio\Base.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Plugin API\Plugin API.csproj">
+      <Project>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</Project>
+      <Name>Plugin API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup />
+</Project>

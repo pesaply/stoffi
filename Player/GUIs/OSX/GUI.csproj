@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43AF86B0-8C9D-46F4-B571-F0A01030454E}</ProjectGuid>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Stoffi.GUI</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>Stoffi</AssemblyName>
+    <Description>The world's next music player.</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseSGen>false</UseSGen>
+    <PlatformTarget>x86</PlatformTarget>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <I18n>
+    </I18n>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="cp -R Resources/Codecs MonoBundle/" workingdir="${TargetDir}/Stoffi.app/Contents/" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseSGen>false</UseSGen>
+    <LinkMode>Full</LinkMode>
+    <PlatformTarget>x86</PlatformTarget>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <I18n>
+    </I18n>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PlatformTarget>x86</PlatformTarget>
+    <LinkMode>Full</LinkMode>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <EnablePackageSigning>true</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
+    <I18n>
+    </I18n>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Bass.Net.OSX">
+      <HintPath>Bass.Net.OSX.dll</HintPath>
+    </Reference>
+    <Reference Include="XamMac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Models\" />
+    <Folder Include="Codecs\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Preferences\" />
+    <Folder Include="Views\Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Navigation.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Views\Preferences\GeneralView.cs" />
+    <Compile Include="Views\Preferences\GeneralViewController.cs" />
+    <Compile Include="Views\Preferences\GeneralView.designer.cs">
+      <DependentUpon>GeneralView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences\PreferencesWindow.cs" />
+    <Compile Include="Views\Preferences\PreferencesWindowController.cs" />
+    <Compile Include="Views\Preferences\PreferencesWindow.designer.cs">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences\IPreferencesTab.cs" />
+    <Compile Include="Views\Preferences\PreferencesToolbarDelegate.cs" />
+    <Compile Include="Views\Preferences\SourcesView.cs" />
+    <Compile Include="Views\Preferences\SourcesViewController.cs" />
+    <Compile Include="Views\Preferences\SourcesView.designer.cs">
+      <DependentUpon>SourcesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisualizerView.cs" />
+    <Compile Include="Views\VisualizerViewController.cs" />
+    <Compile Include="Views\VisualizerView.designer.cs">
+      <DependentUpon>VisualizerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavigationView.cs" />
+    <Compile Include="Views\NavigationViewController.cs" />
+    <Compile Include="Views\NavigationView.designer.cs">
+      <DependentUpon>NavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrackListView.cs" />
+    <Compile Include="Views\TrackListView.designer.cs">
+      <DependentUpon>TrackListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VideoView.cs" />
+    <Compile Include="Views\VideoViewController.cs" />
+    <Compile Include="Views\VideoView.designer.cs">
+      <DependentUpon>VideoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences\ShortcutsView.cs" />
+    <Compile Include="Views\Preferences\ShortcutsViewController.cs" />
+    <Compile Include="Views\Preferences\ShortcutsView.designer.cs">
+      <DependentUpon>ShortcutsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences\CloudView.cs" />
+    <Compile Include="Views\Preferences\CloudViewController.cs" />
+    <Compile Include="Views\Preferences\CloudView.designer.cs">
+      <DependentUpon>CloudView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences\AppsView.cs" />
+    <Compile Include="Views\Preferences\AppsViewController.cs" />
+    <Compile Include="Views\Preferences\AppsView.designer.cs">
+      <DependentUpon>AppsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusBarView.cs" />
+    <Compile Include="Views\StatusBarViewController.cs" />
+    <Compile Include="Views\StatusBarView.designer.cs">
+      <DependentUpon>StatusBarView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\EqualizerWindow.cs" />
+    <Compile Include="Views\Windows\EqualizerWindowController.cs" />
+    <Compile Include="Views\Windows\EqualizerWindow.designer.cs">
+      <DependentUpon>EqualizerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\GeneratorWindow.cs" />
+    <Compile Include="Views\Windows\GeneratorWindowController.cs" />
+    <Compile Include="Views\Windows\GeneratorWindow.designer.cs">
+      <DependentUpon>GeneratorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\InfoWindow.cs" />
+    <Compile Include="Views\Windows\InfoWindowController.cs" />
+    <Compile Include="Views\Windows\InfoWindow.designer.cs">
+      <DependentUpon>InfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrackListViewController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="libbass.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libbass_fx.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\v0.0\Xamarin.Mac.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\blue_on_transparent_256.icns" />
+    <BundleResource Include="Codecs\bass_alac.dll" />
+    <BundleResource Include="Codecs\bass_ape.dll" />
+    <BundleResource Include="Codecs\bass_fx.dll" />
+    <BundleResource Include="Codecs\bass_mpc.dll" />
+    <BundleResource Include="Codecs\bass_ofr.dll" />
+    <BundleResource Include="Codecs\bass_spx.dll" />
+    <BundleResource Include="Codecs\bass_tta.dll" />
+    <BundleResource Include="Codecs\bassflac.dll" />
+    <BundleResource Include="Codecs\basswma.dll" />
+    <BundleResource Include="Codecs\basswv.dll" />
+    <BundleResource Include="Codecs\bass_aac.dll" />
+    <BundleResource Include="Codecs\bass_ac3.dll" />
+    <BundleResource Include="Resources\files.png" />
+    <BundleResource Include="Resources\history.png" />
+    <BundleResource Include="Resources\music.png" />
+    <BundleResource Include="Resources\playlist.png" />
+    <BundleResource Include="Resources\queue.png" />
+    <BundleResource Include="Resources\radio.png" />
+    <BundleResource Include="Resources\soundcloud.png" />
+    <BundleResource Include="Resources\video.png" />
+    <BundleResource Include="Resources\visualizer.png" />
+    <BundleResource Include="Resources\youtube.png" />
+    <BundleResource Include="Resources\next.png" />
+    <BundleResource Include="Resources\next24.png" />
+    <BundleResource Include="Resources\pause.png" />
+    <BundleResource Include="Resources\play.png" />
+    <BundleResource Include="Resources\previous.png" />
+    <BundleResource Include="Resources\previous24.png" />
+    <BundleResource Include="Resources\repeat.png" />
+    <BundleResource Include="Resources\shuffle.png" />
+    <BundleResource Include="Resources\jamendo.png" />
+    <BundleResource Include="Resources\apps.png" />
+    <BundleResource Include="Resources\cloud.png" />
+    <BundleResource Include="Resources\default-album-art.png" />
+    <BundleResource Include="Resources\shortcuts.png" />
+    <BundleResource Include="Resources\sources.png" />
+    <BundleResource Include="Resources\edit.png" />
+    <BundleResource Include="Resources\history_color.png" />
+    <BundleResource Include="Resources\jamendo_color.png" />
+    <BundleResource Include="Resources\radio_color.png" />
+    <BundleResource Include="Resources\soundcloud_color.png" />
+    <BundleResource Include="Resources\visualizer_color.png" />
+    <BundleResource Include="Resources\youtube_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="Views\Preferences\GeneralView.xib" />
+    <InterfaceDefinition Include="Views\Preferences\PreferencesWindow.xib" />
+    <InterfaceDefinition Include="Views\Preferences\SourcesView.xib" />
+    <InterfaceDefinition Include="Views\VisualizerView.xib" />
+    <InterfaceDefinition Include="Views\NavigationView.xib" />
+    <InterfaceDefinition Include="Views\VideoView.xib" />
+    <InterfaceDefinition Include="Views\Preferences\ShortcutsView.xib" />
+    <InterfaceDefinition Include="Views\Preferences\CloudView.xib" />
+    <InterfaceDefinition Include="Views\Preferences\AppsView.xib" />
+    <InterfaceDefinition Include="Views\StatusBarView.xib" />
+    <InterfaceDefinition Include="Views\Windows\EqualizerWindow.xib" />
+    <InterfaceDefinition Include="Views\Windows\GeneratorWindow.xib" />
+    <InterfaceDefinition Include="Views\Windows\InfoWindow.xib" />
+    <InterfaceDefinition Include="Views\TrackListView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{F5B6E91A-6A1E-41BA-B27E-EB884CB67969}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Plugin API\Plugin API.csproj">
+      <Project>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</Project>
+      <Name>Plugin API</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

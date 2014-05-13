@@ -13,20 +13,14 @@
 
 		<div>
 			<%= f.label :password, t("dialog.password") %>
-			<%= f.password_field :plain, :class => "field",
-				:placeholder => t("dialog.password_choose_placeholder"),
-				:onkeyup => "evaluatePassword();", :autofocus => true %>
-			<div class="red note" style="display:none;" id="crack_time">
-				<span id="crack_time_text"></span>
-				<%= image_tag "gfx/tooltip.png", :id => "crack_time_img" %>
-			</div>
-			<%= f.hidden_field :password %>
+			<%= f.password_field :password, :placeholder => t("dialog.password_choose_placeholder"),
+				:class => "field", :autofocus => true %>
 		</div>
 
 		<div>
 			<%= f.label :password_confirmation, t("dialog.password_confirm") %>
-			<%= f.password_field :plain_confirmation, :class => "field", :placeholder => t("dialog.password_confirm_placeholder") %>
-			<%= f.hidden_field :password_confirmation %>
+			<%= f.password_field :password_confirmation, :placeholder => t("dialog.password_confirm_placeholder"),
+				:class => "field", :onkeydown => "return submitIfEnter(this,event);" %>
 		</div>
 
 		<div class="bottom">
@@ -40,30 +34,3 @@
 		</div>
 	<% end %>
 </div>
-
-<script>
-<%
-bots = 20000
-speed = 1000000000
-l = I18n.locale
-l = :en if l == :us
-bots = number_with_delimiter(bots, :locale => l)
-speed = number_to_human(speed, :locale => l).downcase
-%>
-$(function()
-{
-	$(document).ready(function()
-	{
-		$("#crack_time_img").qtip({
-			content: "<%=t "notice.password.explanation", :botsize => bots, :speed => speed %>",
-			show: "mouseover",
-			hide: "mouseout",
-			style:
-			{
-				name: 'light',
-				tip: true
-			}
-		});
-	});
-});
-</script>

@@ -1,0 +1,714 @@
+﻿<!--ViewDetails.xaml
+	
+	A modified ListView that looks extremely sexy.
+	
+	Features:
+	   Drag-n-Drop
+	   Column sort
+	   Column toggle
+	   Icons
+	   Strikethrough
+	   Active items
+	   Explorer-like look
+
+	It also sports a convenient storage structure for use to
+	import and export the configuration in order to allow for
+	easy saving of the configuration between different sessions.
+	
+	= = = = = = = = = =
+	
+	Copyright 2013 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<ListView x:Class="Stoffi.Player.GUI.Controls.ViewDetails"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+          xmlns:Stoffi="clr-namespace:Stoffi.Player.GUI.Controls"
+          mc:Ignorable="d"
+          d:DesignHeight="300" d:DesignWidth="300"
+		  ScrollViewer.ScrollChanged="ScrollViewer_ScrollChanged"
+		  Loaded="ListView_Loaded">
+	<ListView.Resources>
+
+		<ItemsPanelTemplate x:Key="WrapTemplate">
+			<Stoffi:VirtualizingWrapPanel IsItemsHost="True" x:Name="WrapPanel" Margin="0,10,0,0"
+										  Orientation="{Binding Path=WrapOrientation, RelativeSource={RelativeSource AncestorType={x:Type Stoffi:ViewDetails}}}"/>
+		</ItemsPanelTemplate>
+		
+		<Stoffi:GroupNameConverter x:Key="groupNameConverter"/>
+
+		<!-- Aero styles -->
+		<Style x:Key="HiddenHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+			<Setter Property="Visibility" Value="Collapsed"/>
+		</Style>
+		<Style x:Key="AeroContentStyle" TargetType="{x:Type ListViewItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Margin" Value="0,0,0,-1"/>
+			<Setter Property="Padding" Value="5,0,5,0"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListViewItem}">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="17,0,0,0" Padding="0"
+                                Background="{TemplateBinding Background}" CornerRadius="2" SnapsToDevicePixels="True" VerticalAlignment="Stretch">
+							<Border x:Name="InnerBorder" BorderThickness="1" CornerRadius="1" VerticalAlignment="Stretch" Margin="0" Padding="0" SnapsToDevicePixels="True">
+								<Border x:Name="Separator" BorderBrush="LightGray" BorderThickness="0,0,0,1" Margin="0,0,0,-2">
+									<Grid VerticalAlignment="Stretch" Margin="0" SnapsToDevicePixels="True">
+										<Grid.RowDefinitions>
+											<RowDefinition MaxHeight="11"/>
+											<RowDefinition/>
+										</Grid.RowDefinitions>
+
+										<!-- Presenter -->
+										<GridViewRowPresenter Grid.RowSpan="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="-17,0,0,0" />
+
+										<!-- Strike -->
+										<Border Background="Black" VerticalAlignment="Bottom" Height="1" SnapsToDevicePixels="True" x:Name="Strikethrough" Visibility="Collapsed"/>
+
+									</Grid>
+								</Border>
+							</Border>
+						</Border>
+						<ControlTemplate.Triggers>
+							<DataTrigger Binding="{Binding Path=Strike}" Value="True">
+								<Setter TargetName="Strikethrough" Property="Visibility" Value="Visible"/>
+							</DataTrigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fffafbfd" Offset="0"/>
+											<GradientStop Color="#ffebf4fd" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#ffb8d6fb"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#ffb8d6fb"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFebf4fe" Offset="0"/>
+											<GradientStop Color="#FFcfe4fe" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF84acdd"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#FF84acdd"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="Selector.IsSelectionActive" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fff8f8f8" Offset="0"/>
+											<GradientStop Color="#ffe5e5e5" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FFd9d9d9"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#FFd9d9d9"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="IsMouseOver" Value="true"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbebfb" Offset="0"/>
+											<GradientStop Color="#FFc1dcfa" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7da2ce"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#FF7da2ce"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#77dbfbeb" Offset="0"/>
+											<GradientStop Color="#77c1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#777dcea2"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#777dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsMouseOver}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#AAdbfbeb" Offset="0"/>
+											<GradientStop Color="#AAc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#AA7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#AA7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsSelected}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbfbeb" Offset="0"/>
+											<GradientStop Color="#FFc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="Separator" Value="#FF7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="AeroRowStyle" TargetType="{x:Type ListViewItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Margin" Value="0,0,0,0"/>
+			<Setter Property="Padding" Value="5,0,5,0"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListViewItem}">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="17,0,0,0" Padding="0"
+                                Background="{TemplateBinding Background}" CornerRadius="2" SnapsToDevicePixels="True" VerticalAlignment="Stretch">
+							<Border x:Name="InnerBorder" BorderThickness="1" CornerRadius="1" VerticalAlignment="Stretch" Margin="0" Padding="0" SnapsToDevicePixels="True">
+								<Grid VerticalAlignment="Stretch" Margin="0" SnapsToDevicePixels="True">
+									<Grid.RowDefinitions>
+										<RowDefinition MaxHeight="11"/>
+										<RowDefinition/>
+									</Grid.RowDefinitions>
+
+									<!-- Presenter -->
+									<GridViewRowPresenter Grid.RowSpan="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="-17,0,0,0" />
+
+									<!-- Strike -->
+									<Border Background="Black" VerticalAlignment="Bottom" Height="1" SnapsToDevicePixels="True" x:Name="Strikethrough" Visibility="Collapsed"/>
+
+								</Grid>
+							</Border>
+						</Border>
+						<ControlTemplate.Triggers>
+							<DataTrigger Binding="{Binding Path=Strike}" Value="True">
+								<Setter TargetName="Strikethrough" Property="Visibility" Value="Visible"/>
+							</DataTrigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fffafbfd" Offset="0"/>
+											<GradientStop Color="#ffebf4fd" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#ffb8d6fb"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFebf4fe" Offset="0"/>
+											<GradientStop Color="#FFcfe4fe" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF84acdd"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="Selector.IsSelectionActive" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fff8f8f8" Offset="0"/>
+											<GradientStop Color="#ffe5e5e5" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FFd9d9d9"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="IsMouseOver" Value="true"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbebfb" Offset="0"/>
+											<GradientStop Color="#FFc1dcfa" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7da2ce"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#77dbfbeb" Offset="0"/>
+											<GradientStop Color="#77c1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#777dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsMouseOver}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#AAdbfbeb" Offset="0"/>
+											<GradientStop Color="#AAc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#AA7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsSelected}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbfbeb" Offset="0"/>
+											<GradientStop Color="#FFc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="AeroIconStyle" TargetType="{x:Type ListViewItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Margin" Value="0,0,10,0"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListViewItem}">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="0" Padding="0"
+                                Background="{TemplateBinding Background}" CornerRadius="2" SnapsToDevicePixels="True" VerticalAlignment="Top">
+							<Border x:Name="InnerBorder" BorderThickness="1" CornerRadius="1" VerticalAlignment="Top" Margin="0" SnapsToDevicePixels="True"
+									Padding="0">
+								<GridViewRowPresenter Grid.RowSpan="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0" />
+							</Border>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fffafbfd" Offset="0"/>
+											<GradientStop Color="#ffebf4fd" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#ffb8d6fb"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFebf4fe" Offset="0"/>
+											<GradientStop Color="#FFcfe4fe" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF84acdd"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="Selector.IsSelectionActive" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#fff8f8f8" Offset="0"/>
+											<GradientStop Color="#ffe5e5e5" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FFd9d9d9"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="IsMouseOver" Value="true"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbebfb" Offset="0"/>
+											<GradientStop Color="#FFc1dcfa" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7da2ce"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#77dbfbeb" Offset="0"/>
+											<GradientStop Color="#77c1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#777dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsMouseOver}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#AAdbfbeb" Offset="0"/>
+											<GradientStop Color="#AAc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#AA7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsSelected}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background">
+									<Setter.Value>
+										<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+											<GradientStop Color="#FFdbfbeb" Offset="0"/>
+											<GradientStop Color="#FFc1fadc" Offset="1"/>
+										</LinearGradientBrush>
+									</Setter.Value>
+								</Setter>
+								<Setter Property="BorderBrush" Value="#FF7dcea2"/>
+								<Setter Property="BorderBrush" TargetName="InnerBorder" Value="#80FFFFFF"/>
+							</MultiDataTrigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="AeroHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+			<Setter Property="Background" Value="{x:Null}"/>
+			<Setter Property="Foreground" Value="#FF5A6779"/>
+			<Setter Property="BorderBrush" Value="{x:Null}"/>
+			<Setter Property="Margin" Value="0,0,0,10"/>
+		</Style>
+		<Style x:Key="AeroHeaderThumbStyle" TargetType="{x:Type Thumb}">
+			<Setter Property="Canvas.Right" Value="-8"/>
+			<Setter Property="Canvas.Top" Value="-1"/>
+			<Setter Property="Width" Value="18"/>
+			<Setter Property="Height" Value="{Binding ActualHeight, RelativeSource={RelativeSource TemplatedParent}}"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Thumb}">
+						<Border Background="#00F90000" Padding="0" BorderThickness="1">
+							<Rectangle x:Name="HeaderThumb" HorizontalAlignment="Center" Width="1">
+								<Rectangle.Fill>
+									<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+										<GradientStop Color="#d6e5f5" Offset="0.0" />
+										<GradientStop Color="White" Offset="1.0" />
+									</LinearGradientBrush>
+								</Rectangle.Fill>
+							</Rectangle>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="AeroHeaderThumbHoverStyle" TargetType="{x:Type Thumb}">
+			<Setter Property="Canvas.Right" Value="-8"/>
+			<Setter Property="Canvas.Top" Value="-1"/>
+			<Setter Property="Width" Value="18"/>
+			<Setter Property="Height" Value="{Binding ActualHeight, RelativeSource={RelativeSource TemplatedParent}}"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Thumb}">
+						<Border Background="#00F90000" Padding="0" BorderThickness="1">
+							<Rectangle x:Name="HeaderThumb" Fill="#FFe2e8f1" HorizontalAlignment="Center" Width="1"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<LinearGradientBrush x:Key="AeroListItemActiveFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#33dbfbdd" Offset="0"/>
+			<GradientStop Color="#33c1fcc9" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AeroListItemActiveHoverFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#88dbfbdd" Offset="0"/>
+			<GradientStop Color="#88c1fcc9" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AeroListItemActiveSelectedFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#ffdbfbdd" Offset="0"/>
+			<GradientStop Color="#ffc1fcc9" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AeroListItemSelectedFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFdbebfb" Offset="0"/>
+			<GradientStop Color="#FFc1dcfa" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AeroListItemSelectedInactiveFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#fff8f8f8" Offset="0"/>
+			<GradientStop Color="#ffe5e5e5" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="AeroListItemSelectedHoverFill" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#77EAF9FF" Offset="0"/>
+			<GradientStop Color="#77C9EDFD" Offset="1"/>
+		</LinearGradientBrush>
+		<ControlTemplate x:Key="AeroHeaderTemplate" TargetType="{x:Type GridViewColumnHeader}">
+			<Grid>
+				<Border BorderBrush="Transparent" Background="Transparent" BorderThickness="1,0,1,1" x:Name="OuterBorder" SnapsToDevicePixels="True">
+					<Border BorderBrush="Transparent" BorderThickness="0,1,0,0" Background="Transparent" x:Name="InnerBorder" 
+						Margin="1,0,1,1" Padding="0" SnapsToDevicePixels="True">
+						<ContentPresenter x:Name="HeaderContent" 
+										  Margin="0"
+										  Content="{TemplateBinding Content}" 
+										  ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+										  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+					</Border>
+				</Border>
+				<Canvas>
+					<Thumb x:Name="PART_HeaderGripper" Style="{StaticResource AeroHeaderThumbStyle}"/>
+				</Canvas>
+			</Grid>
+			<ControlTemplate.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter TargetName="OuterBorder" Property="BorderBrush" Value="#e2e8f1"/>
+					<Setter TargetName="InnerBorder" Property="Background" Value="#f5f7fa"/>
+					<Setter TargetName="InnerBorder" Property="BorderBrush" Value="#f5f7fa"/>
+					<Setter TargetName="PART_HeaderGripper" Property="Style" Value="{StaticResource AeroHeaderThumbHoverStyle}"/>
+				</Trigger>
+			</ControlTemplate.Triggers>
+		</ControlTemplate>
+		<GroupStyle x:Key="AeroGroupStyle">
+			<GroupStyle.HeaderTemplate>
+				<DataTemplate>
+					<Border BorderBrush="Transparent" BorderThickness="1" Margin="0 3 0 0" Padding="10 5" Background="Transparent" 
+							CornerRadius="2" SnapsToDevicePixels="True" VerticalAlignment="Stretch" x:Name="OuterBorder">
+						<Border x:Name="InnerBorder" BorderThickness="1" CornerRadius="1" VerticalAlignment="Stretch" Margin="0" Padding="0" SnapsToDevicePixels="True">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<TextBlock Grid.Column="0" FontSize="14" Text="{Binding Name, Converter={StaticResource groupNameConverter}}" Foreground="#1E3287"/>
+								<Separator Grid.Column="1" Background="#E2E2E2" Height="1" HorizontalAlignment="Stretch" Margin="5 0 5 0" SnapsToDevicePixels="True" />
+							</Grid>
+						</Border>
+					</Border>
+					<DataTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter TargetName="OuterBorder" Property="Background">
+								<Setter.Value>
+									<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+										<GradientStop Color="#fffafbfd" Offset="0"/>
+										<GradientStop Color="#ffebf4fd" Offset="1"/>
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter TargetName="OuterBorder" Property="BorderBrush" Value="#ffb8d6fa"/>
+							<Setter TargetName="InnerBorder" Property="BorderBrush" Value="#80FFFFFF"/>
+						</Trigger>
+					</DataTemplate.Triggers>
+				</DataTemplate>
+			</GroupStyle.HeaderTemplate>
+		</GroupStyle>
+
+		<!-- Classic styles -->
+		<Style x:Key="ClassicRowStyle" TargetType="{x:Type ListViewItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Margin" Value="0,0,0,1"/>
+			<Setter Property="Padding" Value="5,5,5,5"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListViewItem}">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="17,0,0,0" Padding="0"
+                                Background="{TemplateBinding Background}" CornerRadius="0" SnapsToDevicePixels="True" VerticalAlignment="Stretch">
+							<Border x:Name="InnerBorder" BorderThickness="1" CornerRadius="0" VerticalAlignment="Stretch" Margin="0" Padding="0" SnapsToDevicePixels="True">
+								<Grid VerticalAlignment="Stretch" Margin="0" SnapsToDevicePixels="True">
+									<Grid.RowDefinitions>
+										<RowDefinition MaxHeight="11"/>
+										<RowDefinition/>
+									</Grid.RowDefinitions>
+
+									<!-- Presenter -->
+									<GridViewRowPresenter Grid.RowSpan="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="-17,0,0,0"/>
+
+									<!-- Strike -->
+									<Border Background="Black" VerticalAlignment="Bottom" Height="1" SnapsToDevicePixels="True" x:Name="Strikethrough" Visibility="Collapsed"/>
+
+								</Grid>
+							</Border>
+						</Border>
+						<ControlTemplate.Triggers>
+							<DataTrigger Binding="{Binding Path=Strike}" Value="True">
+								<Setter TargetName="Strikethrough" Property="Visibility" Value="Visible"/>
+							</DataTrigger>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background" Value="MidnightBlue" />
+								<Setter TargetName="Strikethrough" Property="Background" Value="White" />
+								<Setter Property="Foreground" Value="White" />
+							</Trigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background" Value="DarkSeaGreen" />
+								<Setter TargetName="Strikethrough" Property="Background" Value="White" />
+							</MultiDataTrigger>
+							<MultiDataTrigger>
+								<MultiDataTrigger.Conditions>
+									<Condition Binding="{Binding
+										RelativeSource={RelativeSource Mode=Self},
+										Path=IsSelected}" Value="True"/>
+									<Condition Binding="{Binding Path=IsActive}" Value="True"/>
+								</MultiDataTrigger.Conditions>
+								<Setter Property="Background" Value="SeaGreen" />
+								<Setter TargetName="Strikethrough" Property="Background" Value="White" />
+								<Setter Property="Foreground" Value="White" />
+							</MultiDataTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ClassicHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+		</Style>
+		<Style x:Key="ClassicStyle" TargetType="{x:Type ListView}">
+			<Setter Property="BorderBrush" Value="{x:Null}"/>
+			<Setter Property="BorderThickness" Value="0"/>
+		</Style>
+
+		<!-- Data templates -->
+		<DataTemplate x:Key="HeaderTemplateArrowUp">
+			<DockPanel>
+				<Image Source="/Images/Misc/SortArrowUp.png" DockPanel.Dock="Top" Width="7" Height="4"/>
+				<TextBlock Text="{Binding}" DockPanel.Dock="Top" Margin="5,0,3,0" TextTrimming="CharacterEllipsis"/>
+			</DockPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="HeaderTemplateArrowDown">
+			<DockPanel>
+				<Image Source="/Images/Misc/SortArrowDown.png" DockPanel.Dock="Top" Width="7" Height="4"/>
+				<TextBlock Text="{Binding}" DockPanel.Dock="Top" Margin="5,0,3,0" TextTrimming="CharacterEllipsis"/>
+			</DockPanel>
+		</DataTemplate>
+		<DataTemplate x:Key="HeaderTemplate">
+			<TextBlock Text="{Binding}" Margin="5,4,3,0" TextTrimming="CharacterEllipsis"/>
+		</DataTemplate>
+
+	</ListView.Resources>
+</ListView>

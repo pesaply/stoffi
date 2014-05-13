@@ -1,0 +1,17 @@
+﻿{
+	"title":
+	{
+		"message": "Stoffi Chrometillägg",
+		"description": "Extension name."
+	},
+	"description":
+	{
+		"message": "Ett hjälptillägg för Stoffi.",
+		"description": "Description of the extension."
+	},
+	"open":
+	{
+		"message": "Öppna i Stoffi",
+		"description": "Title for list of links to open in Stoffi."
+	}
+}

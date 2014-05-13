@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+            <connections>
+                <outlet property="ContentContainer" destination="54" id="448"/>
+                <outlet property="Navigation" destination="53" id="446"/>
+                <outlet property="PlayPauseButton" destination="83" id="280"/>
+                <outlet property="Repeat" destination="118" id="293"/>
+                <outlet property="Search" destination="41" id="297"/>
+                <outlet property="Shuffle" destination="121" id="294"/>
+                <outlet property="StatusBar" destination="18" id="460"/>
+                <outlet property="TrackInfoMinus" destination="163" id="278"/>
+                <outlet property="TrackInfoPlus" destination="161" id="277"/>
+                <outlet property="TrackInfoSeek" destination="165" id="279"/>
+                <outlet property="TrackList" destination="449" id="450"/>
+                <outlet property="VerticalSplit" destination="52" id="447"/>
+                <outlet property="Video" destination="451" id="452"/>
+                <outlet property="Visualizer" destination="416" id="442"/>
+                <outlet property="Volume" destination="44" id="283"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Stoffi Music Player" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="2" customClass="MainWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <rect key="contentRect" x="256" y="209" width="900" height="450"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
+            <value key="minSize" type="size" width="800" height="400"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="900" height="450"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView id="18" customClass="StatusBarView">
+                        <rect key="frame" x="0.0" y="0.0" width="900" height="24"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </customView>
+                    <splitView dividerStyle="thin" vertical="YES" id="52">
+                        <rect key="frame" x="0.0" y="24" width="900" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView id="53" customClass="NavigationView">
+                                <rect key="frame" x="0.0" y="0.0" width="176" height="426"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </customView>
+                            <customView wantsLayer="YES" focusRingType="none" id="54">
+                                <rect key="frame" x="177" y="0.0" width="723" height="426"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <customView id="449" customClass="TrackListView">
+                                        <rect key="frame" x="0.0" y="0.0" width="723" height="426"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </customView>
+                                    <customView id="451" customClass="VideoView">
+                                        <rect key="frame" x="0.0" y="0.0" width="723" height="426"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </customView>
+                                    <customView id="416" customClass="VisualizerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="723" height="426"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </customView>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="1"/>
+                            <real value="490"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="0CC6E3BD-DB83-433F-B541-7AD0F75EFB12" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="20">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="348A4152-F364-482E-9A48-C3B807DDBE37" label="Search" paletteLabel="Search" id="43">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="30" height="22"/>
+                        <size key="maxSize" width="178" height="22"/>
+                        <searchField key="view" verticalHuggingPriority="750" id="41">
+                            <rect key="frame" x="0.0" y="14" width="178" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="" usesSingleLineMode="YES" bezelStyle="round" id="42">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <action selector="SearchEdit:" target="-2" id="298"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="4B106591-E698-41BE-A2CD-A3BDF376C090" label="Volume" paletteLabel="Volume" id="46">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="90" height="21"/>
+                        <size key="maxSize" width="134" height="21"/>
+                        <slider key="view" verticalHuggingPriority="750" id="44">
+                            <rect key="frame" x="0.0" y="14" width="134" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="45"/>
+                            <connections>
+                                <action selector="VolumeChange:" target="-2" id="282"/>
+                            </connections>
+                        </slider>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EF29F661-117F-4824-8CE3-A28E1D53AFC0" label="Previous" paletteLabel="Previous" image="previous" id="82">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="25"/>
+                        <size key="maxSize" width="35" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="80">
+                            <rect key="frame" x="9" y="14" width="35" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="previous" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="81">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="PreviousClick:" target="-2" id="284"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E656817A-C8FA-4C59-9C1A-F80A4522FF1D" label="Play" paletteLabel="Play" image="play" id="85">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="25"/>
+                        <size key="maxSize" width="35" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="83">
+                            <rect key="frame" x="0.0" y="14" width="35" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="play" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="84">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="PlayPauseClick:" target="-2" id="243"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="A8B6F286-0B5B-4E8E-9F67-CFA72A8ECC51" label="Next" paletteLabel="Next" image="next" id="88">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="25"/>
+                        <size key="maxSize" width="35" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="86">
+                            <rect key="frame" x="0.0" y="14" width="35" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="next" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="87">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="NextClick:" target="-2" id="285"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="32A31E46-53F7-4DAE-A969-EA59AD5C4671" label="Repeat" paletteLabel="Repeat" image="repeat" id="120">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="25"/>
+                        <size key="maxSize" width="35" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="118">
+                            <rect key="frame" x="5" y="14" width="35" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="repeat" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="119">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="RepeatClick:" target="-2" id="295"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="5EE53A5C-8B90-46A6-A562-63A192A15064" label="Shuffle" paletteLabel="Shuffle" image="shuffle" id="123">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="35" height="25"/>
+                        <size key="maxSize" width="35" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="121">
+                            <rect key="frame" x="5" y="14" width="35" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="shuffle" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="122">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="ShuffleClick:" target="-2" id="296"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="52FA1B7A-7CB8-481B-ABCA-6C8B28792AAE" label="Track info" paletteLabel="Track info" tag="-1" id="158">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="300" height="22"/>
+                        <size key="maxSize" width="90000" height="119"/>
+                        <box key="view" autoresizesSubviews="NO" transparent="YES" title="Box" boxType="custom" titlePosition="aboveTop" id="157">
+                            <rect key="frame" x="0.0" y="14" width="344" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view key="contentView">
+                                <rect key="frame" x="1" y="1" width="342" height="20"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jCs-Qb-La7">
+                                        <rect key="frame" x="2" y="0.0" width="338" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" id="XFi-0Y-Jpn">
+                                            <font key="font" metaFont="miniSystem"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" id="161">
+                                        <rect key="frame" x="7" y="6" width="27" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="00:00" id="162">
+                                            <font key="font" metaFont="miniSystem"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" id="163">
+                                        <rect key="frame" x="307" y="6" width="27" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="00:00" id="164">
+                                            <font key="font" metaFont="miniSystem"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <slider verticalHuggingPriority="750" id="165">
+                                        <rect key="frame" x="38" y="5" width="265" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                        <sliderCell key="cell" controlSize="mini" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="166"/>
+                                        <connections>
+                                            <action selector="SeekChange:" target="-2" id="281"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </view>
+                            <color key="borderColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                            <color key="fillColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </box>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="167"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="168"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="82"/>
+                    <toolbarItem reference="85"/>
+                    <toolbarItem reference="88"/>
+                    <toolbarItem reference="46"/>
+                    <toolbarItem reference="158"/>
+                    <toolbarItem reference="120"/>
+                    <toolbarItem reference="123"/>
+                    <toolbarItem reference="43"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <contentBorderThickness minY="24"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="next" width="16" height="16"/>
+        <image name="play" width="32" height="32"/>
+        <image name="previous" width="16" height="16"/>
+        <image name="repeat" width="16" height="16"/>
+        <image name="shuffle" width="16" height="16"/>
+    </resources>
+</document>

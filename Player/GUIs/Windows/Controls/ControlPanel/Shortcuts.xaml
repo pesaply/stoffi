@@ -1,0 +1,73 @@
+﻿<!--Shortcuts.xaml
+	
+	The "Shortcuts" screen inside the "Control Panel".
+    It shows the shortcut profiles and keyboard shortcuts
+	for navigating Stoffi.
+	
+	= = = = = = = = = =
+	
+	Copyright 2013 Simplare
+	
+	This code is part of the Stoffi Music Player Project.
+	Visit our website at: stoffiplayer.com
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version
+	3 of the License, or (at your option) any later version.
+	
+	See stoffiplayer.com/license for more information.
+	-->
+<ScrollViewer x:Class="Stoffi.Player.GUI.Controls.ControlPanel.Shortcuts"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:Stoffi="clr-namespace:Stoffi.Player.GUI.Controls"
+              mc:Ignorable="d" 
+              d:DesignHeight="500" d:DesignWidth="800"
+              Loaded="Shortcuts_Loaded"
+			  PreviewKeyDown="Shortcuts_PreviewKeyDown"
+			  PreviewKeyUp="Shortcuts_PreviewKeyUp">
+	<DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True">
+		<TextBlock DockPanel.Dock="Top" 
+				   Style="{DynamicResource AeroControlPanelTitleStyle}" 
+				   Name="Title" 
+				   loc:Translate.Uid="ShortcutsTitle" 
+				   Text="{loc:Translate Text}"/>
+
+		<!-- PROFILES -->
+		<DockPanel DockPanel.Dock="Top" Margin="25 15 0 5" LastChildFill="True">
+			<TextBlock loc:Translate.Uid="ShortcutsProfileTitle" Text="{loc:Translate Text}" DockPanel.Dock="Left"/>
+			<Separator Background="#CCCCCC" Height="2" Margin="5 0 5 0" SnapsToDevicePixels="True" />
+		</DockPanel>
+		<TextBlock Margin="50 5 0 5" TextWrapping="Wrap" DockPanel.Dock="Top" loc:Translate.Uid="ShortcutsProfileText" Text="{loc:Translate Text}"/>
+		<Grid DockPanel.Dock="Top" Margin="50 5 0 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="170"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Column="0" Grid.Row="0" loc:Translate.Uid="ShortcutsProfileSelect" Text="{loc:Translate Text}" VerticalAlignment="Center"/>
+
+			<ComboBox Grid.Column="1" Grid.Row="0" SelectedIndex="0" HorizontalAlignment="Left" x:Name="ShortcutProfile" Margin="0 5 15 5" SelectionChanged="ShortcutProfile_SelectionChanged">
+			</ComboBox>
+
+			<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+				<Button x:Name="Create" MinWidth="100" HorizontalAlignment="Left" Margin="0 5" loc:Translate.Uid="ShortcutsProfileNew" Content="{loc:Translate Content}" Click="Create_Click"/>
+				<Button x:Name="Rename" MinWidth="100" HorizontalAlignment="Left" Margin="10 5" loc:Translate.Uid="ShortcutsProfileRename" Content="{loc:Translate Content}" Click="Rename_Click"/>
+				<Button x:Name="Delete" MinWidth="100" HorizontalAlignment="Left" Margin="0 5" loc:Translate.Uid="ShortcutsProfileDelete" Content="{loc:Translate Content}" Click="Delete_Click"/>
+			</StackPanel>
+		</Grid>
+
+		<DockPanel Name="ShortcutPanel" DockPanel.Dock="Top">
+			<!-- here all shortcuts will be inserted at runtime -->
+		</DockPanel>
+
+	</DockPanel>
+</ScrollViewer>

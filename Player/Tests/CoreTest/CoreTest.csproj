@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE502F07-A1A3-4530-A428-1BAD9652B206}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Stoffi.Tests.Core</RootNamespace>
+    <AssemblyName>CoreTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Core\Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Utilities\UtilitiesTest.cs" />
+    <Compile Include="Playlists\PlaylistTest.cs" />
+    <Compile Include="Media\TrackTest.cs" />
+    <Compile Include="Playlists\Parsers\PLSTest.cs" />
+    <Compile Include="Playlists\Parsers\M3UTest.cs" />
+    <Compile Include="Playlists\Parsers\B4STest.cs" />
+    <Compile Include="Playlists\Parsers\XSPFTest.cs" />
+    <Compile Include="Playlists\Parsers\YouTubeTest.cs" />
+    <Compile Include="Playlists\Parsers\WPLTest.cs" />
+    <Compile Include="Playlists\Parsers\WindowsMediaMetafileTest.cs" />
+    <Compile Include="Playlists\Parsers\RAMTest.cs" />
+    <Compile Include="Playlists\Parsers\iTunesTest.cs" />
+    <Compile Include="Playlists\Parsers\CloudTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{F5B6E91A-6A1E-41BA-B27E-EB884CB67969}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Plugin API\Plugin API.csproj">
+      <Project>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</Project>
+      <Name>Plugin API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Media\" />
+    <Folder Include="Playlists\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Playlists\Parsers\" />
+  </ItemGroup>
+</Project>

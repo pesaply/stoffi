@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:Stoffi="clr-namespace:Stoffi.Player.GUI">
+	<Stoffi:OpenFileAddDescriptionConverter x:Key="OpenFileAddDescriptionConverter"/>
+	<Stoffi:OpenFilePlayDescriptionConverter x:Key="OpenFilePlayDescriptionConverter"/>
+	<Stoffi:UpgradePolicyDescriptionConverter x:Key="UpgradePolicyDescriptionConverter"/>
+	<Stoffi:SearchPolicyDescriptionConverter x:Key="SearchPolicyDescriptionConverter"/>
+</ResourceDictionary>

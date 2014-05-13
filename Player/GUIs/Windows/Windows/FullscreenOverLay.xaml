@@ -1,0 +1,77 @@
+﻿<Window x:Class="Stoffi.Player.GUI.Windows.FullscreenOverLay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		mc:Ignorable="d"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:s="clr-namespace:Stoffi.Player.GUI.Controls"
+        Title="FullscreenOverLay"
+		AllowsTransparency="True"
+		Topmost="True"
+		ShowInTaskbar="False"
+		WindowState="Maximized"
+		WindowStyle="None"
+		Background="Transparent"
+		Loaded="Window_Loaded"
+		MouseLeave="Window_MouseLeave"
+		MouseEnter="Window_MouseEnter"
+		d:DesignHeight="300" d:DesignWidth="700">
+	<Window.Resources>
+		<SolidColorBrush x:Key="OverlayBackground" Color="#80000000"/>
+	</Window.Resources>
+    <DockPanel LastChildFill="False">
+		<Border Background="{DynamicResource OverlayBackground}" MinWidth="100" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Name="TopOverlay">
+			<Border.Triggers>
+			</Border.Triggers>
+			<DockPanel LastChildFill="False">
+				<StackPanel Orientation="Horizontal" Name="TrackInfo">
+					<Image Source="..\Images\AlbumArt\Default.jpg" Name="AlbumArt" Width="46" Height="46" Margin="20,0,0,0"/>
+					<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+						<TextBlock Name="Title" loc:Translate.Uid="PlaybackEmptyDescription" Text="{loc:Translate Text}" VerticalAlignment="Bottom" Margin="15,0" FontSize="20" DockPanel.Dock="Left" Foreground="White"/>
+						<TextBlock Name="Artist" loc:Translate.Uid="PlaybackEmpty" Text="{loc:Translate Text}" VerticalAlignment="Bottom" Margin="0,0,0,1" FontSize="15" DockPanel.Dock="Left" Foreground="LightGray"/>
+					</StackPanel>
+				</StackPanel>
+				<Image Source="..\Images\Misc\OverlayLogo.png" Width="32" DockPanel.Dock="Right" Margin="20,15" SnapsToDevicePixels="True" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+			</DockPanel>
+		</Border>
+		<StackPanel Background="#80000000" DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Name="BottomOverlay">
+			<DockPanel HorizontalAlignment="Stretch" Margin="20,10">
+				<Label Content="N/A" Padding="0" Name="TimePlus" DockPanel.Dock="Left" FontSize="12" VerticalAlignment="Center" Foreground="LightGray"/>
+				<Label Content="N/A" Padding="0" Name="TimeMinus" DockPanel.Dock="Right" FontSize="12" VerticalAlignment="Center" Foreground="LightGray"/>
+				<s:EnhancedSlider x:Name="Seek" HorizontalAlignment="Stretch" VerticalAlignment="Center" Value="0" Height="10" Margin="10 0" SecondValue="0" Maximum="2000" IsMoveToPointEnabled="True" IsFlat="True"/>
+			</DockPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+				<Slider Margin="10,0,10,0" Width="150" Style="{DynamicResource VolumeSlideStyle}" VerticalAlignment="Center"
+					x:Name="Volume" Maximum="100" MouseWheel="Volume_MouseWheel" IsMoveToPointEnabled="True" LargeChange="5" SmallChange="1" Value="50"/>
+				<DockPanel DockPanel.Dock="Left" Margin="30,0">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<Button Style="{StaticResource PreviousButtonStyle}" VerticalAlignment="Center" Name="Previous" Click="Previous_Click"/>
+						<Button Style="{StaticResource PlayButtonStyle}" VerticalAlignment="Center" Name="PlayPause" Click="PlayPause_Click"/>
+						<Button Style="{StaticResource NextButtonStyle}" VerticalAlignment="Center" Name="Next" Click="Next_Click"/>
+					</StackPanel>
+				</DockPanel>
+				<DockPanel Margin="0" Width="150">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+						<Button Style="{StaticResource RepeatGrayButtonStyle}" Margin="0" Name="Repeat" Click="Repeat_Click"/>
+						<Button Style="{StaticResource ShuffleGrayButtonStyle}" Margin="0" Name="Shuffle" Click="Shuffle_Click"/>
+						<Image Source="..\Images\Icons\FullView.ico" VerticalAlignment="Center" Width="16px" Height="16px" Margin="30,2,0,0" Name="Exit"/>
+						<Image Source="..\Images\Icons\Settings.ico" VerticalAlignment="Center" Width="16px" Height="16px" Margin="15,0" Name="Quality" MouseLeftButtonUp="Quality_MouseLeftButtonUp">
+							<Image.ContextMenu>
+								<ContextMenu Name="QualityMenu" Opened="QualityMenu_Opened" Closed="QualityMenu_Closed">
+									<MenuItem IsCheckable="True" Tag="default" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="highres" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="hd1080" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="hd720" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="large" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="medium" Checked="Quality_Checked"/>
+									<MenuItem IsCheckable="True" Tag="small" Checked="Quality_Checked"/>
+								</ContextMenu>
+							</Image.ContextMenu>
+						</Image>
+					</StackPanel>
+				</DockPanel>
+			</StackPanel>
+		</StackPanel>
+	</DockPanel>
+</Window>
