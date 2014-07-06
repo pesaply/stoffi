@@ -121,7 +121,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Settings Migrator\SettingsMigrator.csproj">
+    <ProjectReference Include="..\SettingsMigrator\SettingsMigrator.csproj">
       <Project>{B803CA82-CCD3-49DD-BC08-A525EFFF0C18}</Project>
       <Name>SettingsMigrator</Name>
     </ProjectReference>
