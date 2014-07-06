@@ -344,14 +344,18 @@ class ApplicationController < ActionController::Base
 	
 	# Get locale code from reading the "Accept-Language" header
 	def extract_locale_from_accept_language_header
-		l = request.env['HTTP_ACCEPT_LANGUAGE']
-		if l
-			parsed_locale = l.scan(/^[a-z]{2}[-_]([a-zA-Z]{2})/).first.first.to_s.downcase
-			if parsed_locale && I18n.available_locales.include?(parsed_locale.to_sym)
-				parsed_locale
-			else
-				nil
+		begin
+			l = request.env['HTTP_ACCEPT_LANGUAGE']
+			if l
+				parsed_locale = l.scan(/^[a-z]{2}[-_]([a-zA-Z]{2})/).first.first.to_s.downcase
+				if parsed_locale && I18n.available_locales.include?(parsed_locale.to_sym)
+					return parsed_locale
+				else
+					return nil
+				end
 			end
+		rescue
+			return nil
 		end
 	end
 	
