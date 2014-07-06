@@ -155,6 +155,8 @@ goto :eof
 :SetParametersPlayer
 set infile="..\Player\Player.csproj"
 set outfile="..\Player\Player2.csproj"
+type %infile% | find "" /V > %outfile%
+move /y %outfile% %infile% > nul
 set version=%stamp:~0,1%.%stamp:~1,2%.%stamp:~3,3%.%stamp:~6,4%
 for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
@@ -182,6 +184,8 @@ goto :eof
 :SetParametersAssembly
 set infile="..\Player\Properties\AssemblyInfo.cs"
 set outfile="..\Player\Properties\AssemblyInfo2.cs"
+type %infile% | find "" /V > %outfile%
+move /y %outfile% %infile% > nul
 set version=%stamp:~0,1%.%stamp:~1,2%.%stamp:~3,3%.%stamp:~6,4%
 for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
@@ -209,30 +213,34 @@ move /y %outfile% %infile% > nul
 goto :eof
 
 :SetParametersMigrator
-set infile="Settings Migrator.csproj"
-set outfile="Settings Migrator2.csproj"
-for /f %%a in ('type %infile%^|find /v /c ""') do set "till=%%a"
+set infile="..\SettingsMigrator\SettingsMigrator.csproj"
+set outfile="..\SettingsMigrator\SettingsMigrator2.csproj"
+type %infile% | find "" /V > %outfile%
+move /y %outfile% %infile% > nul
+for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
 <!InFile! (
-	for /l %%a in (1 1 0) do set /p "="
+ 	for /l %%a in (1 1 0) do set /p "="
 	for /l %%a in (1 1 %till%) do (
-		set "line="
+ 		set "line="
 		set /p "line="
 		if "!line!x" == "x" ( echo.
-		) else (
+ 		) else (
 			if not "!line:AssemblyName=!x" == "!line!x" (
 				echo     ^<AssemblyName^>Migrator.%stamp%^</AssemblyName^>
-			) else ( echo.!line!)
-		)
-	)
+ 			) else ( echo.!line!)
+ 		)
+ 	)
 ) >> %outfile%
 endlocal
-move /y %outfile% %infile% > nul
+move /y "%outfile%" "%infile%" > nul
 goto :eof
 
 :SetParametersSettings
 set infile="..\Player\Properties\Settings.Designer.cs"
 set outfile="..\Player\Properties\Settings.Designer2.cs"
+type %infile% | find "" /V > %outfile%
+move /y %outfile% %infile% > nul
 for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
 <"!InFile!" (
@@ -259,6 +267,8 @@ goto :eof
 :SetParametersSettingsTest
 set infile="..\Player\Properties\Settings.Designer.cs"
 set outfile="..\Player\Properties\Settings.Designer2.cs"
+type %infile% | find "" /V > %outfile%
+move /y "%outfile%" "%infile%" > nul
 for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
 <"!InFile!" (
@@ -281,6 +291,8 @@ goto :eof
 :SetParametersInstaller
 set infile="..\Installer\Installer.vdproj"
 set outfile="..\Installer\Installer2.vdproj"
+type %infile% | find "" /V > %outfile%
+move /y "%outfile%" "%infile%" > nul
 set version=%stamp:~0,1%.%stamp:~1,2%.%stamp:~3,3%
 for /f %%i in ('bin\uuidgen -c') do set productCode=%%i
 for /f %%i in ('bin\uuidgen -c') do set packageCode=%%i
@@ -318,6 +330,8 @@ goto :eof
 :SetBundle
 set infile="..\Installer\Installer.vdproj"
 set outfile="..\Installer\Installer2.vdproj"
+type %infile% | find "" /V > %outfile%
+move /y "%outfile%" "%infile%" > nul
 for /f %%a in ('type "%infile%"^|find /v /c ""') do set "till=%%a"
 setlocal EnableDelayedExpansion
 <"!InFile!" (
@@ -427,18 +441,19 @@ goto :eof
 
 :IncludeMigratorIfNeeded
 set oldF="..\..\temp\previous\Settings Migrator\Migrator.cs"
-set newF="..\..\..\Settings Migrator\Migrator.cs"
+set newF="..\..\..\SettingsMigrator\Migrator.cs"
 for /f "tokens=1" %%a in ('..\..\bin\sha256deep -s %oldF%') do set old=%%a
 for /f "tokens=1" %%a in ('..\..\bin\sha256deep -s %newF%') do set new=%%a
 if not "!old!" == "!new!" (
 	echo Detected change in settings migrator
 	echo Compiling settings migrator...
-	cd "..\..\..\Settings Migrator\"
+	cd "..\..\..\SettingsMigrator\"
 	call :SetParametersMigrator
-	..\Build\bin\msbuild "Settings Migrator.csproj" /p:Configuration="Release" > nul
+	echo Starting compilation...
+	..\Build\bin\msbuild "SettingsMigrator.csproj" /p:Configuration="Release" > nul
 	echo Adding settings migrator to upgrade package...
 	cd ..\Build\output\Upgrade
-	copy /y "..\..\..\Settings Migrator\bin\Release\Migrator.%stamp%.dll" . > nul
+	copy /y "..\..\..\SettingsMigrator\bin\Release\Migrator.%stamp%.dll" . > nul
 )
 goto :eof
 
