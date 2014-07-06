@@ -62,177 +62,7 @@ namespace Stoffi
 
 			#region Modifications
 
-			FixTracks(settings.FileTracks);
-			FixTracks(settings.QueueTracks);
-			FixTracks(settings.HistoryTracks);
-			FixTracks(settings.RadioTracks);
-			foreach (var playlist in settings.Playlists)
-				FixTracks(playlist.Tracks);
-			FixSources(settings.Sources);
-
-			var customProfiles = new List<KeyboardShortcutProfile>();
-			foreach (var p in settings.ShortcutProfiles)
-				if (!p.IsProtected)
-					customProfiles.Add(p);
-
-			settings.ShortcutProfiles.Clear();
-			SettingsManager.InitializeShortcutProfiles(settings.ShortcutProfiles);
-
-			// adjust custom shortcut profiles
-			foreach (var profile in customProfiles)
-			{
-				KeyboardShortcut ks, check;
-				string txt;
-
-				// adjust untouched defaults
-				ks = GetKeyboardShortcut(profile, "Application", "Add track");
-				check = GetKeyboardShortcut(profile, "Alt+T");
-				if ((check == null || (check.Category == "MainWindow" && check.Name == "Tracklist" && ks.Keys == "Ctrl+T")) && (ks.Keys == "Ctrl+T" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+T";
-
-				ks = GetKeyboardShortcut(profile, "Application", "Add folder");
-				check = GetKeyboardShortcut(profile, "Alt+F");
-				if ((check == null || (check.Category == "MainWindow" && check.Name == "Search" && ks.Keys == "Ctrl+F")) && (ks.Keys == "Ctrl+F" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F";
-
-				ks = GetKeyboardShortcut(profile, "Application", "Minimize");
-				if (GetKeyboardShortcut(profile, "Ctrl+Shift+M") == null && (ks.Keys == "Ctrl+M" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+Shift+N";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Now playing");
-				ks.Name = "Video";
-				if (GetKeyboardShortcut(profile, "Ctrl+F1") == null && (ks.Keys == "Alt+W" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F1";
-				profile.Shortcuts.Remove(ks);
-				profile.Shortcuts.Insert(7, ks);
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Library");
-				ks.Name = "Files";
-				if (GetKeyboardShortcut(profile, "Ctrl+F3") == null && (ks.Keys == "Alt+L" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F3";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Queue");
-				if (GetKeyboardShortcut(profile, "Ctrl+F7") == null && (ks.Keys == "Alt+Q" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F7";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "History");
-				if (GetKeyboardShortcut(profile, "Ctrl+F8") == null && (ks.Keys == "Alt+H" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F8";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Playlists");
-				if (GetKeyboardShortcut(profile, "Ctrl+F9") == null && (ks.Keys == "Alt+P" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F9";
-
-				ks = GetKeyboardShortcut(profile, "Application", "Open playlist");
-				ks.Name = "Add playlist";
-				if (GetKeyboardShortcut(profile, "Alt+P") == null && (ks.Keys == "Ctrl+O" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+P";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Tracklist");
-				if (GetKeyboardShortcut(profile, "Ctrl+T") == null && (ks.Keys == "Alt+T" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+T";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Search");
-				if (GetKeyboardShortcut(profile, "Ctrl+F") == null && (ks.Keys == "Alt+F" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+F";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "General preferences");
-				if (GetKeyboardShortcut(profile, "Alt+F1") == null && (ks.Keys == "Alt+G" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F1";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Library sources");
-				ks.Name = "Music sources";
-				if (GetKeyboardShortcut(profile, "Alt+F2") == null && (ks.Keys == "Alt+S" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F2";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Services");
-				if (GetKeyboardShortcut(profile, "Alt+F3") == null && (ks.Keys == "Alt+V" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F3";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Plugins");
-				ks.Name = "Apps";
-				if (GetKeyboardShortcut(profile, "Alt+F5") == null && (ks.Keys == "Alt+X" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F5";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Keyboard shortcuts");
-				if (GetKeyboardShortcut(profile, "Alt+F6") == null && (ks.Keys == "Alt+K" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F6";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "About");
-				if (GetKeyboardShortcut(profile, "Alt+F7") == null && (ks.Keys == "Alt+A" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Alt+F7";
-
-				ks = GetKeyboardShortcut(profile, "MainWindow", "Create playlist");
-				if (GetKeyboardShortcut(profile, "Ctrl+N") == null && (ks.Keys == "Alt+N" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+N";
-
-				ks = GetKeyboardShortcut(profile, "Track", "Remove track");
-				ks.Name = "Remove";
-				ks = GetKeyboardShortcut(profile, "Track", "View information");
-				if (GetKeyboardShortcut(profile, "Ctrl+I") == null && (ks.Keys == "Shift+I" || String.IsNullOrWhiteSpace(ks.Keys)))
-					ks.Keys = "Ctrl+I";
-
-				check = GetKeyboardShortcut(profile, "Alt+R");
-				txt = check != null ? "" : "Alt+R";
-				profile.Shortcuts.Insert(3, new KeyboardShortcut { Category = "Application", Name = "Add radio station", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Alt+A");
-				txt = check != null ? "" : "Alt+A";
-				profile.Shortcuts.Insert(4, new KeyboardShortcut { Category = "Application", Name = "Add app", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Alt+G");
-				txt = check != null ? "" : "Alt+G";
-				profile.Shortcuts.Insert(5, new KeyboardShortcut { Category = "Application", Name = "Generate playlist", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+F2");
-				txt = check != null ? "" : "Ctrl+F2";
-				profile.Shortcuts.Insert(11, new KeyboardShortcut { Category = "MainWindow", Name = "Visualizer", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+F4");
-				txt = check != null ? "" : "Ctrl+F4";
-				profile.Shortcuts.Insert(13, new KeyboardShortcut { Category = "MainWindow", Name = "YouTube", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+F5");
-				txt = check != null ? "" : "Ctrl+F5";
-				profile.Shortcuts.Insert(14, new KeyboardShortcut { Category = "MainWindow", Name = "SoundCloud", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+F6");
-				txt = check != null ? "" : "Ctrl+F6";
-				profile.Shortcuts.Insert(15, new KeyboardShortcut { Category = "MainWindow", Name = "Radio", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+L");
-				txt = check != null ? "" : "Ctrl+L";
-				profile.Shortcuts.Insert(58, new KeyboardShortcut { Category = "Track", Name = "Open folder", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Shift+Delete");
-				txt = check != null ? "" : "Shift+Delete";
-				profile.Shortcuts.Insert(60, new KeyboardShortcut { Category = "Track", Name = "Remove from harddrive", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+C");
-				txt = check != null ? "" : "Ctrl+C";
-				profile.Shortcuts.Insert(61, new KeyboardShortcut { Category = "Track", Name = "Copy", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+X");
-				txt = check != null ? "" : "Ctrl+X";
-				profile.Shortcuts.Insert(62, new KeyboardShortcut { Category = "Track", Name = "Move", IsGlobal = false, Keys = txt });
-
-				check = GetKeyboardShortcut(profile, "Ctrl+S");
-				txt = check != null ? "" : "Ctrl+S";
-				profile.Shortcuts.Insert(64, new KeyboardShortcut { Category = "Track", Name = "Share", IsGlobal = false, Keys = txt });
-			}
-
-			foreach (KeyboardShortcutProfile p in customProfiles)
-				settings.ShortcutProfiles.Add(p);
-
-			FixViewDetailsConfig(settings.SourceListConfig);
-			FixViewDetailsConfig(settings.FileListConfig);
-			FixViewDetailsConfig(settings.QueueListConfig);
-			FixViewDetailsConfig(settings.HistoryListConfig);
-			FixViewDetailsConfig(settings.YouTubeListConfig);
-			foreach (PlaylistData p in settings.Playlists)
-				FixViewDetailsConfig(p.ListConfig);
-			FixViewDetailsConfig(settings.PluginListConfig);
-
+			InitializeEqualizerProfiles(settings.EqualizerProfiles);
 			settings.CurrentEqualizerProfile = settings.EqualizerProfiles[0];
 
 			#endregion
@@ -244,6 +74,76 @@ namespace Stoffi
         #endregion
 
 		#region Private
+
+
+		public void InitializeEqualizerProfiles(List<EqualizerProfile> profiles)
+		{
+			int defaultLevels = 0;
+			foreach (var ep in profiles)
+				if (ep.IsProtected)
+					defaultLevels++;
+
+			if (defaultLevels < 2)
+			{
+				profiles.Clear();
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Flat",
+					IsProtected = true,
+					Levels = new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Bass",
+					IsProtected = true,
+					Levels = new float[] { 9.2f, 6.6f, 4.2f, 1.5f, -0.5f, -1.5f, 0.5f, 3.0f, 3.5f, 4.8f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Jazz",
+					IsProtected = true,
+					Levels = new float[] { 4.0f, 3.0f, 1.6f, 2.0f, -1.6f, -1.6f, 0f, 1.6f, 3.3f, 4.0f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Dance",
+					IsProtected = true,
+					Levels = new float[] { 7f, 4.7f, 2.5f, 0f, 0f, -3.5f, -5f, -5f, 0f, 0f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "RnB",
+					IsProtected = true,
+					Levels = new float[] { 3f, 7f, 5.5f, 1.5f, -3f, -1.5f, 1.8f, 2.4f, 3f, 3.5f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Speech",
+					IsProtected = true,
+					Levels = new float[] { -3.3f, -0.5f, 0f, 0.6f, 3.5f, 5.0f, 5.0f, 4.5f, 3.0f, 0f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Loud",
+					IsProtected = true,
+					Levels = new float[] { 6.6f, 5.2f, 0f, 0f, -1f, 0f, 0f, -5f, 6f, 1f },
+					EchoLevel = 0
+				});
+				profiles.Add(new EqualizerProfile()
+				{
+					Name = "Headphones",
+					IsProtected = true,
+					Levels = new float[] { 5.5f, 4.5f, 3.5f, 1.5f, -1f, -1.5f, 0.5f, 3.5f, 6.5f, 9f },
+					EchoLevel = 0
+				});
+			}
+		}
 
 		private void FixSources(IEnumerable<SourceData> items)
 		{

@@ -49,7 +49,7 @@ namespace Stoffi
 		private static string oauth_request_token = "";
 		private static string oauth_key = "baAito0V8WXtdpfjrE4GfUhld4IvFMd9Ud5EYw8i";
 		private static string oauth_secret = "cU1esKuX0VruYYVhU5Mrry4SukK5yL9uHcYoHip1";
-		private static string domain = "http://beta.stoffiplayer.com";
+		private static string domain = "https://stoffiplayer.com";
 		private static bool connected = true;
 		private static int failedPings = 0;
 		private static object sendLocker = new object();
