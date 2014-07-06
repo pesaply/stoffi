@@ -178,10 +178,10 @@ class PagesController < ApplicationController
 			
 		else
 			Mailer.contact(:domain => "beta.stoffiplayer.com",
-						   :subject => params[:subject],
-						   :from => params[:email],
-						   :name => params[:name],
-						   :message => params[:message]).deliver
+			               :subject => params[:subject],
+			               :from => params[:email],
+			               :name => params[:name],
+			               :message => params[:message]).deliver
 			redirect_to :action => 'contact', :sent => 'success'
 		end
 	end
