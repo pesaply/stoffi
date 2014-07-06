@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csp
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{DB09D187-5989-4BCA-954A-9D832B695AB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings Migrator", "Settings Migrator\Settings Migrator.csproj", "{B803CA82-CCD3-49DD-BC08-A525EFFF0C18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettingsMigrator", "Settings Migrator\SettingsMigrator.csproj", "{B803CA82-CCD3-49DD-BC08-A525EFFF0C18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings Migrator Tester", "Settings Migrator Tester\Settings Migrator Tester.csproj", "{3F6C3E53-077C-4495-82E0-2B6E6AF5E9E2}"
 EndProject
