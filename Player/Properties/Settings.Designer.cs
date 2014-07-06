@@ -743,7 +743,7 @@ namespace Stoffi.Properties {
 		{
 			get
 			{
-				return 1399309945; // version
+				return 1404671946; // version
 			}
 			set
 			{

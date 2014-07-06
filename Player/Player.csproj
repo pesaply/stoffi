@@ -34,8 +34,8 @@
     <SuiteName>Stoffi Music Player</SuiteName>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>9944</ApplicationRevision>
-    <ApplicationVersion>1.39.930.9945</ApplicationVersion>
+    <ApplicationRevision>1946</ApplicationRevision>
+    <ApplicationVersion>1.40.467.1946</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
