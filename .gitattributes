@@ -6,6 +6,7 @@
 *.sln    eol=crlf merge=union
 *.csproj eol=crlf merge=union
 *.vbproj eol=crlf merge=union
+*.vdproj eol=crlf merge=union
 *.fsproj eol=crlf merge=union
 *.dbproj eol=crlf merge=union
 
