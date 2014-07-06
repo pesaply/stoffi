@@ -112,7 +112,7 @@ if %test% == 1 (
 	cd temp\previous\Player
 	call :SetParametersSettingsTest
 	:: Temporary force a manual change of channel (there is no // channel yet)
-	notepad Properties\Settings.Designer.cs
+	rem notepad Properties\Settings.Designer.cs
 	..\..\..\bin\msbuild "Player.csproj" /p:Configuration="Release" > nul
 	cd ..\..\..\
 	
@@ -340,7 +340,7 @@ goto :eof
 :Compile
 set devenv=D:\Apps\Visual Studio 2010\Common7\IDE\devenv.com
 set build=Release
-set solution=..\Stoffi Beta.sln
+set solution=..\Stoffi.sln
 set project=Installer\Installer.vdproj
 set cmd="%devenv%" "%solution%" /build %build% /project "%project%" /projectconfig %build%
 %cmd% > nul
