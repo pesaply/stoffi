@@ -5,7 +5,7 @@ Welcome to the world's next music player.
 
 ![Screenshot](https://www.stoffiplayer.com/assets/us/start.png)
 
-This project should not be taken very seriously. It is mostly a playground for me, allowing me to experiments with different technologies in something that resembles the a real world project. However, over the last couple of years Stoffi has grown into something that's no longer very tiny and limited in scope. I've actually managed to create quite a few features.
+This project should not be taken very seriously. It is mostly a playground for me, allowing me to experiment with different technologies in something that resembles a real world project. However, over the last couple of years Stoffi has grown into something that's no longer very tiny or limited in scope. I've actually managed to create quite a few features.
 
 ## Features
 
