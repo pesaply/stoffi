@@ -56,7 +56,7 @@ namespace Stoffi.Core.Services
 
 		private static OAuth.Manager oauth = new OAuth.Manager();
 		private static string oauth_request_token = "";
-		private static string domain = "http://beta.stoffiplayer.com";
+		private static string domain = "https://stoffiplayer.com";
 		private static bool connected = true;
 		private static int failedPings = 0;
 		private static object sendLocker = new object();

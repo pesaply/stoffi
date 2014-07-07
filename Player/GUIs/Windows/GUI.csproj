@@ -36,6 +36,8 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>5771</ApplicationRevision>
     <ApplicationVersion>1.29.586.5771</ApplicationVersion>
+    <ApplicationRevision>1946</ApplicationRevision>
+    <ApplicationVersion>1.40.467.1946</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -699,8 +701,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)\External\bass.dll" "$(TargetDir)"
+copy "$(ProjectDir)\External\bass_fx.dll" "$(TargetDir)"
+copy "$(ProjectDir)\External\OptimFrog.dll" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
