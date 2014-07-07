@@ -1,7 +1,7 @@
 ::
 :: build.bat
 ::
-:: The build script for Stoffi on Windows.
+:: The build script for building Stoffi on Windows.
 ::
 :: Will build the Windows version of Stoffi and package it into
 :: an upgrade package, an installer, and an installer bundled
@@ -74,7 +74,7 @@ cd temp\previous\Player
 ..\..\..\bin\msbuild "Player.csproj" /p:Configuration="Release" > nul
 cd ..\..\..\
 
-:: Set version, channel, etc
+:: Set version, channel, etc.
 echo Setting parameters...
 call :SetParameters %stamp%
 
