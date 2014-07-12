@@ -202,7 +202,9 @@ namespace Stoffi.Core.Sources
 		/// <returns>True if the track is from this source</returns>
 		public bool IsFromHere(string path)
 		{
-			return path.StartsWith(PathPrefix);
+			if (String.IsNullOrWhiteSpace(path))
+				return false;
+			return path.ToLower().StartsWith(PathPrefix);
 		}
 
 		/// <summary>
