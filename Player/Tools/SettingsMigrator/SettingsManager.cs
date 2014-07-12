@@ -28,18 +28,19 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Globalization;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Stoffi
+namespace Stoffi.Tools.Migrator
 {
 	/// <summary>
 	/// Represents a manager that takes care of all
 	/// application settings.
 	/// </summary>
-	public static class SettingsManager
+	public static partial class SettingsManager
 	{
 		#region Members
 
@@ -450,19 +451,19 @@ namespace Stoffi
 		/// <returns>The newly created config</returns>
 		public static ViewDetailsConfig CreateListConfig()
 		{
-			Stoffi.ViewDetailsConfig config = new Stoffi.ViewDetailsConfig();
+			var config = new ViewDetailsConfig();
 			config.HasNumber = true;
 			config.IsNumberVisible = false;
 			config.Filter = "";
 			config.IsClickSortable = true;
 			config.IsDragSortable = true;
 			config.LockSortOnNumber = false;
-			config.SelectedIndices = new List<int>();
+			config.SelectedIndices = new ObservableCollection<uint>();
 			config.UseIcons = true;
 			config.AcceptFileDrops = true;
-			config.Columns = new ObservableCollection<Stoffi.ViewDetailsColumn>();
+			config.Columns = new ObservableCollection<ViewDetailsColumn>();
 			config.NumberColumn = CreateListColumn("#", "#", "Number", "Number", 60, Alignment.Right, false);
-			config.Sorts = new List<string>();
+			config.Sorts = new ObservableCollection<string>();
 			return config;
 		}
 
@@ -1411,6 +1412,29 @@ namespace Stoffi
 		public uint Owner { get; set; }
 
 		/// <summary>
+		/// Get or sets the ID of the user who owns the playlist in the cloud.
+		/// </summary>
+		public uint OwnerID { get; set; }
+
+		/// <summary>
+		/// Get or sets the name of the user who owns the playlist in the cloud.
+		/// </summary>
+		public string OwnerName { get; set; }
+
+		/// <summary>
+		/// Get or sets the time when OwnerName was checked and cached.
+		/// </summary>
+		public DateTime OwnerCacheTime { get; set; }
+
+		/// <summary>
+		/// Get or sets the filter for automatic adding/removing of songs.
+		/// </summary>
+		/// <remarks>
+		/// If null then the playlist is not dynamic.
+		/// </remarks>
+		public string Filter { get; set; }
+
+		/// <summary>
 		/// Gets or sets the collection of tracks of the playlist
 		/// </summary>
 		public ObservableCollection<TrackData> Tracks
@@ -1448,7 +1472,6 @@ namespace Stoffi
 
 		#endregion
 	}
-
 	/// <summary>
 	/// Describes a track.
 	/// </summary>
@@ -1456,22 +1479,30 @@ namespace Stoffi
 	{
 		#region Members
 
-		private string _artist;
-		private string _album;
-		private string _title;
-		private string _genre;
-		private string _path;
-		private uint _track;
-		private uint _year;
-		private double _length;
-		private uint _count;
-		private DateTime _last_played;
-		private string _url;
-		private int _views;
-		private string artURL;
+		private string artist;
+		private string album;
+		private string title;
+		private string genre;
+		private string path;
+		private uint track;
+		private uint year;
+		private double length;
+		private uint userPlayCount;
+		private ulong globalPlayCount;
+		private DateTime lastPlayed;
+		private string url;
+		private string originalArtURL;
+		private bool processed = false;
+		private long lastWrite = 0;
+		private string codecs;
+		private int channels;
+		private int bitrate;
+		private int sampleRate;
+		private string source;
+		private ObservableCollection<Tuple<string, double>> bookmarks = new ObservableCollection<Tuple<string, double>>();
 
 		/// <summary>
-		/// The difference in time when RawLength is changed
+		/// The difference in time when Length is changed
 		/// </summary>
 		public int diff = 0;
 
@@ -1484,8 +1515,8 @@ namespace Stoffi
 		/// </summary>
 		public string Artist
 		{
-			get { return _artist; }
-			set { _artist = value; OnPropertyChanged("Artist"); }
+			get { return artist; }
+			set { SetProp<string>(ref artist, value, "Artist"); }
 		}
 
 		/// <summary>
@@ -1493,8 +1524,8 @@ namespace Stoffi
 		/// </summary>
 		public string Title
 		{
-			get { return _title; }
-			set { _title = value; OnPropertyChanged("Title"); }
+			get { return title; }
+			set { SetProp<string>(ref title, value, "Title"); }
 		}
 
 		/// <summary>
@@ -1502,8 +1533,8 @@ namespace Stoffi
 		/// </summary>
 		public string Album
 		{
-			get { return _album; }
-			set { _album = value; OnPropertyChanged("Album"); }
+			get { return album; }
+			set { SetProp<string>(ref album, value, "Album"); }
 		}
 
 		/// <summary>
@@ -1511,17 +1542,17 @@ namespace Stoffi
 		/// </summary>
 		public string Genre
 		{
-			get { return _genre; }
-			set { _genre = value; OnPropertyChanged("Genre"); }
+			get { return genre; }
+			set { SetProp<string>(ref genre, value, "Genre"); }
 		}
 
 		/// <summary>
 		/// Gets or sets the number of the track on the album.
 		/// </summary>
-		public uint Track
+		public uint TrackNumber
 		{
-			get { return _track; }
-			set { _track = value; OnPropertyChanged("Track"); }
+			get { return track; }
+			set { SetProp<uint>(ref track, value, "TrackNumber"); }
 		}
 
 		/// <summary>
@@ -1529,8 +1560,8 @@ namespace Stoffi
 		/// </summary>
 		public uint Year
 		{
-			get { return _year; }
-			set { _year = value; OnPropertyChanged("Year"); }
+			get { return year; }
+			set { SetProp<uint>(ref year, value, "Year"); }
 		}
 
 		/// <summary>
@@ -1538,8 +1569,8 @@ namespace Stoffi
 		/// </summary>
 		public double Length
 		{
-			get { return _length; }
-			set { diff = (int)(value - _length); _length = value; OnPropertyChanged("Length"); diff = 0; }
+			get { return length; }
+			set { diff = (int)(value - length); SetProp<double>(ref length, value, "Length"); diff = 0; }
 		}
 
 		/// <summary>
@@ -1547,8 +1578,8 @@ namespace Stoffi
 		/// </summary>
 		public string Path
 		{
-			get { return _path; }
-			set { _path = value; OnPropertyChanged("Path"); }
+			get { return path; }
+			set { SetProp<string>(ref path, value, "Path"); }
 		}
 
 		/// <summary>
@@ -1556,26 +1587,27 @@ namespace Stoffi
 		/// </summary>
 		public uint PlayCount
 		{
-			get { return _count; }
-			set { _count = value; OnPropertyChanged("PlayCount"); }
+			get { return userPlayCount; }
+			set { SetProp<uint>(ref userPlayCount, value, "PlayCount"); }
 		}
 
 		/// <summary>
-		/// Gets or sets the URL of the radio track.
+		/// Gets or sets the URL of the track.
+		/// Only applicable on streamable tracks.
 		/// </summary>
 		public string URL
 		{
-			get { return _url; }
-			set { _url = value; OnPropertyChanged("URL"); }
+			get { return url; }
+			set { SetProp<string>(ref url, value, "URL"); }
 		}
 
 		/// <summary>
 		/// Gets or sets the amount of views on YouTube.
 		/// </summary>
-		public int Views
+		public ulong Views
 		{
-			get { return _views; }
-			set { _views = value; OnPropertyChanged("Views"); }
+			get { return globalPlayCount; }
+			set { SetProp<ulong>(ref globalPlayCount, value, "Views"); }
 		}
 
 		/// <summary>
@@ -1583,58 +1615,278 @@ namespace Stoffi
 		/// </summary>
 		public DateTime LastPlayed
 		{
-			get { return _last_played; }
-			set { _last_played = value; OnPropertyChanged("LastPlayed"); }
+			get { return lastPlayed; }
+			set { SetProp<DateTime>(ref lastPlayed, value, "LastPlayed"); }
 		}
 
 		/// <summary>
-		/// Gets or sets the URL to the album art.
+		/// Gets or sets the URL/path to the album art.
 		/// </summary>
 		public string ArtURL
 		{
-			get { return artURL; }
-			set { artURL = value; OnPropertyChanged("ArtURL"); }
+			get { return image; }
+			set { SetProp<string>(ref image, value, "ArtURL"); }
+		}
+
+		/// <summary>
+		/// Gets or sets the URL to the album art at the original host instead of a potentially cached version.
+		/// </summary>
+		public string OriginalArtURL
+		{
+			get { return originalArtURL; }
+			set { SetProp<string>(ref originalArtURL, value, "OriginalArtURL"); }
 		}
 
 		/// <summary>
 		/// Gets or sets whether the track has been scanned for meta data.
 		/// </summary>
-		public bool Processed { get; set; }
+		public bool Processed
+		{
+			get { return processed; }
+			set { SetProp<bool>(ref processed, value, "Processed"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the time that the file was last written/updated.
 		/// </summary>
-		public long LastWrite { get; set; }
+		public long LastWrite
+		{
+			get { return lastWrite; }
+			set { SetProp<long>(ref lastWrite, value, "LastWrite"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the bitrate of the track.
 		/// </summary>
-		public int Bitrate { get; set; }
+		public int Bitrate
+		{
+			get { return bitrate; }
+			set { SetProp<int>(ref bitrate, value, "Bitrate"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the number of channels of the track.
 		/// </summary>
-		public int Channels { get; set; }
+		public int Channels
+		{
+			get { return channels; }
+			set { SetProp<int>(ref channels, value, "Channels"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the sample rate of the track.
 		/// </summary>
-		public int SampleRate { get; set; }
+		public int SampleRate
+		{
+			get { return sampleRate; }
+			set { SetProp<int>(ref sampleRate, value, "SampleRate"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the codecs of the track.
 		/// </summary>
-		public string Codecs { get; set; }
+		public string Codecs
+		{
+			get { return codecs; }
+			set { SetProp<string>(ref codecs, value, "Codecs"); }
+		}
 
 		/// <summary>
 		/// Gets or sets where the track belongs to ("Files", "Playlist:Name").
 		/// </summary>
-		public string Source { get; set; }
+		public string Source
+		{
+			get { return source; }
+			set { SetProp<string>(ref source, value, "Source"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the bookmarks of the track (percentage).
 		/// </summary>
-		public List<double> Bookmarks { get; set; }
+		public ObservableCollection<Tuple<string, double>> Bookmarks
+		{
+			get { return bookmarks; }
+			set
+			{
+				if (bookmarks != null)
+					bookmarks.CollectionChanged -= CollectionChanged;
+				SetProp<ObservableCollection<Tuple<string, double>>>(ref bookmarks, value, "Bookmarks");
+				if (bookmarks != null)
+					bookmarks.CollectionChanged += CollectionChanged;
+			}
+		}
+
+		/// <summary>
+		/// Gets the type of track.
+		/// </summary>
+		/// <value>The type.</value>
+		public TrackType Type
+		{
+			get
+			{
+				return TrackData.GetType(Path);
+			}
+		}
+
+		/// <summary>
+		/// Gets the icon of the track.
+		/// </summary>
+		/// <value>The icon.</value>
+		public new string Icon
+		{
+			get
+			{
+				switch (Type)
+				{
+					case TrackType.File:
+						return "fileaudio";
+
+					case TrackType.Jamendo:
+						return "jamendo";
+
+					case TrackType.SoundCloud:
+						return "soundcloud";
+
+					case TrackType.Unknown:
+						return "unknown";
+
+					case TrackType.WebRadio:
+						return "radio";
+
+					case TrackType.YouTube:
+						return "youtube";
+				}
+				return "unsupported";
+			}
+		}
+
+		#endregion
+
+		#region Constructor
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Stoffi.Core.Track"/> class.
+		/// </summary>
+		public TrackData()
+		{
+			bookmarks.CollectionChanged += CollectionChanged;
+		}
+
+		#endregion
+
+		#region Methods
+
+		/// <summary>
+		/// Invoked when a collection changes.
+		/// </summary>
+		/// <param name="sender">Sender of the event.</param>
+		/// <param name="e">The event data.</param>
+		private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+		{
+			if ((ObservableCollection<Tuple<string, double>>)sender == bookmarks && bookmarks != null)
+				OnPropertyChanged("Bookmarks");
+		}
+
+		/// <summary>
+		/// Gets the track type of a path.
+		/// </summary>
+		/// <param name="path">The path of the track</param>
+		/// <returns>The type of the given track path</returns>
+		public static TrackType GetType(string path)
+		{
+			if (String.IsNullOrEmpty(path))
+				return TrackType.Unknown;
+
+			else if (Regex.IsMatch(path, @"^https?://", RegexOptions.IgnoreCase))
+			{
+				if (Regex.IsMatch(path, @"https?://[^\?]+/[^\?]+\.\w{1,5}(\?.*)?$", RegexOptions.IgnoreCase))
+					return TrackType.File;
+				return TrackType.WebRadio;
+			}
+
+			else if (path.ToLower().StartsWith("stoffi:youtube:track:"))
+				return TrackType.YouTube;
+
+			else if (path.ToLower().StartsWith("stoffi:soundcloud:track:"))
+				return TrackType.SoundCloud;
+
+			else if (path.ToLower().StartsWith("stoffi:jamendo:track:"))
+				return TrackType.Jamendo;
+
+			else
+				return TrackType.File;
+		}
+
+		#endregion
+	}
+
+	/// <summary>
+	/// Represents the type of a track.
+	/// </summary>
+	public enum TrackType
+	{
+		/// <summary>
+		/// A local or remote audio file.
+		/// </summary>
+		File,
+
+		/// <summary>
+		/// A radio stream over the web.
+		/// </summary>
+		WebRadio,
+
+		/// <summary>
+		/// A YouTube video clip.
+		/// </summary>
+		YouTube,
+
+		/// <summary>
+		/// A SoundCloud track.
+		/// </summary>
+		SoundCloud,
+
+		/// <summary>
+		/// A Jamendo track.
+		/// </summary>
+		Jamendo,
+
+		/// <summary>
+		/// An unknown track type
+		/// </summary>
+		Unknown
+	}
+
+	/// <summary>
+	/// Holds the data for the TrackChanged event.
+	/// </summary>
+	public class TrackChangedEventArgs : EventArgs
+	{
+		#region Properties
+
+		/// <summary>
+		/// Gets the name of the property.
+		/// </summary>
+		public string PropertyName { get; private set; }
+
+		/// <summary>
+		/// Gets the track that changed
+		/// </summary>
+		public TrackData Track { get; private set; }
+
+		#endregion
+
+		#region Constructor
+
+		/// <summary>
+		/// Create a new instance of the TarckChangedEventArgs class
+		/// </summary>
+		/// <param name="name">The name of the property</param>
+		/// <param name="track">The track that changed</param>
+		public TrackChangedEventArgs(string name, TrackData track)
+		{
+			PropertyName = name;
+			Track = track;
+		}
 
 		#endregion
 	}
@@ -1736,6 +1988,45 @@ namespace Stoffi
         /// Gets or sets the date that the plugin was installed.
         /// </summary>
         public DateTime Installed { get; set; }
+	}
+
+	/// <summary>
+	/// Base class for classes which sends out PropertyChanged events.
+	/// </summary>
+	public abstract class PropertyChangedBase : INotifyPropertyChanged
+	{
+
+		/// <summary>
+		/// Occurs when the property of the item is changed
+		/// </summary>
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		/// <summary>
+		/// Dispatches the PropertyChanged event
+		/// </summary>
+		/// <param name="name">The name of the property that was changed</param>
+		protected void OnPropertyChanged(string name)
+		{
+			if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
+		}
+
+		/// <summary>
+		/// Set the value of a property's underlying variable.
+		/// </summary>
+		/// <param name="variable">Variable.</param>
+		/// <param name="value">Value.</param>
+		/// <param name="name">Name of the property.</param>
+		/// <returns>true if the value was changed, otherwise false.</returns>
+		protected bool SetProp<T>(ref T variable, T value, string name)
+		{
+			if (!EqualityComparer<T>.Default.Equals(variable, value))
+			{
+				variable = value;
+				OnPropertyChanged(name);
+				return true;
+			}
+			return false;
+		}
 	}
 
 	#endregion

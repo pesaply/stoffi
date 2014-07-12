@@ -31,14 +31,17 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Stoffi
+namespace Stoffi.Tools.Migrator
 {
     /// <summary>
     /// Migrates settings between two versions of Stoffi.
     /// </summary>
     public class SettingsMigrator : IMigrator
     {
-        #region Members
+		#region Members
+
+		private static Database db;
+		private static object saveToDatabaseLock = new object();
 
         #endregion
 
@@ -62,19 +65,15 @@ namespace Stoffi
 
 			#region Modifications
 
-			InitializeEqualizerProfiles(settings.EqualizerProfiles);
-			settings.CurrentEqualizerProfile = settings.EqualizerProfiles[0];
-
 			#endregion
 
 			U.L(LogLevel.Information, "Migrator", "Writing configuration");
-			WriteConfig(settings, toFile);
+			//WriteConfig(settings, toFile);
 		}
 
         #endregion
 
 		#region Private
-
 
 		public void InitializeEqualizerProfiles(List<EqualizerProfile> profiles)
 		{
@@ -161,96 +160,14 @@ namespace Stoffi
 
 		private void FixTrack(TrackData track)
 		{
-			if (track == null) return;
-			if (track.Source == "Library")
-				track.Source = "Files";
-			if (track.Path.StartsWith("youtube://"))
-				track.Path = "stoffi:track:youtube:" + track.Path.Substring(10);
-			else if (track.Path.StartsWith("soundcloud://"))
-				track.Path = "stoffi:track:soundcloud:" + track.Path.Substring(13);
-			//if (File.Exists(track.Path))
-			//{
-			//    TagLib.File file = TagLib.File.Create(track.Path, TagLib.ReadStyle.Average);
-			//    track.Bitrate = file.Properties.AudioBitrate;
-			//    track.Channels = file.Properties.AudioChannels;
-			//    track.SampleRate = file.Properties.AudioSampleRate;
-			//    track.Codecs = "";
-			//    foreach (TagLib.ICodec c in file.Properties.Codecs)
-			//        if (c != null)
-			//            track.Codecs += c.Description + ", ";
-			//    if (track.Codecs.Length > 2)
-			//        track.Codecs = track.Codecs.Substring(0, track.Codecs.Length - 2);
-			//    track.Icon = "pack://application:,,,/Platform/Windows 7/GUI/Images/Icons/FileAudio.ico";
-			//}
-			//else if (track.Path.StartsWith("youtube://"))
-			//{
-			//    track.Icon = "pack://application:,,,/Platform/Windows 7/GUI/Images/Icons/YouTube.ico";
-			//}
-			track.Icon = track.Icon.Replace(
-				"pack://application:,,,/GUI/Images/Icons/",
-				"pack://application:,,,/Platform/Windows 7/GUI/Images/Icons/"
-			);
 		}
 
 		public static void FixViewDetailsConfig(ViewDetailsConfig vdc)
 		{
-			if (vdc == null) return;
-			if (vdc.Columns.Count == 2 && vdc.Sorts.Count == 0)
-			{
-				vdc.Sorts.Add("asc:Type");
-				vdc.Sorts.Add("asc:Data");
-			}
-			if (vdc.Columns.Count == 10 && vdc.Sorts.Count == 0)
-			{
-				vdc.Sorts.Add("asc:Title");
-				vdc.Sorts.Add("asc:Track");
-				vdc.Sorts.Add("asc:Album");
-				vdc.Sorts.Add("asc:Artist");
-			}
-
-			foreach (ViewDetailsColumn column in vdc.Columns)
-			{
-				switch (column.Name)
-				{
-					case "Length":
-						column.SortField = "Length";
-						column.Converter = "Duration";
-						break;
-
-					case "LastPlayed":
-						column.SortField = "LastPlayed";
-						column.Converter = "DateTime";
-						break;
-
-					case "Views":
-						column.SortField = "Views";
-						column.Converter = "Number";
-						break;
-
-					case "PlayCount":
-						column.Converter = "Number";
-						break;
-
-					case "Type":
-						column.SortField = "Type";
-						column.Binding = "Type";
-						column.Converter = "SourceType";
-						break;
-
-					case "Installed":
-						column.Converter = "DateTime";
-						break;
-				}
-			}
 		}
 
 		private void FixSource(SourceData item)
 		{
-			if (item == null) return;
-			item.Icon = item.Icon.Replace(
-				"pack://application:,,,/GUI/Images/Icons/",
-				"pack://application:,,,/Platform/Windows 7/GUI/Images/Icons/"
-			);
 		}
 
 		private KeyboardShortcut GetKeyboardShortcut(KeyboardShortcutProfile profile, String keysAsText)
@@ -452,37 +369,19 @@ namespace Stoffi
 							settings.HistoryListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
 
 						else if (name == "HistoryTracks")
-						{
-							//settings.HistoryTracks = ReadSetting<List<TrackData>>(xmlReader);
-							List<Old.TrackData> tracks = ReadSetting<List<Old.TrackData>>(xmlReader);
-							settings.HistoryTracks = new List<TrackData>();
-							foreach (Old.TrackData t in tracks)
-								settings.HistoryTracks.Add(ParseOldTrack(t));
-						}
+							settings.HistoryTracks = ReadSetting<List<TrackData>>(xmlReader);
 
 						else if (name == "FileListConfig" || name == "LibraryListConfig")
 							settings.FileListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
 
 						else if (name == "FileTracks" || name == "LibraryTracks")
-						{
-							//settings.FileTracks = ReadSetting<List<TrackData>>(xmlReader);
-							List<Old.TrackData> tracks = ReadSetting<List<Old.TrackData>>(xmlReader);
-							settings.FileTracks = new List<TrackData>();
-							foreach (Old.TrackData t in tracks)
-								settings.FileTracks.Add(ParseOldTrack(t));
-						}
+							settings.FileTracks = ReadSetting<List<TrackData>>(xmlReader);
 
 						else if (name == "RadioListConfig")
 							settings.RadioListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
 
 						else if (name == "RadioTracks")
-						{
-							//settings.RadioTracks = ReadSetting<List<TrackData>>(xmlReader);
-							List<Old.TrackData> tracks = ReadSetting<List<Old.TrackData>>(xmlReader);
-							settings.RadioTracks = new List<TrackData>();
-							foreach (Old.TrackData t in tracks)
-								settings.RadioTracks.Add(ParseOldTrack(t));
-						}
+							settings.RadioTracks = ReadSetting<List<TrackData>>(xmlReader);
 
 						else if (name == "DiscListConfig")
 							settings.DiscListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
@@ -491,13 +390,7 @@ namespace Stoffi
 							settings.QueueListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
 
 						else if (name == "QueueTracks")
-						{
-							//settings.QueueTracks = ReadSetting<List<TrackData>>(xmlReader);
-							List<Old.TrackData> tracks = ReadSetting<List<Old.TrackData>>(xmlReader);
-							settings.QueueTracks = new List<TrackData>();
-							foreach (Old.TrackData t in tracks)
-								settings.QueueTracks.Add(ParseOldTrack(t));
-						}
+							settings.QueueTracks = ReadSetting<List<TrackData>>(xmlReader);
 
 						else if (name == "YouTubeListConfig")
 							settings.YouTubeListConfig = ReadSetting<ViewDetailsConfig>(xmlReader);
@@ -551,10 +444,7 @@ namespace Stoffi
 							settings.CurrentActiveNavigation = xmlReader.Value;
 
 						else if (name == "CurrentTrack")
-						{
-							//settings.CurrentTrack = ReadSetting<TrackData>(xmlReader);
-							settings.CurrentTrack = ParseOldTrack(ReadSetting<Old.TrackData>(xmlReader));
-						}
+							settings.CurrentTrack = ReadSetting<TrackData>(xmlReader);
 
 						else if (name == "CurrentEqualizerProfile")
 							settings.CurrentEqualizerProfile = ReadSetting<EqualizerProfile>(xmlReader);
@@ -596,22 +486,7 @@ namespace Stoffi
 							settings.UpgradeCheck = xmlReader.Value;
 
 						else if (name == "Playlists")
-						{
-							//settings.Playlists = ReadSetting<List<PlaylistData>>(xmlReader);
-							List<Old.PlaylistData> playlists = ReadSetting<List<Old.PlaylistData>>(xmlReader);
-							settings.Playlists = new List<PlaylistData>();
-							foreach (Old.PlaylistData p in playlists)
-							{
-								PlaylistData pl = new PlaylistData();
-								pl.Name = p.Name;
-								pl.Time = double.Parse(p.Time, CultureInfo.GetCultureInfo("en-US"));
-								pl.ListConfig = p.ListConfig;
-								pl.Tracks = new ObservableCollection<TrackData>();
-								foreach (Old.TrackData t in p.Tracks)
-									pl.Tracks.Add(ParseOldTrack(t));
-								settings.Playlists.Add(pl);
-							}
-						}
+							settings.Playlists = ReadSetting<List<PlaylistData>>(xmlReader);
 
 						else if (name == "OAuthToken")
 							settings.OAuthToken = xmlReader.Value;
@@ -628,39 +503,6 @@ namespace Stoffi
 			}
 
 			xmlReader.Close();
-		}
-
-		private TrackData ParseOldTrack(Old.TrackData track)
-		{
-			if (track == null) return null;
-			TrackData t = new TrackData();
-			t.Album = track.Album;
-			t.Artist = track.Artist;
-			t.ArtURL = track.ArtURL;
-			t.Bitrate = track.Bitrate;
-			t.Bookmarks = track.Bookmarks;
-			t.Channels = track.Channels;
-			t.Codecs = track.Codecs;
-			t.Genre = track.Genre;
-			t.Icon = track.Icon;
-			t.IsActive = track.IsActive;
-			if (!String.IsNullOrWhiteSpace(track.LastPlayed))
-				t.LastPlayed = DateTime.Parse(track.LastPlayed);
-			t.LastWrite = track.LastWrite;
-			t.Length = track.RawLength;
-			t.Number = track.Number;
-			t.Path = track.Path;
-			t.PlayCount = track.PlayCount;
-			t.Processed = track.Processed;
-			t.SampleRate = track.SampleRate;
-			t.Source = track.Source;
-			t.Strike = track.Strike;
-			t.Title = track.Title;
-			t.Track = track.Track;
-			t.URL = track.URL;
-			t.Views = track.RawViews;
-			t.Year = track.Year;
-			return t;
 		}
 
 		private void WriteConfig(NewSettings settings, String file)
@@ -873,11 +715,29 @@ namespace Stoffi
 	/// <summary>
 	/// Describes a configuration for the ViewDetails class
 	/// </summary>
-	public class ViewDetailsConfig : INotifyPropertyChanged
+	public class ViewDetailsConfig : PropertyChangedBase
 	{
 		#region Members
 
-		string filter = "";
+		private ObservableCollection<ViewDetailsColumn> columns = new ObservableCollection<ViewDetailsColumn>();
+		private ViewDetailsColumn numberColumn = new ViewDetailsColumn();
+		private ObservableCollection<uint> selectedIndices = new ObservableCollection<uint>();
+		private ObservableCollection<string> sorts = new ObservableCollection<string>();
+		private string filter = "";
+		private bool hasNumber = true;
+		private bool isNumberVisible = true;
+		private int numberIndex = 0;
+		private bool useIcons = true;
+		private bool acceptFileDrops = false;
+		private bool isDragSortable = true;
+		private bool isClickSortable = true;
+		private bool lockSortOnNumber = false;
+		private double verticalScrollOffset = 0;
+		private double horizontalScrollOffset = 0;
+		private double verticalScrollOffsetWithoutSearch = 0;
+		private ViewMode mode = ViewMode.Details;
+		private double iconSize = 64;
+		private bool isLoading = false;
 
 		#endregion
 
@@ -886,24 +746,67 @@ namespace Stoffi
 		/// <summary>
 		/// Gets or sets the columns
 		/// </summary>
-		public ObservableCollection<ViewDetailsColumn> Columns { get; set; }
+		public ObservableCollection<ViewDetailsColumn> Columns
+		{
+			get { return columns; }
+			set
+			{
+				if (columns != null)
+					columns.CollectionChanged -= CollectionChanged;
+				SetProp<ObservableCollection<ViewDetailsColumn>> (ref columns, value, "Columns");
+				if (columns != null)
+				{
+					foreach (var c in columns) {
+						c.PropertyChanged -= Column_PropertyChanged;
+						c.PropertyChanged += Column_PropertyChanged;
+					}
+					columns.CollectionChanged += CollectionChanged;
+				}
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the number column configuration
 		/// </summary>
-		public ViewDetailsColumn NumberColumn { get; set; }
+		public ViewDetailsColumn NumberColumn
+		{
+			get { return numberColumn; }
+			set { SetProp<ViewDetailsColumn> (ref numberColumn, value, "NumberColumn"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the indices of the selected items
 		/// </summary>
-		public List<int> SelectedIndices { get; set; }
+		public ObservableCollection<uint> SelectedIndices
+		{
+			get { return selectedIndices; }
+			set
+			{ 
+				if (selectedIndices != null)
+					selectedIndices.CollectionChanged -= CollectionChanged;
+				SetProp<ObservableCollection<uint>> (ref selectedIndices, value, "SelectedIndices");
+				if (selectedIndices != null)
+					selectedIndices.CollectionChanged += CollectionChanged;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the the sort orders
 		/// Each sort is represented as a string on the format
 		/// "asc/dsc:ColumnName"
 		/// </summary>
-		public List<string> Sorts { get; set; }
+		public ObservableCollection<string> Sorts
+		{
+			get { return sorts; }
+			set
+			{
+				if (sorts != null)
+					sorts.CollectionChanged -= CollectionChanged;
+				SetProp<ObservableCollection<string>> (ref sorts, value, "Sorts");
+				if (sorts != null)
+					sorts.CollectionChanged += CollectionChanged;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets text used to filter the list
@@ -911,96 +814,285 @@ namespace Stoffi
 		public string Filter
 		{
 			get { return filter; }
-			set
-			{
-				filter = value;
-				OnPropertyChanged("Filter");
-			}
+			set { SetProp<string> (ref filter, value, "Filter"); }
 		}
 
 		/// <summary>
 		/// Gets or sets whether the number column should be enabled
 		/// </summary>
-		public bool HasNumber { get; set; }
+		public bool HasNumber
+		{
+			get { return hasNumber; }
+			set { SetProp<bool> (ref hasNumber, value, "HasNumber"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether the number column should be visible
 		/// </summary>
-		public bool IsNumberVisible { get; set; }
+		public bool IsNumberVisible
+		{
+			get { return isNumberVisible; }
+			set { SetProp<bool> (ref isNumberVisible, value, "IsNumberVisible"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the position of the number column
 		/// </summary>
-		public int NumberIndex { get; set; }
+		public int NumberIndex
+		{
+			get { return numberIndex; }
+			set { SetProp<int> (ref numberIndex, value, "NumberIndex"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether to display icons or not
 		/// </summary>
-		public bool UseIcons { get; set; }
+		public bool UseIcons
+		{
+			get { return useIcons; }
+			set { SetProp<bool> (ref useIcons, value, "UseIcons"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether files can be dropped onto the list
 		/// </summary>
-		public bool AcceptFileDrops { get; set; }
+		public bool AcceptFileDrops
+		{
+			get { return acceptFileDrops; }
+			set { SetProp<bool> (ref acceptFileDrops, value, "AcceptFileDrops"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether the list can be resorted via drag and drop
 		/// </summary>
-		public bool IsDragSortable { get; set; }
+		public bool IsDragSortable
+		{
+			get { return isDragSortable; }
+			set { SetProp<bool> (ref isDragSortable, value, "IsDragSortable"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether the list can be resorted by clicking on a column
 		/// </summary>
-		public bool IsClickSortable { get; set; }
+		public bool IsClickSortable
+		{
+			get { return isClickSortable; }
+			set { SetProp<bool> (ref isClickSortable, value, "IsClickSortable"); }
+		}
 
 		/// <summary>
 		/// Gets or sets whether only the number column can be used to sort the list
 		/// </summary>
-		public bool LockSortOnNumber { get; set; }
+		public bool LockSortOnNumber
+		{
+			get { return lockSortOnNumber; }
+			set { SetProp<bool> (ref lockSortOnNumber, value, "LockSortOnNumber"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the vertical scroll offset
 		/// </summary>
-		public double VerticalScrollOffset { get; set; }
+		public double VerticalScrollOffset
+		{
+			get { return verticalScrollOffset; }
+			set { SetProp<double> (ref verticalScrollOffset, value, "VerticalScrollOffset"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the horizontal scroll offset
 		/// </summary>
-		public double HorizontalScrollOffset { get; set; }
+		public double HorizontalScrollOffset
+		{
+			get { return horizontalScrollOffset; }
+			set { SetProp<double> (ref horizontalScrollOffset, value, "HorizontalScrollOffset"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the vertical scroll offset when no search is active.
 		/// </summary>
-		public double VerticalScrollOffsetWithoutSearch { get; set; }
+		public double VerticalScrollOffsetWithoutSearch
+		{
+			get { return verticalScrollOffsetWithoutSearch; }
+			set { SetProp<double> (ref verticalScrollOffsetWithoutSearch, value, "VerticalScrollOffsetWithoutSearch"); }
+		}
+
+		/// <summary>
+		/// Gets or sets the view mode.
+		/// </summary>
+		public ViewMode Mode
+		{
+			get { return mode; }
+			set { SetProp<ViewMode> (ref mode, value, "Mode"); }
+		}
+
+		/// <summary>
+		/// Gets or sets the size of the icons.
+		/// </summary>
+		/// <remarks>
+		/// Only applicable when Mode is Icons.
+		/// </remarks>
+		public double IconSize
+		{
+			get { return iconSize; }
+			set { SetProp<double> (ref iconSize, value, "IconSize"); }
+		}
+
+		/// <summary>
+		/// Gets or sets whether the list is currently loading the content.
+		/// </summary>
+		public bool IsLoading
+		{
+			get { return isLoading; }
+			set { SetProp<bool> (ref isLoading, value, "IsLoading"); }
+		}
 
 		#endregion
 
-		#region INotifyPropertyChanged Members
+		#region Constructor
 
 		/// <summary>
-		/// Occurs when the property of the item is changed
+		/// Initializes a new instance of the <see cref="Stoffi.Core.ListViewConfig"/> class.
 		/// </summary>
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		/// <summary>
-		/// Dispatches the PropertyChanged event
-		/// </summary>
-		/// <param name="name">The name of the property that was changed</param>
-		public void OnPropertyChanged(string name)
+		public ViewDetailsConfig()
 		{
-			if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
+			columns.CollectionChanged += CollectionChanged;
+			selectedIndices.CollectionChanged += CollectionChanged;
+			sorts.CollectionChanged += CollectionChanged;
+			numberColumn.PropertyChanged += Column_PropertyChanged;
+		}
+
+		#endregion
+
+		#region Methods
+
+		/// <summary>
+		/// Get a specific column.
+		/// </summary>
+		/// <returns>The column.</returns>
+		/// <param name="name">The name of the column.</param>
+		public ViewDetailsColumn GetColumn(string name)
+		{
+			if (name == "Number")
+				return NumberColumn;
+			else
+				foreach (var c in Columns)
+					if (c.Name == name)
+						return c;
+			return null;
+		}
+
+		/// <summary>
+		/// Invoked when a property of a column changes.
+		/// </summary>
+		/// <param name="sender">Sender of the event.</param>
+		/// <param name="e">The event data.</param>
+		private void Column_PropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			OnPropertyChanged ("Columns");
+		}
+
+		/// <summary>
+		/// Invoked when a collection changes.
+		/// </summary>
+		/// <param name="sender">Sender of the event.</param>
+		/// <param name="e">The event data.</param>
+		private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+		{
+			if (sender is ObservableCollection<ViewDetailsColumn> && (ObservableCollection<ViewDetailsColumn>)sender == columns) {
+				foreach (var c in columns) {
+					c.PropertyChanged -= Column_PropertyChanged;
+					c.PropertyChanged += Column_PropertyChanged;
+				}
+				OnPropertyChanged ("Columns");
+			}
+			else if (sender is ObservableCollection<string> && (ObservableCollection<string>)sender == sorts)
+				OnPropertyChanged ("Sorts");
+			else if (sender is ObservableCollection<uint> && (ObservableCollection<uint>)sender == selectedIndices)
+				OnPropertyChanged ("SelectedIndices");
+		}
+		/// <summary>
+		/// Creates a config with default values
+		/// </summary>
+		/// <returns>The newly created config</returns>
+		public static ViewDetailsConfig Create()
+		{
+			var config = new ViewDetailsConfig();
+			config.HasNumber = true;
+			config.IsNumberVisible = false;
+			config.Filter = "";
+			config.IsClickSortable = true;
+			config.IsDragSortable = true;
+			config.LockSortOnNumber = false;
+			config.UseIcons = true;
+			config.AcceptFileDrops = true;
+			config.Columns = new ObservableCollection<ViewDetailsColumn>();
+			config.NumberColumn = ViewDetailsColumn.Create("#", "#", "Number", "Number", 60, Alignment.Right, false);
+			return config;
+		}
+
+		/// <summary>
+		/// Initializes a configuration of a list.
+		/// </summary>
+		public void Initialize()
+		{
+			Columns.Add(ViewDetailsColumn.Create("Artist", U.T("ColumnArtist"), 180));
+			Columns.Add(ViewDetailsColumn.Create("Album", U.T("ColumnAlbum"), 160));
+			Columns.Add(ViewDetailsColumn.Create("Title", U.T("ColumnTitle"), 220));
+			Columns.Add(ViewDetailsColumn.Create("Genre", U.T("ColumnGenre"), 90));
+			Columns.Add(ViewDetailsColumn.Create("Length", U.T("ColumnLength"), 70, "Duration", Alignment.Right));
+			Columns.Add(ViewDetailsColumn.Create("Year", U.T("ColumnYear"), 100, Alignment.Right, false));
+			Columns.Add(ViewDetailsColumn.Create("LastPlayed", U.T("ColumnLastPlayed"), 150, "DateTime", Alignment.Left, false));
+			Columns.Add(ViewDetailsColumn.Create("PlayCount", U.T("ColumnPlayCount"), 80, "Number", Alignment.Right));
+			Columns.Add(ViewDetailsColumn.Create("Track", U.T("ColumnTrack"), "TrackNumber", 100, Alignment.Right, false));
+			Columns.Add(ViewDetailsColumn.Create("Path", U.T("ColumnPath"), "Path", 300, Alignment.Left, false));
+			Sorts.Add ("asc:Title");
+			Sorts.Add ("asc:TrackNumber");
+			Sorts.Add ("asc:Album");
+			Sorts.Add ("asc:Artist");
 		}
 
 		#endregion
 	}
 
 	/// <summary>
+	/// How the content can be displayed.
+	/// </summary>
+	public enum ViewMode
+	{
+		/// <summary>
+		/// A columned list which scrolls vertically.
+		/// </summary>
+		Details,
+
+		/// <summary>
+		/// A grid of icons.
+		/// </summary>
+		Icons,
+
+		/// <summary>
+		/// A list which scrolls horizontally.
+		/// </summary>
+		List,
+
+		/// <summary>
+		/// A grid of medium sized icons with meta data.
+		/// </summary>
+		Tiles,
+
+		/// <summary>
+		/// A list of medium sized icons with meta data.
+		/// </summary>
+		Content
+	}
+
+	/// <summary>
 	/// Represents a column of a details list
 	/// </summary>
-	public class ViewDetailsColumn : INotifyPropertyChanged
+	public class ViewDetailsColumn : PropertyChangedBase
 	{
 		#region Members
 
+		private string name;
 		private string text;
 		private string binding;
 		private string converter;
@@ -1018,7 +1110,11 @@ namespace Stoffi
 		/// <summary>
 		/// Gets or sets the name of the column
 		/// </summary>
-		public string Name { get; set; }
+		public string Name
+		{
+			get { return name; }
+			set { SetProp<string> (ref name, value, "Name"); }
+		}
 
 		/// <summary>
 		/// Gets or sets the displayed text
@@ -1026,11 +1122,7 @@ namespace Stoffi
 		public string Text
 		{
 			get { return text; }
-			set
-			{
-				text = value;
-				OnPropertyChanged("Text");
-			}
+			set { SetProp <string>(ref text, value, "Text"); }
 		}
 
 		/// <summary>
@@ -1039,11 +1131,7 @@ namespace Stoffi
 		public string Binding
 		{
 			get { return binding; }
-			set
-			{
-				binding = value;
-				OnPropertyChanged("Binding");
-			}
+			set { SetProp <string>(ref binding, value, "Binding"); }
 		}
 
 		/// <summary>
@@ -1052,11 +1140,7 @@ namespace Stoffi
 		public string Converter
 		{
 			get { return converter; }
-			set
-			{
-				converter = value;
-				OnPropertyChanged("Converter");
-			}
+			set { SetProp <string>(ref converter, value, "Converter"); }
 		}
 
 		/// <summary>
@@ -1065,11 +1149,7 @@ namespace Stoffi
 		public string SortField
 		{
 			get { return sortField; }
-			set
-			{
-				sortField = value;
-				OnPropertyChanged("SortField");
-			}
+			set { SetProp <string>(ref sortField, value, "SortField"); }
 		}
 
 		/// <summary>
@@ -1078,11 +1158,7 @@ namespace Stoffi
 		public bool IsAlwaysVisible
 		{
 			get { return isAlwaysVisible; }
-			set
-			{
-				isAlwaysVisible = value;
-				OnPropertyChanged("IsAlwaysVisible");
-			}
+			set { SetProp <bool>(ref isAlwaysVisible, value, "IsAlwaysVisible"); }
 		}
 
 		/// <summary>
@@ -1091,11 +1167,7 @@ namespace Stoffi
 		public bool IsSortable
 		{
 			get { return isSortable; }
-			set
-			{
-				isSortable = value;
-				OnPropertyChanged("IsSortable");
-			}
+			set { SetProp <bool>(ref isSortable, value, "IsSortable"); }
 		}
 
 		/// <summary>
@@ -1104,11 +1176,7 @@ namespace Stoffi
 		public double Width
 		{
 			get { return width; }
-			set
-			{
-				width = value;
-				OnPropertyChanged("Width");
-			}
+			set { SetProp <double>(ref width, value, "Width"); }
 		}
 
 		/// <summary>
@@ -1117,11 +1185,7 @@ namespace Stoffi
 		public bool IsVisible
 		{
 			get { return isVisible; }
-			set
-			{
-				isVisible = value;
-				OnPropertyChanged("IsVisible");
-			}
+			set { SetProp <bool>(ref isVisible, value, "IsVisible"); }
 		}
 
 		/// <summary>
@@ -1130,29 +1194,112 @@ namespace Stoffi
 		public Alignment Alignment
 		{
 			get { return alignment; }
-			set
-			{
-				alignment = value;
-				OnPropertyChanged("Alignment");
-			}
+			set { SetProp <Alignment>(ref alignment, value, "Alignment"); }
 		}
 
 		#endregion
 
-		#region INotifyPropertyChanged Members
+		#region Methods
 
 		/// <summary>
-		/// Occurs when the property of the item is changed
+		/// Create a column.
 		/// </summary>
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		/// <summary>
-		/// Dispatches the PropertyChanged event
-		/// </summary>
-		/// <param name="name">The name of the property that was changed</param>
-		public void OnPropertyChanged(string name)
+		/// <param name="name">The name of the column</param>
+		/// <param name="text">The displayed text</param>
+		/// <param name="width">The width</param>
+		/// <param name="converter">The converter used to convert the value of the binding</param>
+		/// <param name="isVisible">Whether the column is visible</param>
+		/// <param name="alignment">The alignment of the text</param>
+		/// <param name="isAlwaysVisible">Whether the column is always visible</param>
+		/// <param name="isSortable">Whether the column is sortable</param>
+		/// <returns>The newly created column</returns>
+		public static ViewDetailsColumn Create(string name, string text, int width, string converter,
+			Alignment alignment = Alignment.Left,
+			bool isVisible = true,
+			bool isAlwaysVisible = false,
+			bool isSortable = true)
 		{
-			if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
+			return Create(name, text, name, name, width, alignment, isVisible, isAlwaysVisible, isSortable, converter);
+		}
+
+		/// <summary>
+		/// Create a column.
+		/// </summary>
+		/// <param name="name">The name of the column</param>
+		/// <param name="text">The displayed text</param>
+		/// <param name="width">The width</param>
+		/// <param name="isVisible">Whether the column is visible</param>
+		/// <param name="alignment">The alignment of the text</param>
+		/// <param name="isAlwaysVisible">Whether the column is always visible</param>
+		/// <param name="isSortable">Whether the column is sortable</param>
+		/// <param name="converter">The converter used to convert the value of the binding</param>
+		/// <returns>The newly created column</returns>
+		public static ViewDetailsColumn Create(string name, string text, int width,
+			Alignment alignment = Alignment.Left,
+			bool isVisible = true,
+			bool isAlwaysVisible = false,
+			bool isSortable = true,
+			string converter = null)
+		{
+			return Create(name, text, name, name, width, alignment, isVisible, isAlwaysVisible, isSortable, converter);
+		}
+
+		/// <summary>
+		/// Create a column.
+		/// </summary>
+		/// <param name="name">The name of the column</param>
+		/// <param name="text">The displayed text</param>
+		/// <param name="binding">The value to bind to</param>
+		/// <param name="width">The width</param>
+		/// <param name="isVisible">Whether the column is visible</param>
+		/// <param name="alignment">The alignment of the text</param>
+		/// <param name="isAlwaysVisible">Whether the column is always visible</param>
+		/// <param name="isSortable">Whether the column is sortable</param>
+		/// <param name="converter">The converter used to convert the value of the binding</param>
+		/// <returns>The newly created column</returns>
+		public static ViewDetailsColumn Create(string name, string text, string binding, int width,
+			Alignment alignment = Alignment.Left,
+			bool isVisible = true,
+			bool isAlwaysVisible = false,
+			bool isSortable = true,
+			string converter = null)
+		{
+			return Create(name, text, binding, binding, width, alignment, isVisible, isAlwaysVisible, isSortable, converter);
+		}
+
+		/// <summary>
+		/// Create a column.
+		/// </summary>
+		/// <param name="name">The name of the column</param>
+		/// <param name="text">The displayed text</param>
+		/// <param name="binding">The value to bind to</param>
+		/// <param name="sortField">The column to sort on</param>
+		/// <param name="width">The width</param>
+		/// <param name="isVisible">Whether the column is visible</param>
+		/// <param name="alignment">The alignment of the text</param>
+		/// <param name="isAlwaysVisible">Whether the column is always visible</param>
+		/// <param name="isSortable">Whether the column is sortable</param>
+		/// <param name="converter">The converter used to convert the value of the binding</param>
+		/// <returns>The newly created column</returns>
+		public static ViewDetailsColumn Create(string name, string text, string binding, string sortField, int width,
+			Alignment alignment = Alignment.Left,
+			bool isVisible = true,
+			bool isAlwaysVisible = false,
+			bool isSortable = true,
+			string converter = null)
+		{
+			ViewDetailsColumn column = new ViewDetailsColumn();
+			column.Name = name;
+			column.Text = text;
+			column.Binding = binding;
+			column.Width = width;
+			column.Alignment = alignment;
+			column.IsAlwaysVisible = isAlwaysVisible;
+			column.IsSortable = isSortable;
+			column.IsVisible = isVisible;
+			column.SortField = sortField;
+			column.Converter = converter;
+			return column;
 		}
 
 		#endregion
@@ -1161,15 +1308,18 @@ namespace Stoffi
 	/// <summary>
 	/// Describes the data source of an item inside the ViewDetails list
 	/// </summary>
-	public class ViewDetailsItemData : INotifyPropertyChanged
+	public class ViewDetailsItemData : PropertyChangedBase
 	{
 		#region Members
 
-		private int number;
-		private bool isActive;
-		private string icon;
-		private bool strike;
-		private bool disabled = false;
+		protected int number;
+		protected bool isActive;
+		protected string icon;
+		protected string image;
+		protected bool strike;
+		protected bool disabled = false;
+		protected bool isVisible = false;
+		protected string group;
 
 		#endregion
 
@@ -1181,7 +1331,7 @@ namespace Stoffi
 		public int Number
 		{
 			get { return number; }
-			set { number = value; OnPropertyChanged("Number"); }
+			set { SetProp<int>(ref number, value, "Number"); }
 		}
 
 		/// <summary>
@@ -1190,7 +1340,7 @@ namespace Stoffi
 		public bool IsActive
 		{
 			get { return isActive; }
-			set { isActive = value; OnPropertyChanged("IsActive"); }
+			set { SetProp<bool>(ref isActive, value, "IsActive"); }
 		}
 
 		/// <summary>
@@ -1199,7 +1349,16 @@ namespace Stoffi
 		public string Icon
 		{
 			get { return icon; }
-			set { icon = value; OnPropertyChanged("Icon"); }
+			set { SetProp<string>(ref icon, value, "Icon"); }
+		}
+
+		/// <summary>
+		/// Gets or sets the image of the item
+		/// </summary>
+		public string Image
+		{
+			get { return image; }
+			set { SetProp<string>(ref image, value, "Image"); }
 		}
 
 		/// <summary>
@@ -1208,7 +1367,7 @@ namespace Stoffi
 		public bool Strike
 		{
 			get { return strike; }
-			set { strike = value; OnPropertyChanged("Strike"); }
+			set { SetProp<bool>(ref strike, value, "Strike"); }
 		}
 
 		/// <summary>
@@ -1217,25 +1376,33 @@ namespace Stoffi
 		public bool Disabled
 		{
 			get { return disabled; }
-			set { disabled = value; OnPropertyChanged("Disabled"); }
+			set { SetProp<bool>(ref disabled, value, "Disabled"); }
 		}
 
-		#endregion
-
-		#region INotifyPropertyChanged Members
-
 		/// <summary>
-		/// Occurs when the property of the item is changed
+		/// Gets or sets whether or not the item is visible
+		/// and should be rendered.
 		/// </summary>
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		/// <summary>
-		/// Dispatches the PropertyChanged event
-		/// </summary>
-		/// <param name="name">The name of the property that was changed</param>
-		public void OnPropertyChanged(string name)
+		/// <remarks>
+		/// Used to implement virtualization for controls that
+		/// don't support it (like the WrapPanel).
+		/// </remarks>
+		public bool IsVisible
 		{
-			if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(name));
+			get { return isVisible; }
+			set { SetProp<bool>(ref isVisible, value, "IsVisible"); }
+		}
+
+		/// <summary>
+		/// Gets or sets the group of the item.
+		/// </summary>
+		/// <remarks>
+		/// This is used when grouping is enabled.
+		/// </remarks>
+		public string Group
+		{
+			get { return group; }
+			set { SetProp<string>(ref group, value, "Group"); }
 		}
 
 		#endregion

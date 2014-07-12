@@ -34,7 +34,7 @@ using System.Threading;
 using System.Reflection;
 using System.Web;
 
-namespace Stoffi
+namespace Stoffi.Tools.Migrator
 {
 	/// <summary>
 	/// This is the utility class containing all helper methods
@@ -173,6 +173,11 @@ namespace Stoffi
 					U.L(level, caller, str);
 				U.L(level, caller, String.Format("-- End of response. Total bytes: {0} --", response.ContentLength));
 			}
+		}
+
+		public static string T(object t)
+		{
+			return t == null ? "" : t.ToString();
 		}
 
 		/// <summary>
